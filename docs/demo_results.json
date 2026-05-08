@@ -592,6 +592,57 @@
       "molt_description_length": 1.0625
     }
   ],
+  "training_emergence": {
+    "rows": [
+      {
+        "mechanism_crossing_step": 46.0,
+        "behavior_crossing_step": 54.0,
+        "mechanism_lead_steps": 8.0,
+        "mechanism_behavior_correlation": 0.9563670675383308,
+        "final_intervention_score": 1.0,
+        "final_behavioral_accuracy": 0.9876991697956122,
+        "seed": 0
+      },
+      {
+        "mechanism_crossing_step": 45.0,
+        "behavior_crossing_step": 55.0,
+        "mechanism_lead_steps": 10.0,
+        "mechanism_behavior_correlation": 0.9583256542301688,
+        "final_intervention_score": 1.0,
+        "final_behavioral_accuracy": 0.9878600782003983,
+        "seed": 1
+      },
+      {
+        "mechanism_crossing_step": 45.0,
+        "behavior_crossing_step": 54.0,
+        "mechanism_lead_steps": 9.0,
+        "mechanism_behavior_correlation": 0.957981288379202,
+        "final_intervention_score": 1.0,
+        "final_behavioral_accuracy": 0.9862659079252848,
+        "seed": 2
+      },
+      {
+        "mechanism_crossing_step": 46.0,
+        "behavior_crossing_step": 54.0,
+        "mechanism_lead_steps": 8.0,
+        "mechanism_behavior_correlation": 0.9569826168758736,
+        "final_intervention_score": 0.9868401666103854,
+        "final_behavioral_accuracy": 0.9925334036720996,
+        "seed": 3
+      },
+      {
+        "mechanism_crossing_step": 46.0,
+        "behavior_crossing_step": 54.0,
+        "mechanism_lead_steps": 8.0,
+        "mechanism_behavior_correlation": 0.9573193987309094,
+        "final_intervention_score": 0.9828096707709684,
+        "final_behavioral_accuracy": 0.9808672487125694,
+        "seed": 4
+      }
+    ],
+    "mean_mechanism_lead_steps": 8.6,
+    "mean_correlation": 0.9573952051508969
+  },
   "superposition_phase_first_rows": [
     {
       "packing_ratio": 2.0,

@@ -17,6 +17,7 @@ from mnf.experiments import (
     run_mechanismlab_demo,
     run_random_control_demo,
     run_superposition_phase,
+    run_training_emergence,
     run_transition_atom_sweep,
 )
 
@@ -34,6 +35,7 @@ def main() -> None:
         "random_control_demo": run_random_control_demo.run(),
         "mechanismlab_demo": run_mechanismlab_demo.run(),
         "transition_atom_sweep_first_rows": run_transition_atom_sweep.run()["rows"][:5],
+        "training_emergence": run_training_emergence.run(),
         "superposition_phase_first_rows": run_superposition_phase.run()["rows"][:5],
     }
     print(json.dumps(out, indent=2))

@@ -12,6 +12,7 @@ from mnf.experiments import (
     run_cyclic_noise_sweep,
     run_ground_truth_suite,
     run_superposition_phase,
+    run_training_emergence,
     run_transition_atom_sweep,
 )
 
@@ -24,6 +25,7 @@ def main() -> None:
         "ground_truth_suite": run_ground_truth_suite.run(),
         "cyclic_noise_sweep": run_cyclic_noise_sweep.run(n=3000, seeds=(0, 1, 2, 3, 4)),
         "transition_atom_sweep": run_transition_atom_sweep.run(n=6000, seeds=(0, 1, 2, 3, 4)),
+        "training_emergence": run_training_emergence.run(seeds=(0, 1, 2, 3, 4)),
         "superposition_phase": run_superposition_phase.run(),
     }
     print(json.dumps(out, indent=2))

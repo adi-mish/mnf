@@ -10,9 +10,9 @@ The central claim is that a mechanistic explanation is not a neuron list, SAE la
 - `mnf/charts`: simple linear charts, cyclic typed charts, hierarchical feature absorption utilities, MOLT-like transition atoms, and a tiny optional PyTorch TopK SAE.
 - `mnf/baselines`: lightweight baseline selectors for local benchmark comparisons.
 - `mnf/discovery`: prototype Atlas-Causal Discovery pipeline for proposing atoms, discovering candidate edges, and fitting small causal programs.
-- `mnf/benchmarks`: synthetic ground-truth systems for causal chains, gated/XOR programs, relational lookup, modular arithmetic, transition-only maps, sparse superposition, hierarchical absorption, cyclic weekday features, shortcut controls, memorization controls, and random-vs-trained controls.
+- `mnf/benchmarks`: synthetic ground-truth systems for causal chains, gated/XOR programs, relational lookup, modular arithmetic, transition-only maps, sparse superposition, hierarchical absorption, cyclic weekday features, shortcut controls, memorization controls, training-emergence controls, and random-vs-trained controls.
 - `mnf/experiments`: runnable demos and CPU-only phase sweeps for the benchmark families.
-- `tests`: 29 passing tests that exercise all core components.
+- `tests`: 31 passing tests that exercise all core components.
 - `docs/THEORY.md`: detailed theory.
 - `docs/FORMAL_THEORY.md`: theorem candidates and proof sketches connected to benchmarks.
 - `docs/RESEARCH_PROGRAM.md`: aggressive NeurIPS-scale research plan.
@@ -30,7 +30,7 @@ python scripts/run_all_demos.py
 python scripts/run_research_sweeps.py
 ```
 
-The repo was tested in the current environment with Python 3.13.2.  All 29 tests passed.
+The repo was tested in the current environment with Python 3.13.2.  All 31 tests passed.
 
 ## What this is not
 

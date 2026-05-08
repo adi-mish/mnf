@@ -274,6 +274,32 @@ addition, and relational lookup.
 activation patching is the analogue, but it needs approximate/noisy versions of
 the assumptions.
 
+### Proposition 7: thresholded metrics can make gradual mechanisms look sudden
+
+**Setup.** Let a mechanism-progress variable `m_t` increase smoothly during
+training. Let a behavioral metric be a thresholded readout
+
+```text
+b_t = sigma(k (m_t - theta))
+```
+
+with large sharpness `k`.
+
+**Claim.** Mechanistic progress can cross an intervention-predictive threshold
+strictly before the behavioral metric crosses its emergence threshold, even
+though both are monotone functions of the same underlying mechanism.
+
+**Proof sketch.** For `m_t` increasing, the crossing time for any threshold is
+the first `t` with `m_t >= threshold`. If the mechanistic threshold is lower
+than the behavioral threshold `theta` needed to make `b_t` large, the mechanism
+crossing occurs earlier. Large `k` makes `b_t` appear abrupt.
+
+**Benchmark link.** `mnf/benchmarks/training_dynamics.py` instantiates this
+with a smooth mechanism trace and a thresholded behavioral metric.
+
+**Status.** This is a toy proposition, but it makes the training-dynamics claim
+explicit and testable.
+
 ## 5. What this theory explains
 
 The current MNF formalization explains why several common interpretability

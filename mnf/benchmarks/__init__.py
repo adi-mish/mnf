@@ -11,6 +11,7 @@ from mnf.benchmarks.relational import make_relational_lookup_program, sample_rel
 from mnf.benchmarks.transition_only import make_transition_only_dataset, compare_global_linear_vs_molt
 from mnf.benchmarks.shortcut import make_shortcut_dataset, shortcut_control
 from mnf.benchmarks.memorization import memorization_control
+from mnf.benchmarks.training_dynamics import make_training_emergence_trace, training_emergence_control
 
 __all__ = [
     "make_chain_program",
@@ -33,4 +34,6 @@ __all__ = [
     "make_shortcut_dataset",
     "shortcut_control",
     "memorization_control",
+    "make_training_emergence_trace",
+    "training_emergence_control",
 ]

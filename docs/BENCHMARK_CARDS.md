@@ -111,3 +111,12 @@ mechanism recovery.
 - **Interventions:** held-out identity test and description-length penalty
 - **Expected failure mode:** unconstrained alignment gets perfect observation fit by memorization
 - **Current result:** train accuracy `1.0`, test accuracy `0.475`, description length `512.0`
+
+## Training emergence
+
+- **File:** `mnf/benchmarks/training_dynamics.py`
+- **Mechanism:** smooth mechanism formation with thresholded behavioral metric
+- **State types:** scalar mechanism-progress trace
+- **Interventions:** compare intervention-progress crossing time against behavioral crossing time
+- **Expected failure mode:** behavior-only analysis misses gradual mechanism formation
+- **Current result:** mechanism progress crosses threshold before behavioral emergence in the synthetic trace
