@@ -398,11 +398,73 @@
       "causal_accepted": 1.0,
       "shortcut_accepted": 0.0
     },
+    "shortcut_selector_comparison": {
+      "candidate_scores": {
+        "causal": {
+          "train_accuracy": 0.962,
+          "shifted_accuracy": 0.9635,
+          "invariance_gap": 0.0015000000000000568,
+          "accepted": true
+        },
+        "shortcut": {
+          "train_accuracy": 0.9805,
+          "shifted_accuracy": 0.1075,
+          "invariance_gap": 0.873,
+          "accepted": false
+        }
+      },
+      "train_only_selector": {
+        "selector": "train_accuracy",
+        "selected": "shortcut",
+        "train_accuracy": 0.9805,
+        "shifted_accuracy": 0.1075,
+        "invariance_gap": 0.873
+      },
+      "invariance_selector": {
+        "selector": "invariance",
+        "selected": "causal",
+        "train_accuracy": 0.962,
+        "shifted_accuracy": 0.9635,
+        "invariance_gap": 0.0015000000000000568
+      }
+    },
     "memorizing_alignment": {
       "train_accuracy": 1.0,
       "test_accuracy": 0.474609375,
       "description_length": 512.0,
       "test_generalization_gap": 0.525390625
+    }
+  },
+  "baseline_comparison": {
+    "shortcut_selector_comparison": {
+      "candidate_scores": {
+        "causal": {
+          "train_accuracy": 0.962,
+          "shifted_accuracy": 0.9635,
+          "invariance_gap": 0.0015000000000000568,
+          "accepted": true
+        },
+        "shortcut": {
+          "train_accuracy": 0.9805,
+          "shifted_accuracy": 0.1075,
+          "invariance_gap": 0.873,
+          "accepted": false
+        }
+      },
+      "train_only_selector": {
+        "selector": "train_accuracy",
+        "selected": "shortcut",
+        "train_accuracy": 0.9805,
+        "shifted_accuracy": 0.1075,
+        "invariance_gap": 0.873
+      },
+      "invariance_selector": {
+        "selector": "invariance",
+        "selected": "causal",
+        "train_accuracy": 0.962,
+        "shifted_accuracy": 0.9635,
+        "invariance_gap": 0.0015000000000000568
+      }
     }
   },
   "ground_truth_suite": {

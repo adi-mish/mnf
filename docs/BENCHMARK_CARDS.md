@@ -94,6 +94,15 @@ mechanism recovery.
 - **Expected failure mode:** train-only probes select the shortcut
 - **Current result:** shortcut train accuracy `0.979`, shifted accuracy `0.105`; causal feature is accepted and shortcut is rejected
 
+## Shortcut selector comparison
+
+- **File:** `mnf/baselines/selection.py`
+- **Mechanism:** hard shortcut setting where the shortcut has higher train accuracy than the weaker causal feature
+- **State types:** binary causal and shortcut directions
+- **Interventions:** compare train-only selection against invariance-aware selection
+- **Expected failure mode:** labelability baseline selects the train shortcut
+- **Current result:** train-only selector chooses `shortcut` and gets shifted accuracy below `0.2`; invariance selector chooses `causal` and gets shifted accuracy above `0.9`
+
 ## Memorizing alignment
 
 - **File:** `mnf/benchmarks/memorization.py`

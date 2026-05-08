@@ -5,12 +5,14 @@ import json
 from mnf.benchmarks.memorization import memorization_control
 from mnf.benchmarks.random_control import random_vs_trained_control
 from mnf.benchmarks.shortcut import shortcut_control
+from mnf.baselines.selection import compare_shortcut_selectors
 
 
 def run(seed: int = 0) -> dict[str, object]:
     return {
         "random_vs_trained": random_vs_trained_control(seed=seed),
         "shortcut_spurious_correlation": shortcut_control(seed=seed),
+        "shortcut_selector_comparison": compare_shortcut_selectors(seed=seed),
         "memorizing_alignment": memorization_control(seed=seed),
     }
 

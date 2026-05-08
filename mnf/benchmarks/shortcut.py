@@ -56,6 +56,8 @@ def _shortcut_from_label(
 def make_shortcut_dataset(
     n_per_environment: int = 1000,
     activation_dim: int = 12,
+    causal_strength: float = 1.0,
+    shortcut_strength: float = 1.0,
     train_shortcut_agreement: float = 0.98,
     shifted_shortcut_agreement: float = 0.1,
     noise: float = 0.1,
@@ -80,8 +82,8 @@ def make_shortcut_dataset(
     labels = (causal_values > 0).astype(int)
     environments = np.array(["train"] * n_per_environment + ["shifted"] * n_per_environment)
     activations = (
-        causal_values[:, None] * causal_dir[None, :]
-        + shortcut_values[:, None] * shortcut_dir[None, :]
+        causal_strength * causal_values[:, None] * causal_dir[None, :]
+        + shortcut_strength * shortcut_values[:, None] * shortcut_dir[None, :]
         + noise * rng.normal(size=(2 * n_per_environment, activation_dim))
     )
     return ShortcutDataset(
