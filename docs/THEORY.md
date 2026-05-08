@@ -1,5 +1,8 @@
 # Mechanistic Normal Forms: theory sketch
 
+For a proof-oriented version of the definitions and theorem candidates, see
+`docs/FORMAL_THEORY.md`.
+
 ## 1. Object of study
 
 Fix a model `M`, data distribution `P_X`, behavior family `B`, intervention family `I`, and error tolerance `epsilon`.  A mechanistic explanation is domain-relative.  There is no context-free, unique explanation of an entire neural network.

@@ -14,6 +14,7 @@ The central claim is that a mechanistic explanation is not a neuron list, SAE la
 - `mnf/experiments`: runnable demos and CPU-only phase sweeps for the benchmark families.
 - `tests`: 29 passing tests that exercise all core components.
 - `docs/THEORY.md`: detailed theory.
+- `docs/FORMAL_THEORY.md`: theorem candidates and proof sketches connected to benchmarks.
 - `docs/RESEARCH_PROGRAM.md`: aggressive NeurIPS-scale research plan.
 - `docs/BENCHMARK_CARDS.md`: documented MechanismLab benchmark cards.
 - `docs/demo_results.json`: output of the demos on the current environment.

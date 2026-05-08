@@ -12,4 +12,25 @@ This scaffold was designed around the following research directions:
 - Refusal directions and high-level control variables.
 - Functional emotion concepts in Claude Sonnet 4.5.
 
-See the final assistant response for web citations.  This file is intentionally plain text so the repository remains easy to edit.
+## Primary references
+
+- Causal abstraction as a formal foundation for mechanistic interpretability:
+  https://www.jmlr.org/papers/v26/23-0058.html
+- The non-linear representation dilemma:
+  https://arxiv.org/abs/2507.08802
+- SAE scaling and evaluation:
+  https://arxiv.org/abs/2406.04093
+- Sparse autoencoders on randomly initialized transformers:
+  https://arxiv.org/abs/2501.17727
+- Feature splitting and absorption in sparse autoencoders:
+  https://arxiv.org/abs/2409.14507
+- Irreducible multidimensional and cyclic features:
+  https://arxiv.org/abs/2405.14860
+- Tracr compiled transformers as a ground-truth lab:
+  https://arxiv.org/abs/2301.05062
+- Automated circuit discovery:
+  https://arxiv.org/abs/2304.14997
+- ROME and factual-association editing:
+  https://arxiv.org/abs/2202.05262
+
+This file is intentionally plain text so the repository remains easy to edit.
