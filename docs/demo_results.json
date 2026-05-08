@@ -117,6 +117,33 @@
       "hierarchical_error_reduction": 0.04983333333333334
     }
   ],
+  "cyclic_noise_first_rows": [
+    {
+      "noise": 0.0,
+      "base_label_error": 0.0,
+      "rotation_intervention_error": 0.0
+    },
+    {
+      "noise": 0.03,
+      "base_label_error": 0.0,
+      "rotation_intervention_error": 0.0
+    },
+    {
+      "noise": 0.08,
+      "base_label_error": 0.0,
+      "rotation_intervention_error": 0.0
+    },
+    {
+      "noise": 0.15,
+      "base_label_error": 0.0022222222222222222,
+      "rotation_intervention_error": 0.0022222222222222222
+    },
+    {
+      "noise": 0.3,
+      "base_label_error": 0.14555555555555555,
+      "rotation_intervention_error": 0.14583333333333334
+    }
+  ],
   "random_control_demo": {
     "random_labelability": 0.961038961038961,
     "trained_labelability": 0.961038961038961,
@@ -209,6 +236,48 @@
       ]
     ]
   },
+  "transition_atom_sweep_first_rows": [
+    {
+      "gate_separation": 0.75,
+      "noise": 0.0,
+      "global_linear_mse": 1.8474921254579797,
+      "molt_mse": 1.1754655075868865,
+      "molt_to_global_mse_ratio": 0.6362492653631729,
+      "molt_description_length": 1.0625
+    },
+    {
+      "gate_separation": 0.75,
+      "noise": 0.05,
+      "global_linear_mse": 1.8516230190089893,
+      "molt_mse": 1.1792600178882984,
+      "molt_to_global_mse_ratio": 0.636879108642456,
+      "molt_description_length": 1.0625
+    },
+    {
+      "gate_separation": 0.75,
+      "noise": 0.2,
+      "global_linear_mse": 1.893759020513002,
+      "molt_mse": 1.2203181272020445,
+      "molt_to_global_mse_ratio": 0.6443893409793351,
+      "molt_description_length": 1.0625
+    },
+    {
+      "gate_separation": 1.5,
+      "noise": 0.0,
+      "global_linear_mse": 1.8360104474491277,
+      "molt_mse": 0.38565124511340426,
+      "molt_to_global_mse_ratio": 0.2100485025285184,
+      "molt_description_length": 1.0625
+    },
+    {
+      "gate_separation": 1.5,
+      "noise": 0.05,
+      "global_linear_mse": 1.840199392924485,
+      "molt_mse": 0.3881639799883015,
+      "molt_to_global_mse_ratio": 0.21093582656356755,
+      "molt_description_length": 1.0625
+    }
+  ],
   "superposition_phase_first_rows": [
     {
       "packing_ratio": 2.0,

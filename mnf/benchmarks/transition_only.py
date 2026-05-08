@@ -20,6 +20,7 @@ def make_transition_only_dataset(
     n: int = 2000,
     input_dim: int = 6,
     output_dim: int = 4,
+    gate_separation: float = 2.5,
     noise: float = 0.02,
     seed: int = 0,
 ) -> TransitionOnlyDataset:
@@ -33,8 +34,8 @@ def make_transition_only_dataset(
     rng = np.random.default_rng(seed)
     gate = rng.random(n) > 0.5
     x = rng.normal(size=(n, input_dim))
-    x[gate, 0] += 2.5
-    x[~gate, 0] -= 2.5
+    x[gate, 0] += gate_separation
+    x[~gate, 0] -= gate_separation
     w0 = rng.normal(scale=0.8, size=(input_dim, output_dim))
     w1 = rng.normal(scale=0.8, size=(input_dim, output_dim))
     b0 = rng.normal(scale=0.2, size=output_dim)
