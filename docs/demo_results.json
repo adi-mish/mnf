@@ -1,0 +1,119 @@
+{
+  "ground_truth_recovery": {
+    "true_edges": [
+      [
+        "a",
+        "b"
+      ],
+      [
+        "b",
+        "y"
+      ],
+      [
+        "x",
+        "a"
+      ]
+    ],
+    "pred_edges": [
+      [
+        "a",
+        "b"
+      ],
+      [
+        "a",
+        "y"
+      ],
+      [
+        "b",
+        "y"
+      ],
+      [
+        "x",
+        "a"
+      ],
+      [
+        "x",
+        "b"
+      ],
+      [
+        "x",
+        "y"
+      ]
+    ],
+    "precision": 0.5,
+    "recall": 1.0,
+    "f1": 0.6666666666666666
+  },
+  "cyclic_demo": {
+    "base_label_error": 0.0,
+    "rotation_intervention_error": 0.0
+  },
+  "absorption_demo": {
+    "absorption_score": 0.9815512877316903,
+    "flat_parent_error": 0.193,
+    "hierarchical_parent_error": 0.0
+  },
+  "random_control_demo": {
+    "random_labelability": 0.961038961038961,
+    "trained_labelability": 0.961038961038961,
+    "random_causal_use": 0.012244225447411935,
+    "trained_causal_use": 0.8998801968443919
+  },
+  "superposition_phase_first_rows": [
+    {
+      "packing_ratio": 2.0,
+      "mean_abs_coherence": 0.4189348203906622,
+      "max_abs_coherence": 0.9787990529692746,
+      "total_interference": 0.0030186857867059574,
+      "mean_coactivation": 0.0004000000000000001,
+      "n_features": 8,
+      "activation_dim": 4,
+      "p": 0.02,
+      "favored": true
+    },
+    {
+      "packing_ratio": 2.0,
+      "mean_abs_coherence": 0.4189348203906622,
+      "max_abs_coherence": 0.9787990529692746,
+      "total_interference": 0.018866786166912234,
+      "mean_coactivation": 0.0025000000000000005,
+      "n_features": 8,
+      "activation_dim": 4,
+      "p": 0.05,
+      "favored": true
+    },
+    {
+      "packing_ratio": 2.0,
+      "mean_abs_coherence": 0.4189348203906622,
+      "max_abs_coherence": 0.9787990529692746,
+      "total_interference": 0.16980107550221005,
+      "mean_coactivation": 0.022499999999999996,
+      "n_features": 8,
+      "activation_dim": 4,
+      "p": 0.15,
+      "favored": true
+    },
+    {
+      "packing_ratio": 2.0,
+      "mean_abs_coherence": 0.4189348203906622,
+      "max_abs_coherence": 0.9787990529692746,
+      "total_interference": 1.207474314682383,
+      "mean_coactivation": 0.16000000000000003,
+      "n_features": 8,
+      "activation_dim": 4,
+      "p": 0.4,
+      "favored": true
+    },
+    {
+      "packing_ratio": 1.0,
+      "mean_abs_coherence": 0.27214859881657316,
+      "max_abs_coherence": 0.5648880029739425,
+      "total_interference": 0.0010851101934663031,
+      "mean_coactivation": 0.0004000000000000001,
+      "n_features": 8,
+      "activation_dim": 8,
+      "p": 0.02,
+      "favored": false
+    }
+  ]
+}
