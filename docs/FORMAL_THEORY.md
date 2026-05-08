@@ -468,9 +468,55 @@ are stable.
 
 **Benchmark link.** `mnf/interactions/bounds.py` implements the bound.
 `mnf/benchmarks/interactions/noisy_recovery.py` sweeps recovery under noisy cell
-observations.
+observations and reports abstention when labels are not margin-stable.
 
-### Theorem 13: shared-MDL preference for reusable atoms
+### Proposition 13: context-relativity of pair labels
+
+**Setup.** Pairwise factorial recovery is performed in a selected background
+context.
+
+**Claim.** Pair labels are not context-free in general. For:
+
+```text
+Y(a,b,c) = a + b + (1 - c)ab
+```
+
+the pair `(a,b)` is additive when `c=1` and synergistic when `c=0`.
+
+**Proof sketch.** The pairwise synergy contrast equals `0` in the first context
+and `1` in the second. One all-on-context matrix therefore cannot certify a
+global interaction label.
+
+**Benchmark link.** `mnf/benchmarks/interactions/context_stability.py` reports
+the changed pair labels across all-on and all-off contexts.
+
+### Proposition 14: active repeated-measurement design
+
+**Setup.** Candidate interventions are the deduplicated pairwise all-on-context
+states. The active loop samples states needed by unresolved pair labels and, in
+the noisy case, repeats states that participate in unstable contrasts.
+
+**Claim.** In the noiseless finite case, the loop terminates after at most:
+
+```text
+1 + K + K(K - 1) / 2
+```
+
+unique states for `K >= 2`. In the noisy case, termination requires margin:
+the relevant contrast must exceed its deterministic error bound plus the
+decision margin.
+
+**Proof sketch.** In the noiseless case, each unresolved pair has at least one
+missing cell. Sampling a missing candidate state reduces the finite set of
+missing cells, and once all candidate states are sampled every pair has its four
+cells. In the noisy case, repeated samples shrink the cell confidence radius,
+but zero-margin contrasts cannot be forced stable by finite data.
+
+**Benchmark link.** `mnf/benchmarks/interactions/active_design.py` recovers the
+six-mechanism suite in `22` unique states without noise and allocates more
+measurements to unstable contrasts as noise increases.
+
+### Theorem 15: shared-MDL preference for reusable atoms
 
 **Setup.** Two mechanisms can either duplicate a typed atom or share it.
 
@@ -490,7 +536,7 @@ description lengths. The implementation uses `MechanismEcosystem` to compute
 **Benchmark link.** `mnf/benchmarks/interactions/shared_atom_reuse.py` gives a
 toy route atom reused by two lookup mechanisms.
 
-### Proposition 14: developmental bootstrapping
+### Proposition 16: developmental bootstrapping
 
 **Setup.** Mechanism strengths follow:
 

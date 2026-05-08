@@ -14,11 +14,12 @@ The central claim is that a mechanistic explanation is not a neuron list, SAE la
 - `mnf/discovery`: prototype Atlas-Causal Discovery pipeline plus a minimal Mechanism Ecology Discovery adapter for pairwise interaction recovery.
 - `mnf/benchmarks`: synthetic ground-truth systems for causal chains, gated/XOR programs, induction match-copy, relational lookup, modular arithmetic, transition-only maps, sparse superposition, hierarchical absorption, cyclic weekday features, shortcut controls, memorization controls, training-emergence controls, interaction/ecology controls, and random-vs-trained controls.
 - `mnf/experiments`: runnable demos and CPU-only phase sweeps for the benchmark families.
-- `tests`: 64 passing tests that exercise all core components.
+- `tests`: 71 passing tests that exercise all core components.
 - `docs/THEORY.md`: detailed theory.
 - `docs/FORMAL_THEORY.md`: theorem candidates and proof sketches connected to benchmarks.
 - `docs/INTERACTION_CALCULUS.md`: executable iMNF interaction metrics, intervention designs, uncertainty, and recovery metrics.
 - `docs/THEOREMS.md`: proof-obligation package for the iMNF claims and their benchmark witnesses.
+- `docs/ADVERSARIAL_REVIEW.md`: adversarial review of the current theory claims, attack surfaces, and required evidence.
 - `docs/RESEARCH_PROGRAM.md`: aggressive NeurIPS-scale research plan.
 - `docs/BENCHMARK_CARDS.md`: documented MechanismLab benchmark cards.
 - `docs/demo_results.json`: output of the demos on the current environment.
@@ -36,7 +37,7 @@ python scripts/run_research_sweeps.py
 python scripts/write_results_summary.py
 ```
 
-The repo was tested in the current environment with Python 3.13.2.  All 64 tests passed.
+The repo was tested in the current environment with Python 3.13.2.  All 71 tests passed.
 
 ## What this is not
 

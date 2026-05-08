@@ -10,6 +10,7 @@ from mnf.benchmarks.interactions.recovery_suite import (
 )
 from mnf.interactions import (
     classify_pairwise_interaction,
+    classify_pairwise_interaction_with_uncertainty,
     evaluate_design,
     label_recovery_report,
     pairwise_contrast_error_bounds,
@@ -42,12 +43,26 @@ def noisy_recovery_trial(
     bounds = pairwise_contrast_error_bounds(max_abs_cell_error)
     contrast_tol = max(1e-7, bounds["synergy"])
     pred_labels = {pair: classify_pairwise_interaction(effects, tol=contrast_tol) for pair, effects in factorials.items()}
-    report = label_recovery_report(expected_recovery_labels(names), pred_labels)
+    true_labels = expected_recovery_labels(names)
+    report = label_recovery_report(true_labels, pred_labels)
+    abstaining_labels = {
+        pair: classify_pairwise_interaction_with_uncertainty(effects, tol=contrast_tol)
+        for pair, effects in factorials.items()
+    }
+    covered_pairs = {pair for pair, label in abstaining_labels.items() if label != "uncertain"}
+    covered_report = label_recovery_report(
+        {pair: label for pair, label in true_labels.items() if pair in covered_pairs},
+        {pair: label for pair, label in abstaining_labels.items() if pair in covered_pairs},
+    )
+    uncertain_rate = 1.0 - (len(covered_pairs) / len(true_labels) if true_labels else 1.0)
     return {
         "noise": float(noise),
         "seed": int(seed),
         "accuracy": float(report.accuracy),
         "f1": float(report.f1),
+        "uncertain_rate": float(uncertain_rate),
+        "covered_accuracy": float(covered_report.accuracy),
+        "covered_f1": float(covered_report.f1),
         "all_correct": float(report.accuracy == 1.0),
         "max_abs_cell_error": float(max_abs_cell_error),
         "synergy_error_bound": float(bounds["synergy"]),
@@ -68,6 +83,9 @@ def noisy_recovery_sweep(
                 "noise": float(noise),
                 "mean_accuracy": float(np.mean([trial["accuracy"] for trial in trials])),
                 "mean_f1": float(np.mean([trial["f1"] for trial in trials])),
+                "mean_uncertain_rate": float(np.mean([trial["uncertain_rate"] for trial in trials])),
+                "mean_covered_accuracy": float(np.mean([trial["covered_accuracy"] for trial in trials])),
+                "mean_covered_f1": float(np.mean([trial["covered_f1"] for trial in trials])),
                 "all_correct_rate": float(np.mean([trial["all_correct"] for trial in trials])),
                 "mean_max_abs_cell_error": float(np.mean([trial["max_abs_cell_error"] for trial in trials])),
                 "mean_synergy_error_bound": float(np.mean([trial["synergy_error_bound"] for trial in trials])),

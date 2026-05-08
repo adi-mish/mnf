@@ -20,6 +20,10 @@ This scaffold was designed around the following research directions:
   https://arxiv.org/abs/2507.08802
 - SAE scaling and evaluation:
   https://arxiv.org/abs/2406.04093
+- OpenAI large-scale GPT-4 SAE feature extraction:
+  https://openai.com/index/extracting-concepts-from-gpt-4/
+- SAEBench benchmark suite:
+  https://arxiv.org/abs/2503.09532
 - Sparse autoencoders on randomly initialized transformers:
   https://arxiv.org/abs/2501.17727
 - Sparse autoencoders do not find canonical units:
@@ -36,6 +40,18 @@ This scaffold was designed around the following research directions:
   https://arxiv.org/abs/2301.05062
 - Automated circuit discovery:
   https://arxiv.org/abs/2304.14997
+- Causal scrubbing:
+  https://www.alignmentforum.org/posts/JvZhhzycHu2Yd57RN/causal-scrubbing
+- Transcoders for interpretable feature circuits:
+  https://arxiv.org/abs/2406.11944
+- Circuit tracing and attribution graphs:
+  https://transformer-circuits.pub/2025/attribution-graphs/methods.html
+- Gemma Scope open interpretability tool suite:
+  https://deepmind.google/models/gemma/gemma-scope/
+- Refusal mediated by a single direction:
+  https://arxiv.org/abs/2406.11717
+- Emotion concepts and their function in Claude Sonnet 4.5:
+  https://arxiv.org/abs/2604.07729
 - ROME and factual-association editing:
   https://arxiv.org/abs/2202.05262
 

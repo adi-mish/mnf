@@ -93,6 +93,7 @@ Upgrade the prototype pipeline:
 - pairwise factorial intervention stage for redundancy, synergy, gating, and support;
 - bootstrap uncertainty estimates for interaction contrasts;
 - deterministic contrast-error bounds and noisy recovery phase sweeps;
+- active repeated-measurement design for unstable interaction contrasts;
 - capacity-competition and gradient-coupling estimation;
 - recovery metrics for pair labels and interaction matrices;
 - pruning stage with MDL and invariance penalties;

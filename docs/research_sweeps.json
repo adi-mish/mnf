@@ -1018,6 +1018,31 @@
       "support_delta": 0.51,
       "normalized_support_delta": 0.6219512195114367
     },
+    "context_stability": {
+      "n_pairs": 6,
+      "n_changed_pairs": 3,
+      "stable_label_rate": 0.5,
+      "focal_pair": [
+        "left",
+        "right"
+      ],
+      "focal_context_on_label": "additive",
+      "focal_context_off_label": "synergistic_or_gated",
+      "changed_pairs": {
+        "left::right": {
+          "context_on": "additive",
+          "context_off": "synergistic_or_gated"
+        },
+        "left::switch": {
+          "context_on": "competitive",
+          "context_off": "additive"
+        },
+        "right::switch": {
+          "context_on": "competitive",
+          "context_off": "additive"
+        }
+      }
+    },
     "interaction_recovery": {
       "design_size": 22,
       "n_pairs": 15,
@@ -1482,6 +1507,9 @@
           "noise": 0.0,
           "mean_accuracy": 1.0,
           "mean_f1": 1.0,
+          "mean_uncertain_rate": 0.0,
+          "mean_covered_accuracy": 1.0,
+          "mean_covered_f1": 1.0,
           "all_correct_rate": 1.0,
           "mean_max_abs_cell_error": 0.0,
           "mean_synergy_error_bound": 0.0,
@@ -1491,6 +1519,9 @@
           "noise": 0.005,
           "mean_accuracy": 1.0,
           "mean_f1": 1.0,
+          "mean_uncertain_rate": 0.0,
+          "mean_covered_accuracy": 1.0,
+          "mean_covered_f1": 1.0,
           "all_correct_rate": 1.0,
           "mean_max_abs_cell_error": 0.010621830885516301,
           "mean_synergy_error_bound": 0.042487323542065206,
@@ -1500,6 +1531,9 @@
           "noise": 0.01,
           "mean_accuracy": 1.0,
           "mean_f1": 1.0,
+          "mean_uncertain_rate": 0.0019999999999999996,
+          "mean_covered_accuracy": 1.0,
+          "mean_covered_f1": 1.0,
           "all_correct_rate": 1.0,
           "mean_max_abs_cell_error": 0.021243661771032585,
           "mean_synergy_error_bound": 0.08497464708413034,
@@ -1509,6 +1543,9 @@
           "noise": 0.02,
           "mean_accuracy": 0.9973333333333333,
           "mean_f1": 0.9986206896551724,
+          "mean_uncertain_rate": 0.15966666666666665,
+          "mean_covered_accuracy": 1.0,
+          "mean_covered_f1": 1.0,
           "all_correct_rate": 0.96,
           "mean_max_abs_cell_error": 0.04248732354206517,
           "mean_synergy_error_bound": 0.16994929416826068,
@@ -1518,6 +1555,9 @@
           "noise": 0.03,
           "mean_accuracy": 0.9486666666666668,
           "mean_f1": 0.9724681066060376,
+          "mean_uncertain_rate": 0.4110000000000001,
+          "mean_covered_accuracy": 1.0,
+          "mean_covered_f1": 1.0,
           "all_correct_rate": 0.435,
           "mean_max_abs_cell_error": 0.06373098531309776,
           "mean_synergy_error_bound": 0.25492394125239104,
@@ -1527,6 +1567,9 @@
           "noise": 0.05,
           "mean_accuracy": 0.7176666666666667,
           "mean_f1": 0.8275507657842741,
+          "mean_uncertain_rate": 0.6953333333333334,
+          "mean_covered_accuracy": 1.0,
+          "mean_covered_f1": 1.0,
           "all_correct_rate": 0.005,
           "mean_max_abs_cell_error": 0.10621830885516297,
           "mean_synergy_error_bound": 0.42487323542065186,
@@ -1536,6 +1579,9 @@
           "noise": 0.08,
           "mean_accuracy": 0.4346666666666667,
           "mean_f1": 0.6012138248561388,
+          "mean_uncertain_rate": 0.9353333333333333,
+          "mean_covered_accuracy": 1.0,
+          "mean_covered_f1": 1.0,
           "all_correct_rate": 0.0,
           "mean_max_abs_cell_error": 0.1699492941682607,
           "mean_synergy_error_bound": 0.6797971766730428,
@@ -1545,6 +1591,9 @@
           "noise": 0.12,
           "mean_accuracy": 0.2026666666666667,
           "mean_f1": 0.33429761737230784,
+          "mean_uncertain_rate": 0.9976666666666667,
+          "mean_covered_accuracy": 1.0,
+          "mean_covered_f1": 1.0,
           "all_correct_rate": 0.0,
           "mean_max_abs_cell_error": 0.25492394125239104,
           "mean_synergy_error_bound": 1.0196957650095642,
@@ -1554,6 +1603,9 @@
           "noise": 0.2,
           "mean_accuracy": 0.030333333333333334,
           "mean_f1": 0.05630611455108359,
+          "mean_uncertain_rate": 1.0,
+          "mean_covered_accuracy": 1.0,
+          "mean_covered_f1": 1.0,
           "all_correct_rate": 0.0,
           "mean_max_abs_cell_error": 0.42487323542065186,
           "mean_synergy_error_bound": 1.6994929416826074,
@@ -1563,10 +1615,65 @@
           "noise": 0.3,
           "mean_accuracy": 0.0023333333333333335,
           "mean_f1": 0.004301470588235295,
+          "mean_uncertain_rate": 1.0,
+          "mean_covered_accuracy": 1.0,
+          "mean_covered_f1": 1.0,
           "all_correct_rate": 0.0,
           "mean_max_abs_cell_error": 0.6373098531309777,
           "mean_synergy_error_bound": 2.5492394125239106,
           "mean_classification_tolerance": 2.5492394125239106
+        }
+      ]
+    },
+    "active_design": {
+      "rows": [
+        {
+          "noise": 0.0,
+          "mean_measurements": 22.0,
+          "mean_unique_states": 22.0,
+          "all_stable_rate": 1.0,
+          "mean_accuracy": 1.0,
+          "mean_f1": 1.0
+        },
+        {
+          "noise": 0.005,
+          "mean_measurements": 22.01,
+          "mean_unique_states": 22.0,
+          "all_stable_rate": 1.0,
+          "mean_accuracy": 1.0,
+          "mean_f1": 1.0
+        },
+        {
+          "noise": 0.01,
+          "mean_measurements": 22.01,
+          "mean_unique_states": 22.0,
+          "all_stable_rate": 1.0,
+          "mean_accuracy": 1.0,
+          "mean_f1": 1.0
+        },
+        {
+          "noise": 0.02,
+          "mean_measurements": 37.31,
+          "mean_unique_states": 22.0,
+          "all_stable_rate": 0.96,
+          "mean_accuracy": 1.0,
+          "mean_f1": 1.0
+        },
+        {
+          "noise": 0.03,
+          "mean_measurements": 256.0,
+          "mean_unique_states": 22.0,
+          "all_stable_rate": 0.0,
+          "mean_accuracy": 0.9733333333333334,
+          "mean_f1": 0.9862068965517241
+        },
+        {
+          "noise": 0.04,
+          "mean_measurements": 256.0,
+          "mean_unique_states": 22.0,
+          "all_stable_rate": 0.0,
+          "mean_accuracy": 0.9000000000000001,
+          "mean_f1": 0.9467706622879035
         }
       ]
     },

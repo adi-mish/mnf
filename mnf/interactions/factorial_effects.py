@@ -136,3 +136,35 @@ def classify_pairwise_interaction(effects: FactorialEffects, tol: float = 1e-6) 
     if abs(effects.joint_effect) <= tol:
         return "inactive"
     return "additive"
+
+
+def classify_pairwise_interaction_with_uncertainty(
+    effects: FactorialEffects,
+    tol: float = 1e-6,
+    stable_multiplier: float = 2.0,
+) -> str:
+    """Return `uncertain` when the label is not margin-stable.
+
+    The ordinary classifier answers "what label is selected at this tolerance?"
+    This helper answers the stricter operational question "would the same label
+    still be selected if the error bar were modestly larger?"  A disagreement
+    means the contrast is near the decision boundary and should not be treated
+    as a hard mechanism interaction claim.
+    """
+
+    if tol < 0:
+        raise ValueError("tol must be non-negative")
+    if stable_multiplier < 1.0:
+        raise ValueError("stable_multiplier must be at least 1")
+    label = classify_pairwise_interaction(effects, tol=tol)
+    if label == "inactive":
+        observed_margin = max(
+            abs(effects.joint_effect),
+            abs(effects.synergy),
+            effects.redundancy_score,
+            effects.competition_score,
+        )
+        if observed_margin > 0.0:
+            return "uncertain"
+    stable_label = classify_pairwise_interaction(effects, tol=tol * stable_multiplier)
+    return label if label == stable_label else "uncertain"

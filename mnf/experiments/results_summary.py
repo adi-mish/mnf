@@ -68,9 +68,11 @@ def summarize_research_sweeps(data: Mapping[str, Any]) -> str:
         redundant = interaction["redundant_paths"]
         gating = interaction["gating"]
         shared = interaction["shared_atom_reuse"]
+        context_stability = interaction.get("context_stability")
         recovery = interaction.get("interaction_recovery")
         higher_order = interaction.get("higher_order")
         noisy = interaction.get("noisy_interaction_recovery")
+        active = interaction.get("active_design")
         lines.extend([
             "## Mechanism Interactions",
             "",
@@ -84,6 +86,10 @@ def summarize_research_sweeps(data: Mapping[str, Any]) -> str:
             lines.append(
                 f"Interaction recovery F1: `{_fmt(recovery['recovery']['f1'])}` over `{recovery['n_pairs']}` mechanism pairs using `{recovery['design_size']}` intervention states."
             )
+        if context_stability is not None:
+            lines.append(
+                f"Context-stability changed pairs: `{context_stability['n_changed_pairs']}` of `{context_stability['n_pairs']}`; the focal pair changes from `{context_stability['focal_context_on_label']}` to `{context_stability['focal_context_off_label']}`."
+            )
         if higher_order is not None:
             lines.append(
                 f"Higher-order triple-gate contrast: `{_fmt(higher_order['third_order_effect'])}` using `{higher_order['triple_design_size']}` intervention states."
@@ -93,6 +99,15 @@ def summarize_research_sweeps(data: Mapping[str, Any]) -> str:
             high_noise = noisy["rows"][-1]
             lines.append(
                 f"Noisy recovery all-correct rate: `{_fmt(low_noise['all_correct_rate'])}` at noise `{low_noise['noise']}` and `{_fmt(high_noise['all_correct_rate'])}` at noise `{high_noise['noise']}`."
+            )
+            lines.append(
+                f"Noisy recovery abstention rate: `{_fmt(low_noise['mean_uncertain_rate'])}` at noise `{low_noise['noise']}` and `{_fmt(high_noise['mean_uncertain_rate'])}` at noise `{high_noise['noise']}`."
+            )
+        if active is not None:
+            clean_active = active["rows"][0]
+            last_active = active["rows"][-1]
+            lines.append(
+                f"Active design mean measurements: `{_fmt(clean_active['mean_measurements'])}` at noise `{clean_active['noise']}` and `{_fmt(last_active['mean_measurements'])}` at noise `{last_active['noise']}`."
             )
         lines.append("")
 

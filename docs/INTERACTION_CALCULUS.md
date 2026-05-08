@@ -86,6 +86,12 @@ contrast `sum_i c_i Y_i` has error at most `epsilon * sum_i |c_i|`. Pairwise
 synergy and gate contrasts therefore have error at most `4 epsilon`, and an
 order-`k` inclusion-exclusion contrast has error at most `2^k epsilon`.
 
+The classifier now has an abstaining variant:
+`classify_pairwise_interaction_with_uncertainty`. It returns `uncertain` when
+the label chosen at the nominal tolerance changes after modestly widening the
+error bar. This keeps weak noisy contrasts out of hard additive/non-additive
+claims.
+
 ## Recovery metrics
 
 `mnf/interactions/recovery.py` provides:
@@ -115,18 +121,44 @@ It recovers:
 from `22` intervention states with F1 `1.0`.
 
 The noisy recovery sweep records how this degrades as cell observations are
-perturbed. It is a synthetic margin check, not a substitute for real activation
-intervention uncertainty.
+perturbed. It also reports the abstention rate from the margin-stability
+classifier. This is a synthetic margin check, not a substitute for real
+activation intervention uncertainty.
+
+## Context Stability
+
+Pairwise labels are selected-context claims. Holding all non-pair mechanisms on
+can hide interactions that appear when the background context changes.
+`mnf/benchmarks/interactions/context_stability.py` is a minimal counterexample:
+the `left/right` pair is additive when `switch` is on and synergistic when
+`switch` is off. The correct output is therefore not one universal pair label,
+but a context-stability report.
+
+## Active Design
+
+`mnf/interactions/active.py` implements a small active-design loop. It starts
+from the pairwise all-on-context candidate design, samples the intervention
+states needed by unresolved pair labels, then allocates repeated measurements
+to states that participate in unstable contrasts.
+
+In the exact six-mechanism recovery suite, the active loop terminates after the
+same `22` unique states required by the deduplicated pairwise design. Under
+noise, it does not invent new states; it spends additional measurements on the
+same state set until contrast margins clear the deterministic tolerance or the
+budget is exhausted.
+
+This is not an optimal experimental-design theorem. It is a CPU-checkable
+margin rule for deciding where repeated intervention measurements are useful.
 
 ## What remains before real models
 
 The CPU implementation now covers the pairwise interaction engine, shared-MDL
-accounting, uncertainty, and synthetic recovery. The next CPU-only gaps are:
+accounting, uncertainty, active repeated-measurement design, and synthetic
+recovery. The next CPU-only gaps are:
 
-- active intervention selection beyond a simple uncertainty heuristic;
 - higher-order interaction search over many candidate subsets;
-- richer benchmark cards with explicit ground-truth atoms and environments;
-- proof hardening for approximate/noisy settings.
+- richer context-shifted environments beyond the current minimal counterexample;
+- proof hardening for ecosystem-level approximate/noisy settings.
 
 The next non-CPU-local gap is real-model activation intervention: TransformerLens
 or equivalent hooks, model weights, and likely GPU for anything beyond tiny

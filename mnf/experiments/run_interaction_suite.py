@@ -6,8 +6,10 @@ import json
 import numpy as np
 
 from mnf.benchmarks.interactions import (
+    active_design_sweep,
     capacity_competition_sweep,
     cooperative_routing_metrics,
+    context_stability_metrics,
     developmental_bootstrap_metrics,
     factorial_interaction_phase_diagram,
     gating_metrics,
@@ -37,6 +39,8 @@ def run(
     synergy_weights: Sequence[float] = (0.0, 0.25, 0.5, 0.75, 1.0),
     noisy_recovery_noise_levels: Sequence[float] = (0.0, 0.01, 0.03, 0.05, 0.08, 0.12, 0.2),
     noisy_recovery_seeds: Sequence[int] = tuple(range(50)),
+    active_design_noise_levels: Sequence[float] = (0.0, 0.005, 0.01, 0.02, 0.03),
+    active_design_seeds: Sequence[int] = tuple(range(20)),
 ) -> dict[str, object]:
     bootstrap_rows = [developmental_bootstrap_metrics(seed=s) for s in seeds]
     death_rows = [mechanism_death_metrics(seed=s) for s in seeds]
@@ -44,6 +48,7 @@ def run(
     phase = factorial_interaction_phase_diagram(redundancy_weights, synergy_weights)
     recovery = interaction_recovery_suite(seed=seeds[0] if seeds else 0)
     noisy_recovery = noisy_recovery_sweep(noisy_recovery_noise_levels, noisy_recovery_seeds)
+    active_design = active_design_sweep(active_design_noise_levels, active_design_seeds)
 
     grad = pairwise_gradient_coupling(
         [
@@ -70,8 +75,10 @@ def run(
         "higher_order": higher_order_interaction_metrics(),
         "shared_atom_reuse": shared_atom_reuse_metrics(),
         "cooperative_routing": cooperative_routing_metrics(),
+        "context_stability": context_stability_metrics(),
         "interaction_recovery": recovery,
         "noisy_interaction_recovery": noisy_recovery,
+        "active_design": active_design,
         "developmental_bootstrap_rows": bootstrap_rows,
         "mechanism_death_rows": death_rows,
         "capacity_competition": capacity,

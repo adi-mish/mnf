@@ -1,5 +1,13 @@
 """Interaction calculus for Interactive Mechanistic Normal Forms."""
 
+from mnf.interactions.active import (
+    ActivePairStatus,
+    active_interaction_discovery,
+    active_pair_statuses,
+    choose_next_intervention_state,
+    pair_cell_states,
+    pair_status,
+)
 from mnf.interactions.capacity import (
     capacity_competition,
     capacity_competition_from_matrices,
@@ -23,7 +31,12 @@ from mnf.interactions.design import (
     sparse_higher_order_design,
 )
 from mnf.interactions.dynamics import CoupledDynamicsParams, CoupledDynamicsTrace, first_crossing_step, simulate_coupled_dynamics
-from mnf.interactions.factorial_effects import FactorialEffects, classify_pairwise_interaction, factorial_from_callable
+from mnf.interactions.factorial_effects import (
+    FactorialEffects,
+    classify_pairwise_interaction,
+    classify_pairwise_interaction_with_uncertainty,
+    factorial_from_callable,
+)
 from mnf.interactions.gating import conditional_gate_strength, gate_m_to_n_from_factorial, gate_n_to_m_from_factorial
 from mnf.interactions.gradient_coupling import gradient_coupling, pairwise_gradient_coupling
 from mnf.interactions.matrix import InteractionMatrix, build_interaction_matrix
@@ -35,8 +48,15 @@ from mnf.interactions.shapley import pairwise_shapley_values
 from mnf.interactions.uncertainty import EffectInterval, bootstrap_factorial_effects, noisy_factorial_samples
 
 __all__ = [
+    "ActivePairStatus",
+    "pair_cell_states",
+    "pair_status",
+    "active_pair_statuses",
+    "choose_next_intervention_state",
+    "active_interaction_discovery",
     "FactorialEffects",
     "classify_pairwise_interaction",
+    "classify_pairwise_interaction_with_uncertainty",
     "factorial_from_callable",
     "soft_jaccard",
     "weighted_membership_dot",

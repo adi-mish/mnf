@@ -18,6 +18,16 @@ from mnf.interactions import (
 )
 
 
+DEFAULT_RECOVERY_NAMES = (
+    "redundant_left",
+    "redundant_right",
+    "gate",
+    "worker",
+    "competitor",
+    "additive",
+)
+
+
 def interaction_recovery_behavior(state: Mapping[str, bool]) -> float:
     """Joint behavior with known redundant, gated, and competitive motifs."""
 
@@ -40,14 +50,7 @@ def _expected_label(pair: tuple[str, str]) -> str:
 
 
 def expected_recovery_labels(
-    names: Sequence[str] = (
-        "redundant_left",
-        "redundant_right",
-        "gate",
-        "worker",
-        "competitor",
-        "additive",
-    ),
+    names: Sequence[str] = DEFAULT_RECOVERY_NAMES,
 ) -> dict[tuple[str, str], str]:
     return {pair: _expected_label(pair) for pair in combinations(names, 2)}
 
@@ -57,14 +60,7 @@ def _predicted_labels(factorials: Mapping[tuple[str, str], FactorialEffects]) ->
 
 
 def interaction_recovery_suite(
-    names: Sequence[str] = (
-        "redundant_left",
-        "redundant_right",
-        "gate",
-        "worker",
-        "competitor",
-        "additive",
-    ),
+    names: Sequence[str] = DEFAULT_RECOVERY_NAMES,
     bootstrap_n: int = 400,
     seed: int = 0,
 ) -> dict[str, object]:

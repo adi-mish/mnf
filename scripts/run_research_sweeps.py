@@ -37,6 +37,8 @@ def main() -> None:
             synergy_weights=(0.0, 0.1, 0.25, 0.5, 0.75, 1.0, 1.5),
             noisy_recovery_noise_levels=(0.0, 0.005, 0.01, 0.02, 0.03, 0.05, 0.08, 0.12, 0.2, 0.3),
             noisy_recovery_seeds=tuple(range(200)),
+            active_design_noise_levels=(0.0, 0.005, 0.01, 0.02, 0.03, 0.04),
+            active_design_seeds=tuple(range(100)),
         ),
         "cyclic_noise_sweep": run_cyclic_noise_sweep.run(n=3000, seeds=(0, 1, 2, 3, 4)),
         "transition_atom_sweep": run_transition_atom_sweep.run(n=6000, seeds=(0, 1, 2, 3, 4)),

@@ -192,10 +192,77 @@ margin, its sign is stable under the cell errors.
 
 **Repo status.** `mnf/interactions/bounds.py` implements these bounds. The noisy
 recovery sweep perturbs the six-mechanism recovery suite and records the
-all-correct recovery rate as noise increases.
+all-correct recovery rate as noise increases. It also reports an abstention
+rate using the margin-stability classifier, so weak noisy contrasts can become
+`uncertain` instead of being forced into additive or non-additive labels.
 
 **Paper role.** This is the first approximate theorem. It turns the exact
 factorial claims into margin conditions for noisy intervention estimates.
+
+## Proposition E2b: pair labels are context-relative
+
+**Claim.** A pairwise all-on-context factorial label need not be invariant to
+background interventions. There are systems where the same pair is additive
+when a third mechanism is on and synergistic when that third mechanism is off.
+
+**Construction.** Let:
+
+```text
+Y(a,b,c) = a + b + (1 - c)ab.
+```
+
+For the pair `(a,b)` with `c=1`, the synergy contrast is:
+
+```text
+Y(1,1,1) - Y(1,0,1) - Y(0,1,1) + Y(0,0,1) = 0.
+```
+
+For the same pair with `c=0`, the contrast is:
+
+```text
+Y(1,1,0) - Y(1,0,0) - Y(0,1,0) + Y(0,0,0) = 1.
+```
+
+Thus the pair label changes from additive to synergistic under a context shift.
+
+**Repo status.** `mnf/benchmarks/interactions/context_stability.py` implements
+this counterexample and reports changed labels between all-on and all-off
+background contexts.
+
+**Paper role.** This prevents overclaiming from one interaction matrix. A
+serious ecosystem result should report context stability or state explicitly
+which intervention context its labels describe.
+
+## Proposition E3: active pairwise design terminates in the noiseless finite case
+
+**Claim.** In the finite pairwise all-on-context design with noiseless
+measurements, a greedy active loop that always samples an intervention state
+needed by an unresolved pair terminates after at most:
+
+```text
+1 + K + K(K - 1) / 2
+```
+
+unique states for `K >= 2`, and then all pairwise factorial contrasts are
+available.
+
+**Proof.** The candidate set is exactly the deduplicated pairwise design: the
+all-on baseline, every single ablation, and every dual ablation. Every
+unresolved pair lacks at least one of its four cells. Sampling any missing cell
+strictly reduces the number of missing cells in the finite design. After all
+candidate states have been sampled, every pair has all four cells. Noiseless
+contrast labels are then the exact labels induced by those four cells.
+
+**Noisy extension.** With noisy measurements, termination is margin-based rather
+than guaranteed by coverage. Repeated measurements reduce the cell confidence
+radius; a pair is stable once its relevant contrast margin exceeds the
+deterministic error bound. If the true margin is zero or the budget is too small,
+the algorithm should report instability rather than force a label.
+
+**Repo status.** `mnf/interactions/active.py` implements this loop, and
+`mnf/benchmarks/interactions/active_design.py` reports exact recovery in `22`
+states for the six-mechanism suite plus repeated-measurement behavior under
+noise.
 
 ## Theorem F: shared-MDL atom reuse
 
@@ -264,8 +331,14 @@ overclaiming.
 
 The CPU-local theory now has a coherent theorem package and executable
 witnesses for the main new claims: redundancy, gating, pairwise recovery,
-higher-order contrasts, approximate contrast stability, shared MDL, and
-capacity competition.
+higher-order contrasts, approximate contrast stability, active repeated
+intervention design, shared MDL, and capacity competition.
+
+The adversarial review in `docs/ADVERSARIAL_REVIEW.md` identifies the main
+remaining attack surfaces: context-dependent pair labels, additive-label
+fragility under noise, non-optimal active design, redundancy/competition
+confounding, shared-MDL code dependence, fuzzy-membership underidentification,
+and synthetic-to-transformer transfer.
 
 The next genuinely different step is not more synthetic proof scaffolding. It
 is either:

@@ -169,7 +169,20 @@ Approximate recovery is margin-based. If every factorial cell mean is estimated
 within `epsilon`, then a contrast `sum_i c_i Y_i` is estimated within
 `epsilon * sum_i |c_i|`. Pairwise synergy and gating therefore need a margin
 larger than `4 epsilon`; an order-`k` inclusion-exclusion contrast needs a
-margin larger than `2^k epsilon`.
+margin larger than `2^k epsilon`. When the margin is not stable, the current
+implementation can return `uncertain` instead of pretending that a noisy
+additive/non-additive decision is a theorem.
+
+Interaction labels are also context-relative. A pair can be additive when all
+other mechanisms are on and synergistic when a background switch is off. The
+context-stability benchmark is a deliberately small counterexample: it forces
+the repo to report which pair labels change under background interventions.
+
+The active-design version uses the same margins operationally: first cover the
+deduplicated pairwise design, then spend extra measurements on states that
+participate in unstable pair labels. In noiseless finite benchmarks this ends
+after the pairwise design; under noise it reports instability rather than
+forcing a label when margins are too small.
 
 ## 10. Circuits as minimal causal subprograms
 

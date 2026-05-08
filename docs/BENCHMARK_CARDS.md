@@ -200,7 +200,25 @@ mechanism recovery.
 - **State types:** binary mechanism-strength states
 - **Interventions:** pairwise factorial design under additive observation noise
 - **Expected failure mode:** exact interaction labels become unstable when contrast margins are smaller than estimation error
-- **Current result:** records all-correct rate, mean F1, and deterministic contrast-error bounds across noise levels
+- **Current result:** records all-correct rate, mean F1, abstention rate, and deterministic contrast-error bounds across noise levels
+
+## Context-stability recovery
+
+- **File:** `mnf/benchmarks/interactions/context_stability.py`
+- **Mechanism:** a `switch` changes whether the same `left/right` pair is additive or synergistic
+- **State types:** binary mechanism-strength states
+- **Interventions:** pairwise factorial designs under all-on and all-off background contexts
+- **Expected failure mode:** a single all-on-context interaction matrix is mistaken for a context-free mechanism fact
+- **Current result:** reports changed pair labels across contexts; the focal `left/right` pair changes from `additive` to `synergistic_or_gated`
+
+## Active interaction design
+
+- **File:** `mnf/benchmarks/interactions/active_design.py`
+- **Mechanism:** active repeated-measurement recovery on the six-mechanism interaction suite
+- **State types:** binary mechanism-strength states
+- **Interventions:** greedy selection among pairwise factorial states, with repeats for unstable contrasts
+- **Expected failure mode:** fixed one-shot designs either under-sample noisy contrasts or over-spend on already stable pairs
+- **Current result:** noiseless recovery terminates at the `22`-state pairwise design; noisy recovery allocates additional measurements to unstable labels
 
 ## Higher-order interaction
 
