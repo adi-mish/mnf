@@ -9,6 +9,8 @@ from mnf.benchmarks.gated import make_gated_xor_program, sample_gated_xor_data
 from mnf.benchmarks.modular import make_modular_addition_program, sample_modular_addition_data
 from mnf.benchmarks.relational import make_relational_lookup_program, sample_relational_lookup_data
 from mnf.benchmarks.transition_only import make_transition_only_dataset, compare_global_linear_vs_molt
+from mnf.benchmarks.shortcut import make_shortcut_dataset, shortcut_control
+from mnf.benchmarks.memorization import memorization_control
 
 __all__ = [
     "make_chain_program",
@@ -28,4 +30,7 @@ __all__ = [
     "sample_relational_lookup_data",
     "make_transition_only_dataset",
     "compare_global_linear_vs_molt",
+    "make_shortcut_dataset",
+    "shortcut_control",
+    "memorization_control",
 ]

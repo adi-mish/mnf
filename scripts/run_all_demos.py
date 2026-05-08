@@ -6,6 +6,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from mnf.experiments import (
+    run_adversarial_controls,
     run_absorption_demo,
     run_absorption_phase,
     run_cyclic_demo,
@@ -23,6 +24,7 @@ def main() -> None:
     out = {
         "ground_truth_recovery": run_ground_truth_recovery.run(),
         "ground_truth_suite": run_ground_truth_suite.run(),
+        "adversarial_controls": run_adversarial_controls.run(),
         "cyclic_demo": run_cyclic_demo.run(),
         "absorption_demo": run_absorption_demo.run(),
         "absorption_phase_first_rows": run_absorption_phase.run()["rows"][:5],

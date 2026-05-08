@@ -381,6 +381,30 @@
       }
     ]
   },
+  "adversarial_controls": {
+    "random_vs_trained": {
+      "random_labelability": 0.961038961038961,
+      "trained_labelability": 0.961038961038961,
+      "random_causal_use": 0.012244225447411957,
+      "trained_causal_use": 0.8998801968443918
+    },
+    "shortcut_spurious_correlation": {
+      "causal_train_accuracy": 1.0,
+      "causal_shifted_accuracy": 1.0,
+      "causal_invariance_gap": 0.0,
+      "shortcut_train_accuracy": 0.979,
+      "shortcut_shifted_accuracy": 0.105,
+      "shortcut_invariance_gap": 0.874,
+      "causal_accepted": 1.0,
+      "shortcut_accepted": 0.0
+    },
+    "memorizing_alignment": {
+      "train_accuracy": 1.0,
+      "test_accuracy": 0.474609375,
+      "description_length": 512.0,
+      "test_generalization_gap": 0.525390625
+    }
+  },
   "ground_truth_suite": {
     "rows": [
       {
