@@ -11,6 +11,7 @@ from mnf.experiments import (
     run_cyclic_demo,
     run_cyclic_noise_sweep,
     run_ground_truth_recovery,
+    run_ground_truth_suite,
     run_mechanismlab_demo,
     run_random_control_demo,
     run_superposition_phase,
@@ -21,6 +22,7 @@ from mnf.experiments import (
 def main() -> None:
     out = {
         "ground_truth_recovery": run_ground_truth_recovery.run(),
+        "ground_truth_suite": run_ground_truth_suite.run(),
         "cyclic_demo": run_cyclic_demo.run(),
         "absorption_demo": run_absorption_demo.run(),
         "absorption_phase_first_rows": run_absorption_phase.run()["rows"][:5],

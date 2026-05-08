@@ -61,6 +61,234 @@
     "pruned_recall": 1.0,
     "pruned_f1": 1.0
   },
+  "ground_truth_suite": {
+    "rows": [
+      {
+        "benchmark": "scalar_chain",
+        "true_edges": [
+          [
+            "a",
+            "b"
+          ],
+          [
+            "b",
+            "y"
+          ],
+          [
+            "x",
+            "a"
+          ]
+        ],
+        "candidate_edges": [
+          [
+            "a",
+            "b"
+          ],
+          [
+            "a",
+            "y"
+          ],
+          [
+            "b",
+            "y"
+          ],
+          [
+            "x",
+            "a"
+          ],
+          [
+            "x",
+            "b"
+          ],
+          [
+            "x",
+            "y"
+          ]
+        ],
+        "pred_edges": [
+          [
+            "a",
+            "b"
+          ],
+          [
+            "b",
+            "y"
+          ],
+          [
+            "x",
+            "a"
+          ]
+        ],
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "benchmark": "gated_xor",
+        "true_edges": [
+          [
+            "gate",
+            "y"
+          ],
+          [
+            "x1",
+            "xor"
+          ],
+          [
+            "x2",
+            "xor"
+          ],
+          [
+            "xor",
+            "y"
+          ]
+        ],
+        "candidate_edges": [
+          [
+            "gate",
+            "xor"
+          ],
+          [
+            "gate",
+            "y"
+          ],
+          [
+            "x1",
+            "gate"
+          ],
+          [
+            "x1",
+            "x2"
+          ],
+          [
+            "x1",
+            "xor"
+          ],
+          [
+            "x1",
+            "y"
+          ],
+          [
+            "x2",
+            "gate"
+          ],
+          [
+            "x2",
+            "xor"
+          ],
+          [
+            "x2",
+            "y"
+          ],
+          [
+            "xor",
+            "y"
+          ]
+        ],
+        "pred_edges": [
+          [
+            "gate",
+            "y"
+          ],
+          [
+            "x1",
+            "xor"
+          ],
+          [
+            "x2",
+            "xor"
+          ],
+          [
+            "xor",
+            "y"
+          ]
+        ],
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "benchmark": "modular_addition_C7",
+        "true_edges": [
+          [
+            "a",
+            "sum"
+          ],
+          [
+            "b",
+            "sum"
+          ]
+        ],
+        "candidate_edges": [
+          [
+            "a",
+            "b"
+          ],
+          [
+            "a",
+            "sum"
+          ],
+          [
+            "b",
+            "sum"
+          ]
+        ],
+        "pred_edges": [
+          [
+            "a",
+            "sum"
+          ],
+          [
+            "b",
+            "sum"
+          ]
+        ],
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "benchmark": "relational_lookup",
+        "true_edges": [
+          [
+            "relation",
+            "object"
+          ],
+          [
+            "subject",
+            "object"
+          ]
+        ],
+        "candidate_edges": [
+          [
+            "relation",
+            "object"
+          ],
+          [
+            "subject",
+            "object"
+          ],
+          [
+            "subject",
+            "relation"
+          ]
+        ],
+        "pred_edges": [
+          [
+            "relation",
+            "object"
+          ],
+          [
+            "subject",
+            "object"
+          ]
+        ],
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    ]
+  },
   "cyclic_demo": {
     "base_label_error": 0.0,
     "rotation_intervention_error": 0.0

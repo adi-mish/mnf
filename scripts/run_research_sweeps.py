@@ -8,6 +8,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from mnf.experiments import (
     run_absorption_phase,
     run_cyclic_noise_sweep,
+    run_ground_truth_suite,
     run_superposition_phase,
     run_transition_atom_sweep,
 )
@@ -16,6 +17,7 @@ from mnf.experiments import (
 def main() -> None:
     out = {
         "absorption_phase": run_absorption_phase.run(n=5000, seeds=(0, 1, 2, 3, 4)),
+        "ground_truth_suite": run_ground_truth_suite.run(),
         "cyclic_noise_sweep": run_cyclic_noise_sweep.run(n=3000, seeds=(0, 1, 2, 3, 4)),
         "transition_atom_sweep": run_transition_atom_sweep.run(n=6000, seeds=(0, 1, 2, 3, 4)),
         "superposition_phase": run_superposition_phase.run(),
