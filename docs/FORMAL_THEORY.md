@@ -442,7 +442,35 @@ interactions, but it is the right first pass for sparse interaction structure.
 all `15` pair labels in a six-mechanism ecology from `22` states instead of the
 `64` states required by full factorial recovery.
 
-### Theorem 12: shared-MDL preference for reusable atoms
+### Proposition 12: approximate factorial contrast stability
+
+**Setup.** Each factorial cell mean `Y_i` is estimated with absolute error at
+most `epsilon`. A contrast is linear:
+
+```text
+C = sum_i c_i Y_i.
+```
+
+**Claim.** The contrast error is at most:
+
+```text
+epsilon * sum_i |c_i|.
+```
+
+Thus pairwise synergy and gate contrasts have error at most `4 epsilon`, joint
+effects have error at most `2 epsilon`, and order-`k` inclusion-exclusion
+contrasts have error at most `2^k epsilon`.
+
+**Proof sketch.** Apply the triangle inequality to
+`sum_i c_i (Y_i + e_i) - sum_i c_i Y_i`. If the true contrast magnitude exceeds
+the bound plus the decision margin, the contrast sign and any sign-based label
+are stable.
+
+**Benchmark link.** `mnf/interactions/bounds.py` implements the bound.
+`mnf/benchmarks/interactions/noisy_recovery.py` sweeps recovery under noisy cell
+observations.
+
+### Theorem 13: shared-MDL preference for reusable atoms
 
 **Setup.** Two mechanisms can either duplicate a typed atom or share it.
 
@@ -462,7 +490,7 @@ description lengths. The implementation uses `MechanismEcosystem` to compute
 **Benchmark link.** `mnf/benchmarks/interactions/shared_atom_reuse.py` gives a
 toy route atom reused by two lookup mechanisms.
 
-### Proposition 13: developmental bootstrapping
+### Proposition 14: developmental bootstrapping
 
 **Setup.** Mechanism strengths follow:
 
@@ -506,7 +534,7 @@ The theory is not complete. The largest missing pieces are:
 
 1. A mature definition of naturalness beyond simple description-length and
    invariance penalties.
-2. Approximate versions of the theorems for noisy learned models.
+2. Approximate ecosystem-level versions of the theorems for noisy learned models.
 3. A proof that MNF-style scores are identifiable under realistic intervention
    families.
 4. Real-model evidence against strong baselines such as SAE, ACDC, and

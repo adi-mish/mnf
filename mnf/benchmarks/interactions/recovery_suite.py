@@ -39,6 +39,19 @@ def _expected_label(pair: tuple[str, str]) -> str:
     return "additive"
 
 
+def expected_recovery_labels(
+    names: Sequence[str] = (
+        "redundant_left",
+        "redundant_right",
+        "gate",
+        "worker",
+        "competitor",
+        "additive",
+    ),
+) -> dict[tuple[str, str], str]:
+    return {pair: _expected_label(pair) for pair in combinations(names, 2)}
+
+
 def _predicted_labels(factorials: Mapping[tuple[str, str], FactorialEffects]) -> dict[tuple[str, str], str]:
     return {pair: classify_pairwise_interaction(effects, tol=1e-7) for pair, effects in factorials.items()}
 
@@ -59,7 +72,7 @@ def interaction_recovery_suite(
     observations = evaluate_design(names, interaction_recovery_behavior, design)
     factorials = pairwise_effects_from_observations(names, observations)
     pred_labels = _predicted_labels(factorials)
-    true_labels = {pair: _expected_label(pair) for pair in combinations(names, 2)}
+    true_labels = expected_recovery_labels(names)
     report = label_recovery_report(true_labels, pred_labels)
     matrix = mechanism_ecology_discovery_from_joint_behavior(
         names,

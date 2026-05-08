@@ -7,6 +7,7 @@ def test_interaction_suite_smoke():
     assert out["gating"]["gate_m_to_n"] == 1.0
     assert out["higher_order"]["third_order_effect"] == 1.0
     assert out["interaction_recovery"]["recovery"]["f1"] == 1.0
+    assert out["noisy_interaction_recovery"]["rows"][0]["all_correct_rate"] == 1.0
     assert out["shared_atom_reuse"]["shared_mdl_gain"] > 0.0
     assert out["max_capacity_competition"] > 0.0
     assert out["phase_diagram_rows"] > 0

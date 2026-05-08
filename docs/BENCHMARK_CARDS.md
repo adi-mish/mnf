@@ -193,6 +193,15 @@ mechanism recovery.
 - **Expected failure mode:** isolated mechanism scoring misses the interaction matrix and uncertainty over interaction labels
 - **Current result:** recovers all `15` pair labels with F1 `1.0` from `22` intervention states and reports bootstrap confidence intervals for gate and redundancy effects
 
+## Noisy interaction recovery
+
+- **File:** `mnf/benchmarks/interactions/noisy_recovery.py`
+- **Mechanism:** the six-mechanism interaction recovery suite with perturbed intervention observations
+- **State types:** binary mechanism-strength states
+- **Interventions:** pairwise factorial design under additive observation noise
+- **Expected failure mode:** exact interaction labels become unstable when contrast margins are smaller than estimation error
+- **Current result:** records all-correct rate, mean F1, and deterministic contrast-error bounds across noise levels
+
 ## Higher-order interaction
 
 - **File:** `mnf/benchmarks/interactions/higher_order.py`

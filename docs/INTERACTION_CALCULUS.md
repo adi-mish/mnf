@@ -80,6 +80,12 @@ redundancy-score CI lower bound ~= 0.993
 
 on the noisy synthetic recovery suite.
 
+`mnf/interactions/bounds.py` also gives deterministic worst-case bounds. If
+each factorial cell mean has absolute error at most `epsilon`, then a linear
+contrast `sum_i c_i Y_i` has error at most `epsilon * sum_i |c_i|`. Pairwise
+synergy and gate contrasts therefore have error at most `4 epsilon`, and an
+order-`k` inclusion-exclusion contrast has error at most `2^k epsilon`.
+
 ## Recovery metrics
 
 `mnf/interactions/recovery.py` provides:
@@ -107,6 +113,10 @@ It recovers:
 ```
 
 from `22` intervention states with F1 `1.0`.
+
+The noisy recovery sweep records how this degrades as cell observations are
+perturbed. It is a synthetic margin check, not a substitute for real activation
+intervention uncertainty.
 
 ## What remains before real models
 

@@ -160,6 +160,43 @@ triple-gate contrast of `1.0`.
 **Paper role.** This marks the boundary of the current pairwise engine and
 gives a principled next intervention when pairwise residuals remain.
 
+## Proposition E2: approximate contrast stability
+
+**Claim.** Let each observed factorial cell mean have absolute error at most
+`epsilon`. For any linear contrast
+
+```text
+C = sum_i c_i Y_i
+```
+
+the estimated contrast has absolute error at most:
+
+```text
+epsilon * sum_i |c_i|.
+```
+
+Therefore pairwise synergy and gate contrasts have worst-case error at most
+`4 epsilon`, joint effects have error at most `2 epsilon`, and an order-`k`
+inclusion-exclusion contrast has error at most `2^k epsilon`.
+
+**Proof.** By the triangle inequality:
+
+```text
+|sum_i c_i (Y_i + e_i) - sum_i c_i Y_i|
+<= sum_i |c_i| |e_i|
+<= epsilon sum_i |c_i|.
+```
+
+If the true contrast magnitude is larger than this bound plus the classification
+margin, its sign is stable under the cell errors.
+
+**Repo status.** `mnf/interactions/bounds.py` implements these bounds. The noisy
+recovery sweep perturbs the six-mechanism recovery suite and records the
+all-correct recovery rate as noise increases.
+
+**Paper role.** This is the first approximate theorem. It turns the exact
+factorial claims into margin conditions for noisy intervention estimates.
+
 ## Theorem F: shared-MDL atom reuse
 
 **Claim.** If two mechanisms can either duplicate an atom or share it, shared
@@ -227,12 +264,13 @@ overclaiming.
 
 The CPU-local theory now has a coherent theorem package and executable
 witnesses for the main new claims: redundancy, gating, pairwise recovery,
-higher-order contrasts, shared MDL, and capacity competition.
+higher-order contrasts, approximate contrast stability, shared MDL, and
+capacity competition.
 
 The next genuinely different step is not more synthetic proof scaffolding. It
 is either:
 
-1. a fresh mathematical pass on approximate/noisy identifiability and ecosystem
-   gauge transformations; or
+1. a fresh mathematical pass on approximate/noisy ecosystem identifiability and
+   ecosystem gauge transformations; or
 2. a real-model intervention pass using transformer activations, which likely
    needs model tooling and GPU for anything beyond very small models.

@@ -6,8 +6,13 @@ from mnf.benchmarks.interactions.developmental_bootstrap import developmental_bo
 from mnf.benchmarks.interactions.gating_mechanism import gated_worker_behavior, gating_metrics
 from mnf.benchmarks.interactions.higher_order import higher_order_interaction_metrics, triple_gate_behavior
 from mnf.benchmarks.interactions.mechanism_death import mechanism_death_metrics
+from mnf.benchmarks.interactions.noisy_recovery import noisy_recovery_sweep, noisy_recovery_trial
 from mnf.benchmarks.interactions.phase_diagram import factorial_interaction_phase_diagram, mixed_or_and_behavior
-from mnf.benchmarks.interactions.recovery_suite import interaction_recovery_behavior, interaction_recovery_suite
+from mnf.benchmarks.interactions.recovery_suite import (
+    expected_recovery_labels,
+    interaction_recovery_behavior,
+    interaction_recovery_suite,
+)
 from mnf.benchmarks.interactions.redundant_paths import redundant_or_behavior, redundant_paths_metrics
 from mnf.benchmarks.interactions.shared_atom_reuse import make_shared_atom_ecosystem, shared_atom_reuse_metrics
 from mnf.benchmarks.interactions.synergistic_paths import and_synergy_behavior, synergistic_paths_metrics
@@ -22,8 +27,11 @@ __all__ = [
     "higher_order_interaction_metrics",
     "triple_gate_behavior",
     "mechanism_death_metrics",
+    "noisy_recovery_trial",
+    "noisy_recovery_sweep",
     "factorial_interaction_phase_diagram",
     "mixed_or_and_behavior",
+    "expected_recovery_labels",
     "interaction_recovery_behavior",
     "interaction_recovery_suite",
     "redundant_or_behavior",

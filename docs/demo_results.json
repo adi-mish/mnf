@@ -886,6 +886,73 @@
         ]
       }
     },
+    "noisy_interaction_recovery": {
+      "rows": [
+        {
+          "noise": 0.0,
+          "mean_accuracy": 1.0,
+          "mean_f1": 1.0,
+          "all_correct_rate": 1.0,
+          "mean_max_abs_cell_error": 0.0,
+          "mean_synergy_error_bound": 0.0,
+          "mean_classification_tolerance": 1e-07
+        },
+        {
+          "noise": 0.01,
+          "mean_accuracy": 1.0,
+          "mean_f1": 1.0,
+          "all_correct_rate": 1.0,
+          "mean_max_abs_cell_error": 0.021143058728138202,
+          "mean_synergy_error_bound": 0.08457223491255281,
+          "mean_classification_tolerance": 0.08457223491255281
+        },
+        {
+          "noise": 0.03,
+          "mean_accuracy": 0.948,
+          "mean_f1": 0.972495894909688,
+          "all_correct_rate": 0.4,
+          "mean_max_abs_cell_error": 0.06342917618441468,
+          "mean_synergy_error_bound": 0.2537167047376587,
+          "mean_classification_tolerance": 0.2537167047376587
+        },
+        {
+          "noise": 0.05,
+          "mean_accuracy": 0.7133333333333333,
+          "mean_f1": 0.8234288047451466,
+          "all_correct_rate": 0.02,
+          "mean_max_abs_cell_error": 0.10571529364069114,
+          "mean_synergy_error_bound": 0.42286117456276456,
+          "mean_classification_tolerance": 0.42286117456276456
+        },
+        {
+          "noise": 0.08,
+          "mean_accuracy": 0.44266666666666665,
+          "mean_f1": 0.6063917633345551,
+          "all_correct_rate": 0.0,
+          "mean_max_abs_cell_error": 0.16914446982510584,
+          "mean_synergy_error_bound": 0.6765778793004233,
+          "mean_classification_tolerance": 0.6765778793004233
+        },
+        {
+          "noise": 0.12,
+          "mean_accuracy": 0.19866666666666666,
+          "mean_f1": 0.31980439065578387,
+          "all_correct_rate": 0.0,
+          "mean_max_abs_cell_error": 0.25371670473765867,
+          "mean_synergy_error_bound": 1.0148668189506347,
+          "mean_classification_tolerance": 1.0148668189506347
+        },
+        {
+          "noise": 0.2,
+          "mean_accuracy": 0.025333333333333336,
+          "mean_f1": 0.0472936016511868,
+          "all_correct_rate": 0.0,
+          "mean_max_abs_cell_error": 0.42286117456276456,
+          "mean_synergy_error_bound": 1.6914446982510583,
+          "mean_classification_tolerance": 1.6914446982510583
+        }
+      ]
+    },
     "developmental_bootstrap_rows": [
       {
         "scaffold_crossing_step": 21.0,

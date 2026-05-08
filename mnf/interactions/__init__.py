@@ -5,6 +5,13 @@ from mnf.interactions.capacity import (
     capacity_competition_from_matrices,
     decoder_gram_squared,
 )
+from mnf.interactions.bounds import (
+    all_required_contrasts_stable,
+    contrast_error_bound,
+    higher_order_contrast_error_bound,
+    pairwise_contrast_error_bounds,
+    sign_is_stable,
+)
 from mnf.interactions.design import (
     InterventionState,
     choose_next_pair_by_uncertainty,
@@ -37,6 +44,11 @@ __all__ = [
     "capacity_competition",
     "capacity_competition_from_matrices",
     "decoder_gram_squared",
+    "contrast_error_bound",
+    "pairwise_contrast_error_bounds",
+    "higher_order_contrast_error_bound",
+    "sign_is_stable",
+    "all_required_contrasts_stable",
     "InterventionState",
     "full_factorial_design",
     "pairwise_factorial_design",

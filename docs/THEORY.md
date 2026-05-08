@@ -165,6 +165,12 @@ inclusion-exclusion over a selected mechanism subset. The triple-gate benchmark
 is the current CPU check: two gates and one worker produce a third-order
 contrast of `1.0`.
 
+Approximate recovery is margin-based. If every factorial cell mean is estimated
+within `epsilon`, then a contrast `sum_i c_i Y_i` is estimated within
+`epsilon * sum_i |c_i|`. Pairwise synergy and gating therefore need a margin
+larger than `4 epsilon`; an order-`k` inclusion-exclusion contrast needs a
+margin larger than `2^k epsilon`.
+
 ## 10. Circuits as minimal causal subprograms
 
 A circuit is not a set of heads or neurons.  A circuit is a minimal subprogram:

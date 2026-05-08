@@ -70,6 +70,7 @@ def summarize_research_sweeps(data: Mapping[str, Any]) -> str:
         shared = interaction["shared_atom_reuse"]
         recovery = interaction.get("interaction_recovery")
         higher_order = interaction.get("higher_order")
+        noisy = interaction.get("noisy_interaction_recovery")
         lines.extend([
             "## Mechanism Interactions",
             "",
@@ -86,6 +87,12 @@ def summarize_research_sweeps(data: Mapping[str, Any]) -> str:
         if higher_order is not None:
             lines.append(
                 f"Higher-order triple-gate contrast: `{_fmt(higher_order['third_order_effect'])}` using `{higher_order['triple_design_size']}` intervention states."
+            )
+        if noisy is not None:
+            low_noise = noisy["rows"][1] if len(noisy["rows"]) > 1 else noisy["rows"][0]
+            high_noise = noisy["rows"][-1]
+            lines.append(
+                f"Noisy recovery all-correct rate: `{_fmt(low_noise['all_correct_rate'])}` at noise `{low_noise['noise']}` and `{_fmt(high_noise['all_correct_rate'])}` at noise `{high_noise['noise']}`."
             )
         lines.append("")
 

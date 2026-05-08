@@ -37,6 +37,7 @@ Maximum capacity-competition score in the sweep: `2.8000`.
 Factorial interaction phase-diagram rows: `49`.
 Interaction recovery F1: `1.0000` over `15` mechanism pairs using `22` intervention states.
 Higher-order triple-gate contrast: `1.0000` using `8` intervention states.
+Noisy recovery all-correct rate: `1.0000` at noise `0.005` and `0.0000` at noise `0.3`.
 
 ## Transition Atoms
 
