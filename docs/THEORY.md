@@ -115,8 +115,8 @@ The remedy is not only larger flat SAEs.  The remedy is structured dictionaries 
 
 ## 9. Mechanism ecologies
 
-PLAN2 upgrades MNF into Interactive MNF. The target object is not an isolated
-circuit but an ecosystem:
+Interactive MNF upgrades MNF from isolated explanations to mechanism
+ecologies. The target object is not an isolated circuit but an ecosystem:
 
 ```text
 E_D = (A*, M, R, H_E, alpha, gamma, Omega)

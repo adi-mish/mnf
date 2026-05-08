@@ -50,10 +50,14 @@ and `Omega` are arbitrary lookup tables and there is no naturalness or
 description-length penalty, then zero observation and intervention error are
 always achievable.
 
-**Proof.** Enumerate all observed `(x, i)` pairs. Map each observed low-level
-state to a unique high-level symbol. Let `H` return the recorded output for that
-symbol and let `Omega` select the corresponding table row. This exactly fits
-the finite table but stores the data rather than explaining the model.
+**Proof.** Enumerate all observed runs `(x, i)` and map each observed low-level
+trace, or the activation augmented with a sample/run identifier, to a unique
+high-level symbol. Let `H` return the recorded output for that symbol and let
+`Omega` select the corresponding table row. This exactly fits the finite table
+but stores the data rather than explaining the model. If two runs are forced to
+have exactly the same low-level input to `alpha` but contradictory high-level
+targets, no deterministic abstraction can fit both; the vacuity result is about
+unconstrained high-capacity alignments that can memorize the empirical table.
 
 **Repo status.** Implemented as the memorization control. This is already
 proof-grade for finite data.
@@ -86,10 +90,10 @@ interaction recovery suite validate this exactly.
 ontology. It implies that necessity tests must be factorial or Shapley-style
 when redundancy is plausible.
 
-## Theorem C: gating non-identifiability
+## Theorem C: gating can be non-identifiable from marginal interventions
 
-**Claim.** Marginal interventions cannot identify mechanisms whose role is to
-gate another mechanism.
+**Claim.** Marginal interventions are insufficient in general for identifying
+mechanisms whose role is to gate another mechanism.
 
 **Construction.**
 
@@ -98,7 +102,10 @@ B = gate and worker
 ```
 
 The worker's effect is `1` when the gate is on and `0` when the gate is off.
-The gate may not be a direct output mechanism; it is a conditional enabler.
+On a domain where the gate is off, a marginal worker ablation has zero effect
+and falsely rejects the worker. On a domain where worker prevalence changes,
+the marginal gate effect is confounded by the worker distribution. The gate may
+not be a direct output mechanism; it is a conditional enabler.
 
 **Repo status.** `mnf/benchmarks/interactions/gating_mechanism.py` reports the
 conditional contrast, and `mnf/interactions/factorial_effects.py` exposes
@@ -109,7 +116,8 @@ conditional contrast, and `mnf/interactions/factorial_effects.py` exposes
 
 ## Theorem D: pairwise factorial economy
 
-**Claim.** For `K` mechanisms, pairwise all-on-context factorial recovery costs:
+**Claim.** For `K >= 2` mechanisms, pairwise all-on-context factorial recovery
+costs:
 
 ```text
 1 + K + K(K - 1) / 2
@@ -155,12 +163,13 @@ gives a principled next intervention when pairwise residuals remain.
 ## Theorem F: shared-MDL atom reuse
 
 **Claim.** If two mechanisms can either duplicate an atom or share it, shared
-MNF chooses the shared representation exactly when:
+MNF chooses the shared representation exactly when the shared code is shorter
+than the independent code that pays duplicated atom costs:
 
 ```text
 K(shared_atom) + K(m1 | shared_atom) + K(m2 | shared_atom) + K(R)
 <
-K(m1) + K(m2)
+K_independent(m1) + K_independent(m2)
 ```
 
 **Proof.** Direct comparison of the independent and shared code lengths.
@@ -171,20 +180,22 @@ K(m1) + K(m2)
 **Paper role.** This formalizes "same concept reused in multiple mechanisms"
 without forcing a binary one-feature-one-mechanism ontology.
 
-## Theorem G: capacity competition
+## Proposition G: capacity competition score
 
 **Claim.** For mechanisms with atom memberships `pi_m`, `pi_n`, atom
-coactivation `q_ij`, and decoder directions `d_i`, `d_j`, the first-order
-mechanism-level interference term is:
+coactivation `q_ij`, and decoder directions `d_i`, `d_j`, a natural
+first-order mechanism-level interference score is:
 
 ```text
 CapComp_mn =
   sum_ij pi_mi pi_nj q_ij <d_i, d_j>^2
 ```
 
-**Argument.** Superposition interference scales with coactivation and squared
-decoder alignment. Mechanism memberships lift the feature-level term to
-mechanism-level accounting.
+**Argument.** In sparse-packing objectives where feature interference scales
+with coactivation and squared decoder alignment, mechanism memberships lift the
+feature-level term to mechanism-level accounting. This is a theorem only after
+the objective is fixed; otherwise it is a principled score and benchmark
+quantity.
 
 **Repo status.** `mnf/interactions/capacity.py` and the capacity phase sweep.
 
@@ -195,9 +206,11 @@ separately interpretable.
 ## Theorem H: typed gauge identifiability
 
 **Claim.** Mechanisms are identifiable only up to the symmetry group of their
-typed state space: affine transforms for scalars, permutations for categorical
-variables, rotations/reflections for cyclic variables, basis changes for
-subspaces, and atom-sharing gauge transformations for ecosystems.
+typed state space and intervention algebra: affine transforms for scalar
+charts when only affine structure is fixed, permutations for categorical
+variables, rotations/reflections for cyclic variables when the origin or
+orientation is not fixed, basis changes for subspaces, and atom-sharing gauge
+transformations for ecosystems.
 
 **Proof plan.** Define the intervention generators for each type and show that
 commuting charts are exactly equivariant maps under the corresponding symmetry

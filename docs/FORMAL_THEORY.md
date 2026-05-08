@@ -91,19 +91,23 @@ intervention and invariance tests.
 
 ### Theorem 1: vacuity without naturalness
 
-**Claim.** Let `X` and `I_L` be finite. If `alpha` and `H` may be arbitrary
-lookup tables with no description-length or naturalness penalty, then for any
-finite observation/intervention table there exists an MNF tuple with zero
-observation error and zero intervention error.
+**Claim.** Let the empirical observation/intervention table be finite. If
+`alpha` and `H` may be arbitrary lookup tables over the observed low-level
+traces, or over activations augmented with sample/run identifiers, and there is
+no description-length or naturalness penalty, then the table can be fit with
+zero observation error and zero intervention error.
 
-**Proof sketch.** Enumerate every observed pair `(x, i)` and assign it a unique
-symbol `s_(x,i)`. Let `alpha` map the low-level activation observed under
-intervention `i` on input `x` to `s_(x,i)`. Let `H` be a table that returns the
-recorded high-level output for every enumerated symbol. Let `Omega` map each
+**Proof sketch.** Enumerate every observed run `(x, i)` and assign it a unique
+symbol `s_(x,i)`. Let `alpha` map the observed low-level trace, or an activation
+augmented with the run identifier, to `s_(x,i)`. Let `H` be a table that returns
+the recorded high-level output for every enumerated symbol. Let `Omega` map each
 low-level intervention to the corresponding table index. This construction fits
 the finite table exactly. It reveals no mechanism because all computation is
 hidden in the alignment/table. Its description length grows with the number of
-observed cases.
+observed cases. If two rows are forced to have exactly the same low-level input
+to `alpha` but contradictory high-level targets, no deterministic abstraction
+can fit both; the vacuity result is about unconstrained high-capacity alignments
+that can memorize the empirical table.
 
 **Benchmark link.** `mnf/benchmarks/memorization.py` implements this pathology:
 the memorizing alignment gets train accuracy `1.0`, test accuracy about `0.475`,
@@ -112,7 +116,7 @@ and description length `512.0`.
 **Status.** This is the cleanest formal argument in the theory: naturalness is
 not optional. Without it, causal abstraction is non-identifying.
 
-### Theorem 2: shortcut selectors fail without invariance
+### Proposition 2: shortcut selectors fail without invariance
 
 **Setup.** There are two candidate variables, causal `C` and shortcut `S`, and
 two environments, train `e_0` and shifted `e_1`. The label is stable under `C`.
@@ -304,8 +308,8 @@ explicit and testable.
 
 ## 5. Interactive MNF extension
 
-The original MNF object is an isolated explanation. PLAN2 upgrades this to an
-ecosystem:
+The original MNF object is an isolated explanation. Interactive MNF upgrades
+this to an ecosystem:
 
 ```text
 iMNF = (A*, M, R, H_E, alpha, gamma, Omega)
@@ -366,7 +370,7 @@ ablation recovers the redundant pair.
 **Benchmark link.** `mnf/benchmarks/interactions/redundant_paths.py` implements
 the exact Boolean case with `B_00 = 0` and `B_10 = B_01 = B_11 = 1`.
 
-### Theorem 9: gating non-identifiability under marginal interventions
+### Theorem 9: gating can be non-identifiable under marginal interventions
 
 **Setup.** A gate `g` enables a worker mechanism `w`:
 
@@ -374,25 +378,29 @@ the exact Boolean case with `B_00 = 0` and `B_10 = B_01 = B_11 = 1`.
 B = g and w.
 ```
 
-**Claim.** Marginal intervention effects do not identify the gate role. The
-conditional effect of `w` when `g=1` differs from the conditional effect of `w`
-when `g=0`.
+**Claim.** Marginal intervention effects are insufficient in general for
+identifying the gate role. There are domains where the marginal effect of `g`
+or `w` is zero or ambiguous while the conditional gate contrast is nonzero.
 
 **Proof sketch.** In the Boolean case, changing `w` while `g=0` has no effect,
-but changing `w` while `g=1` changes behavior from `0` to `1`. Therefore the
-gate is identified by a conditional/factorial contrast, not by a marginal
-feature label or a single unconditional ablation.
+but changing `w` while `g=1` changes behavior from `0` to `1`. If the marginal
+test is evaluated only on contexts with `g=0`, it rejects `w`; if it averages
+over contexts with different worker rates, it confounds gate strength with the
+worker distribution. The gate role is therefore identified by the conditional
+contrast, not by a feature label or a single unconditional ablation.
 
 **Benchmark link.** `mnf/benchmarks/interactions/gating_mechanism.py` reports
 `worker_effect_when_gate_on = 1` and `worker_effect_when_gate_off = 0`.
 
-### Theorem 10: sparse mechanism packing
+### Proposition 10: sparse mechanism packing score
 
 **Setup.** Let mechanisms `m` and `n` have atom memberships `pi_m` and `pi_n`.
 Let atom coactivation be `q_ij`, and let decoder-direction squared alignment be
 `<d_i, d_j>^2`.
 
-**Claim.** A mechanism-level capacity-competition term is
+**Claim.** Under a sparse-packing objective whose first-order interference
+penalty is coactivation times squared decoder alignment, a mechanism-level
+capacity-competition term is
 
 ```text
 CapComp_mn =
@@ -400,9 +408,10 @@ CapComp_mn =
 ```
 
 When this term is small relative to the predictive gain from representing both
-mechanisms, sparse packing is favored. When it is large, the mechanisms should
-split across atoms, layers, or routes, or one mechanism should suppress the
-other.
+mechanisms, that objective favors sparse packing. When it is large, the same
+objective favors splitting mechanisms across atoms, layers, or routes, or
+suppressing one mechanism. Without an explicit objective this is a score, not a
+standalone theorem about all learned models.
 
 **Benchmark link.** `mnf/benchmarks/interactions/capacity_competition.py`
 sweeps coactivation, decoder alignment, and overlap.
@@ -413,7 +422,7 @@ sweeps coactivation, decoder alignment, and overlap.
 `2^K` mechanism-strength states. Pairwise factorial recovery holds non-pair
 mechanisms fixed and evaluates the four cells for each pair.
 
-**Claim.** Pairwise recovery needs at most:
+**Claim.** For `K >= 2`, pairwise recovery needs at most:
 
 ```text
 1 + K + K(K - 1) / 2
@@ -437,12 +446,13 @@ all `15` pair labels in a six-mechanism ecology from `22` states instead of the
 
 **Setup.** Two mechanisms can either duplicate a typed atom or share it.
 
-**Claim.** The shared explanation is preferred exactly when:
+**Claim.** Let the independent explanation cost count duplicated atom costs in
+each mechanism. The shared explanation is preferred exactly when:
 
 ```text
 K(shared_atom) + K(m1 | shared_atom) + K(m2 | shared_atom) + K(R)
 <
-K(m1) + K(m2)
+K_independent(m1) + K_independent(m2)
 ```
 
 **Proof sketch.** This is direct comparison of independent and shared
@@ -461,9 +471,11 @@ ds_m/dt =
   s_m(1 - s_m) * (r_m + sum_n A_mn s_n - sum_n C_mn s_n - kappa_m).
 ```
 
-**Claim.** If `r_m - kappa_m < 0` but `A_mn > 0`, then `m` cannot grow until
+**Claim.** For interior strengths `0 < s_m < 1`, if `r_m - kappa_m < 0` but
+`A_mn > 0`, then the instantaneous growth rate of `m` is positive only after
 `s_n > (kappa_m - r_m) / A_mn`. A supporting mechanism can therefore create a
-delayed emergence threshold.
+delayed emergence threshold. If `s_m = 0` exactly, the logistic equation also
+needs noise or a seed term to leave the boundary.
 
 **Benchmark link.** `mnf/benchmarks/interactions/developmental_bootstrap.py`
 simulates this two-mechanism case.

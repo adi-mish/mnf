@@ -13,7 +13,7 @@ sparse latents, or isolated circuits.
 A NeurIPS-best-paper-caliber version needs four contributions in one paper:
 
 1. **Theory:** formal definitions of natural causal abstraction, fuzzy mechanisms, typed variables, transition atoms, shared MDL, interaction terms, and falsifiability criteria.
-2. **Theorems:** sparse mechanism packing, feature absorption, typed-feature identifiability up to gauge, isolated-circuit fallacy, gating non-identifiability, shared-MDL preference, developmental bootstrapping, and vacuity of unconstrained abstraction.
+2. **Theorems and propositions:** feature absorption, typed-feature identifiability up to gauge, isolated-circuit fallacy, gating non-identifiability under marginal interventions, shared-MDL preference, developmental bootstrapping, sparse mechanism packing scores, and vacuity of unconstrained abstraction.
 3. **Benchmark:** MechanismLab 2.0, a ground-truth suite spanning scalar, hierarchical, cyclic, relational, transition-only, interaction/ecology, compiled, trained, and random-control systems.
 4. **Algorithm:** Mechanism Ecology Discovery, which recovers executable mechanisms and interaction matrices and beats probes, flat SAEs, and component-level circuit discovery on intervention prediction.
 

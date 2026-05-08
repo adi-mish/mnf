@@ -52,8 +52,8 @@ states after deduplication: one all-on baseline, `K` single ablations, and every
 dual ablation. This is implemented in `mnf/interactions/design.py`.
 
 This design is not a substitute for high-order discovery. It is a first pass
-that recovers conditional pairwise redundancy, gating, additive effects, and
-competition cheaply.
+that estimates conditional pairwise redundancy, gating, additive effects, and
+competition cheaply in the selected context.
 
 For a selected subset `S`, the implementation also supports sparse higher-order
 inclusion-exclusion:
