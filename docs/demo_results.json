@@ -340,6 +340,881 @@
     "mean_memorizer_test_accuracy": 0.05,
     "mean_copy_test_accuracy": 1.0
   },
+  "interaction_suite": {
+    "redundant_paths": {
+      "y00": 0.0,
+      "y10": 1.0,
+      "y01": 1.0,
+      "y11": 1.0,
+      "joint_effect": 1.0,
+      "effect_m_when_n_off": 1.0,
+      "effect_m_when_n_on": 0.0,
+      "effect_n_when_m_off": 1.0,
+      "effect_n_when_m_on": 0.0,
+      "drop_m_from_joint": 0.0,
+      "drop_n_from_joint": 0.0,
+      "dual_ablation_drop": 1.0,
+      "synergy": -1.0,
+      "compensation_score": 1.0,
+      "redundancy_score": 1.0,
+      "competition_score": 0.0,
+      "gate_m_to_n": -1.0,
+      "gate_n_to_m": -1.0,
+      "interaction_label": "redundant",
+      "single_ablation_misses_pair": true
+    },
+    "synergistic_paths": {
+      "y00": 0.0,
+      "y10": 0.0,
+      "y01": 0.0,
+      "y11": 1.0,
+      "joint_effect": 1.0,
+      "effect_m_when_n_off": 0.0,
+      "effect_m_when_n_on": 1.0,
+      "effect_n_when_m_off": 0.0,
+      "effect_n_when_m_on": 1.0,
+      "drop_m_from_joint": 1.0,
+      "drop_n_from_joint": 1.0,
+      "dual_ablation_drop": 1.0,
+      "synergy": 1.0,
+      "compensation_score": 0.0,
+      "redundancy_score": 0.0,
+      "competition_score": 0.0,
+      "gate_m_to_n": 1.0,
+      "gate_n_to_m": 1.0,
+      "interaction_label": "synergistic_or_gated",
+      "shapley_m": 0.5,
+      "shapley_n": 0.5,
+      "shapley_total": 1.0
+    },
+    "gating": {
+      "y00": 0.0,
+      "y10": 0.0,
+      "y01": 0.0,
+      "y11": 1.0,
+      "joint_effect": 1.0,
+      "effect_m_when_n_off": 0.0,
+      "effect_m_when_n_on": 1.0,
+      "effect_n_when_m_off": 0.0,
+      "effect_n_when_m_on": 1.0,
+      "drop_m_from_joint": 1.0,
+      "drop_n_from_joint": 1.0,
+      "dual_ablation_drop": 1.0,
+      "synergy": 1.0,
+      "compensation_score": 0.0,
+      "redundancy_score": 0.0,
+      "competition_score": 0.0,
+      "gate_m_to_n": 1.0,
+      "gate_n_to_m": 1.0,
+      "interaction_label": "synergistic_or_gated",
+      "worker_effect_when_gate_on": 1.0,
+      "worker_effect_when_gate_off": 0.0
+    },
+    "shared_atom_reuse": {
+      "atom_overlap": 0.3333333333333333,
+      "shared_description_length": 7.25,
+      "independent_description_length": 9.0,
+      "shared_mdl_gain": 1.75,
+      "mean_mechanisticity": 0.7877839572629823
+    },
+    "cooperative_routing": {
+      "intact_mechanisticity": 0.82,
+      "without_route_mechanisticity": 0.31,
+      "support_delta": 0.51,
+      "normalized_support_delta": 0.6219512195114367
+    },
+    "developmental_bootstrap_rows": [
+      {
+        "scaffold_crossing_step": 21.0,
+        "dependent_crossing_step": 59.0,
+        "support_ready_step": 13.0,
+        "developmental_lag_steps": 38.0,
+        "final_scaffold_strength": 0.999999999999989,
+        "final_dependent_strength": 0.9999999998536271
+      },
+      {
+        "scaffold_crossing_step": 21.0,
+        "dependent_crossing_step": 59.0,
+        "support_ready_step": 13.0,
+        "developmental_lag_steps": 38.0,
+        "final_scaffold_strength": 0.999999999999989,
+        "final_dependent_strength": 0.9999999998536271
+      },
+      {
+        "scaffold_crossing_step": 21.0,
+        "dependent_crossing_step": 59.0,
+        "support_ready_step": 13.0,
+        "developmental_lag_steps": 38.0,
+        "final_scaffold_strength": 0.999999999999989,
+        "final_dependent_strength": 0.9999999998536271
+      },
+      {
+        "scaffold_crossing_step": 21.0,
+        "dependent_crossing_step": 59.0,
+        "support_ready_step": 13.0,
+        "developmental_lag_steps": 38.0,
+        "final_scaffold_strength": 0.999999999999989,
+        "final_dependent_strength": 0.9999999998536271
+      },
+      {
+        "scaffold_crossing_step": 21.0,
+        "dependent_crossing_step": 59.0,
+        "support_ready_step": 13.0,
+        "developmental_lag_steps": 38.0,
+        "final_scaffold_strength": 0.999999999999989,
+        "final_dependent_strength": 0.9999999998536271
+      }
+    ],
+    "mechanism_death_rows": [
+      {
+        "winner_final_strength": 0.9999999998359327,
+        "suppressed_final_strength": 6.110527810547603e-08,
+        "suppressed_start_strength": 0.55,
+        "suppression_delta": 0.549999938894722
+      },
+      {
+        "winner_final_strength": 0.9999999998359327,
+        "suppressed_final_strength": 6.110527810547603e-08,
+        "suppressed_start_strength": 0.55,
+        "suppression_delta": 0.549999938894722
+      },
+      {
+        "winner_final_strength": 0.9999999998359327,
+        "suppressed_final_strength": 6.110527810547603e-08,
+        "suppressed_start_strength": 0.55,
+        "suppression_delta": 0.549999938894722
+      },
+      {
+        "winner_final_strength": 0.9999999998359327,
+        "suppressed_final_strength": 6.110527810547603e-08,
+        "suppressed_start_strength": 0.55,
+        "suppression_delta": 0.549999938894722
+      },
+      {
+        "winner_final_strength": 0.9999999998359327,
+        "suppressed_final_strength": 6.110527810547603e-08,
+        "suppressed_start_strength": 0.55,
+        "suppression_delta": 0.549999938894722
+      }
+    ],
+    "capacity_competition": {
+      "rows": [
+        {
+          "coactivation": 0.01,
+          "decoder_cosine": 0.0,
+          "overlap": 0.0,
+          "capacity_competition": 0.0,
+          "predicted_error_increase": 0.0
+        },
+        {
+          "coactivation": 0.01,
+          "decoder_cosine": 0.0,
+          "overlap": 0.5,
+          "capacity_competition": 0.0,
+          "predicted_error_increase": 0.0
+        },
+        {
+          "coactivation": 0.01,
+          "decoder_cosine": 0.0,
+          "overlap": 1.0,
+          "capacity_competition": 0.0,
+          "predicted_error_increase": 0.0
+        },
+        {
+          "coactivation": 0.01,
+          "decoder_cosine": 0.25,
+          "overlap": 0.0,
+          "capacity_competition": 0.000625,
+          "predicted_error_increase": 0.000125
+        },
+        {
+          "coactivation": 0.01,
+          "decoder_cosine": 0.25,
+          "overlap": 0.5,
+          "capacity_competition": 0.00140625,
+          "predicted_error_increase": 0.00028125
+        },
+        {
+          "coactivation": 0.01,
+          "decoder_cosine": 0.25,
+          "overlap": 1.0,
+          "capacity_competition": 0.0025,
+          "predicted_error_increase": 0.0005
+        },
+        {
+          "coactivation": 0.01,
+          "decoder_cosine": 0.5,
+          "overlap": 0.0,
+          "capacity_competition": 0.0025,
+          "predicted_error_increase": 0.0005
+        },
+        {
+          "coactivation": 0.01,
+          "decoder_cosine": 0.5,
+          "overlap": 0.5,
+          "capacity_competition": 0.005625,
+          "predicted_error_increase": 0.001125
+        },
+        {
+          "coactivation": 0.01,
+          "decoder_cosine": 0.5,
+          "overlap": 1.0,
+          "capacity_competition": 0.01,
+          "predicted_error_increase": 0.002
+        },
+        {
+          "coactivation": 0.01,
+          "decoder_cosine": 0.9,
+          "overlap": 0.0,
+          "capacity_competition": 0.008100000000000001,
+          "predicted_error_increase": 0.0016200000000000003
+        },
+        {
+          "coactivation": 0.01,
+          "decoder_cosine": 0.9,
+          "overlap": 0.5,
+          "capacity_competition": 0.018225,
+          "predicted_error_increase": 0.0036450000000000007
+        },
+        {
+          "coactivation": 0.01,
+          "decoder_cosine": 0.9,
+          "overlap": 1.0,
+          "capacity_competition": 0.032400000000000005,
+          "predicted_error_increase": 0.006480000000000001
+        },
+        {
+          "coactivation": 0.05,
+          "decoder_cosine": 0.0,
+          "overlap": 0.0,
+          "capacity_competition": 0.0,
+          "predicted_error_increase": 0.0
+        },
+        {
+          "coactivation": 0.05,
+          "decoder_cosine": 0.0,
+          "overlap": 0.5,
+          "capacity_competition": 0.0,
+          "predicted_error_increase": 0.0
+        },
+        {
+          "coactivation": 0.05,
+          "decoder_cosine": 0.0,
+          "overlap": 1.0,
+          "capacity_competition": 0.0,
+          "predicted_error_increase": 0.0
+        },
+        {
+          "coactivation": 0.05,
+          "decoder_cosine": 0.25,
+          "overlap": 0.0,
+          "capacity_competition": 0.003125,
+          "predicted_error_increase": 0.0006250000000000001
+        },
+        {
+          "coactivation": 0.05,
+          "decoder_cosine": 0.25,
+          "overlap": 0.5,
+          "capacity_competition": 0.007031250000000001,
+          "predicted_error_increase": 0.0014062500000000004
+        },
+        {
+          "coactivation": 0.05,
+          "decoder_cosine": 0.25,
+          "overlap": 1.0,
+          "capacity_competition": 0.0125,
+          "predicted_error_increase": 0.0025000000000000005
+        },
+        {
+          "coactivation": 0.05,
+          "decoder_cosine": 0.5,
+          "overlap": 0.0,
+          "capacity_competition": 0.0125,
+          "predicted_error_increase": 0.0025000000000000005
+        },
+        {
+          "coactivation": 0.05,
+          "decoder_cosine": 0.5,
+          "overlap": 0.5,
+          "capacity_competition": 0.028125000000000004,
+          "predicted_error_increase": 0.0056250000000000015
+        },
+        {
+          "coactivation": 0.05,
+          "decoder_cosine": 0.5,
+          "overlap": 1.0,
+          "capacity_competition": 0.05,
+          "predicted_error_increase": 0.010000000000000002
+        },
+        {
+          "coactivation": 0.05,
+          "decoder_cosine": 0.9,
+          "overlap": 0.0,
+          "capacity_competition": 0.04050000000000001,
+          "predicted_error_increase": 0.008100000000000001
+        },
+        {
+          "coactivation": 0.05,
+          "decoder_cosine": 0.9,
+          "overlap": 0.5,
+          "capacity_competition": 0.09112500000000003,
+          "predicted_error_increase": 0.018225000000000005
+        },
+        {
+          "coactivation": 0.05,
+          "decoder_cosine": 0.9,
+          "overlap": 1.0,
+          "capacity_competition": 0.16200000000000003,
+          "predicted_error_increase": 0.032400000000000005
+        },
+        {
+          "coactivation": 0.15,
+          "decoder_cosine": 0.0,
+          "overlap": 0.0,
+          "capacity_competition": 0.0,
+          "predicted_error_increase": 0.0
+        },
+        {
+          "coactivation": 0.15,
+          "decoder_cosine": 0.0,
+          "overlap": 0.5,
+          "capacity_competition": 0.0,
+          "predicted_error_increase": 0.0
+        },
+        {
+          "coactivation": 0.15,
+          "decoder_cosine": 0.0,
+          "overlap": 1.0,
+          "capacity_competition": 0.0,
+          "predicted_error_increase": 0.0
+        },
+        {
+          "coactivation": 0.15,
+          "decoder_cosine": 0.25,
+          "overlap": 0.0,
+          "capacity_competition": 0.009375,
+          "predicted_error_increase": 0.001875
+        },
+        {
+          "coactivation": 0.15,
+          "decoder_cosine": 0.25,
+          "overlap": 0.5,
+          "capacity_competition": 0.021093749999999998,
+          "predicted_error_increase": 0.004218749999999999
+        },
+        {
+          "coactivation": 0.15,
+          "decoder_cosine": 0.25,
+          "overlap": 1.0,
+          "capacity_competition": 0.0375,
+          "predicted_error_increase": 0.0075
+        },
+        {
+          "coactivation": 0.15,
+          "decoder_cosine": 0.5,
+          "overlap": 0.0,
+          "capacity_competition": 0.0375,
+          "predicted_error_increase": 0.0075
+        },
+        {
+          "coactivation": 0.15,
+          "decoder_cosine": 0.5,
+          "overlap": 0.5,
+          "capacity_competition": 0.08437499999999999,
+          "predicted_error_increase": 0.016874999999999998
+        },
+        {
+          "coactivation": 0.15,
+          "decoder_cosine": 0.5,
+          "overlap": 1.0,
+          "capacity_competition": 0.15,
+          "predicted_error_increase": 0.03
+        },
+        {
+          "coactivation": 0.15,
+          "decoder_cosine": 0.9,
+          "overlap": 0.0,
+          "capacity_competition": 0.1215,
+          "predicted_error_increase": 0.024300000000000002
+        },
+        {
+          "coactivation": 0.15,
+          "decoder_cosine": 0.9,
+          "overlap": 0.5,
+          "capacity_competition": 0.27337500000000003,
+          "predicted_error_increase": 0.05467500000000001
+        },
+        {
+          "coactivation": 0.15,
+          "decoder_cosine": 0.9,
+          "overlap": 1.0,
+          "capacity_competition": 0.486,
+          "predicted_error_increase": 0.09720000000000001
+        },
+        {
+          "coactivation": 0.4,
+          "decoder_cosine": 0.0,
+          "overlap": 0.0,
+          "capacity_competition": 0.0,
+          "predicted_error_increase": 0.0
+        },
+        {
+          "coactivation": 0.4,
+          "decoder_cosine": 0.0,
+          "overlap": 0.5,
+          "capacity_competition": 0.0,
+          "predicted_error_increase": 0.0
+        },
+        {
+          "coactivation": 0.4,
+          "decoder_cosine": 0.0,
+          "overlap": 1.0,
+          "capacity_competition": 0.0,
+          "predicted_error_increase": 0.0
+        },
+        {
+          "coactivation": 0.4,
+          "decoder_cosine": 0.25,
+          "overlap": 0.0,
+          "capacity_competition": 0.025,
+          "predicted_error_increase": 0.005000000000000001
+        },
+        {
+          "coactivation": 0.4,
+          "decoder_cosine": 0.25,
+          "overlap": 0.5,
+          "capacity_competition": 0.05625000000000001,
+          "predicted_error_increase": 0.011250000000000003
+        },
+        {
+          "coactivation": 0.4,
+          "decoder_cosine": 0.25,
+          "overlap": 1.0,
+          "capacity_competition": 0.1,
+          "predicted_error_increase": 0.020000000000000004
+        },
+        {
+          "coactivation": 0.4,
+          "decoder_cosine": 0.5,
+          "overlap": 0.0,
+          "capacity_competition": 0.1,
+          "predicted_error_increase": 0.020000000000000004
+        },
+        {
+          "coactivation": 0.4,
+          "decoder_cosine": 0.5,
+          "overlap": 0.5,
+          "capacity_competition": 0.22500000000000003,
+          "predicted_error_increase": 0.04500000000000001
+        },
+        {
+          "coactivation": 0.4,
+          "decoder_cosine": 0.5,
+          "overlap": 1.0,
+          "capacity_competition": 0.4,
+          "predicted_error_increase": 0.08000000000000002
+        },
+        {
+          "coactivation": 0.4,
+          "decoder_cosine": 0.9,
+          "overlap": 0.0,
+          "capacity_competition": 0.32400000000000007,
+          "predicted_error_increase": 0.06480000000000001
+        },
+        {
+          "coactivation": 0.4,
+          "decoder_cosine": 0.9,
+          "overlap": 0.5,
+          "capacity_competition": 0.7290000000000002,
+          "predicted_error_increase": 0.14580000000000004
+        },
+        {
+          "coactivation": 0.4,
+          "decoder_cosine": 0.9,
+          "overlap": 1.0,
+          "capacity_competition": 1.2960000000000003,
+          "predicted_error_increase": 0.25920000000000004
+        }
+      ]
+    },
+    "factorial_interaction_phase_diagram": {
+      "rows": [
+        {
+          "redundancy_weight": 0.0,
+          "synergy_weight": 0.0,
+          "synergy": 0.0,
+          "redundancy_score": 0.0,
+          "compensation_score": 0.0,
+          "interaction_label": "inactive"
+        },
+        {
+          "redundancy_weight": 0.0,
+          "synergy_weight": 0.25,
+          "synergy": 0.25,
+          "redundancy_score": 0.0,
+          "compensation_score": 0.0,
+          "interaction_label": "synergistic_or_gated"
+        },
+        {
+          "redundancy_weight": 0.0,
+          "synergy_weight": 0.5,
+          "synergy": 0.5,
+          "redundancy_score": 0.0,
+          "compensation_score": 0.0,
+          "interaction_label": "synergistic_or_gated"
+        },
+        {
+          "redundancy_weight": 0.0,
+          "synergy_weight": 0.75,
+          "synergy": 0.75,
+          "redundancy_score": 0.0,
+          "compensation_score": 0.0,
+          "interaction_label": "synergistic_or_gated"
+        },
+        {
+          "redundancy_weight": 0.0,
+          "synergy_weight": 1.0,
+          "synergy": 1.0,
+          "redundancy_score": 0.0,
+          "compensation_score": 0.0,
+          "interaction_label": "synergistic_or_gated"
+        },
+        {
+          "redundancy_weight": 0.25,
+          "synergy_weight": 0.0,
+          "synergy": -0.25,
+          "redundancy_score": 0.25,
+          "compensation_score": 0.25,
+          "interaction_label": "redundant"
+        },
+        {
+          "redundancy_weight": 0.25,
+          "synergy_weight": 0.25,
+          "synergy": 0.0,
+          "redundancy_score": 0.0,
+          "compensation_score": 0.0,
+          "interaction_label": "additive"
+        },
+        {
+          "redundancy_weight": 0.25,
+          "synergy_weight": 0.5,
+          "synergy": 0.25,
+          "redundancy_score": 0.0,
+          "compensation_score": 0.0,
+          "interaction_label": "synergistic_or_gated"
+        },
+        {
+          "redundancy_weight": 0.25,
+          "synergy_weight": 0.75,
+          "synergy": 0.5,
+          "redundancy_score": 0.0,
+          "compensation_score": 0.0,
+          "interaction_label": "synergistic_or_gated"
+        },
+        {
+          "redundancy_weight": 0.25,
+          "synergy_weight": 1.0,
+          "synergy": 0.75,
+          "redundancy_score": 0.0,
+          "compensation_score": 0.0,
+          "interaction_label": "synergistic_or_gated"
+        },
+        {
+          "redundancy_weight": 0.5,
+          "synergy_weight": 0.0,
+          "synergy": -0.5,
+          "redundancy_score": 0.5,
+          "compensation_score": 0.5,
+          "interaction_label": "redundant"
+        },
+        {
+          "redundancy_weight": 0.5,
+          "synergy_weight": 0.25,
+          "synergy": -0.25,
+          "redundancy_score": 0.25,
+          "compensation_score": 0.25,
+          "interaction_label": "redundant"
+        },
+        {
+          "redundancy_weight": 0.5,
+          "synergy_weight": 0.5,
+          "synergy": 0.0,
+          "redundancy_score": 0.0,
+          "compensation_score": 0.0,
+          "interaction_label": "additive"
+        },
+        {
+          "redundancy_weight": 0.5,
+          "synergy_weight": 0.75,
+          "synergy": 0.25,
+          "redundancy_score": 0.0,
+          "compensation_score": 0.0,
+          "interaction_label": "synergistic_or_gated"
+        },
+        {
+          "redundancy_weight": 0.5,
+          "synergy_weight": 1.0,
+          "synergy": 0.5,
+          "redundancy_score": 0.0,
+          "compensation_score": 0.0,
+          "interaction_label": "synergistic_or_gated"
+        },
+        {
+          "redundancy_weight": 0.75,
+          "synergy_weight": 0.0,
+          "synergy": -0.75,
+          "redundancy_score": 0.75,
+          "compensation_score": 0.75,
+          "interaction_label": "redundant"
+        },
+        {
+          "redundancy_weight": 0.75,
+          "synergy_weight": 0.25,
+          "synergy": -0.5,
+          "redundancy_score": 0.5,
+          "compensation_score": 0.5,
+          "interaction_label": "redundant"
+        },
+        {
+          "redundancy_weight": 0.75,
+          "synergy_weight": 0.5,
+          "synergy": -0.25,
+          "redundancy_score": 0.25,
+          "compensation_score": 0.25,
+          "interaction_label": "redundant"
+        },
+        {
+          "redundancy_weight": 0.75,
+          "synergy_weight": 0.75,
+          "synergy": 0.0,
+          "redundancy_score": 0.0,
+          "compensation_score": 0.0,
+          "interaction_label": "additive"
+        },
+        {
+          "redundancy_weight": 0.75,
+          "synergy_weight": 1.0,
+          "synergy": 0.25,
+          "redundancy_score": 0.0,
+          "compensation_score": 0.0,
+          "interaction_label": "synergistic_or_gated"
+        },
+        {
+          "redundancy_weight": 1.0,
+          "synergy_weight": 0.0,
+          "synergy": -1.0,
+          "redundancy_score": 1.0,
+          "compensation_score": 1.0,
+          "interaction_label": "redundant"
+        },
+        {
+          "redundancy_weight": 1.0,
+          "synergy_weight": 0.25,
+          "synergy": -0.75,
+          "redundancy_score": 0.75,
+          "compensation_score": 0.75,
+          "interaction_label": "redundant"
+        },
+        {
+          "redundancy_weight": 1.0,
+          "synergy_weight": 0.5,
+          "synergy": -0.5,
+          "redundancy_score": 0.5,
+          "compensation_score": 0.5,
+          "interaction_label": "redundant"
+        },
+        {
+          "redundancy_weight": 1.0,
+          "synergy_weight": 0.75,
+          "synergy": -0.25,
+          "redundancy_score": 0.25,
+          "compensation_score": 0.25,
+          "interaction_label": "redundant"
+        },
+        {
+          "redundancy_weight": 1.0,
+          "synergy_weight": 1.0,
+          "synergy": 0.0,
+          "redundancy_score": 0.0,
+          "compensation_score": 0.0,
+          "interaction_label": "additive"
+        }
+      ]
+    },
+    "max_capacity_competition": 1.2960000000000003,
+    "phase_diagram_rows": 25,
+    "mean_developmental_lag_steps": 38.0,
+    "mean_suppression_delta": 0.549999938894722,
+    "gradient_coupling": [
+      [
+        1.0,
+        0.9989200860769055,
+        -0.8975543264360013
+      ],
+      [
+        0.9989200860769055,
+        1.0,
+        -0.9170700562514066
+      ],
+      [
+        -0.8975543264360013,
+        -0.9170700562514066,
+        1.0
+      ]
+    ],
+    "redundant_interaction_matrix": {
+      "names": [
+        "left_path",
+        "right_path"
+      ],
+      "overlap": [
+        [
+          1.0,
+          0.25925925925925924
+        ],
+        [
+          0.25925925925925924,
+          1.0
+        ]
+      ],
+      "behavioral_synergy": [
+        [
+          0.0,
+          -1.0
+        ],
+        [
+          -1.0,
+          0.0
+        ]
+      ],
+      "gate": [
+        [
+          0.0,
+          -1.0
+        ],
+        [
+          -1.0,
+          0.0
+        ]
+      ],
+      "redundancy": [
+        [
+          0.0,
+          1.0
+        ],
+        [
+          1.0,
+          0.0
+        ]
+      ],
+      "capacity_competition": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "gradient_coupling": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0
+        ]
+      ],
+      "support": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    "gating_interaction_matrix": {
+      "names": [
+        "gate",
+        "worker"
+      ],
+      "overlap": [
+        [
+          1.0,
+          0.175
+        ],
+        [
+          0.175,
+          1.0
+        ]
+      ],
+      "behavioral_synergy": [
+        [
+          0.0,
+          1.0
+        ],
+        [
+          1.0,
+          0.0
+        ]
+      ],
+      "gate": [
+        [
+          0.0,
+          1.0
+        ],
+        [
+          1.0,
+          0.0
+        ]
+      ],
+      "redundancy": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "capacity_competition": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "gradient_coupling": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0
+        ]
+      ],
+      "support": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    }
+  },
   "adversarial_controls": {
     "random_vs_trained": {
       "random_labelability": 0.961038961038961,
@@ -696,9 +1571,9 @@
     {
       "gate_separation": 1.5,
       "noise": 0.05,
-      "global_linear_mse": 1.8401993929244853,
+      "global_linear_mse": 1.840199392924485,
       "molt_mse": 0.3881639799883015,
-      "molt_to_global_mse_ratio": 0.21093582656356752,
+      "molt_to_global_mse_ratio": 0.21093582656356755,
       "molt_description_length": 1.0625
     }
   ],

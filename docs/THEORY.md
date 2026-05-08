@@ -113,7 +113,42 @@ The parent latent then fails to fire on child cases even though the parent conce
 
 The remedy is not only larger flat SAEs.  The remedy is structured dictionaries with explicit hierarchy, typed charts, and causal consistency tests.
 
-## 9. Circuits as minimal causal subprograms
+## 9. Mechanism ecologies
+
+PLAN2 upgrades MNF into Interactive MNF. The target object is not an isolated
+circuit but an ecosystem:
+
+```text
+E_D = (A*, M, R, H_E, alpha, gamma, Omega)
+```
+
+where `A*` is a typed atom library, `M` is a set of fuzzy mechanisms, and `R`
+is the interaction structure between mechanisms. A mechanism has soft atom
+membership:
+
+```text
+pi_m in [0, 1]^|A*|
+```
+
+so an atom can partially participate in several mechanisms. Shared description
+length pays for reused atoms once, which lets the theory prefer reusable
+variables when they really reduce total intervention-predictive complexity.
+
+Interactions are first-class:
+
+- **Redundancy:** either mechanism can compensate for the other.
+- **Gating:** one mechanism changes whether another has behavioral effect.
+- **Support:** ablating one mechanism lowers another mechanism's score.
+- **Capacity competition:** coactive mechanisms interfere through aligned
+  decoder directions or shared representational bandwidth.
+- **Gradient coupling:** training one mechanism helps or hurts another.
+- **Developmental coupling:** mechanisms bootstrap, suppress, or replace each
+  other over training.
+
+The repo implements these ideas in `mnf/mechanisms`, `mnf/interactions`, and
+`mnf/benchmarks/interactions`.
+
+## 10. Circuits as minimal causal subprograms
 
 A circuit is not a set of heads or neurons.  A circuit is a minimal subprogram:
 
@@ -131,7 +166,12 @@ that is:
 
 Heads, neurons, SAE latents, and attribution nodes are coordinate systems for approximating subprograms.
 
-## 10. Training dynamics
+For isolated systems, necessity and sufficiency are useful tests. For mechanism
+ecologies, single ablations can be wrong: redundant mechanisms can have no
+single-ablation effect, and gates can have no direct output effect while still
+controlling another mechanism.
+
+## 11. Training dynamics
 
 For a candidate mechanism C, define training-time utility:
 
@@ -145,7 +185,7 @@ A mechanism stabilizes when utility becomes positive and gradients coherently as
 continuous mechanism formation + thresholded metric + cleanup of shortcuts
 ```
 
-## 11. Falsifiers
+## 12. Falsifiers
 
 MNF is in trouble if:
 
@@ -154,4 +194,7 @@ MNF is in trouble if:
 - typed cyclic charts do not outperform scalar dictionaries on cyclic variables;
 - hierarchical dictionaries do not reduce absorption;
 - transition atoms do not improve MLP-heavy explanations;
-- mechanism-progress metrics do not precede behavioral emergence.
+- mechanism-progress metrics do not precede behavioral emergence;
+- factorial interventions do not improve on single-ablation mechanism tests;
+- shared-MDL accounting does not predict reusable atoms better than independent
+  circuit descriptions.

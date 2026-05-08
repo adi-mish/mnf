@@ -302,7 +302,147 @@ with a smooth mechanism trace and a thresholded behavioral metric.
 **Status.** This is a toy proposition, but it makes the training-dynamics claim
 explicit and testable.
 
-## 5. What this theory explains
+## 5. Interactive MNF extension
+
+The original MNF object is an isolated explanation. PLAN2 upgrades this to an
+ecosystem:
+
+```text
+iMNF = (A*, M, R, H_E, alpha, gamma, Omega)
+```
+
+where `A*` is a typed atom library, `M = {m_1, ..., m_k}` is a set of fuzzy
+mechanisms, and `R` is the mechanism interaction structure. A fuzzy mechanism
+has a soft atom-membership vector
+
+```text
+pi_m in [0, 1]^|A*|
+```
+
+plus an executable role, an intervention family, an operating domain, and a
+graded mechanisticity score. The implementation in `mnf/mechanisms` uses:
+
+```text
+Mech(m) =
+  Eff_m * exp(-(lambda_int E_int + lambda_inv E_inv
+                + lambda_nat E_nat + beta K_m)).
+```
+
+This is intentionally graded. A feature can be labelable but unused, causal but
+brittle, useful but unnatural, or compact and intervention-faithful.
+
+The ecosystem description length pays for shared atoms once:
+
+```text
+K_shared(E) =
+  sum_{a in used(M)} K(a)
+  + sum_{m in M} K(m | A*)
+  + K(R).
+```
+
+This creates a formal preference for reusable mechanisms when they improve
+intervention prediction with a shorter shared code.
+
+### Theorem 8: isolated-circuit fallacy under redundancy
+
+**Setup.** Let two mechanisms `m` and `n` be redundant routes to behavior `B`:
+
+```text
+B_11 ~= B_10 ~= B_01
+B_00 << B_11
+```
+
+where `B_ab` is the behavior score with `m` in state `a` and `n` in state `b`.
+
+**Claim.** Single-mechanism necessity tests can falsely reject both mechanisms,
+even though the pair is necessary.
+
+**Proof sketch.** Ablating `m` alone compares `B_11` to `B_01`, which is near
+zero effect by assumption. Ablating `n` alone compares `B_11` to `B_10`, also
+near zero. But ablating both compares `B_11` to `B_00`, which has large effect.
+Thus single ablation concludes that neither route matters, while factorial
+ablation recovers the redundant pair.
+
+**Benchmark link.** `mnf/benchmarks/interactions/redundant_paths.py` implements
+the exact Boolean case with `B_00 = 0` and `B_10 = B_01 = B_11 = 1`.
+
+### Theorem 9: gating non-identifiability under marginal interventions
+
+**Setup.** A gate `g` enables a worker mechanism `w`:
+
+```text
+B = g and w.
+```
+
+**Claim.** Marginal intervention effects do not identify the gate role. The
+conditional effect of `w` when `g=1` differs from the conditional effect of `w`
+when `g=0`.
+
+**Proof sketch.** In the Boolean case, changing `w` while `g=0` has no effect,
+but changing `w` while `g=1` changes behavior from `0` to `1`. Therefore the
+gate is identified by a conditional/factorial contrast, not by a marginal
+feature label or a single unconditional ablation.
+
+**Benchmark link.** `mnf/benchmarks/interactions/gating_mechanism.py` reports
+`worker_effect_when_gate_on = 1` and `worker_effect_when_gate_off = 0`.
+
+### Theorem 10: sparse mechanism packing
+
+**Setup.** Let mechanisms `m` and `n` have atom memberships `pi_m` and `pi_n`.
+Let atom coactivation be `q_ij`, and let decoder-direction squared alignment be
+`<d_i, d_j>^2`.
+
+**Claim.** A mechanism-level capacity-competition term is
+
+```text
+CapComp_mn =
+  sum_ij pi_mi pi_nj q_ij <d_i, d_j>^2.
+```
+
+When this term is small relative to the predictive gain from representing both
+mechanisms, sparse packing is favored. When it is large, the mechanisms should
+split across atoms, layers, or routes, or one mechanism should suppress the
+other.
+
+**Benchmark link.** `mnf/benchmarks/interactions/capacity_competition.py`
+sweeps coactivation, decoder alignment, and overlap.
+
+### Theorem 11: shared-MDL preference for reusable atoms
+
+**Setup.** Two mechanisms can either duplicate a typed atom or share it.
+
+**Claim.** The shared explanation is preferred exactly when:
+
+```text
+K(shared_atom) + K(m1 | shared_atom) + K(m2 | shared_atom) + K(R)
+<
+K(m1) + K(m2)
+```
+
+**Proof sketch.** This is direct comparison of independent and shared
+description lengths. The implementation uses `MechanismEcosystem` to compute
+`independent_description_length - shared_description_length`.
+
+**Benchmark link.** `mnf/benchmarks/interactions/shared_atom_reuse.py` gives a
+toy route atom reused by two lookup mechanisms.
+
+### Proposition 12: developmental bootstrapping
+
+**Setup.** Mechanism strengths follow:
+
+```text
+ds_m/dt =
+  s_m(1 - s_m) * (r_m + sum_n A_mn s_n - sum_n C_mn s_n - kappa_m).
+```
+
+**Claim.** If `r_m - kappa_m < 0` but `A_mn > 0`, then `m` cannot grow until
+`s_n > (kappa_m - r_m) / A_mn`. A supporting mechanism can therefore create a
+delayed emergence threshold.
+
+**Benchmark link.** `mnf/benchmarks/interactions/developmental_bootstrap.py`
+simulates this two-mechanism case.
+
+## 6. What this theory explains
 
 The current MNF formalization explains why several common interpretability
 signals are insufficient:
@@ -317,8 +457,12 @@ signals are insufficient:
   mechanisms.
 - Correlation graphs over-propose transitive dependencies without intervention
   validation.
+- Single ablations can miss redundant mechanisms.
+- Marginal interventions can miss gates.
+- Independent MDL can miss reusable shared atoms.
+- Mechanisms can support, suppress, or compete with each other during training.
 
-## 6. What remains open
+## 7. What remains open
 
 The theory is not complete. The largest missing pieces are:
 
@@ -329,12 +473,13 @@ The theory is not complete. The largest missing pieces are:
    families.
 4. Real-model evidence against strong baselines such as SAE, ACDC, and
    TransformerLens workflows.
-5. A training-dynamics result connecting mechanism formation to later behavior.
+5. A real-model interaction result showing redundancy, gating, or capacity
+   competition in transformer activations.
 
 The current repo should therefore be read as a formal target plus a falsifiable
 benchmark scaffold, not as a completed theory of mechanistic interpretability.
 
-## 7. Relation to current literature
+## 8. Relation to current literature
 
 MNF is closest in spirit to causal abstraction. Geiger et al.'s JMLR paper
 argues that causal abstraction can provide a common formal language for

@@ -7,6 +7,7 @@ building blocks rather than a monolithic implementation.
 
 from mnf.core.causal_program import CausalProgram, Node
 from mnf.core.mechanism import MechanismExplanation, MNFScore
+from mnf.mechanisms import Atom, FuzzyMechanism, MechanismEcosystem
 from mnf.core.types import (
     StateSpace,
     ScalarSpace,
@@ -22,6 +23,9 @@ __all__ = [
     "Node",
     "MechanismExplanation",
     "MNFScore",
+    "Atom",
+    "FuzzyMechanism",
+    "MechanismEcosystem",
     "StateSpace",
     "ScalarSpace",
     "BinarySpace",

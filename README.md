@@ -7,12 +7,14 @@ The central claim is that a mechanistic explanation is not a neuron list, SAE la
 ## What is included
 
 - `mnf/core`: typed state spaces, interventions, causal programs, MNF scoring, MDL proxies, graph metrics.
+- `mnf/mechanisms`: fuzzy mechanisms, mechanism-strength interventions, shared atom accounting, and ecosystem-level shared MDL.
+- `mnf/interactions`: pairwise factorial effects, redundancy/gating/synergy metrics, capacity competition, support, gradient coupling, Shapley allocation, and coupled dynamics.
 - `mnf/charts`: simple linear charts, cyclic typed charts, hierarchical feature absorption utilities, MOLT-like transition atoms, and a tiny optional PyTorch TopK SAE.
 - `mnf/baselines`: lightweight baseline selectors and scalar/PCA-style chart comparisons.
-- `mnf/discovery`: prototype Atlas-Causal Discovery pipeline for proposing atoms, discovering candidate edges, and fitting small causal programs.
-- `mnf/benchmarks`: synthetic ground-truth systems for causal chains, gated/XOR programs, induction match-copy, relational lookup, modular arithmetic, transition-only maps, sparse superposition, hierarchical absorption, cyclic weekday features, shortcut controls, memorization controls, training-emergence controls, and random-vs-trained controls.
+- `mnf/discovery`: prototype Atlas-Causal Discovery pipeline plus a minimal Mechanism Ecology Discovery adapter for pairwise interaction recovery.
+- `mnf/benchmarks`: synthetic ground-truth systems for causal chains, gated/XOR programs, induction match-copy, relational lookup, modular arithmetic, transition-only maps, sparse superposition, hierarchical absorption, cyclic weekday features, shortcut controls, memorization controls, training-emergence controls, interaction/ecology controls, and random-vs-trained controls.
 - `mnf/experiments`: runnable demos and CPU-only phase sweeps for the benchmark families.
-- `tests`: 37 passing tests that exercise all core components.
+- `tests`: 51 passing tests that exercise all core components.
 - `docs/THEORY.md`: detailed theory.
 - `docs/FORMAL_THEORY.md`: theorem candidates and proof sketches connected to benchmarks.
 - `docs/RESEARCH_PROGRAM.md`: aggressive NeurIPS-scale research plan.
@@ -32,7 +34,7 @@ python scripts/run_research_sweeps.py
 python scripts/write_results_summary.py
 ```
 
-The repo was tested in the current environment with Python 3.10.12.  All 37 tests passed.
+The repo was tested in the current environment with Python 3.10.12.  All 51 tests passed.
 
 ## What this is not
 
@@ -48,3 +50,7 @@ Every explanatory object must answer four questions:
 4. What downstream causal role does it play?
 
 If it cannot answer those questions, it may be decodable, but it is not yet mechanistic.
+
+The iMNF extension adds a fifth question: how does this mechanism interact with
+other mechanisms through redundancy, gating, support, shared atoms, capacity
+competition, or training-time coupling?

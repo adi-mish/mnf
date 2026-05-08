@@ -28,6 +28,14 @@ At noise `0.3`, typed rotation error is `0.1516` versus scalar rotation error `0
 Mean held-out memorizer accuracy: `0.0544`.
 Mean held-out copy-mechanism accuracy: `1.0000`.
 
+## Mechanism Interactions
+
+Redundant-path dual ablation drop: `1.0000` with single-ablation drops `0.0000` and `0.0000`.
+Gating strength `gate -> worker`: `1.0000`.
+Shared-MDL gain for reused route atom: `1.7500`.
+Maximum capacity-competition score in the sweep: `2.8000`.
+Factorial interaction phase-diagram rows: `49`.
+
 ## Transition Atoms
 
 Best MOLT/global MSE ratio: `0.0001` at gate separation `4.0` and noise `0.0`.

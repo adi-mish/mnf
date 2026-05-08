@@ -2,18 +2,20 @@
 
 ## Target paper
 
-**Mechanistic Normal Forms: Natural Causal Abstractions for Interpreting Neural Networks**
+**Interactive Mechanistic Normal Forms: Causal Mechanism Ecologies in Neural Networks**
 
-Core claim: mechanistic interpretability should recover minimum-description-length natural causal programs, not merely label neurons or sparse latents.
+Core claim: mechanistic interpretability should recover graded, interacting,
+minimum-description-length causal mechanism ecosystems, not merely label neurons,
+sparse latents, or isolated circuits.
 
 ## Landmark contribution stack
 
 A NeurIPS-best-paper-caliber version needs four contributions in one paper:
 
-1. **Theory:** formal definitions of natural causal abstraction, typed variables, transition atoms, MNF score, and falsifiability criteria.
-2. **Theorems:** sparse packing, feature absorption, typed-feature identifiability up to gauge, and vacuity of unconstrained abstraction.
-3. **Benchmark:** MechanismLab, a ground-truth suite spanning scalar, hierarchical, cyclic, relational, transition-only, compiled, trained, and random-control systems.
-4. **Algorithm:** Atlas-Causal Discovery, which recovers executable mechanisms and beats probes, flat SAEs, and component-level circuit discovery on intervention prediction.
+1. **Theory:** formal definitions of natural causal abstraction, fuzzy mechanisms, typed variables, transition atoms, shared MDL, interaction terms, and falsifiability criteria.
+2. **Theorems:** sparse mechanism packing, feature absorption, typed-feature identifiability up to gauge, isolated-circuit fallacy, gating non-identifiability, shared-MDL preference, developmental bootstrapping, and vacuity of unconstrained abstraction.
+3. **Benchmark:** MechanismLab 2.0, a ground-truth suite spanning scalar, hierarchical, cyclic, relational, transition-only, interaction/ecology, compiled, trained, and random-control systems.
+4. **Algorithm:** Mechanism Ecology Discovery, which recovers executable mechanisms and interaction matrices and beats probes, flat SAEs, and component-level circuit discovery on intervention prediction.
 
 ## Phase 0: repository hardening
 
@@ -34,6 +36,9 @@ Write a formal paper draft with:
 - typed state spaces and gauge symmetries;
 - distinction between decodable / represented / used / mechanistic;
 - state atoms and transition atoms;
+- fuzzy mechanism membership;
+- redundancy, gating, support, capacity competition, gradient coupling, and developmental coupling;
+- shared-MDL accounting for atom reuse;
 - MDL objective;
 - theorem statements.
 
@@ -43,6 +48,9 @@ First proofs to complete:
 2. Absorption theorem for parent-child features under L0/L1 sparsity.
 3. Identifiability up to gauge for scalar, cyclic, and categorical typed variables with interventions.
 4. Non-identifiability/vacuity under arbitrary nonlinear alignments.
+5. Isolated-circuit fallacy under redundant paths.
+6. Gating non-identifiability under marginal interventions.
+7. Shared-MDL preference for reusable atoms.
 
 ## Phase 2: MechanismLab benchmark
 
@@ -59,6 +67,8 @@ Required tasks:
 - transition-only synthetic MLPs;
 - random controls;
 - trained small transformers;
+- redundant-path, gating, support, and capacity-competition mechanism ecologies;
+- coupled training dynamics, including developmental bootstrap and mechanism death;
 - Tracr/RASP compiled transformers if dependencies permit.
 
 Metrics:
@@ -70,15 +80,21 @@ Metrics:
 - description length;
 - invariance under paraphrase/environment/checkpoint;
 - false mechanism rate on random controls.
+- interaction matrix recovery error;
+- shared-MDL gain against independent mechanism descriptions.
 
-## Phase 3: Atlas-Causal Discovery v1
+## Phase 3: Mechanism Ecology Discovery v1
 
 Upgrade the prototype pipeline:
 
 - proposal stage with scalar SAEs, TopK SAEs, cyclic charts, hierarchy charts, supervised contrastive directions, and transition atoms;
+- fuzzy mechanism proposal using masks over typed atoms;
 - validation stage with activation patching, path patching, and counterfactual interventions;
+- pairwise factorial intervention stage for redundancy, synergy, gating, and support;
+- capacity-competition and gradient-coupling estimation;
 - pruning stage with MDL and invariance penalties;
-- output stage producing an executable mechanism DSL.
+- shared-MDL pruning stage over atoms, mechanisms, and interactions;
+- output stage producing an executable mechanism-ecosystem DSL.
 
 ## Phase 4: real-model integration
 
@@ -123,7 +139,8 @@ Minimum set for a serious submission:
 5. Random-control separation: labelability vs mechanistic use.
 6. Transition atoms outperform state-only explanations on MLP-heavy synthetic tasks.
 7. Real-model case studies showing lower intervention error and shorter descriptions than baselines.
-8. Training-dynamics result: MNF progress predicts behavioral emergence.
+8. Interaction result: factorial interventions recover redundancy and gating where single ablations fail.
+9. Training-dynamics result: MNF progress predicts behavioral emergence and coupled dynamics predict bootstrap or suppression.
 
 ## Phase 7: what to cut if time is short
 
@@ -135,5 +152,6 @@ The highest-value core is:
 4. Cyclic typed-feature experiment.
 5. Random-control experiment.
 6. One real-model case study.
+7. One interaction result showing isolated-circuit failure.
 
 This still makes a strong paper because it attacks the foundation of what counts as a mechanistic explanation.

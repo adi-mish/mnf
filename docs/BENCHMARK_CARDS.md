@@ -138,3 +138,66 @@ mechanism recovery.
 - **Interventions:** held-out pair generalization and match-position state inspection
 - **Expected failure mode:** pair memorization fits train pairs but fails on unseen pairs
 - **Current result:** algorithmic copy mechanism gets held-out accuracy `1.0`; pair memorizer is near chance on held-out pairs
+
+## Redundant paths
+
+- **File:** `mnf/benchmarks/interactions/redundant_paths.py`
+- **Mechanism:** either of two routes is sufficient for the behavior
+- **State types:** binary mechanism-strength states
+- **Interventions:** pairwise factorial on/off ablations
+- **Expected failure mode:** single ablation incorrectly rejects both real mechanisms
+- **Current result:** single-ablation drops are `0.0`, but dual-ablation drop is `1.0`
+
+## Gating interaction
+
+- **File:** `mnf/benchmarks/interactions/gating_mechanism.py`
+- **Mechanism:** a gate enables a downstream worker mechanism
+- **State types:** binary gate and worker states
+- **Interventions:** conditional worker ablation under gate-on and gate-off states
+- **Expected failure mode:** marginal interventions miss a mechanism that acts by enabling another mechanism
+- **Current result:** worker effect is `1.0` when the gate is on and `0.0` when the gate is off
+
+## Shared atom reuse
+
+- **File:** `mnf/benchmarks/interactions/shared_atom_reuse.py`
+- **Mechanism:** two lookup mechanisms reuse a route atom
+- **State types:** route atom plus mechanism-specific state atoms
+- **Interventions:** shared-versus-independent description-length accounting
+- **Expected failure mode:** independent circuit descriptions duplicate the same reusable variable
+- **Current result:** shared-MDL gain is positive in the route-reuse toy ecosystem
+
+## Capacity competition
+
+- **File:** `mnf/benchmarks/interactions/capacity_competition.py`
+- **Mechanism:** two mechanisms coactivate on aligned decoder directions
+- **State types:** fuzzy memberships over sparse atoms
+- **Interventions:** sweep coactivation, decoder alignment, and atom overlap
+- **Expected failure mode:** treating mechanisms independently misses representational interference
+- **Current result:** competition increases monotonically with coactivation and decoder alignment
+
+## Interaction phase diagram
+
+- **File:** `mnf/benchmarks/interactions/phase_diagram.py`
+- **Mechanism:** tunable mixture of redundant OR-style and synergistic AND-style pathways
+- **State types:** binary mechanism-strength states
+- **Interventions:** pairwise factorial on/off ablations over a grid of mixture weights
+- **Expected failure mode:** a binary mechanism/not-mechanism view misses continuous transitions between redundancy and synergy
+- **Current result:** the sweep spans redundant and synergistic/gated regimes
+
+## Developmental bootstrap
+
+- **File:** `mnf/benchmarks/interactions/developmental_bootstrap.py`
+- **Mechanism:** one mechanism becomes learnable only after a supporting mechanism grows
+- **State types:** scalar mechanism-strength traces
+- **Interventions:** coupled mechanism ecology dynamics
+- **Expected failure mode:** behavior-only analysis misses support-driven delayed emergence
+- **Current result:** the dependent mechanism crosses threshold after the scaffold mechanism
+
+## Mechanism death
+
+- **File:** `mnf/benchmarks/interactions/mechanism_death.py`
+- **Mechanism:** a stronger mechanism suppresses a competing mechanism through the ecology dynamics
+- **State types:** scalar mechanism-strength traces
+- **Interventions:** coupled competition dynamics
+- **Expected failure mode:** static circuit snapshots miss training-time suppression
+- **Current result:** the suppressed mechanism loses strength as the winner grows

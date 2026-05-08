@@ -63,6 +63,22 @@ def summarize_research_sweeps(data: Mapping[str, Any]) -> str:
         "",
     ])
 
+    interaction = data.get("interaction_suite")
+    if interaction is not None:
+        redundant = interaction["redundant_paths"]
+        gating = interaction["gating"]
+        shared = interaction["shared_atom_reuse"]
+        lines.extend([
+            "## Mechanism Interactions",
+            "",
+            f"Redundant-path dual ablation drop: `{_fmt(redundant['dual_ablation_drop'])}` with single-ablation drops `{_fmt(redundant['drop_m_from_joint'])}` and `{_fmt(redundant['drop_n_from_joint'])}`.",
+            f"Gating strength `gate -> worker`: `{_fmt(gating['gate_m_to_n'])}`.",
+            f"Shared-MDL gain for reused route atom: `{_fmt(shared['shared_mdl_gain'])}`.",
+            f"Maximum capacity-competition score in the sweep: `{_fmt(interaction['max_capacity_competition'])}`.",
+            f"Factorial interaction phase-diagram rows: `{interaction['phase_diagram_rows']}`.",
+            "",
+        ])
+
     transition_rows = data["transition_atom_sweep"]["rows"]
     best_transition = min(transition_rows, key=lambda row: row["molt_to_global_mse_ratio"])
     lines.extend([
