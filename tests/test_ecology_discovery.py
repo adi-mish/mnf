@@ -1,4 +1,4 @@
-from mnf.discovery import mechanism_ecology_discovery
+from mnf.discovery import mechanism_ecology_discovery, mechanism_ecology_discovery_from_joint_behavior
 
 
 def test_mechanism_ecology_discovery_recovers_redundancy():
@@ -9,3 +9,13 @@ def test_mechanism_ecology_discovery_recovers_redundancy():
     )
     assert matrix.redundancy[0, 1] == 1.0
     assert matrix.overlap[0, 1] > 0.0
+
+
+def test_mechanism_ecology_discovery_from_joint_behavior_recovers_gate():
+    matrix = mechanism_ecology_discovery_from_joint_behavior(
+        names=("gate", "worker", "context"),
+        behavior_fn=lambda state: float(state["gate"] and state["worker"]) + 0.1 * float(state["context"]),
+        memberships=({"gate_state": 1.0}, {"gate_state": 0.5, "worker": 1.0}, {"context": 1.0}),
+    )
+    assert matrix.gate[0, 1] == 1.0
+    assert matrix.behavioral_synergy[0, 1] == 1.0

@@ -35,6 +35,8 @@ Gating strength `gate -> worker`: `1.0000`.
 Shared-MDL gain for reused route atom: `1.7500`.
 Maximum capacity-competition score in the sweep: `2.8000`.
 Factorial interaction phase-diagram rows: `49`.
+Interaction recovery F1: `1.0000` over `15` mechanism pairs using `22` intervention states.
+Higher-order triple-gate contrast: `1.0000` using `8` intervention states.
 
 ## Transition Atoms
 

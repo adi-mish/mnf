@@ -12,4 +12,5 @@ def test_results_summary_mentions_core_experiments():
     assert "Induction Match-Copy" in text
     if "interaction_suite" in data:
         assert "Mechanism Interactions" in text
+        assert "Interaction recovery F1" in text
     assert "Transition Atoms" in text

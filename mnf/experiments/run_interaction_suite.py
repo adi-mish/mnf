@@ -11,6 +11,8 @@ from mnf.benchmarks.interactions import (
     developmental_bootstrap_metrics,
     factorial_interaction_phase_diagram,
     gating_metrics,
+    higher_order_interaction_metrics,
+    interaction_recovery_suite,
     mechanism_death_metrics,
     redundant_paths_metrics,
     shared_atom_reuse_metrics,
@@ -37,6 +39,7 @@ def run(
     death_rows = [mechanism_death_metrics(seed=s) for s in seeds]
     capacity = capacity_competition_sweep(coactivations, decoder_cosines, overlaps)
     phase = factorial_interaction_phase_diagram(redundancy_weights, synergy_weights)
+    recovery = interaction_recovery_suite(seed=seeds[0] if seeds else 0)
 
     grad = pairwise_gradient_coupling(
         [
@@ -60,8 +63,10 @@ def run(
         "redundant_paths": redundant_paths_metrics(),
         "synergistic_paths": synergistic_paths_metrics(),
         "gating": gating_metrics(),
+        "higher_order": higher_order_interaction_metrics(),
         "shared_atom_reuse": shared_atom_reuse_metrics(),
         "cooperative_routing": cooperative_routing_metrics(),
+        "interaction_recovery": recovery,
         "developmental_bootstrap_rows": bootstrap_rows,
         "mechanism_death_rows": death_rows,
         "capacity_competition": capacity,

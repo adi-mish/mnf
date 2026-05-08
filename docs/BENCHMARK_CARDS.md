@@ -184,6 +184,24 @@ mechanism recovery.
 - **Expected failure mode:** a binary mechanism/not-mechanism view misses continuous transitions between redundancy and synergy
 - **Current result:** the sweep spans redundant and synergistic/gated regimes
 
+## Interaction recovery suite
+
+- **File:** `mnf/benchmarks/interactions/recovery_suite.py`
+- **Mechanism:** six-mechanism ecology with redundant, gated, competitive, and additive motifs
+- **State types:** binary mechanism-strength states plus fuzzy atom memberships
+- **Interventions:** pairwise factorial design with non-pair mechanisms held on
+- **Expected failure mode:** isolated mechanism scoring misses the interaction matrix and uncertainty over interaction labels
+- **Current result:** recovers all `15` pair labels with F1 `1.0` from `22` intervention states and reports bootstrap confidence intervals for gate and redundancy effects
+
+## Higher-order interaction
+
+- **File:** `mnf/benchmarks/interactions/higher_order.py`
+- **Mechanism:** two gates jointly enable one worker mechanism
+- **State types:** binary mechanism-strength states
+- **Interventions:** sparse higher-order factorial design
+- **Expected failure mode:** pairwise-only recovery misses that some mechanisms require higher-order contrasts
+- **Current result:** third-order triple-gate contrast is `1.0` using the full sparse order-3 design
+
 ## Developmental bootstrap
 
 - **File:** `mnf/benchmarks/interactions/developmental_bootstrap.py`

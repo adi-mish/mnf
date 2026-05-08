@@ -68,6 +68,8 @@ def summarize_research_sweeps(data: Mapping[str, Any]) -> str:
         redundant = interaction["redundant_paths"]
         gating = interaction["gating"]
         shared = interaction["shared_atom_reuse"]
+        recovery = interaction.get("interaction_recovery")
+        higher_order = interaction.get("higher_order")
         lines.extend([
             "## Mechanism Interactions",
             "",
@@ -76,8 +78,16 @@ def summarize_research_sweeps(data: Mapping[str, Any]) -> str:
             f"Shared-MDL gain for reused route atom: `{_fmt(shared['shared_mdl_gain'])}`.",
             f"Maximum capacity-competition score in the sweep: `{_fmt(interaction['max_capacity_competition'])}`.",
             f"Factorial interaction phase-diagram rows: `{interaction['phase_diagram_rows']}`.",
-            "",
         ])
+        if recovery is not None:
+            lines.append(
+                f"Interaction recovery F1: `{_fmt(recovery['recovery']['f1'])}` over `{recovery['n_pairs']}` mechanism pairs using `{recovery['design_size']}` intervention states."
+            )
+        if higher_order is not None:
+            lines.append(
+                f"Higher-order triple-gate contrast: `{_fmt(higher_order['third_order_effect'])}` using `{higher_order['triple_design_size']}` intervention states."
+            )
+        lines.append("")
 
     transition_rows = data["transition_atom_sweep"]["rows"]
     best_transition = min(transition_rows, key=lambda row: row["molt_to_global_mse_ratio"])

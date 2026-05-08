@@ -407,7 +407,33 @@ other.
 **Benchmark link.** `mnf/benchmarks/interactions/capacity_competition.py`
 sweeps coactivation, decoder alignment, and overlap.
 
-### Theorem 11: shared-MDL preference for reusable atoms
+### Proposition 11: pairwise factorial recovery can be much cheaper than full factorial recovery
+
+**Setup.** There are `K` mechanisms. Full factorial intervention requires
+`2^K` mechanism-strength states. Pairwise factorial recovery holds non-pair
+mechanisms fixed and evaluates the four cells for each pair.
+
+**Claim.** Pairwise recovery needs at most:
+
+```text
+1 + K + K(K - 1) / 2
+```
+
+states when all non-pair mechanisms are held on and duplicate states are
+deduplicated. It recovers all pairwise additive, redundant, gating/synergy, and
+competition terms that are conditionally defined in that context.
+
+**Proof sketch.** The unique states are the all-on baseline, every single
+ablation, and every dual ablation. These are exactly the four cells for each
+pair with all other mechanisms held on. The factorial contrasts for a pair are
+functions only of those four cells. This does not recover arbitrary higher-order
+interactions, but it is the right first pass for sparse interaction structure.
+
+**Benchmark link.** `mnf/benchmarks/interactions/recovery_suite.py` recovers
+all `15` pair labels in a six-mechanism ecology from `22` states instead of the
+`64` states required by full factorial recovery.
+
+### Theorem 12: shared-MDL preference for reusable atoms
 
 **Setup.** Two mechanisms can either duplicate a typed atom or share it.
 
@@ -426,7 +452,7 @@ description lengths. The implementation uses `MechanismEcosystem` to compute
 **Benchmark link.** `mnf/benchmarks/interactions/shared_atom_reuse.py` gives a
 toy route atom reused by two lookup mechanisms.
 
-### Proposition 12: developmental bootstrapping
+### Proposition 13: developmental bootstrapping
 
 **Setup.** Mechanism strengths follow:
 

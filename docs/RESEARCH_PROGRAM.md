@@ -91,7 +91,9 @@ Upgrade the prototype pipeline:
 - fuzzy mechanism proposal using masks over typed atoms;
 - validation stage with activation patching, path patching, and counterfactual interventions;
 - pairwise factorial intervention stage for redundancy, synergy, gating, and support;
+- bootstrap uncertainty estimates for interaction contrasts;
 - capacity-competition and gradient-coupling estimation;
+- recovery metrics for pair labels and interaction matrices;
 - pruning stage with MDL and invariance penalties;
 - shared-MDL pruning stage over atoms, mechanisms, and interactions;
 - output stage producing an executable mechanism-ecosystem DSL.

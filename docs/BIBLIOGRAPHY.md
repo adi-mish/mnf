@@ -22,10 +22,16 @@ This scaffold was designed around the following research directions:
   https://arxiv.org/abs/2406.04093
 - Sparse autoencoders on randomly initialized transformers:
   https://arxiv.org/abs/2501.17727
+- Sparse autoencoders do not find canonical units:
+  https://arxiv.org/abs/2502.04878
+- Sparse autoencoder sanity checks against random baselines:
+  https://arxiv.org/abs/2602.14111
+- Toy models of superposition:
+  https://transformer-circuits.pub/2022/toy_model/
 - Feature splitting and absorption in sparse autoencoders:
   https://arxiv.org/abs/2409.14507
 - Irreducible multidimensional and cyclic features:
-  https://arxiv.org/abs/2405.14860
+  https://openreview.net/pdf?id=d63a4AM4hb
 - Tracr compiled transformers as a ground-truth lab:
   https://arxiv.org/abs/2301.05062
 - Automated circuit discovery:

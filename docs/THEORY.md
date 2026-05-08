@@ -148,6 +148,23 @@ Interactions are first-class:
 The repo implements these ideas in `mnf/mechanisms`, `mnf/interactions`, and
 `mnf/benchmarks/interactions`.
 
+The practical intervention engine uses pairwise factorial designs first. For
+`K` mechanisms, full factorial recovery costs `2^K` states, while the pairwise
+all-on-context design costs only:
+
+```text
+1 + K + K(K - 1) / 2
+```
+
+This is enough to estimate pairwise redundancy, gating/synergy, additive
+effects, and competition before spending interventions on sparse higher-order
+terms.
+
+When higher-order structure is suspected, the same intervention algebra uses
+inclusion-exclusion over a selected mechanism subset. The triple-gate benchmark
+is the current CPU check: two gates and one worker produce a third-order
+contrast of `1.0`.
+
 ## 10. Circuits as minimal causal subprograms
 
 A circuit is not a set of heads or neurons.  A circuit is a minimal subprogram:
