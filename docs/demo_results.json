@@ -70,6 +70,53 @@
     "flat_parent_error": 0.193,
     "hierarchical_parent_error": 0.0
   },
+  "absorption_phase_first_rows": [
+    {
+      "child_rate": 0.05,
+      "parent_only_rate": 0.1,
+      "noise": 0.01,
+      "absorption_score": 0.9962879216267589,
+      "flat_parent_error": 0.04983333333333334,
+      "hierarchical_parent_error": 0.0,
+      "hierarchical_error_reduction": 0.04983333333333334
+    },
+    {
+      "child_rate": 0.05,
+      "parent_only_rate": 0.1,
+      "noise": 0.05,
+      "absorption_score": 0.9814261282189509,
+      "flat_parent_error": 0.04983333333333334,
+      "hierarchical_parent_error": 0.0,
+      "hierarchical_error_reduction": 0.04983333333333334
+    },
+    {
+      "child_rate": 0.05,
+      "parent_only_rate": 0.1,
+      "noise": 0.1,
+      "absorption_score": 0.9628182513646864,
+      "flat_parent_error": 0.04983333333333334,
+      "hierarchical_parent_error": 0.0,
+      "hierarchical_error_reduction": 0.04983333333333334
+    },
+    {
+      "child_rate": 0.05,
+      "parent_only_rate": 0.3,
+      "noise": 0.01,
+      "absorption_score": 0.9962875518742487,
+      "flat_parent_error": 0.04983333333333334,
+      "hierarchical_parent_error": 0.0,
+      "hierarchical_error_reduction": 0.04983333333333334
+    },
+    {
+      "child_rate": 0.05,
+      "parent_only_rate": 0.3,
+      "noise": 0.05,
+      "absorption_score": 0.9814169017153548,
+      "flat_parent_error": 0.04983333333333334,
+      "hierarchical_parent_error": 0.0,
+      "hierarchical_error_reduction": 0.04983333333333334
+    }
+  ],
   "random_control_demo": {
     "random_labelability": 0.961038961038961,
     "trained_labelability": 0.961038961038961,
