@@ -744,6 +744,192 @@
       }
     ]
   },
+  "induction_demo": {
+    "rows": [
+      {
+        "memorizer_train_accuracy": 1.0,
+        "memorizer_test_accuracy": 0.0375,
+        "copy_train_accuracy": 1.0,
+        "copy_test_accuracy": 1.0,
+        "memorizer_description_length": 120.0,
+        "copy_description_length": 4.0,
+        "seed": 0
+      },
+      {
+        "memorizer_train_accuracy": 1.0,
+        "memorizer_test_accuracy": 0.0375,
+        "copy_train_accuracy": 1.0,
+        "copy_test_accuracy": 1.0,
+        "memorizer_description_length": 120.0,
+        "copy_description_length": 4.0,
+        "seed": 1
+      },
+      {
+        "memorizer_train_accuracy": 1.0,
+        "memorizer_test_accuracy": 0.075,
+        "copy_train_accuracy": 1.0,
+        "copy_test_accuracy": 1.0,
+        "memorizer_description_length": 120.0,
+        "copy_description_length": 4.0,
+        "seed": 2
+      },
+      {
+        "memorizer_train_accuracy": 1.0,
+        "memorizer_test_accuracy": 0.05,
+        "copy_train_accuracy": 1.0,
+        "copy_test_accuracy": 1.0,
+        "memorizer_description_length": 120.0,
+        "copy_description_length": 4.0,
+        "seed": 3
+      },
+      {
+        "memorizer_train_accuracy": 1.0,
+        "memorizer_test_accuracy": 0.05,
+        "copy_train_accuracy": 1.0,
+        "copy_test_accuracy": 1.0,
+        "memorizer_description_length": 120.0,
+        "copy_description_length": 4.0,
+        "seed": 4
+      },
+      {
+        "memorizer_train_accuracy": 1.0,
+        "memorizer_test_accuracy": 0.0625,
+        "copy_train_accuracy": 1.0,
+        "copy_test_accuracy": 1.0,
+        "memorizer_description_length": 120.0,
+        "copy_description_length": 4.0,
+        "seed": 5
+      },
+      {
+        "memorizer_train_accuracy": 1.0,
+        "memorizer_test_accuracy": 0.0875,
+        "copy_train_accuracy": 1.0,
+        "copy_test_accuracy": 1.0,
+        "memorizer_description_length": 120.0,
+        "copy_description_length": 4.0,
+        "seed": 6
+      },
+      {
+        "memorizer_train_accuracy": 1.0,
+        "memorizer_test_accuracy": 0.0625,
+        "copy_train_accuracy": 1.0,
+        "copy_test_accuracy": 1.0,
+        "memorizer_description_length": 120.0,
+        "copy_description_length": 4.0,
+        "seed": 7
+      },
+      {
+        "memorizer_train_accuracy": 1.0,
+        "memorizer_test_accuracy": 0.05,
+        "copy_train_accuracy": 1.0,
+        "copy_test_accuracy": 1.0,
+        "memorizer_description_length": 120.0,
+        "copy_description_length": 4.0,
+        "seed": 8
+      },
+      {
+        "memorizer_train_accuracy": 1.0,
+        "memorizer_test_accuracy": 0.025,
+        "copy_train_accuracy": 1.0,
+        "copy_test_accuracy": 1.0,
+        "memorizer_description_length": 120.0,
+        "copy_description_length": 4.0,
+        "seed": 9
+      },
+      {
+        "memorizer_train_accuracy": 1.0,
+        "memorizer_test_accuracy": 0.025,
+        "copy_train_accuracy": 1.0,
+        "copy_test_accuracy": 1.0,
+        "memorizer_description_length": 120.0,
+        "copy_description_length": 4.0,
+        "seed": 10
+      },
+      {
+        "memorizer_train_accuracy": 1.0,
+        "memorizer_test_accuracy": 0.0875,
+        "copy_train_accuracy": 1.0,
+        "copy_test_accuracy": 1.0,
+        "memorizer_description_length": 120.0,
+        "copy_description_length": 4.0,
+        "seed": 11
+      },
+      {
+        "memorizer_train_accuracy": 1.0,
+        "memorizer_test_accuracy": 0.0625,
+        "copy_train_accuracy": 1.0,
+        "copy_test_accuracy": 1.0,
+        "memorizer_description_length": 120.0,
+        "copy_description_length": 4.0,
+        "seed": 12
+      },
+      {
+        "memorizer_train_accuracy": 1.0,
+        "memorizer_test_accuracy": 0.025,
+        "copy_train_accuracy": 1.0,
+        "copy_test_accuracy": 1.0,
+        "memorizer_description_length": 120.0,
+        "copy_description_length": 4.0,
+        "seed": 13
+      },
+      {
+        "memorizer_train_accuracy": 1.0,
+        "memorizer_test_accuracy": 0.05,
+        "copy_train_accuracy": 1.0,
+        "copy_test_accuracy": 1.0,
+        "memorizer_description_length": 120.0,
+        "copy_description_length": 4.0,
+        "seed": 14
+      },
+      {
+        "memorizer_train_accuracy": 1.0,
+        "memorizer_test_accuracy": 0.0375,
+        "copy_train_accuracy": 1.0,
+        "copy_test_accuracy": 1.0,
+        "memorizer_description_length": 120.0,
+        "copy_description_length": 4.0,
+        "seed": 15
+      },
+      {
+        "memorizer_train_accuracy": 1.0,
+        "memorizer_test_accuracy": 0.05,
+        "copy_train_accuracy": 1.0,
+        "copy_test_accuracy": 1.0,
+        "memorizer_description_length": 120.0,
+        "copy_description_length": 4.0,
+        "seed": 16
+      },
+      {
+        "memorizer_train_accuracy": 1.0,
+        "memorizer_test_accuracy": 0.1,
+        "copy_train_accuracy": 1.0,
+        "copy_test_accuracy": 1.0,
+        "memorizer_description_length": 120.0,
+        "copy_description_length": 4.0,
+        "seed": 17
+      },
+      {
+        "memorizer_train_accuracy": 1.0,
+        "memorizer_test_accuracy": 0.0625,
+        "copy_train_accuracy": 1.0,
+        "copy_test_accuracy": 1.0,
+        "memorizer_description_length": 120.0,
+        "copy_description_length": 4.0,
+        "seed": 18
+      },
+      {
+        "memorizer_train_accuracy": 1.0,
+        "memorizer_test_accuracy": 0.05,
+        "copy_train_accuracy": 1.0,
+        "copy_test_accuracy": 1.0,
+        "memorizer_description_length": 120.0,
+        "copy_description_length": 4.0,
+        "seed": 19
+      }
+    ],
+    "mean_memorizer_test_accuracy": 0.05437500000000001,
+    "mean_copy_test_accuracy": 1.0
+  },
   "cyclic_noise_sweep": {
     "rows": [
       {
@@ -788,33 +974,33 @@
       {
         "gate_separation": 0.75,
         "noise": 0.0,
-        "global_linear_mse": 2.335875856745502,
+        "global_linear_mse": 2.3358758567455014,
         "molt_mse": 1.507738002378349,
-        "molt_to_global_mse_ratio": 0.6454700912397932,
+        "molt_to_global_mse_ratio": 0.6454700912397933,
         "molt_description_length": 1.0625
       },
       {
         "gate_separation": 0.75,
         "noise": 0.05,
-        "global_linear_mse": 2.3389841690684925,
+        "global_linear_mse": 2.338984169068492,
         "molt_mse": 1.5106429042577925,
-        "molt_to_global_mse_ratio": 0.6458542662387537,
+        "molt_to_global_mse_ratio": 0.6458542662387539,
         "molt_description_length": 1.0625
       },
       {
         "gate_separation": 0.75,
         "noise": 0.2,
         "global_linear_mse": 2.378103780955951,
-        "molt_mse": 1.5491163614058707,
-        "molt_to_global_mse_ratio": 0.6514082244060672,
+        "molt_mse": 1.5491163614058705,
+        "molt_to_global_mse_ratio": 0.651408224406067,
         "molt_description_length": 1.0625
       },
       {
         "gate_separation": 1.5,
         "noise": 0.0,
-        "global_linear_mse": 2.333055922308503,
+        "global_linear_mse": 2.3330559223085032,
         "molt_mse": 0.5123569378241681,
-        "molt_to_global_mse_ratio": 0.2196076540322288,
+        "molt_to_global_mse_ratio": 0.21960765403222876,
         "molt_description_length": 1.0625
       },
       {
@@ -845,16 +1031,16 @@
         "gate_separation": 2.5,
         "noise": 0.05,
         "global_linear_mse": 2.33469914260886,
-        "molt_mse": 0.04972465076212498,
-        "molt_to_global_mse_ratio": 0.021298097838234192,
+        "molt_mse": 0.049724650762124976,
+        "molt_to_global_mse_ratio": 0.02129809783823419,
         "molt_description_length": 1.0625
       },
       {
         "gate_separation": 2.5,
         "noise": 0.2,
-        "global_linear_mse": 2.3737810270038566,
+        "global_linear_mse": 2.373781027003857,
         "molt_mse": 0.08691192915143586,
-        "molt_to_global_mse_ratio": 0.03661328832050466,
+        "molt_to_global_mse_ratio": 0.03661328832050465,
         "molt_description_length": 1.0625
       },
       {

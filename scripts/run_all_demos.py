@@ -15,6 +15,7 @@ from mnf.experiments import (
     run_cyclic_noise_sweep,
     run_ground_truth_recovery,
     run_ground_truth_suite,
+    run_induction_demo,
     run_mechanismlab_demo,
     run_random_control_demo,
     run_superposition_phase,
@@ -27,6 +28,7 @@ def main() -> None:
     out = {
         "ground_truth_recovery": run_ground_truth_recovery.run(),
         "ground_truth_suite": run_ground_truth_suite.run(),
+        "induction_demo": run_induction_demo.run(),
         "adversarial_controls": run_adversarial_controls.run(),
         "baseline_comparison": run_baseline_comparison.run(),
         "cyclic_baseline_comparison": run_cyclic_baseline_comparison.run(),

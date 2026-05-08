@@ -129,3 +129,12 @@ mechanism recovery.
 - **Interventions:** compare intervention-progress crossing time against behavioral crossing time
 - **Expected failure mode:** behavior-only analysis misses gradual mechanism formation
 - **Current result:** mechanism progress crosses threshold before behavioral emergence in the synthetic trace
+
+## Induction match-copy
+
+- **File:** `mnf/benchmarks/induction.py`
+- **Mechanism:** find the previous occurrence of the final bigram and copy the following token
+- **State types:** categorical tokens and match position
+- **Interventions:** held-out pair generalization and match-position state inspection
+- **Expected failure mode:** pair memorization fits train pairs but fails on unseen pairs
+- **Current result:** algorithmic copy mechanism gets held-out accuracy `1.0`; pair memorizer is near chance on held-out pairs

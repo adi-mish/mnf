@@ -310,6 +310,8 @@ signals are insufficient:
 - High train accuracy can come from shortcuts.
 - Feature labelability can exist without causal use.
 - Observation fit can be produced by memorizing alignments.
+- N-gram memorization can fit train examples while missing an induction-style
+  copy mechanism.
 - Scalar charts can be unnatural for cyclic variables.
 - State-only explanations can be long or inaccurate for transition-heavy
   mechanisms.

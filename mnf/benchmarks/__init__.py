@@ -12,6 +12,7 @@ from mnf.benchmarks.transition_only import make_transition_only_dataset, compare
 from mnf.benchmarks.shortcut import make_shortcut_dataset, shortcut_control
 from mnf.benchmarks.memorization import memorization_control
 from mnf.benchmarks.training_dynamics import make_training_emergence_trace, training_emergence_control
+from mnf.benchmarks.induction import make_induction_program, compare_induction_vs_memorization
 
 __all__ = [
     "make_chain_program",
@@ -36,4 +37,6 @@ __all__ = [
     "memorization_control",
     "make_training_emergence_trace",
     "training_emergence_control",
+    "make_induction_program",
+    "compare_induction_vs_memorization",
 ]

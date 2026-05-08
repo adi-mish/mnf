@@ -289,6 +289,57 @@
       }
     ]
   },
+  "induction_demo": {
+    "rows": [
+      {
+        "memorizer_train_accuracy": 1.0,
+        "memorizer_test_accuracy": 0.0375,
+        "copy_train_accuracy": 1.0,
+        "copy_test_accuracy": 1.0,
+        "memorizer_description_length": 120.0,
+        "copy_description_length": 4.0,
+        "seed": 0
+      },
+      {
+        "memorizer_train_accuracy": 1.0,
+        "memorizer_test_accuracy": 0.0375,
+        "copy_train_accuracy": 1.0,
+        "copy_test_accuracy": 1.0,
+        "memorizer_description_length": 120.0,
+        "copy_description_length": 4.0,
+        "seed": 1
+      },
+      {
+        "memorizer_train_accuracy": 1.0,
+        "memorizer_test_accuracy": 0.075,
+        "copy_train_accuracy": 1.0,
+        "copy_test_accuracy": 1.0,
+        "memorizer_description_length": 120.0,
+        "copy_description_length": 4.0,
+        "seed": 2
+      },
+      {
+        "memorizer_train_accuracy": 1.0,
+        "memorizer_test_accuracy": 0.05,
+        "copy_train_accuracy": 1.0,
+        "copy_test_accuracy": 1.0,
+        "memorizer_description_length": 120.0,
+        "copy_description_length": 4.0,
+        "seed": 3
+      },
+      {
+        "memorizer_train_accuracy": 1.0,
+        "memorizer_test_accuracy": 0.05,
+        "copy_train_accuracy": 1.0,
+        "copy_test_accuracy": 1.0,
+        "memorizer_description_length": 120.0,
+        "copy_description_length": 4.0,
+        "seed": 4
+      }
+    ],
+    "mean_memorizer_test_accuracy": 0.05,
+    "mean_copy_test_accuracy": 1.0
+  },
   "adversarial_controls": {
     "random_vs_trained": {
       "random_labelability": 0.961038961038961,
@@ -645,9 +696,9 @@
     {
       "gate_separation": 1.5,
       "noise": 0.05,
-      "global_linear_mse": 1.840199392924485,
+      "global_linear_mse": 1.8401993929244853,
       "molt_mse": 0.3881639799883015,
-      "molt_to_global_mse_ratio": 0.21093582656356755,
+      "molt_to_global_mse_ratio": 0.21093582656356752,
       "molt_description_length": 1.0625
     }
   ],
