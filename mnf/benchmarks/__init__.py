@@ -5,6 +5,10 @@ from mnf.benchmarks.superposition import SparseFeatureWorld, superposition_phase
 from mnf.benchmarks.hierarchy import make_hierarchy_dataset, compare_flat_vs_hierarchical_codes
 from mnf.benchmarks.cyclic import make_weekday_rotation_dataset, weekday_space
 from mnf.benchmarks.random_control import random_vs_trained_control
+from mnf.benchmarks.gated import make_gated_xor_program, sample_gated_xor_data
+from mnf.benchmarks.modular import make_modular_addition_program, sample_modular_addition_data
+from mnf.benchmarks.relational import make_relational_lookup_program, sample_relational_lookup_data
+from mnf.benchmarks.transition_only import make_transition_only_dataset, compare_global_linear_vs_molt
 
 __all__ = [
     "make_chain_program",
@@ -16,4 +20,12 @@ __all__ = [
     "make_weekday_rotation_dataset",
     "weekday_space",
     "random_vs_trained_control",
+    "make_gated_xor_program",
+    "sample_gated_xor_data",
+    "make_modular_addition_program",
+    "sample_modular_addition_data",
+    "make_relational_lookup_program",
+    "sample_relational_lookup_data",
+    "make_transition_only_dataset",
+    "compare_global_linear_vs_molt",
 ]

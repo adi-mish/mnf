@@ -40,9 +40,26 @@
         "y"
       ]
     ],
+    "intervention_pruned_edges": [
+      [
+        "a",
+        "b"
+      ],
+      [
+        "b",
+        "y"
+      ],
+      [
+        "x",
+        "a"
+      ]
+    ],
     "precision": 0.5,
     "recall": 1.0,
-    "f1": 0.6666666666666666
+    "f1": 0.6666666666666666,
+    "pruned_precision": 1.0,
+    "pruned_recall": 1.0,
+    "pruned_f1": 1.0
   },
   "cyclic_demo": {
     "base_label_error": 0.0,
@@ -56,8 +73,94 @@
   "random_control_demo": {
     "random_labelability": 0.961038961038961,
     "trained_labelability": 0.961038961038961,
-    "random_causal_use": 0.012244225447411935,
-    "trained_causal_use": 0.8998801968443919
+    "random_causal_use": 0.012244225447411957,
+    "trained_causal_use": 0.8998801968443918
+  },
+  "mechanismlab_demo": {
+    "gated_xor_truth_table": [
+      {
+        "x1": 0,
+        "x2": 0,
+        "gate": 0,
+        "xor": 0,
+        "y": 0
+      },
+      {
+        "x1": 0,
+        "x2": 0,
+        "gate": 1,
+        "xor": 0,
+        "y": 0
+      },
+      {
+        "x1": 0,
+        "x2": 1,
+        "gate": 0,
+        "xor": 1,
+        "y": 0
+      },
+      {
+        "x1": 0,
+        "x2": 1,
+        "gate": 1,
+        "xor": 1,
+        "y": 1
+      },
+      {
+        "x1": 1,
+        "x2": 0,
+        "gate": 0,
+        "xor": 1,
+        "y": 0
+      },
+      {
+        "x1": 1,
+        "x2": 0,
+        "gate": 1,
+        "xor": 1,
+        "y": 1
+      },
+      {
+        "x1": 1,
+        "x2": 1,
+        "gate": 0,
+        "xor": 0,
+        "y": 0
+      },
+      {
+        "x1": 1,
+        "x2": 1,
+        "gate": 1,
+        "xor": 0,
+        "y": 0
+      }
+    ],
+    "modular_shift_error": 0.0,
+    "relation_swap_objects": [
+      "violin",
+      "piano",
+      "flute",
+      "drums"
+    ],
+    "transition_only": {
+      "global_linear_mse": 1.2712395925378794,
+      "molt_mse": 0.03320261951810897,
+      "molt_description_length": 1.0625
+    },
+    "intervention_pruned_chain_edges": [
+      [
+        "a",
+        "b"
+      ],
+      [
+        "b",
+        "y"
+      ],
+      [
+        "x",
+        "a"
+      ]
+    ]
   },
   "superposition_phase_first_rows": [
     {

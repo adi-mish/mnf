@@ -5,7 +5,14 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from mnf.experiments import run_absorption_demo, run_cyclic_demo, run_ground_truth_recovery, run_random_control_demo, run_superposition_phase
+from mnf.experiments import (
+    run_absorption_demo,
+    run_cyclic_demo,
+    run_ground_truth_recovery,
+    run_mechanismlab_demo,
+    run_random_control_demo,
+    run_superposition_phase,
+)
 
 
 def main() -> None:
@@ -14,6 +21,7 @@ def main() -> None:
         "cyclic_demo": run_cyclic_demo.run(),
         "absorption_demo": run_absorption_demo.run(),
         "random_control_demo": run_random_control_demo.run(),
+        "mechanismlab_demo": run_mechanismlab_demo.run(),
         "superposition_phase_first_rows": run_superposition_phase.run()["rows"][:5],
     }
     print(json.dumps(out, indent=2))
