@@ -1,6 +1,11 @@
 """Mechanism ecology benchmarks for Interactive MNF."""
 
-from mnf.benchmarks.interactions.active_design import active_design_sweep, active_design_trial
+from mnf.benchmarks.interactions.active_design import (
+    active_design_baseline_sweep,
+    active_design_sweep,
+    active_design_trial,
+    repeated_design_trial,
+)
 from mnf.benchmarks.interactions.capacity_competition import capacity_competition_score, capacity_competition_sweep
 from mnf.benchmarks.interactions.cooperative_routing import cooperative_routing_metrics
 from mnf.benchmarks.interactions.context_stability import context_shift_behavior, context_stability_metrics
@@ -23,6 +28,8 @@ from mnf.benchmarks.interactions.synergistic_paths import and_synergy_behavior, 
 __all__ = [
     "active_design_trial",
     "active_design_sweep",
+    "active_design_baseline_sweep",
+    "repeated_design_trial",
     "capacity_competition_score",
     "capacity_competition_sweep",
     "cooperative_routing_metrics",

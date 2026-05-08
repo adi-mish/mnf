@@ -218,7 +218,7 @@ mechanism recovery.
 - **State types:** binary mechanism-strength states
 - **Interventions:** greedy selection among pairwise factorial states, with repeats for unstable contrasts
 - **Expected failure mode:** fixed one-shot designs either under-sample noisy contrasts or over-spend on already stable pairs
-- **Current result:** noiseless recovery terminates at the `22`-state pairwise design; noisy recovery allocates additional measurements to unstable labels
+- **Current result:** noiseless recovery terminates at the `22`-state pairwise design; noisy recovery allocates additional measurements to unstable labels and is compared against uniform and random repeated designs at matched budgets
 
 ## Higher-order interaction
 

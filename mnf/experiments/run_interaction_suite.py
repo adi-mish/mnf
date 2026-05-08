@@ -6,6 +6,7 @@ import json
 import numpy as np
 
 from mnf.benchmarks.interactions import (
+    active_design_baseline_sweep,
     active_design_sweep,
     capacity_competition_sweep,
     cooperative_routing_metrics,
@@ -41,6 +42,7 @@ def run(
     noisy_recovery_seeds: Sequence[int] = tuple(range(50)),
     active_design_noise_levels: Sequence[float] = (0.0, 0.005, 0.01, 0.02, 0.03),
     active_design_seeds: Sequence[int] = tuple(range(20)),
+    active_baseline_budgets: Sequence[int] = (22, 32, 64, 128, 256),
 ) -> dict[str, object]:
     bootstrap_rows = [developmental_bootstrap_metrics(seed=s) for s in seeds]
     death_rows = [mechanism_death_metrics(seed=s) for s in seeds]
@@ -49,6 +51,11 @@ def run(
     recovery = interaction_recovery_suite(seed=seeds[0] if seeds else 0)
     noisy_recovery = noisy_recovery_sweep(noisy_recovery_noise_levels, noisy_recovery_seeds)
     active_design = active_design_sweep(active_design_noise_levels, active_design_seeds)
+    active_baselines = active_design_baseline_sweep(
+        noise_levels=(0.0, 0.02, 0.03),
+        budgets=active_baseline_budgets,
+        seeds=active_design_seeds,
+    )
 
     grad = pairwise_gradient_coupling(
         [
@@ -79,6 +86,7 @@ def run(
         "interaction_recovery": recovery,
         "noisy_interaction_recovery": noisy_recovery,
         "active_design": active_design,
+        "active_design_baselines": active_baselines,
         "developmental_bootstrap_rows": bootstrap_rows,
         "mechanism_death_rows": death_rows,
         "capacity_competition": capacity,

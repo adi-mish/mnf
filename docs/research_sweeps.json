@@ -1653,27 +1653,157 @@
         },
         {
           "noise": 0.02,
-          "mean_measurements": 37.31,
+          "mean_measurements": 26.83,
           "mean_unique_states": 22.0,
-          "all_stable_rate": 0.96,
+          "all_stable_rate": 1.0,
           "mean_accuracy": 1.0,
           "mean_f1": 1.0
         },
         {
           "noise": 0.03,
-          "mean_measurements": 256.0,
+          "mean_measurements": 52.11,
           "mean_unique_states": 22.0,
-          "all_stable_rate": 0.0,
-          "mean_accuracy": 0.9733333333333334,
-          "mean_f1": 0.9862068965517241
+          "all_stable_rate": 1.0,
+          "mean_accuracy": 0.9813333333333334,
+          "mean_f1": 0.990344827586207
         },
         {
           "noise": 0.04,
-          "mean_measurements": 256.0,
+          "mean_measurements": 79.99,
           "mean_unique_states": 22.0,
-          "all_stable_rate": 0.0,
-          "mean_accuracy": 0.9000000000000001,
-          "mean_f1": 0.9467706622879035
+          "all_stable_rate": 1.0,
+          "mean_accuracy": 0.9113333333333334,
+          "mean_f1": 0.9530322933771211
+        }
+      ]
+    },
+    "active_design_baselines": {
+      "rows": [
+        {
+          "noise": 0.0,
+          "budget": 22,
+          "active_mean_measurements": 22.0,
+          "active_stable_rate": 1.0,
+          "active_mean_accuracy": 1.0,
+          "active_mean_f1": 1.0,
+          "uniform_stable_rate": 1.0,
+          "uniform_mean_accuracy": 1.0,
+          "uniform_mean_f1": 1.0,
+          "random_stable_rate": 0.0,
+          "random_mean_accuracy": 0.142,
+          "random_mean_f1": 0.21443299643552036
+        },
+        {
+          "noise": 0.0,
+          "budget": 64,
+          "active_mean_measurements": 22.0,
+          "active_stable_rate": 1.0,
+          "active_mean_accuracy": 1.0,
+          "active_mean_f1": 1.0,
+          "uniform_stable_rate": 1.0,
+          "uniform_mean_accuracy": 1.0,
+          "uniform_mean_f1": 1.0,
+          "random_stable_rate": 0.28,
+          "random_mean_accuracy": 0.7673333333333333,
+          "random_mean_f1": 0.8265209776064348
+        },
+        {
+          "noise": 0.0,
+          "budget": 256,
+          "active_mean_measurements": 22.0,
+          "active_stable_rate": 1.0,
+          "active_mean_accuracy": 1.0,
+          "active_mean_f1": 1.0,
+          "uniform_stable_rate": 1.0,
+          "uniform_mean_accuracy": 1.0,
+          "uniform_mean_f1": 1.0,
+          "random_stable_rate": 1.0,
+          "random_mean_accuracy": 1.0,
+          "random_mean_f1": 1.0
+        },
+        {
+          "noise": 0.02,
+          "budget": 22,
+          "active_mean_measurements": 22.0,
+          "active_stable_rate": 0.0,
+          "active_mean_accuracy": 0.9993333333333334,
+          "active_mean_f1": 1.0,
+          "uniform_stable_rate": 0.0,
+          "uniform_mean_accuracy": 1.0,
+          "uniform_mean_f1": 1.0,
+          "random_stable_rate": 0.0,
+          "random_mean_accuracy": 0.14933333333333332,
+          "random_mean_f1": 0.2235194346305196
+        },
+        {
+          "noise": 0.02,
+          "budget": 64,
+          "active_mean_measurements": 26.83,
+          "active_stable_rate": 1.0,
+          "active_mean_accuracy": 1.0,
+          "active_mean_f1": 1.0,
+          "uniform_stable_rate": 0.9,
+          "uniform_mean_accuracy": 1.0,
+          "uniform_mean_f1": 1.0,
+          "random_stable_rate": 0.09,
+          "random_mean_accuracy": 0.8266666666666667,
+          "random_mean_f1": 0.8800309250136837
+        },
+        {
+          "noise": 0.02,
+          "budget": 256,
+          "active_mean_measurements": 26.83,
+          "active_stable_rate": 1.0,
+          "active_mean_accuracy": 1.0,
+          "active_mean_f1": 1.0,
+          "uniform_stable_rate": 1.0,
+          "uniform_mean_accuracy": 1.0,
+          "uniform_mean_f1": 1.0,
+          "random_stable_rate": 1.0,
+          "random_mean_accuracy": 1.0,
+          "random_mean_f1": 1.0
+        },
+        {
+          "noise": 0.03,
+          "budget": 22,
+          "active_mean_measurements": 22.0,
+          "active_stable_rate": 0.0,
+          "active_mean_accuracy": 0.9706666666666669,
+          "active_mean_f1": 0.9851724137931035,
+          "uniform_stable_rate": 0.0,
+          "uniform_mean_accuracy": 0.9733333333333334,
+          "uniform_mean_f1": 0.9862068965517241,
+          "random_stable_rate": 0.0,
+          "random_mean_accuracy": 0.14400000000000002,
+          "random_mean_f1": 0.2168638490553284
+        },
+        {
+          "noise": 0.03,
+          "budget": 64,
+          "active_mean_measurements": 52.11,
+          "active_stable_rate": 1.0,
+          "active_mean_accuracy": 0.9813333333333334,
+          "active_mean_f1": 0.990344827586207,
+          "uniform_stable_rate": 0.0,
+          "uniform_mean_accuracy": 1.0,
+          "uniform_mean_f1": 1.0,
+          "random_stable_rate": 0.01,
+          "random_mean_accuracy": 0.8160000000000001,
+          "random_mean_f1": 0.873917077175698
+        },
+        {
+          "noise": 0.03,
+          "budget": 256,
+          "active_mean_measurements": 52.11,
+          "active_stable_rate": 1.0,
+          "active_mean_accuracy": 0.9813333333333334,
+          "active_mean_f1": 0.990344827586207,
+          "uniform_stable_rate": 1.0,
+          "uniform_mean_accuracy": 1.0,
+          "uniform_mean_f1": 1.0,
+          "random_stable_rate": 0.98,
+          "random_mean_accuracy": 1.0,
+          "random_mean_f1": 1.0
         }
       ]
     },

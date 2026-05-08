@@ -40,10 +40,12 @@ optimal experimental design, and it can waste samples if the uncertainty proxy
 is poorly calibrated.
 
 **Current response.** The theory now claims only finite noiseless coverage and
-margin-based noisy stopping, not optimality.
+margin-based noisy stopping, not optimality. The active-design benchmark now
+includes uniform and random repeated-design baselines at matched budgets.
 
-**Needed evidence.** Compare active design against uniform repeats and random
-state sampling across matched measurement budgets.
+**Needed evidence.** Add richer design families and statistical efficiency
+curves. The current baselines test the obvious alternatives, not global
+optimality.
 
 ## 4. Redundancy and competition can be confounded
 

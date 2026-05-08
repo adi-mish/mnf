@@ -40,7 +40,8 @@ Context-stability changed pairs: `3` of `6`; the focal pair changes from `additi
 Higher-order triple-gate contrast: `1.0000` using `8` intervention states.
 Noisy recovery all-correct rate: `1.0000` at noise `0.005` and `0.0000` at noise `0.3`.
 Noisy recovery abstention rate: `0.0000` at noise `0.005` and `1.0000` at noise `0.3`.
-Active design mean measurements: `22.0000` at noise `0.0` and `256.0000` at noise `0.04`.
+Active design mean measurements: `22.0000` at noise `0.0` and `79.9900` at noise `0.04` with accuracy `0.9113`.
+Active-vs-baseline at noise `0.02`, budget `64`: active stable rate `1.0000`, uniform `0.9000`, random `0.0900`.
 
 ## Transition Atoms
 

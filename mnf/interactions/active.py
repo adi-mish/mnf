@@ -178,7 +178,7 @@ def choose_next_intervention_state(
                     score += 0.01 * missing / (1.0 + count)
             else:
                 gap = max(status.margin - status.tolerance, 1e-6)
-                score += 1.0 / gap
+                score += 1.0 / ((1.0 + count) * gap)
         score += 1e-6 / (1.0 + count)
         if score > best_score:
             best_score = score

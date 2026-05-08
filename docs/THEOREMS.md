@@ -262,7 +262,8 @@ the algorithm should report instability rather than force a label.
 **Repo status.** `mnf/interactions/active.py` implements this loop, and
 `mnf/benchmarks/interactions/active_design.py` reports exact recovery in `22`
 states for the six-mechanism suite plus repeated-measurement behavior under
-noise.
+noise. The same benchmark reports matched-budget uniform and random repeated
+designs as non-adaptive baselines.
 
 ## Theorem F: shared-MDL atom reuse
 

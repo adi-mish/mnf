@@ -149,6 +149,9 @@ budget is exhausted.
 
 This is not an optimal experimental-design theorem. It is a CPU-checkable
 margin rule for deciding where repeated intervention measurements are useful.
+The benchmark also reports matched-budget uniform and random repeated designs,
+so the active rule is compared against simple non-adaptive alternatives rather
+than left as an unbaselined heuristic.
 
 ## What remains before real models
 

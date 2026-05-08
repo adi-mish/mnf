@@ -73,6 +73,7 @@ def summarize_research_sweeps(data: Mapping[str, Any]) -> str:
         higher_order = interaction.get("higher_order")
         noisy = interaction.get("noisy_interaction_recovery")
         active = interaction.get("active_design")
+        active_baselines = interaction.get("active_design_baselines")
         lines.extend([
             "## Mechanism Interactions",
             "",
@@ -107,7 +108,16 @@ def summarize_research_sweeps(data: Mapping[str, Any]) -> str:
             clean_active = active["rows"][0]
             last_active = active["rows"][-1]
             lines.append(
-                f"Active design mean measurements: `{_fmt(clean_active['mean_measurements'])}` at noise `{clean_active['noise']}` and `{_fmt(last_active['mean_measurements'])}` at noise `{last_active['noise']}`."
+                f"Active design mean measurements: `{_fmt(clean_active['mean_measurements'])}` at noise `{clean_active['noise']}` and `{_fmt(last_active['mean_measurements'])}` at noise `{last_active['noise']}` with accuracy `{_fmt(last_active['mean_accuracy'])}`."
+            )
+        if active_baselines is not None:
+            baseline_row = next(
+                row
+                for row in active_baselines["rows"]
+                if row["noise"] == 0.02 and row["budget"] == 64
+            )
+            lines.append(
+                f"Active-vs-baseline at noise `0.02`, budget `64`: active stable rate `{_fmt(baseline_row['active_stable_rate'])}`, uniform `{_fmt(baseline_row['uniform_stable_rate'])}`, random `{_fmt(baseline_row['random_stable_rate'])}`."
             )
         lines.append("")
 

@@ -39,6 +39,7 @@ def main() -> None:
             noisy_recovery_seeds=tuple(range(200)),
             active_design_noise_levels=(0.0, 0.005, 0.01, 0.02, 0.03, 0.04),
             active_design_seeds=tuple(range(100)),
+            active_baseline_budgets=(22, 64, 256),
         ),
         "cyclic_noise_sweep": run_cyclic_noise_sweep.run(n=3000, seeds=(0, 1, 2, 3, 4)),
         "transition_atom_sweep": run_transition_atom_sweep.run(n=6000, seeds=(0, 1, 2, 3, 4)),

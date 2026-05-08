@@ -514,7 +514,8 @@ but zero-margin contrasts cannot be forced stable by finite data.
 
 **Benchmark link.** `mnf/benchmarks/interactions/active_design.py` recovers the
 six-mechanism suite in `22` unique states without noise and allocates more
-measurements to unstable contrasts as noise increases.
+measurements to unstable contrasts as noise increases. It also compares against
+uniform and random repeated designs at matched budgets.
 
 ### Theorem 15: shared-MDL preference for reusable atoms
 
