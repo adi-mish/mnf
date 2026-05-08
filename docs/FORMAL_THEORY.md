@@ -210,7 +210,9 @@ No scalar ordering is canonical.
 **Benchmark link.** `mnf/benchmarks/cyclic.py` and
 `mnf/experiments/run_cyclic_noise_sweep.py` instantiate this with weekdays.
 Rotation-intervention error is `0.0` through noise `0.08`, and about `0.147` at
-noise `0.3`.
+noise `0.3`. `mnf/baselines/cyclic.py` contrasts this with a scalar integer
+regressor, whose low-noise label and rotation errors remain above `0.4` because
+the cyclic wraparound is not natural in scalar coordinates.
 
 **Status.** This is proof-grade for finite cyclic variables with known
 intervention generators. It should generalize to compact group variables, but

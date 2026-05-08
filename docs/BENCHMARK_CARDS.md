@@ -58,6 +58,15 @@ mechanism recovery.
 - **Expected failure mode:** direction-only charts lack a natural rotation operation
 - **Current result:** rotation error stays `0.0` through noise `0.08`; at noise `0.3`, error is about `0.147`
 
+## Cyclic scalar baseline
+
+- **File:** `mnf/baselines/cyclic.py`
+- **Mechanism:** weekday state on a circle, compared to scalar integer regression
+- **State types:** typed cyclic `C_7` versus scalar label chart
+- **Interventions:** rotate in the typed chart versus add to the scalar label
+- **Expected failure mode:** scalar regression breaks at the cyclic wraparound
+- **Current result:** typed chart has near-zero low-noise error; scalar baseline has label/rotation error above `0.4`
+
 ## Sparse superposition
 
 - **File:** `mnf/benchmarks/superposition.py`

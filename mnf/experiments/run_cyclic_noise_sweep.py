@@ -7,6 +7,7 @@ import numpy as np
 
 from mnf.benchmarks.cyclic import make_weekday_rotation_dataset, weekday_space
 from mnf.charts.cyclic import CyclicChart
+from mnf.baselines.cyclic import compare_cyclic_baselines
 
 
 def run(
@@ -21,6 +22,7 @@ def run(
     for noise in noise_levels:
         base_errors = []
         rotation_errors = []
+        baseline = compare_cyclic_baselines(n=n, noise=noise, seed=seed)
         for offset in seeds:
             ds = make_weekday_rotation_dataset(n=n, noise=noise, seed=seed + offset)
             chart = CyclicChart.fit(ds.activations, ds.labels, weekday_space)
@@ -32,6 +34,8 @@ def run(
                 "noise": float(noise),
                 "base_label_error": float(np.mean(base_errors)),
                 "rotation_intervention_error": float(np.mean(rotation_errors)),
+                "scalar_label_error": baseline["scalar_label_error"],
+                "scalar_rotation_error": baseline["scalar_rotation_error"],
             }
         )
     return {"rows": rows}

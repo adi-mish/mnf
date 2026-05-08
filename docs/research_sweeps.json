@@ -467,6 +467,55 @@
       }
     }
   },
+  "cyclic_baseline_comparison": {
+    "rows": [
+      {
+        "noise": 0.0,
+        "typed_label_error": 0.0,
+        "typed_rotation_error": 0.0,
+        "typed_description_length": 0.5,
+        "scalar_label_error": 0.5728888888888889,
+        "scalar_rotation_error": 0.5728888888888889,
+        "scalar_description_length": 0.265625
+      },
+      {
+        "noise": 0.03,
+        "typed_label_error": 0.0,
+        "typed_rotation_error": 0.0,
+        "typed_description_length": 0.5,
+        "scalar_label_error": 0.5771111111111111,
+        "scalar_rotation_error": 0.5771111111111111,
+        "scalar_description_length": 0.265625
+      },
+      {
+        "noise": 0.08,
+        "typed_label_error": 0.0,
+        "typed_rotation_error": 0.0,
+        "typed_description_length": 0.5,
+        "scalar_label_error": 0.5791111111111111,
+        "scalar_rotation_error": 0.5791111111111111,
+        "scalar_description_length": 0.265625
+      },
+      {
+        "noise": 0.15,
+        "typed_label_error": 0.0044444444444444444,
+        "typed_rotation_error": 0.004222222222222223,
+        "typed_description_length": 0.5,
+        "scalar_label_error": 0.5742222222222222,
+        "scalar_rotation_error": 0.5742222222222222,
+        "scalar_description_length": 0.265625
+      },
+      {
+        "noise": 0.3,
+        "typed_label_error": 0.15266666666666667,
+        "typed_rotation_error": 0.15155555555555555,
+        "typed_description_length": 0.5,
+        "scalar_label_error": 0.6217777777777779,
+        "scalar_rotation_error": 0.6217777777777779,
+        "scalar_description_length": 0.265625
+      }
+    ]
+  },
   "ground_truth_suite": {
     "rows": [
       {
@@ -700,27 +749,37 @@
       {
         "noise": 0.0,
         "base_label_error": 0.0,
-        "rotation_intervention_error": 0.0
+        "rotation_intervention_error": 0.0,
+        "scalar_label_error": 0.6033333333333334,
+        "scalar_rotation_error": 0.6033333333333334
       },
       {
         "noise": 0.03,
         "base_label_error": 0.0,
-        "rotation_intervention_error": 0.0
+        "rotation_intervention_error": 0.0,
+        "scalar_label_error": 0.6022222222222222,
+        "scalar_rotation_error": 0.6022222222222222
       },
       {
         "noise": 0.08,
         "base_label_error": 0.0,
-        "rotation_intervention_error": 0.0
+        "rotation_intervention_error": 0.0,
+        "scalar_label_error": 0.5977777777777777,
+        "scalar_rotation_error": 0.5977777777777777
       },
       {
         "noise": 0.15,
         "base_label_error": 0.0048000000000000004,
-        "rotation_intervention_error": 0.0048000000000000004
+        "rotation_intervention_error": 0.0048000000000000004,
+        "scalar_label_error": 0.6088888888888889,
+        "scalar_rotation_error": 0.6088888888888889
       },
       {
         "noise": 0.3,
         "base_label_error": 0.14673333333333335,
-        "rotation_intervention_error": 0.14726666666666666
+        "rotation_intervention_error": 0.14726666666666666,
+        "scalar_label_error": 0.65,
+        "scalar_rotation_error": 0.65
       }
     ]
   },
