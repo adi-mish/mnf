@@ -14,6 +14,7 @@ The central claim is that a mechanistic explanation is not a neuron list, SAE la
 - `tests`: 28 passing tests that exercise all core components.
 - `docs/THEORY.md`: detailed theory.
 - `docs/RESEARCH_PROGRAM.md`: aggressive NeurIPS-scale research plan.
+- `docs/BENCHMARK_CARDS.md`: documented MechanismLab benchmark cards.
 - `docs/demo_results.json`: output of the demos on the current environment.
 - `docs/research_sweeps.json`: CPU-generated phase/sweep outputs for local benchmark experiments.
 
