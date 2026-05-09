@@ -28,6 +28,15 @@ The docs now consistently treat probes, SAE latents, heads, neurons, and
 directions as atom proposals rather than mechanisms unless they pass
 intervention, invariance, naturalness, and certificate checks.
 
+The second adversarial pass also downgraded typed ecosystem gauge
+identifiability from a theorem to a conjecture/proof obligation. The cyclic
+finite-state case is supported; the full ecosystem gauge case is not yet proved.
+
+In this audit, "rigorous" means that each claim is either proved under explicit
+finite/synthetic assumptions, scoped as conditional, or marked as an open
+proof/evidence gap. It does not mean the current theory is globally airtight for
+arbitrary learned transformer internals.
+
 ## Proof-Grade Or Nearly Proof-Grade Pieces
 
 These claims are mathematically coherent under their stated assumptions:
@@ -62,6 +71,8 @@ These are useful and consistent, but their scope must stay limited:
   stopping, not global experimental-design optimality;
 - capacity competition is a principled score until a specific sparse-packing
   objective is fixed;
+- ecosystem gauge identifiability is a conjecture/proof obligation beyond the
+  currently implemented cyclic case;
 - the tiny transformer result is learned-weight evidence, not pretrained
   real-model evidence.
 

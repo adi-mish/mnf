@@ -98,7 +98,9 @@ Interference is approximately:
 Interference_ij = P(z_i != 0, z_j != 0) <d_i, d_j>^2
 ```
 
-The model solves a rate-distortion tradeoff between predictive utility, dimensional capacity, and interference.  Polysemantic neurons arise when the neuron basis is not aligned to the feature dictionary.
+This can be modeled as a rate-distortion tradeoff between predictive utility,
+dimensional capacity, and interference. Polysemantic neurons arise when the
+neuron basis is not aligned to the feature dictionary.
 
 ## 8. Feature absorption as flat-dictionary failure
 

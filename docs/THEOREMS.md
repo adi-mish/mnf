@@ -2,8 +2,8 @@
 
 This document separates proof obligations from implementation details. The goal
 is to make the strongest version of Interactive Mechanistic Normal Forms
-falsifiable: every theorem below should either become a proof, a benchmark, or a
-reason to weaken the claim.
+falsifiable: every theorem, proposition, or conjecture below should either
+become a proof, a benchmark, or a reason to weaken the claim.
 
 ## External anchor points
 
@@ -390,7 +390,7 @@ quantity.
 mechanisms can compete for representational capacity even when they are
 separately interpretable.
 
-## Theorem H: typed gauge identifiability
+## Conjecture H: typed gauge identifiability
 
 **Claim.** Mechanisms are identifiable only up to the symmetry group of their
 typed state space and intervention algebra: affine transforms for scalar
@@ -403,8 +403,9 @@ transformations for ecosystems.
 commuting charts are exactly equivariant maps under the corresponding symmetry
 group.
 
-**Repo status.** The cyclic case is already implemented. The ecosystem gauge
-case remains a proof task.
+**Repo status.** The cyclic case is implemented and has a proof sketch in
+`docs/FORMAL_THEORY.md`. The ecosystem gauge case remains a proof task, so this
+is not yet a theorem-level result.
 
 **Paper role.** This prevents false precision. A theory that claims canonical
 neuron or SAE-latent identity where only a gauge class is identifiable is
