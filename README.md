@@ -23,6 +23,7 @@ The central claim is that a mechanistic explanation is not a neuron list, SAE la
 - `docs/FORMAL_THEORY.md`: theorem candidates and proof sketches connected to benchmarks.
 - `docs/INTERACTION_CALCULUS.md`: executable iMNF interaction metrics, intervention designs, uncertainty, and recovery metrics.
 - `docs/THEOREMS.md`: proof-obligation package for the iMNF claims and their benchmark witnesses.
+- `docs/THEORY_AUDIT.md`: consistency and rigor audit for the theory documents.
 - `docs/ADVERSARIAL_REVIEW.md`: adversarial review of the current theory claims, attack surfaces, and required evidence.
 - `docs/TESTING.md`: quick, slow, smoke, and stochastic test-suite conventions.
 - `docs/RESEARCH_PROGRAM.md`: aggressive NeurIPS-scale research plan.

@@ -337,8 +337,8 @@ explicit and testable.
 
 ## 5. Interactive MNF extension
 
-The original MNF object is an isolated explanation. Interactive MNF upgrades
-this to an ecosystem:
+The original MNF object is an isolated explanation. Interactive MNF first
+upgrades this to an ecosystem:
 
 ```text
 iMNF = (A*, M, R, H_E, alpha, gamma, Omega)
@@ -353,7 +353,8 @@ pi_m in [0, 1]^|A*|
 ```
 
 plus an executable role, an intervention family, an operating domain, and a
-graded mechanisticity score. The implementation in `mnf/mechanisms` uses:
+graded certificate. Older mechanism-scoring helpers in `mnf/mechanisms` use a
+scalar search score:
 
 ```text
 Mech(m) =
@@ -361,8 +362,21 @@ Mech(m) =
                 + lambda_nat E_nat + beta K_m)).
 ```
 
-This is intentionally graded. A feature can be labelable but unused, causal but
-brittle, useful but unnatural, or compact and intervention-faithful.
+This scalar is intentionally not a final truth criterion. It is a Lagrangian
+for search or ranking under explicit weights. The PLAN3 atlas formulation
+therefore evaluates final mechanism claims with certificate vectors:
+
+```text
+C(m) =
+  (E_obs, E_int, E_inv, E_glue, E_nat,
+   E_closure, K_shared, effect, uncertainty, CI).
+```
+
+`mnf/certificates` implements threshold and Pareto-front reporting over these
+components. A feature can be labelable but unused, causal but brittle, useful
+but unnatural, or compact and intervention-faithful; these cases should remain
+visible as different certificate dimensions rather than being hidden by one
+weighted number.
 
 The ecosystem description length pays for shared atoms once:
 
