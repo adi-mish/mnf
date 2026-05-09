@@ -79,7 +79,8 @@ Required tasks:
 - random controls;
 - trained small transformers. Current status: an optional CPU tiny transformer
   learns modular addition over `C_7` and is evaluated by cyclic input-shift
-  interventions;
+  interventions; a 20-seed local CPU sweep reaches mean final accuracy `0.9990`
+  with mean cyclic-shift consistency `0.9980` for both inputs.
 - redundant-path, gating, support, and capacity-competition mechanism ecologies;
 - coupled training dynamics, including developmental bootstrap and mechanism death;
 - Tracr/RASP compiled transformers if dependencies permit.

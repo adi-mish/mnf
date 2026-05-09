@@ -95,7 +95,9 @@ merging, or rotation.
 interventions are approximate, entangled, distribution-shifting operations.
 
 **Current response.** The docs explicitly stop short of claiming real-model
-evidence.
+evidence. The repo now includes a learned tiny-transformer CPU smoke test for
+modular addition, plus a 20-seed robustness sweep showing high cyclic
+intervention consistency after training.
 
 **Needed evidence.** A small real-model case study with activation hooks,
 matched baselines, and intervention-prediction error. This is the point where a
@@ -125,7 +127,7 @@ scalar score for main claims.
 The theory is internally much tighter than the initial PLAN2 sketch, but the
 strong version still needs three things:
 
-1. broader context-stability and abstention calibration;
+1. broader context-stability and abstention calibration beyond the current sweep;
 2. ecosystem gauge theory for fuzzy shared atoms beyond the minimal atlas-glue benchmark;
 3. real activation-intervention evidence against strong baselines.
 

@@ -88,6 +88,7 @@ orients a directed gate while leaving behavior-only evidence ambiguous.
 ## Current Boundary
 
 The CPU-local repo now tests the atlas/certificate machinery on synthetic
-systems. It does not yet prove that the same machinery recovers learned
-mechanisms from real transformer weights. That remains the next substantive
+systems and includes one learned-weight tiny transformer smoke test for modular
+addition. It does not yet prove that the same machinery recovers mechanisms from
+external pretrained transformer activations. That remains the next substantive
 step before broad real-model claims.
