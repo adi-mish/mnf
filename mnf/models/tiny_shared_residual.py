@@ -130,6 +130,50 @@ def train_tiny_shared_residual_redundant_transformer(
     )
 
 
+def train_tiny_shared_residual_single_route_control(
+    modulus: int = 7,
+    steps: int = 160,
+    lr: float = 3e-3,
+    seed: int = 0,
+    device: str = "cpu",
+) -> tuple[TinySharedResidualRedundantTransformer, TinySharedResidualTrainingResult]:
+    """Train a shared residual model where the second route is decorative."""
+
+    torch = _require_torch()
+    torch.manual_seed(seed)
+    model = TinySharedResidualRedundantTransformer(modulus=modulus).to(device)
+    with torch.no_grad():
+        model.route_b_output.weight.zero_()
+        model.route_b_output.bias.zero_()
+    for parameter in model.route_b_output.parameters():
+        parameter.requires_grad = False
+
+    x, y = modular_addition_dataset(modulus=modulus, device=device)
+    optimizer = torch.optim.AdamW(
+        (parameter for parameter in model.parameters() if parameter.requires_grad),
+        lr=lr,
+        weight_decay=1e-4,
+    )
+    loss = None
+    for _step in range(steps + 1):
+        optimizer.zero_grad()
+        loss = sum(
+            torch.nn.functional.cross_entropy(model(x, route_mask=mask), y)
+            for mask in ((1.0, 1.0), (1.0, 0.0))
+        )
+        loss.backward()
+        optimizer.step()
+
+    metrics = evaluate_shared_residual_route_interventions(model, modulus=modulus, device=device)
+    assert loss is not None
+    return model, TinySharedResidualTrainingResult(
+        final_loss=float(loss.detach().cpu()),
+        base_accuracy=float(metrics["base_accuracy"]),
+        route_a_only_accuracy=float(metrics["route_a_only_accuracy"]),
+        route_b_only_accuracy=float(metrics["route_b_only_accuracy"]),
+    )
+
+
 def _accuracy(
     model: TinySharedResidualRedundantTransformer,
     tokens: Any,
@@ -218,5 +262,54 @@ def run_shared_residual_redundant_cpu_sweep(
         ),
         "single_ablation_underweights_rate": float(
             sum(bool(row["interventions"]["single_ablation_underweights"]) for row in rows) / len(rows)
+        ),
+    }
+
+
+def run_shared_residual_single_route_control_sweep(
+    seeds: Sequence[int] = (0, 1, 2),
+    modulus: int = 7,
+    steps: int = 160,
+) -> dict[str, object]:
+    if not torch_available():
+        return {"available": False, "reason": "optional torch dependency is not installed"}
+
+    rows = []
+    accounting: dict[str, int | float] | None = None
+    for seed in seeds:
+        model, training = train_tiny_shared_residual_single_route_control(
+            modulus=modulus,
+            steps=steps,
+            seed=seed,
+        )
+        if accounting is None:
+            accounting = model.parameter_accounting()
+        interventions = evaluate_shared_residual_route_interventions(model, modulus=modulus)
+        rows.append({"seed": seed, "training": training.as_dict(), "interventions": interventions})
+
+    def mean(key: str) -> float:
+        return float(sum(float(row["interventions"][key]) for row in rows) / len(rows))
+
+    return {
+        "available": True,
+        "modulus": modulus,
+        "steps": steps,
+        "n_seeds": len(rows),
+        "parameter_accounting": accounting or {},
+        "rows": rows,
+        "mean_base_accuracy": mean("base_accuracy"),
+        "mean_route_a_only_accuracy": mean("route_a_only_accuracy"),
+        "mean_route_b_only_accuracy": mean("route_b_only_accuracy"),
+        "mean_both_routes_ablated_accuracy": mean("both_routes_ablated_accuracy"),
+        "mean_max_single_ablation_drop": mean("max_single_ablation_drop"),
+        "mean_dual_ablation_drop": mean("dual_ablation_drop"),
+        "redundancy_certified_rate": float(
+            sum(bool(row["interventions"]["redundancy_certified"]) for row in rows) / len(rows)
+        ),
+        "single_ablation_underweights_rate": float(
+            sum(bool(row["interventions"]["single_ablation_underweights"]) for row in rows) / len(rows)
+        ),
+        "false_redundancy_rate": float(
+            sum(bool(row["interventions"]["redundancy_certified"]) for row in rows) / len(rows)
         ),
     }

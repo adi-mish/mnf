@@ -116,7 +116,10 @@ main isolated-circuit failure under training: either route alone remains
 sufficient, so a single-ablation baseline underweights the routes, while dual
 ablation reveals the causal mass. A newer shared-residual version removes the
 separate-transformer-stack objection by reusing one encoder/residual stream and
-placing redundancy in the readout routes; it still has named route heads.
+placing redundancy in the readout routes; it still has named route heads. A
+paired decorative-route control freezes one head at zero and gets false
+redundancy rate `0.0000`, so the certificate is not merely accepting any named
+two-head shared-residual architecture.
 
 **Needed evidence.** Train a less explicitly separated transformer where
 redundant algorithms are not named readout heads, then recover the routes from

@@ -21,6 +21,7 @@ from mnf.experiments import (
     run_induction_demo,
     run_interaction_suite,
     run_superposition_phase,
+    run_tiny_shared_residual_control_demo,
     run_tiny_shared_residual_transformer_demo,
     run_tiny_redundant_transformer_demo,
     run_tiny_transformer_demo,
@@ -58,6 +59,8 @@ DEFAULT_CONFIG = {
     "tiny_redundant_transformer_steps": 160,
     "tiny_shared_residual_transformer_seeds": (0, 1, 2),
     "tiny_shared_residual_transformer_steps": 160,
+    "tiny_shared_residual_control_seeds": (0, 1, 2),
+    "tiny_shared_residual_control_steps": 160,
 }
 
 
@@ -152,6 +155,14 @@ def main() -> None:
             run_tiny_shared_residual_transformer_demo.run(
                 seeds=tuple(config["tiny_shared_residual_transformer_seeds"]),
                 steps=int(config["tiny_shared_residual_transformer_steps"]),
+            )
+            if bool(config["include_tiny_transformer"])
+            else {"available": False, "reason": "disabled by config"}
+        ),
+        "tiny_shared_residual_control_demo": (
+            run_tiny_shared_residual_control_demo.run(
+                seeds=tuple(config["tiny_shared_residual_control_seeds"]),
+                steps=int(config["tiny_shared_residual_control_steps"]),
             )
             if bool(config["include_tiny_transformer"])
             else {"available": False, "reason": "disabled by config"}

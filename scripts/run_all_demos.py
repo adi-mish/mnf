@@ -24,6 +24,7 @@ from mnf.experiments import (
     run_mechanismlab_demo,
     run_random_control_demo,
     run_superposition_phase,
+    run_tiny_shared_residual_control_demo,
     run_tiny_shared_residual_transformer_demo,
     run_tiny_redundant_transformer_demo,
     run_tiny_transformer_demo,
@@ -55,6 +56,10 @@ def main() -> None:
         "tiny_transformer_demo": run_tiny_transformer_demo.run(seeds=(0,), steps=120),
         "tiny_redundant_transformer_demo": run_tiny_redundant_transformer_demo.run(seeds=(0,), steps=120),
         "tiny_shared_residual_transformer_demo": run_tiny_shared_residual_transformer_demo.run(
+            seeds=(0,),
+            steps=120,
+        ),
+        "tiny_shared_residual_control_demo": run_tiny_shared_residual_control_demo.run(
             seeds=(0,),
             steps=120,
         ),

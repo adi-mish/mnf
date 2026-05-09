@@ -36,6 +36,7 @@ The central claim is that a mechanistic explanation is not a neuron list, SAE la
 - `docs/TINY_TRANSFORMER_CPU_SUMMARY.md`: 100-seed CPU robustness summary for the learned tiny modular-addition transformer.
 - `docs/REDUNDANT_TINY_TRANSFORMER_CPU_SUMMARY.md`: 100-seed CPU robustness summary for learned redundant-route transformers.
 - `docs/SHARED_RESIDUAL_TINY_TRANSFORMER_CPU_SUMMARY.md`: 100-seed CPU robustness summary for redundant readouts over one shared residual stream.
+- `docs/SHARED_RESIDUAL_CONTROL_CPU_SUMMARY.md`: 100-seed CPU negative control showing that a decorative readout route is not falsely certified as redundant.
 
 ## Quick start
 

@@ -3140,6 +3140,53 @@
     "redundancy_certified_rate": 1.0,
     "single_ablation_underweights_rate": 1.0
   },
+  "tiny_shared_residual_control_demo": {
+    "available": true,
+    "modulus": 7,
+    "steps": 120,
+    "n_seeds": 1,
+    "parameter_accounting": {
+      "shared_core_parameters": 8896,
+      "route_a_parameters": 231,
+      "route_b_parameters": 231,
+      "shared_total_parameters": 9358,
+      "independent_total_parameters": 18254,
+      "shared_parameter_gain": 8896,
+      "shared_parameter_gain_ratio": 0.48734523939958363
+    },
+    "rows": [
+      {
+        "seed": 0,
+        "training": {
+          "final_loss": 0.033851057291030884,
+          "base_accuracy": 1.0,
+          "route_a_only_accuracy": 1.0,
+          "route_b_only_accuracy": 0.1428571492433548
+        },
+        "interventions": {
+          "base_accuracy": 1.0,
+          "route_a_only_accuracy": 1.0,
+          "route_b_only_accuracy": 0.1428571492433548,
+          "both_routes_ablated_accuracy": 0.1428571492433548,
+          "drop_when_ablate_route_a": 0.8571428507566452,
+          "drop_when_ablate_route_b": 0.0,
+          "max_single_ablation_drop": 0.8571428507566452,
+          "dual_ablation_drop": 0.8571428507566452,
+          "single_ablation_underweights": false,
+          "redundancy_certified": false
+        }
+      }
+    ],
+    "mean_base_accuracy": 1.0,
+    "mean_route_a_only_accuracy": 1.0,
+    "mean_route_b_only_accuracy": 0.1428571492433548,
+    "mean_both_routes_ablated_accuracy": 0.1428571492433548,
+    "mean_max_single_ablation_drop": 0.8571428507566452,
+    "mean_dual_ablation_drop": 0.8571428507566452,
+    "redundancy_certified_rate": 0.0,
+    "single_ablation_underweights_rate": 0.0,
+    "false_redundancy_rate": 0.0
+  },
   "training_emergence": {
     "rows": [
       {

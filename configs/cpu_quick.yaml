@@ -26,3 +26,5 @@ tiny_redundant_transformer_seeds: [0]
 tiny_redundant_transformer_steps: 120
 tiny_shared_residual_transformer_seeds: [0]
 tiny_shared_residual_transformer_steps: 120
+tiny_shared_residual_control_seeds: [0]
+tiny_shared_residual_control_steps: 120

@@ -85,6 +85,9 @@ These are useful and consistent, but their scope must stay limited:
 - the redundant tiny transformer uses architecture-explicit routes, so it tests
   the redundancy/certificate logic under learned weights but not hidden-route
   discovery in an arbitrary transformer.
+- the shared-residual decorative-route control is a learned-weight negative
+  control for false redundancy certification, not a hidden-route discovery
+  result.
 
 ## Result Consistency Checks
 
@@ -109,6 +112,8 @@ artifacts:
 - shared-residual redundant tiny transformer dual-ablation drop: `0.8565`,
   single-ablation underweight rate `1.0000`, and shared parameter gain ratio
   `0.4873`;
+- shared-residual decorative-route control live-route accuracy: `0.9984`,
+  decorative-route accuracy: `0.1429`, and false redundancy rate `0.0000`;
 - response-kernel atom-splitting output-only max distance: `0.0000`, with
   identification diameter `1.0000` and positive kernel distance once internal
   route markers are observed.

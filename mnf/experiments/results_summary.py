@@ -269,6 +269,26 @@ def summarize_research_sweeps(data: Mapping[str, Any]) -> str:
                 "",
             ])
 
+    shared_residual_control = data.get("tiny_shared_residual_control_demo")
+    if shared_residual_control is not None:
+        lines.extend([
+            "## Tiny Shared-Residual Decorative-Route Control",
+            "",
+        ])
+        if shared_residual_control.get("available"):
+            lines.extend([
+                f"Mean base accuracy: `{_fmt(shared_residual_control['mean_base_accuracy'])}`.",
+                f"Mean route-only accuracy: live route `{_fmt(shared_residual_control['mean_route_a_only_accuracy'])}`, decorative route `{_fmt(shared_residual_control['mean_route_b_only_accuracy'])}`.",
+                f"Mean max single-ablation drop: `{_fmt(shared_residual_control['mean_max_single_ablation_drop'])}`.",
+                f"False redundancy rate: `{_fmt(shared_residual_control['false_redundancy_rate'])}`.",
+                "",
+            ])
+        else:
+            lines.extend([
+                f"Skipped: `{shared_residual_control['reason']}`.",
+                "",
+            ])
+
     training = data["training_emergence"]
     lines.extend([
         "## Training Emergence",

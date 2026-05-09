@@ -297,6 +297,15 @@ point-identified by the available observations.
 - **Expected failure mode:** explicit route separation overstates the case for learned redundancy and shared-MDL reuse
 - **Current result:** the 100-seed CPU sweep has mean base accuracy `0.9994`, mean route-only accuracies `0.9994` and `0.9994`, mean both-routes-ablated accuracy `0.1429`, redundancy/single-ablation-underweight rates `1.0000`, and shared parameter gain ratio `0.4873`
 
+## Tiny shared-residual decorative-route control
+
+- **File:** `mnf/models/tiny_shared_residual.py`
+- **Mechanism:** one learned residual stream feeds one sufficient modular-addition readout route and one frozen decorative route
+- **State types:** shared final residual state plus route-specific logit heads
+- **Interventions:** evaluate full model, live route only, decorative route only, and both readout routes ablated
+- **Expected failure mode:** shared-MDL or named-route accounting falsely certifies redundancy because a second head exists
+- **Current result:** the 100-seed CPU sweep has mean base accuracy `0.9984`, live-route-only accuracy `0.9984`, decorative-route-only accuracy `0.1429`, mean max single-ablation drop `0.8555`, and false redundancy rate `0.0000`
+
 ## Developmental bootstrap
 
 - **File:** `mnf/benchmarks/interactions/developmental_bootstrap.py`
@@ -332,4 +341,4 @@ point-identified by the available observations.
 | No global chart | chart identity is gauge/context dependent |
 | Tiny learned modular transformer | input-token mechanisms are tested at embedding and final-token block sites, but not yet decomposed into attention q/k/v or MLP submodules |
 | Tiny learned redundant modular transformer | redundancy is architecture-explicit because the two learned routes are separate modules |
-| Tiny shared-residual redundant transformer | redundant readout routes are still named, though they reuse one shared residual stream |
+| Tiny shared-residual redundant transformer | redundant readout routes are still named, though they reuse one shared residual stream; the decorative-route control checks that named heads alone are not enough |
