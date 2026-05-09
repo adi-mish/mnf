@@ -19,14 +19,20 @@ Lagrangian. The current final object is the certificate-vector and atlas
 formulation:
 
 ```text
-A_D = (U, C, M, R, H, alpha, gamma, Omega, G, K)
+A_D = (U, C, M, R, H, alpha, gamma, Omega, G, K, Q)
 C(m) = (E_obs, E_int, E_inv, E_glue, E_nat,
-        E_closure, K_shared, effect, uncertainty, CI)
+        E_closure, K_shared, ID, effect, uncertainty, CI)
+K_M(i, c) = P_M(O, A_R | x, e, c, do(i))
 ```
 
 The docs now consistently treat probes, SAE latents, heads, neurons, and
 directions as atom proposals rather than mechanisms unless they pass
 intervention, invariance, naturalness, and certificate checks.
+
+Mechanism identity is also now consistently response-kernel based: a fuzzy
+atom-membership vector is a useful search coordinate, not the thing that makes a
+mechanism real. Non-identifiability is represented explicitly by
+`IdentificationSet` rather than by silently choosing one representative.
 
 The second adversarial pass also downgraded typed ecosystem gauge
 identifiability from a theorem to a conjecture/proof obligation. The cyclic
@@ -50,6 +56,7 @@ These claims are mathematically coherent under their stated assumptions:
 - context-relativity of pair labels;
 - behavior-table structural ambiguity;
 - context-gluing obstruction;
+- response-kernel atom-splitting ambiguity;
 - shared-MDL preference relative to a fixed code.
 
 The key reason these are rigorous is that they are finite constructions or
@@ -87,7 +94,11 @@ artifacts:
 - context-stability sweep changed-context rate: `0.7500`;
 - feature-baseline random false-mechanism rate: `0.6667`;
 - tiny transformer 20-seed mean accuracy: `0.9990`;
-- tiny transformer cyclic-shift consistency: about `0.9980` for both inputs.
+- tiny transformer cyclic-shift consistency: about `0.9980` for both inputs;
+- tiny transformer embedding-patch consistency: about `0.9980` for both inputs;
+- response-kernel atom-splitting output-only max distance: `0.0000`, with
+  identification diameter `1.0000` and positive kernel distance once internal
+  route markers are observed.
 
 ## Remaining Rigorous Gaps
 
@@ -97,7 +108,7 @@ The main remaining proof or evidence gaps are:
 - a mature naturalness definition beyond description length, locality, and
   invariance heuristics;
 - ecosystem gauge theory for fuzzy atom splitting, merging, and rotation;
-- approximate/noisy ecosystem identifiability for learned models;
+- approximate/noisy response-kernel identifiability for learned models;
 - real activation-intervention evidence against strong baselines such as SAE,
   ACDC, and TransformerLens workflows;
 - real-model interaction evidence for redundancy, gating, support, or capacity

@@ -173,3 +173,56 @@ def evaluate_modular_interventions(
         "a_zero_original_accuracy": a_zero_original_accuracy,
         "b_zero_original_accuracy": b_zero_original_accuracy,
     }
+
+
+def evaluate_embedding_patch_interventions(
+    model: TinyModularAdditionTransformer,
+    modulus: int = 7,
+    deltas: Sequence[int] = (1, 2, 3),
+    device: str = "cpu",
+) -> dict[str, float]:
+    torch = _require_torch()
+    from mnf.models.patching import run_with_token_activation_patch
+
+    model.eval()
+    x, _ = modular_addition_dataset(modulus=modulus, device=device)
+    with torch.no_grad():
+        base_pred = model(x).argmax(dim=-1)
+        a_consistency = []
+        b_consistency = []
+        a_effect = []
+        b_effect = []
+        for delta in deltas:
+            a_source = x.clone()
+            a_source[:, 0] = (a_source[:, 0] + delta) % modulus
+            a_logits = run_with_token_activation_patch(
+                model,
+                base_tokens=x,
+                source_tokens=a_source,
+                module_name="embedding",
+                token_positions=(0,),
+            )
+            a_pred = a_logits.argmax(dim=-1)
+            a_expected = (base_pred + delta) % modulus
+            a_consistency.append(float((a_pred == a_expected).float().mean().detach().cpu()))
+            a_effect.append(float((a_pred != base_pred).float().mean().detach().cpu()))
+
+            b_source = x.clone()
+            b_source[:, 1] = (b_source[:, 1] + delta) % modulus
+            b_logits = run_with_token_activation_patch(
+                model,
+                base_tokens=x,
+                source_tokens=b_source,
+                module_name="embedding",
+                token_positions=(1,),
+            )
+            b_pred = b_logits.argmax(dim=-1)
+            b_expected = (base_pred + delta) % modulus
+            b_consistency.append(float((b_pred == b_expected).float().mean().detach().cpu()))
+            b_effect.append(float((b_pred != base_pred).float().mean().detach().cpu()))
+    return {
+        "a_embedding_patch_consistency": float(sum(a_consistency) / len(a_consistency)),
+        "b_embedding_patch_consistency": float(sum(b_consistency) / len(b_consistency)),
+        "a_embedding_patch_effect_rate": float(sum(a_effect) / len(a_effect)),
+        "b_embedding_patch_effect_rate": float(sum(b_effect) / len(b_effect)),
+    }

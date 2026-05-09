@@ -1,6 +1,7 @@
 from mnf.certificates import (
     CertificateThresholds,
     ConfidenceInterval,
+    IdentificationSet,
     MechanismCertificate,
     certificate_report,
     pareto_frontier,
@@ -37,6 +38,24 @@ def test_threshold_report_rejects_specific_certificate_dimensions():
 
     assert report.accepted == ("good",)
     assert report.rejected["bad"] == ("intervention_error", "uncertainty", "effect")
+
+
+def test_identification_set_is_certificate_dimension():
+    ambiguous = MechanismCertificate(
+        effect=1.0,
+        identification=IdentificationSet(
+            representatives=("split", "merged"),
+            diameter=0.25,
+            reason="output_only_indistinguishable",
+        ),
+    )
+    report = certificate_report(
+        {"ambiguous": ambiguous},
+        CertificateThresholds(max_identification_diameter=0.1, min_effect=0.5),
+    )
+
+    assert "identification_diameter" in report.rejected["ambiguous"]
+    assert ambiguous.as_dict()["identification"]["is_ambiguous"] is True
 
 
 def test_lagrangian_ranking_is_explicitly_weighted():

@@ -18,6 +18,7 @@ from mnf.experiments import (
     run_feature_baseline_suite,
     run_ground_truth_recovery,
     run_ground_truth_suite,
+    run_identifiability_demo,
     run_induction_demo,
     run_interaction_suite,
     run_mechanismlab_demo,
@@ -33,6 +34,7 @@ def main() -> None:
     out = {
         "ground_truth_recovery": run_ground_truth_recovery.run(),
         "ground_truth_suite": run_ground_truth_suite.run(),
+        "identifiability_demo": run_identifiability_demo.run(),
         "induction_demo": run_induction_demo.run(),
         "interaction_suite": run_interaction_suite.run(),
         "atlas_suite": run_atlas_suite.run(),

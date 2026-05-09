@@ -15,6 +15,7 @@ class CertificateThresholds:
     max_closure_error: float = float("inf")
     max_shared_description_length: float = float("inf")
     max_uncertainty: float = float("inf")
+    max_identification_diameter: float = float("inf")
     min_effect: float = 0.0
 
     def accepts(self, certificate: MechanismCertificate) -> bool:
@@ -27,6 +28,7 @@ class CertificateThresholds:
             and certificate.closure_error <= self.max_closure_error
             and certificate.shared_description_length <= self.max_shared_description_length
             and certificate.uncertainty <= self.max_uncertainty
+            and certificate.identification.diameter <= self.max_identification_diameter
             and certificate.effect >= self.min_effect
         )
 
@@ -46,6 +48,12 @@ class CertificateThresholds:
                 "<=",
             ),
             ("uncertainty", certificate.uncertainty, self.max_uncertainty, "<="),
+            (
+                "identification_diameter",
+                certificate.identification.diameter,
+                self.max_identification_diameter,
+                "<=",
+            ),
         )
         for name, value, threshold, _ in checks:
             if value > threshold:

@@ -17,6 +17,7 @@ from mnf.experiments import (
     run_cyclic_noise_sweep,
     run_feature_baseline_suite,
     run_ground_truth_suite,
+    run_identifiability_demo,
     run_induction_demo,
     run_interaction_suite,
     run_superposition_phase,
@@ -101,6 +102,7 @@ def main() -> None:
         "cyclic_baseline_comparison": run_cyclic_baseline_comparison.run(),
         "ground_truth_suite": run_ground_truth_suite.run(),
         "induction_demo": run_induction_demo.run(seeds=tuple(config["induction_seeds"])),
+        "identifiability_demo": run_identifiability_demo.run(),
         "interaction_suite": run_interaction_suite.run(
             seeds=tuple(config["interaction_seeds"]),
             coactivations=tuple(config["coactivations"]),

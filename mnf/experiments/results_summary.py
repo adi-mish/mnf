@@ -157,11 +157,30 @@ def summarize_research_sweeps(data: Mapping[str, Any]) -> str:
     certificate = data.get("certificate_demo")
     if certificate is not None:
         report = certificate["report"]
+        faithful = report["certificates"].get("faithful_but_long", {})
+        identification = faithful.get("identification", {})
         lines.extend([
             "## Certificate Vectors",
             "",
             f"Pareto frontier indices: `{report['pareto_indices']}`.",
             f"Accepted certificates: `{report['accepted']}`.",
+        ])
+        if identification:
+            lines.append(
+                f"Example identification set: `{identification['representatives']}` with diameter `{_fmt(identification['diameter'])}`."
+            )
+        lines.append("")
+
+    identifiability = data.get("identifiability_demo")
+    if identifiability is not None:
+        atom = identifiability["atom_splitting"]
+        output_only = atom["output_only_identification"]
+        representatives = output_only["representatives"]
+        lines.extend([
+            "## Identifiability",
+            "",
+            f"Output-only atom-splitting max distance: `{_fmt(atom['output_only_max_distance'])}` with representatives `{representatives}` and ID diameter `{_fmt(output_only['diameter'])}`.",
+            f"Adding internal route markers raises max distance to `{_fmt(atom['rich_observable_max_distance'])}`.",
             "",
         ])
 
@@ -184,6 +203,7 @@ def summarize_research_sweeps(data: Mapping[str, Any]) -> str:
             lines.extend([
                 f"Mean final modular-addition accuracy: `{_fmt(tiny['mean_final_accuracy'])}`.",
                 f"Mean cyclic-shift consistency: input-a `{_fmt(tiny['mean_a_cyclic_shift_consistency'])}`, input-b `{_fmt(tiny['mean_b_cyclic_shift_consistency'])}`.",
+                f"Mean embedding-patch consistency: input-a `{_fmt(tiny['mean_a_embedding_patch_consistency'])}`, input-b `{_fmt(tiny['mean_b_embedding_patch_consistency'])}`.",
                 "",
             ])
         else:

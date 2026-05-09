@@ -1229,6 +1229,36 @@
     "mean_memorizer_test_accuracy": 0.05437500000000001,
     "mean_copy_test_accuracy": 1.0
   },
+  "identifiability_demo": {
+    "atom_splitting": {
+      "output_only_max_distance": 0.0,
+      "output_only_identification": {
+        "representatives": [
+          "split_routes",
+          "merged_route"
+        ],
+        "diameter": 1.0,
+        "reason": "response_kernel_indistinguishable",
+        "distinguishable_by": [
+          "route_internal_markers"
+        ],
+        "indistinguishable_under": [
+          "output_only",
+          "route_ablation"
+        ],
+        "metadata": {
+          "distances": {
+            "split_routes": 0.0,
+            "merged_route": 0.0
+          }
+        },
+        "is_point_identified": false,
+        "is_ambiguous": true
+      },
+      "rich_observable_max_distance": 1.0,
+      "rich_observables_distinguish": true
+    }
+  },
   "interaction_suite": {
     "redundant_paths": {
       "y00": 0.0,
@@ -5231,6 +5261,7 @@
           "intervention_error",
           "glue_error",
           "uncertainty",
+          "identification_diameter",
           "effect"
         ]
       },
@@ -5245,7 +5276,20 @@
           "shared_description_length": 1.0,
           "effect": 0.45,
           "uncertainty": 0.04,
-          "confidence_intervals": {}
+          "identification_diameter": 0.0,
+          "confidence_intervals": {},
+          "identification": {
+            "representatives": [
+              "compact_factor"
+            ],
+            "diameter": 0.0,
+            "reason": "point_identified",
+            "distinguishable_by": [],
+            "indistinguishable_under": [],
+            "metadata": {},
+            "is_point_identified": true,
+            "is_ambiguous": false
+          }
         },
         "faithful_but_long": {
           "obs_error": 0.0,
@@ -5257,7 +5301,25 @@
           "shared_description_length": 4.0,
           "effect": 0.45,
           "uncertainty": 0.02,
-          "confidence_intervals": {}
+          "identification_diameter": 0.03,
+          "confidence_intervals": {},
+          "identification": {
+            "representatives": [
+              "faithful_route_a",
+              "faithful_route_b"
+            ],
+            "diameter": 0.03,
+            "reason": "atom_split_indistinguishable_under_output_only",
+            "distinguishable_by": [
+              "internal_route_marker"
+            ],
+            "indistinguishable_under": [
+              "output_only_interventions"
+            ],
+            "metadata": {},
+            "is_point_identified": false,
+            "is_ambiguous": true
+          }
         },
         "dominated": {
           "obs_error": 0.0,
@@ -5269,7 +5331,22 @@
           "shared_description_length": 5.0,
           "effect": 0.1,
           "uncertainty": 0.2,
-          "confidence_intervals": {}
+          "identification_diameter": 0.5,
+          "confidence_intervals": {},
+          "identification": {
+            "representatives": [
+              "dominated_a",
+              "dominated_b",
+              "dominated_c"
+            ],
+            "diameter": 0.5,
+            "reason": "too_broad_identification_set",
+            "distinguishable_by": [],
+            "indistinguishable_under": [],
+            "metadata": {},
+            "is_point_identified": false,
+            "is_ambiguous": true
+          }
         }
       }
     },
@@ -5460,6 +5537,12 @@
           "b_cyclic_shift_consistency": 1.0,
           "a_zero_original_accuracy": 0.1428571492433548,
           "b_zero_original_accuracy": 0.1428571492433548
+        },
+        "activation_patching": {
+          "a_embedding_patch_consistency": 1.0,
+          "b_embedding_patch_consistency": 1.0,
+          "a_embedding_patch_effect_rate": 1.0,
+          "b_embedding_patch_effect_rate": 1.0
         }
       },
       {
@@ -5498,6 +5581,12 @@
           "b_cyclic_shift_consistency": 1.0,
           "a_zero_original_accuracy": 0.1428571492433548,
           "b_zero_original_accuracy": 0.1428571492433548
+        },
+        "activation_patching": {
+          "a_embedding_patch_consistency": 1.0,
+          "b_embedding_patch_consistency": 1.0,
+          "a_embedding_patch_effect_rate": 1.0,
+          "b_embedding_patch_effect_rate": 1.0
         }
       },
       {
@@ -5536,12 +5625,20 @@
           "b_cyclic_shift_consistency": 1.0,
           "a_zero_original_accuracy": 0.1428571492433548,
           "b_zero_original_accuracy": 0.1428571492433548
+        },
+        "activation_patching": {
+          "a_embedding_patch_consistency": 1.0,
+          "b_embedding_patch_consistency": 1.0,
+          "a_embedding_patch_effect_rate": 1.0,
+          "b_embedding_patch_effect_rate": 1.0
         }
       }
     ],
     "mean_final_accuracy": 1.0,
     "mean_a_cyclic_shift_consistency": 1.0,
-    "mean_b_cyclic_shift_consistency": 1.0
+    "mean_b_cyclic_shift_consistency": 1.0,
+    "mean_a_embedding_patch_consistency": 1.0,
+    "mean_b_embedding_patch_consistency": 1.0
   },
   "training_emergence": {
     "rows": [

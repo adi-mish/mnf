@@ -5,7 +5,20 @@ For a proof-oriented version of the definitions and theorem candidates, see
 
 ## 1. Object of study
 
-Fix a model `M`, data distribution `P_X`, behavior family `B`, intervention family `I`, and error tolerance `epsilon`.  A mechanistic explanation is domain-relative.  There is no context-free, unique explanation of an entire neural network.
+Fix a model `M`, data distribution `P_X`, behavior family `B`, intervention
+family `I`, observable family `O`, context family `C`, and error tolerance
+`epsilon`. A mechanistic explanation is domain-relative. There is no
+context-free, unique explanation of an entire neural network.
+
+The PLAN4 refinement makes the object explicit: the model induces an
+interventional response kernel
+
+```text
+K_M(i, c) = P_M(O, A_R | x, e, c, do(i)).
+```
+
+Mechanistic interpretability is then the recovery of a minimal natural
+factorization of this kernel, not merely a list of neurons, features, or heads.
 
 A mechanistic explanation is a tuple:
 
@@ -20,7 +33,9 @@ where:
 - `gamma` maps high-level states/interventions back into model activation space.
 - `Omega` maps model interventions to high-level interventions or vice versa.
 
-The explanation is accepted only when it has low observation error, low intervention error, low invariance error, and low description length.
+The explanation is accepted only when it has low observation error, low
+intervention error, low invariance error, low description length, and an
+explicit account of non-identifiability under the available interventions.
 
 ## 2. Mechanistic commutation
 
@@ -118,24 +133,28 @@ The remedy is not only larger flat SAEs.  The remedy is structured dictionaries 
 ## 9. Mechanism ecologies
 
 Interactive MNF upgrades MNF from isolated explanations to mechanism
-ecologies. The PLAN3 version tightens this again into an interventional
-mechanism atlas. The target object is not an isolated circuit but an ecosystem:
+ecologies. The PLAN4 version tightens this again into an interventional
+response-kernel atlas. The target object is not an isolated circuit but an
+ecosystem:
 
 ```text
 E_D = (A*, M, R, H_E, alpha, gamma, Omega)
 ```
 
-where `A*` is a typed atom library, `M` is a set of fuzzy mechanisms, and `R`
-is the interaction structure between mechanisms. A mechanism has soft atom
-membership:
+where `A*` is a typed atom library, `M` is a set of mechanisms, and `R` is the
+interaction structure between mechanisms. A mechanism is an intervention-stable
+factor of the response kernel. It may be represented during search with soft
+atom membership:
 
 ```text
 pi_m in [0, 1]^|A*|
 ```
 
-so an atom can partially participate in several mechanisms. Shared description
-length pays for reused atoms once, which lets the theory prefer reusable
-variables when they really reduce total intervention-predictive complexity.
+so an atom can partially participate in several mechanisms. This membership
+vector is an implementation coordinate, not the identity criterion for the
+mechanism. Shared description length pays for reused atoms once, which lets the
+theory prefer reusable variables when they really reduce total
+intervention-predictive complexity.
 
 Interactions are first-class:
 
@@ -151,17 +170,19 @@ Interactions are first-class:
 The repo implements these ideas in `mnf/mechanisms`, `mnf/interactions`, and
 `mnf/benchmarks/interactions`.
 
-The atlas version adds context-indexed charts and gauges:
+The atlas version adds context-indexed charts, gauges, and identification
+certificates:
 
 ```text
-A_D = (U, C, M, R, H, alpha, gamma, Omega, G, K)
+A_D = (U, C, M, R, H, alpha, gamma, Omega, G, K, Q)
 ```
 
-where `C` is a chart/context cover and `G` is the allowed gauge structure. On
-chart overlap, gluing error measures whether two local explanations agree up to
-an allowed transformation. `mnf/atlas` implements this metric, and the
-no-global-chart benchmark shows a case where context-indexed gluing has zero
-error but every single global gauge has nonzero error.
+where `C` is a chart/context cover, `G` is the allowed gauge structure, and `Q`
+is the uncertainty and identification certificate. On chart overlap, gluing
+error measures whether two local explanations agree up to an allowed
+transformation. `mnf/atlas` implements this metric, and the no-global-chart
+benchmark shows a case where context-indexed gluing has zero error but every
+single global gauge has nonzero error.
 
 The practical intervention engine uses pairwise factorial designs first. For
 `K` mechanisms, full factorial recovery costs `2^K` states, while the pairwise
@@ -208,8 +229,16 @@ forcing a label when margins are too small.
 Mechanisticity is also better treated as a certificate vector than as one final
 scalar. `mnf/certificates` tracks observation error, intervention error,
 invariance error, glue error, naturalness cost, closure error, shared
-description length, effect, and uncertainty. Scalar Lagrangians remain useful
-for search, but final claims should report thresholds or Pareto fronts.
+description length, effect, uncertainty, and identification diameter. Scalar
+Lagrangians remain useful for search, but final claims should report thresholds
+or Pareto fronts.
+
+`mnf/semantics` provides finite response-kernel utilities. The current
+identifiability witness shows that an output-only intervention algebra can make
+a split redundant route and a merged abstract route indistinguishable, while a
+richer observable set with internal route markers separates them. This is the
+right failure mode: the system should report an identification set rather than
+force a false canonical mechanism.
 
 ## 10. Circuits as minimal causal subprograms
 
@@ -258,8 +287,10 @@ MNF is in trouble if:
 - hierarchical dictionaries do not reduce absorption;
 - transition atoms do not improve MLP-heavy explanations;
 - mechanism-progress metrics do not precede behavioral emergence;
+- response-kernel alternatives with identical available observations are
+  reported as point-identified;
 - factorial interventions do not improve on single-ablation mechanism tests;
 - shared-MDL accounting does not predict reusable atoms better than independent
-  circuit descriptions.
+  circuit descriptions;
 - behavior-only structural labels cannot be improved by internal evidence;
 - atlas gluing adds complexity without improving intervention prediction.

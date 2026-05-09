@@ -4,7 +4,12 @@ from collections.abc import Sequence
 
 import numpy as np
 
-from mnf.models import evaluate_modular_interventions, torch_available, train_tiny_modular_addition
+from mnf.models import (
+    evaluate_embedding_patch_interventions,
+    evaluate_modular_interventions,
+    torch_available,
+    train_tiny_modular_addition,
+)
 
 
 def run(
@@ -19,11 +24,13 @@ def run(
     for seed in seeds:
         model, training = train_tiny_modular_addition(modulus=modulus, steps=steps, seed=seed)
         interventions = evaluate_modular_interventions(model, modulus=modulus)
+        activation_patching = evaluate_embedding_patch_interventions(model, modulus=modulus)
         rows.append(
             {
                 "seed": seed,
                 "training": training.as_dict(),
                 "interventions": interventions,
+                "activation_patching": activation_patching,
             }
         )
 
@@ -39,5 +46,11 @@ def run(
         ),
         "mean_b_cyclic_shift_consistency": float(
             np.mean([row["interventions"]["b_cyclic_shift_consistency"] for row in rows])
+        ),
+        "mean_a_embedding_patch_consistency": float(
+            np.mean([row["activation_patching"]["a_embedding_patch_consistency"] for row in rows])
+        ),
+        "mean_b_embedding_patch_consistency": float(
+            np.mean([row["activation_patching"]["b_embedding_patch_consistency"] for row in rows])
         ),
     }

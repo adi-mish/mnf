@@ -3,6 +3,8 @@ from __future__ import annotations
 from collections.abc import Mapping
 from dataclasses import dataclass, field
 
+from mnf.certificates.identification import IdentificationSet, point_identified
+
 
 _COST_FIELDS = (
     "obs_error",
@@ -13,6 +15,7 @@ _COST_FIELDS = (
     "closure_error",
     "shared_description_length",
     "uncertainty",
+    "identification_diameter",
 )
 
 
@@ -54,12 +57,17 @@ class MechanismCertificate:
     shared_description_length: float = 0.0
     effect: float = 0.0
     uncertainty: float = 0.0
+    identification: IdentificationSet = field(default_factory=point_identified)
     confidence_intervals: Mapping[str, ConfidenceInterval] = field(default_factory=dict)
 
     def __post_init__(self) -> None:
         for name, value in self.as_dict(include_intervals=False).items():
             if value < 0:
                 raise ValueError(f"{name} must be nonnegative")
+
+    @property
+    def identification_diameter(self) -> float:
+        return float(self.identification.diameter)
 
     def as_dict(self, include_intervals: bool = True) -> dict[str, object]:
         out: dict[str, object] = {
@@ -72,12 +80,14 @@ class MechanismCertificate:
             "shared_description_length": float(self.shared_description_length),
             "effect": float(self.effect),
             "uncertainty": float(self.uncertainty),
+            "identification_diameter": float(self.identification.diameter),
         }
         if include_intervals:
             out["confidence_intervals"] = {
                 name: interval.as_dict()
                 for name, interval in self.confidence_intervals.items()
             }
+            out["identification"] = self.identification.as_dict()
         return out
 
     def cost_vector(self) -> dict[str, float]:

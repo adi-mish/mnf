@@ -24,6 +24,8 @@ This scaffold was designed around the following research directions:
   https://openai.com/index/extracting-concepts-from-gpt-4/
 - SAEBench benchmark suite:
   https://arxiv.org/abs/2503.09532
+- SynthSAEBench synthetic SAE benchmark:
+  https://arxiv.org/abs/2602.14687
 - Sparse autoencoders on randomly initialized transformers:
   https://arxiv.org/abs/2501.17727
 - Sparse autoencoders do not find canonical units:

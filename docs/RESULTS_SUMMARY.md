@@ -59,6 +59,12 @@ Best global glue error: `0.2500` versus context-indexed glue error `0.0000`.
 
 Pareto frontier indices: `[0, 1]`.
 Accepted certificates: `['compact_but_weak', 'faithful_but_long']`.
+Example identification set: `['faithful_route_a', 'faithful_route_b']` with diameter `0.0300`.
+
+## Identifiability
+
+Output-only atom-splitting max distance: `0.0000` with representatives `['split_routes', 'merged_route']` and ID diameter `1.0000`.
+Adding internal route markers raises max distance to `1.0000`.
 
 ## Transition Atoms
 
@@ -68,6 +74,7 @@ Best MOLT/global MSE ratio: `0.0001` at gate separation `4.0` and noise `0.0`.
 
 Mean final modular-addition accuracy: `1.0000`.
 Mean cyclic-shift consistency: input-a `1.0000`, input-b `1.0000`.
+Mean embedding-patch consistency: input-a `1.0000`, input-b `1.0000`.
 
 ## Training Emergence
 

@@ -1,16 +1,34 @@
 # Interventional mechanism atlases
 
-PLAN3 tightens iMNF into an atlas theory. A final explanation is not a single
-global circuit; it is a context-indexed family of typed causal charts with
-explicit gauges, gluing errors, certificate vectors, and structural-interaction
-evidence.
+PLAN4 tightens iMNF into a response-kernel atlas theory. A final explanation is
+not a single global circuit; it is a context-indexed family of typed causal
+charts with explicit gauges, gluing errors, identification sets, certificate
+vectors, and structural-interaction evidence.
+
+The current target can be read as:
+
+```text
+Mechanistic interpretability is recovery of a minimal natural factorization
+of a model's interventional response kernel.
+```
+
+For fixed inputs, environments, contexts, interventions, and observables, the
+model induces a finite or sampled response kernel:
+
+```text
+K_M(i, c) = P_M(O, A_R | x, e, c, do(i)).
+```
+
+A mechanism claim is accepted only insofar as its high-level atlas predicts this
+kernel under the available interventions and reports which alternative
+factorizations remain indistinguishable.
 
 ## Core Object
 
 For a domain `D`, an atlas is:
 
 ```text
-A_D = (U, C, M, R, H, alpha, gamma, Omega, G, K)
+A_D = (U, C, M, R, H, alpha, gamma, Omega, G, K, Q)
 ```
 
 where:
@@ -22,7 +40,8 @@ where:
 - `H` is the executable high-level causal ecosystem;
 - `alpha`, `gamma`, and `Omega` implement reads, writes, and intervention maps;
 - `G` is the gauge/equivalence structure;
-- `K` is the shared description-length code.
+- `K` is the shared description-length code;
+- `Q` is the uncertainty and identification certificate.
 
 The local acceptance condition is intervention commutation:
 
@@ -46,6 +65,7 @@ C(m) = (
   E_nat,
   E_closure,
   K_shared,
+  ID,
   U,
   CI
 )
@@ -53,7 +73,15 @@ C(m) = (
 
 `mnf/certificates` implements this as `MechanismCertificate`, with Pareto
 frontier and threshold-report utilities. Lower error/cost/uncertainty is better;
-larger effect is better. A scalar Lagrangian is explicit and weighted.
+larger effect is better. `ID` is an `IdentificationSet`: the set of alternative
+representatives that the current intervention/observable algebra cannot
+distinguish. A scalar Lagrangian is explicit and weighted.
+
+`mnf/semantics` implements finite response kernels and kernel-distance helpers.
+`mnf/benchmarks/identifiability.py` includes a deliberately small
+atom-splitting ambiguity: output-only observations cannot distinguish a split
+redundant route from a merged route, while adding internal route markers makes
+the alternatives distinguishable.
 
 ## Gluing
 
@@ -85,10 +113,19 @@ structural_label = ambiguous_without_internal_evidence
 `mnf/benchmarks/interactions/table_aliasing.py` then adds internal evidence that
 orients a directed gate while leaving behavior-only evidence ambiguous.
 
+## Mechanism Identity
+
+Mechanisms are not identical to fuzzy membership vectors. A mechanism is an
+intervention-stable response factor, considered up to the gauge and
+non-identifiability structure of the chosen domain. Fuzzy atom membership is a
+useful implementation coordinate for search, packing, and shared-MDL accounting,
+but final claims should be about response-kernel behavior plus a certificate.
+
 ## Current Boundary
 
 The CPU-local repo now tests the atlas/certificate machinery on synthetic
-systems and includes one learned-weight tiny transformer smoke test for modular
-addition. It does not yet prove that the same machinery recovers mechanisms from
-external pretrained transformer activations. That remains the next substantive
-step before broad real-model claims.
+systems, explicitly reports one response-kernel non-identifiability witness, and
+includes one learned-weight tiny transformer smoke test for modular addition
+with embedding-level activation patching. It does not yet prove that the same
+machinery recovers mechanisms from external pretrained transformer activations.
+That remains the next substantive step before broad real-model claims.

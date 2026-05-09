@@ -4,6 +4,10 @@ These cards document the current CPU-only synthetic benchmark suite. Each
 benchmark is designed to distinguish labelability from intervention-predictive
 mechanism recovery.
 
+PLAN4 adds a stricter metadata requirement: benchmark cards should expose known
+non-identifiabilities instead of implying that every ground-truth factor is
+point-identified by the available observations.
+
 ## Scalar chain
 
 - **File:** `mnf/benchmarks/synthetic.py`
@@ -238,6 +242,16 @@ mechanism recovery.
 - **Expected failure mode:** behavior-only interaction labels are mistaken for structural labels
 - **Current result:** behavior-only evidence reports `ambiguous_without_internal_evidence`; internal evidence orients the directed gate as `m_to_n`
 
+## Atom-splitting identifiability
+
+- **File:** `mnf/benchmarks/identifiability.py`
+- **Mechanism:** a split redundant route and a merged abstract route induce the same output-only response kernel
+- **State types:** binary route states plus optional internal route markers
+- **Interventions:** ablate route labels singly and jointly; compare output-only versus marker-augmented observables
+- **Known non-identifiability:** output-only evidence cannot distinguish `split_routes` from `merged_route`
+- **Expected failure mode:** a mechanism finder reports a point estimate instead of an identification set
+- **Current result:** output-only max kernel distance is `0.0` with identification diameter `1.0`; adding route markers gives positive max distance and distinguishes the representatives
+
 ## No global chart
 
 - **File:** `mnf/benchmarks/atlas/no_global_chart.py`
@@ -261,9 +275,9 @@ mechanism recovery.
 - **File:** `mnf/models/tiny_transformer.py`
 - **Mechanism:** a one-layer CPU transformer learns modular addition over `C_7`
 - **State types:** token states with cyclic counterfactual shifts
-- **Interventions:** shift either input token modulo `7` and check output rotation consistency
+- **Interventions:** shift either input token modulo `7`; patch source-token embedding activations into the base run and check output rotation consistency
 - **Expected failure mode:** synthetic executable benchmarks do not exercise learned weights
-- **Current result:** the CPU smoke reaches perfect modular-addition accuracy in the current environment and has near-perfect cyclic-shift consistency for both inputs
+- **Current result:** the CPU smoke reaches perfect modular-addition accuracy in the current environment and has near-perfect cyclic-shift and embedding-patch consistency for both inputs
 
 ## Developmental bootstrap
 
@@ -282,3 +296,20 @@ mechanism recovery.
 - **Interventions:** coupled competition dynamics
 - **Expected failure mode:** static circuit snapshots miss training-time suppression
 - **Current result:** the suppressed mechanism loses strength as the winner grows
+
+## Known Non-Identifiability Index
+
+| Benchmark family | Known non-identifiability or gauge |
+| --- | --- |
+| Cyclic weekday / modular addition | cyclic origin is arbitrary; orientation is identifiable only if the intervention generator is oriented |
+| Relational lookup | categorical subject/relation/object labels are identifiable up to label permutation unless anchored by names |
+| Sparse superposition | feature dictionaries are gauge-dependent under rotations that preserve sparse recovery quality |
+| Hierarchical absorption | parent and child mass can be redistributed in flat sparse codes without hierarchy constraints |
+| Redundant paths | single ablations cannot distinguish two redundant routes from one sufficient route |
+| Gating interaction | marginal tests can confound gate strength with worker prevalence |
+| Interaction phase diagram | redundancy/synergy labels vary continuously with mixture weights and thresholds |
+| Context-stability recovery | pair labels depend on the background context |
+| Table aliasing | output table cannot orient a directed gate without internal evidence |
+| Atom-splitting identifiability | output-only response kernel cannot distinguish split versus merged redundant routes |
+| No global chart | chart identity is gauge/context dependent |
+| Tiny learned modular transformer | input-token mechanisms are only tested at embedding-output patch sites, not localized inside attention/MLP submodules |

@@ -1,15 +1,16 @@
 # Mechanistic Normal Forms
 
-A tested research scaffold for **Mechanistic Normal Forms (MNF)**: a theory and prototype codebase for treating mechanistic interpretability as constrained causal program induction.
+A tested research scaffold for **Mechanistic Normal Forms (MNF)**: a theory and prototype codebase for treating mechanistic interpretability as constrained causal program induction and response-kernel factorization.
 
-The central claim is that a mechanistic explanation is not a neuron list, SAE latent list, or probe direction.  It is an executable, low-description-length, intervention-faithful, typed causal program whose interventions commute with the original model over a specified domain.
+The central claim is that a mechanistic explanation is not a neuron list, SAE latent list, or probe direction.  It is an executable, low-description-length, intervention-faithful, typed causal program whose interventions commute with the original model over a specified domain and whose remaining non-identifiability is explicitly reported.
 
 ## What is included
 
 - `mnf/core`: typed state spaces, interventions, causal programs, MNF scoring, MDL proxies, graph metrics.
-- `mnf/mechanisms`: fuzzy mechanisms, mechanism-strength interventions, shared atom accounting, and ecosystem-level shared MDL.
+- `mnf/mechanisms`: mechanism proposals, soft atom-membership coordinates, mechanism-strength interventions, shared atom accounting, and ecosystem-level shared MDL.
 - `mnf/interactions`: pairwise factorial effects, redundancy/gating/synergy metrics, capacity competition, support, gradient coupling, Shapley allocation, and coupled dynamics.
-- `mnf/certificates`: certificate vectors, Pareto ordering, thresholds, and report helpers for mechanism claims.
+- `mnf/semantics`: finite interventional response-kernel tables, kernel distances, naturalness profiles, equivalence checks, and identification-set construction.
+- `mnf/certificates`: certificate vectors, identification sets, Pareto ordering, thresholds, and report helpers for mechanism claims.
 - `mnf/atlas`: context-indexed chart and gauge/gluing utilities for interventional mechanism atlases.
 - `mnf/charts`: simple linear charts, cyclic typed charts, hierarchical feature absorption utilities, MOLT-like transition atoms, and a tiny optional PyTorch TopK SAE.
 - `mnf/models`: optional tiny CPU transformer components for learned-mechanism smoke tests.
@@ -19,7 +20,7 @@ The central claim is that a mechanistic explanation is not a neuron list, SAE la
 - `mnf/experiments`: runnable demos and CPU-only phase sweeps for the benchmark families.
 - `tests`: passing tests that exercise all core components, including slow CPU smoke tests.
 - `docs/THEORY.md`: detailed theory.
-- `docs/INTERVENTIONAL_ATLASES.md`: iMNF-2 atlas, certificate-vector, gauge/gluing, and structural-interaction formulation.
+- `docs/INTERVENTIONAL_ATLASES.md`: iMNF/IMA response-kernel atlas, certificate-vector, identification-set, gauge/gluing, and structural-interaction formulation.
 - `docs/FORMAL_THEORY.md`: theorem candidates and proof sketches connected to benchmarks.
 - `docs/INTERACTION_CALCULUS.md`: executable iMNF interaction metrics, intervention designs, uncertainty, and recovery metrics.
 - `docs/THEOREMS.md`: proof-obligation package for the iMNF claims and their benchmark witnesses.
@@ -54,15 +55,16 @@ This is not a complete LLM interpretability pipeline.  It does not download larg
 
 ## Design principle
 
-Every explanatory object must answer four questions:
+Every explanatory object must answer five questions:
 
 1. What state space does it live in?
 2. How is it read from activations?
 3. How is it intervened on in activation space?
 4. What downstream causal role does it play?
+5. Which alternatives remain indistinguishable under the current interventions?
 
 If it cannot answer those questions, it may be decodable, but it is not yet mechanistic.
 
-The iMNF extension adds a fifth question: how does this mechanism interact with
+The iMNF extension adds a sixth question: how does this mechanism interact with
 other mechanisms through redundancy, gating, support, shared atoms, capacity
 competition, or training-time coupling?

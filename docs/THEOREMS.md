@@ -20,7 +20,16 @@ https://www.jmlr.org/papers/v26/23-0058.html
 
 The iMNF addition is that intervention fit alone is not enough. The abstraction
 must also be low-description-length, typed, natural, invariant, and explicit
-about mechanism interactions.
+about mechanism interactions and non-identifiability. The PLAN4 target is a
+minimal natural factorization of the interventional response kernel:
+
+```text
+K_M(i, c) = P_M(O, A_R | x, e, c, do(i)).
+```
+
+Mechanism claims are therefore made up to an `IdentificationSet`: alternative
+natural factorizations that cannot be separated by the current interventions
+and observables.
 
 The benchmark strategy should lean on three external facts:
 
@@ -347,6 +356,42 @@ with zero context-indexed glue error.
 **Paper role.** This is the minimal atlas theorem: a single global feature
 dictionary can be strictly worse than a chart cover with explicit gluing.
 
+## Proposition E6: response-kernel atom-splitting ambiguity
+
+**Claim.** A response kernel over insufficient observables can fail to identify
+whether a behavior is implemented by split redundant routes or by one merged
+abstract route.
+
+**Construction.** Compare two candidate explanations under output-only
+observations:
+
+```text
+E_split:  route_a OR route_b
+E_merged: abstract_route
+```
+
+with the intervention table:
+
+```text
+none -> 1
+ablate_route_a -> 1
+ablate_route_b -> 1
+ablate_both -> 0
+```
+
+Both explanations induce the same output kernel. A richer observable set with
+route-internal markers distinguishes them because single-route ablations change
+the corresponding marker in `E_split`.
+
+**Repo status.** `mnf/semantics` implements finite response kernels, and
+`mnf/benchmarks/identifiability.py` reports the ambiguity as an
+`IdentificationSet` with positive diameter.
+
+**Paper role.** This is the smallest proof obligation for PLAN4's
+non-identifiability term: when the intervention/observable algebra is too weak,
+the theory must report a set of indistinguishable explanations rather than
+choose a false canonical one.
+
 ## Theorem F: shared-MDL atom reuse
 
 **Claim.** If two mechanisms can either duplicate an atom or share it, shared
@@ -417,7 +462,8 @@ The CPU-local theory now has a coherent theorem package and executable
 witnesses for the main new claims: redundancy, gating, pairwise recovery,
 higher-order contrasts, approximate contrast stability, active repeated
 intervention design, behavior-table structural ambiguity, context-gluing
-obstruction, shared MDL, and capacity competition.
+obstruction, response-kernel atom-splitting ambiguity, shared MDL, and capacity
+competition.
 
 The adversarial review in `docs/ADVERSARIAL_REVIEW.md` identifies the main
 remaining attack surfaces: context-dependent pair labels, additive-label

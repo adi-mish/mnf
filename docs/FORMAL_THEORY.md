@@ -9,12 +9,13 @@ enough that they can be proved, falsified, or turned into benchmark tests.
 Fix a domain
 
 ```text
-D = (P_X, B, I_L, E, epsilon)
+D = (P_X, B, I_L, C, O, E, epsilon)
 ```
 
 where `P_X` is an input distribution, `B` is a behavior or metric family, `I_L`
-is a family of low-level interventions, `E` is a set of environments, and
-`epsilon` is the allowed error tolerance.
+is a family of low-level interventions, `C` is a set of contexts, `O` is a set
+of observables, `E` is a set of environments, and `epsilon` is the allowed error
+tolerance.
 
 A low-level model is a deterministic or stochastic map
 
@@ -46,6 +47,28 @@ alpha(M^i(x)) ~= H^Omega(i)(alpha(M(x)))
 
 for `x ~ P_X` and `i in I_L`.
 
+The PLAN4 object is the model's interventional response kernel:
+
+```text
+K_M(i, c) = P_M(O, A_R | x, e, c, do(i)).
+```
+
+For finite benchmarks this is a table over interventions, contexts, and
+observables. For learned models it is an empirical distribution estimated from
+samples. A high-level explanation induces its own kernel `K_H`. Mechanistic
+faithfulness is therefore not only a pointwise output claim; it is low distance
+between `K_M` and `K_H` under the domain's observable/intervention algebra.
+
+Final claims are accepted up to an identification set:
+
+```text
+ID(E) = {E' in N : d(K_E, K_E') <= epsilon}
+```
+
+where `N` is the chosen naturalness class. If `ID(E)` has multiple separated
+representatives, the claim is non-identifiable under the current evidence and
+must be reported that way.
+
 ## 2. MNF objective
 
 An explanation is evaluated by
@@ -55,6 +78,7 @@ L_MNF =
   E_obs
   + lambda E_int
   + mu E_inv
+  + eta diam(ID)
   + beta K(MNF)
   + rho E_unnatural
 ```
@@ -64,6 +88,7 @@ where:
 - `E_obs` is behavior prediction error.
 - `E_int` is intervention prediction error.
 - `E_inv` is cross-environment invariance failure.
+- `diam(ID)` is the diameter of the current identification set.
 - `K(MNF)` is description length.
 - `E_unnatural` penalizes nonlocal reads, high-capacity alignments, memorizing
   maps, missing intervention semantics, and brittle prompt- or environment-
@@ -344,17 +369,19 @@ upgrades this to an ecosystem:
 iMNF = (A*, M, R, H_E, alpha, gamma, Omega)
 ```
 
-where `A*` is a typed atom library, `M = {m_1, ..., m_k}` is a set of fuzzy
-mechanisms, and `R` is the mechanism interaction structure. A fuzzy mechanism
-has a soft atom-membership vector
+where `A*` is a typed atom library, `M = {m_1, ..., m_k}` is a set of
+intervention-stable response factors, and `R` is the mechanism interaction
+structure. A mechanism may be parameterized during search by a soft
+atom-membership vector
 
 ```text
 pi_m in [0, 1]^|A*|
 ```
 
 plus an executable role, an intervention family, an operating domain, and a
-graded certificate. Older mechanism-scoring helpers in `mnf/mechanisms` use a
-scalar search score:
+graded certificate. The vector is not the mechanism's identity; it is one chart
+for proposing and compressing response factors. Older mechanism-scoring helpers
+in `mnf/mechanisms` use a scalar search score:
 
 ```text
 Mech(m) =
@@ -369,7 +396,7 @@ therefore evaluates final mechanism claims with certificate vectors:
 ```text
 C(m) =
   (E_obs, E_int, E_inv, E_glue, E_nat,
-   E_closure, K_shared, effect, uncertainty, CI).
+   E_closure, K_shared, ID, effect, uncertainty, CI).
 ```
 
 `mnf/certificates` implements threshold and Pareto-front reporting over these
@@ -377,6 +404,10 @@ components. A feature can be labelable but unused, causal but brittle, useful
 but unnatural, or compact and intervention-faithful; these cases should remain
 visible as different certificate dimensions rather than being hidden by one
 weighted number.
+
+`mnf/semantics` implements finite response-kernel tables and distances.
+`mnf/certificates.identification` implements the identification-set record used
+by the certificate vector.
 
 The ecosystem description length pays for shared atoms once:
 
@@ -601,7 +632,37 @@ flip on `B`, giving zero gluing error.
 **Benchmark link.** `mnf/benchmarks/atlas/no_global_chart.py` reports nonzero
 best-global gluing error and zero context-indexed gluing error.
 
-### Theorem 17: shared-MDL preference for reusable atoms
+### Proposition 17: response-kernel atom-splitting non-identifiability
+
+**Setup.** Two candidate explanations induce response kernels over the same
+output-only intervention algebra. Explanation `E_split` has two redundant
+routes, while `E_merged` has one abstract route. The available interventions
+ablate route labels but the observable set contains only the final output.
+
+**Claim.** If both single route ablations leave the output unchanged and dual
+ablation removes the behavior, the output-only response kernels are identical.
+Therefore the split and merged explanations are not distinguishable under that
+observable/intervention algebra. Adding internal route-marker observables can
+separate them.
+
+**Proof sketch.** The output table for both explanations is:
+
+```text
+none -> 1
+ablate_route_a -> 1
+ablate_route_b -> 1
+ablate_both -> 0
+```
+
+Every output-only kernel entry is therefore equal. Any estimator that only sees
+that kernel must assign the same evidence to both representatives. Internal
+route observables add entries whose values differ under single-route ablations,
+so the richer kernels have positive distance.
+
+**Benchmark link.** `mnf/benchmarks/identifiability.py` constructs this exact
+witness and reports a nontrivial `IdentificationSet` for output-only evidence.
+
+### Theorem 18: shared-MDL preference for reusable atoms
 
 **Setup.** Two mechanisms can either duplicate a typed atom or share it.
 
@@ -621,7 +682,7 @@ description lengths. The implementation uses `MechanismEcosystem` to compute
 **Benchmark link.** `mnf/benchmarks/interactions/shared_atom_reuse.py` gives a
 toy route atom reused by two lookup mechanisms.
 
-### Proposition 18: developmental bootstrapping
+### Proposition 19: developmental bootstrapping
 
 **Setup.** Mechanism strengths follow:
 
@@ -658,6 +719,7 @@ signals are insufficient:
 - Marginal interventions can miss gates.
 - Behavior-level factorial tables can be structurally ambiguous.
 - Single global charts can fail where context-indexed atlases glue cleanly.
+- Output-only response kernels can leave atom splitting non-identifiable.
 - Independent MDL can miss reusable shared atoms.
 - Mechanisms can support, suppress, or compete with each other during training.
 
@@ -668,8 +730,8 @@ The theory is not complete. The largest missing pieces are:
 1. A mature definition of naturalness beyond simple description-length and
    invariance penalties.
 2. Approximate ecosystem-level versions of the theorems for noisy learned models.
-3. A proof that MNF-style scores are identifiable under realistic intervention
-   families.
+3. Approximate response-kernel identification theory under realistic
+   intervention families.
 4. Real-model evidence against strong baselines such as SAE, ACDC, and
    TransformerLens workflows.
 5. A real-model interaction result showing redundancy, gating, or capacity

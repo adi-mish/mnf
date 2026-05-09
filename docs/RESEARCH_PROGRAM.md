@@ -6,15 +6,16 @@
 
 Core claim: mechanistic interpretability should recover context-indexed,
 gauge-aware, graded, interacting, minimum-description-length causal mechanism
-atlases, not merely label neurons, sparse latents, or isolated circuits.
+atlases that factorize a model's interventional response kernel, not merely
+label neurons, sparse latents, or isolated circuits.
 
 ## Landmark contribution stack
 
 A NeurIPS-best-paper-caliber version needs four contributions in one paper:
 
-1. **Theory:** natural causal abstraction, fuzzy mechanisms, typed variables, transition atoms, gauge/gluing, certificate vectors, shared MDL, interaction terms, and falsifiability criteria.
-2. **Theorems and propositions:** feature absorption, typed-feature identifiability up to gauge, behavior-table structural ambiguity, context-gluing obstruction, isolated-circuit fallacy, gating non-identifiability under marginal interventions, shared-MDL preference, developmental bootstrapping, sparse mechanism packing scores, and vacuity of unconstrained abstraction.
-3. **Benchmark:** MechanismLab 3.0, a ground-truth suite spanning scalar, hierarchical, cyclic, relational, transition-only, atlas/gluing, structural-aliasing, interaction/ecology, compiled, trained, and random-control systems.
+1. **Theory:** natural causal abstraction, response-kernel factorization, typed variables, transition atoms, gauge/gluing, identification sets, certificate vectors, shared MDL, interaction terms, and falsifiability criteria.
+2. **Theorems and propositions:** feature absorption, typed-feature identifiability up to gauge, response-kernel atom-splitting ambiguity, behavior-table structural ambiguity, context-gluing obstruction, isolated-circuit fallacy, gating non-identifiability under marginal interventions, shared-MDL preference, developmental bootstrapping, sparse mechanism packing scores, and vacuity of unconstrained abstraction.
+3. **Benchmark:** MechanismLab 4.0, a ground-truth suite spanning scalar, hierarchical, cyclic, relational, transition-only, atlas/gluing, structural-aliasing, response-kernel non-identifiability, interaction/ecology, compiled, trained, and random-control systems.
 4. **Algorithm:** Mechanism Ecology Discovery with Atlases, which recovers executable mechanisms, context-indexed charts, certificates, and interaction matrices and beats probes, flat SAEs, and component-level circuit discovery on intervention prediction.
 
 ## Phase 0: repository hardening
@@ -50,6 +51,7 @@ Write a formal paper draft with:
 - MDL objective;
 - theorem statements.
 - certificate-vector acceptance and Pareto comparison.
+- response-kernel semantics and identification-set reporting.
 
 First proofs to complete:
 
@@ -62,6 +64,7 @@ First proofs to complete:
 7. Behavior-table ambiguity under identical four-cell outputs.
 8. Context-gluing obstruction for non-global charts.
 9. Shared-MDL preference for reusable atoms.
+10. Response-kernel atom-splitting non-identifiability under weak observables.
 
 ## Phase 2: MechanismLab benchmark
 
@@ -79,10 +82,13 @@ Required tasks:
 - random controls;
 - trained small transformers. Current status: an optional CPU tiny transformer
   learns modular addition over `C_7` and is evaluated by cyclic input-shift
-  interventions; a 20-seed local CPU sweep reaches mean final accuracy `0.9990`
-  with mean cyclic-shift consistency `0.9980` for both inputs.
+  interventions and embedding-output activation patching; the 20-seed local CPU
+  sweep reaches mean final accuracy `0.9990` with mean cyclic-shift and
+  embedding-patch consistency `0.9980` for both inputs.
 - redundant-path, gating, support, and capacity-competition mechanism ecologies;
 - coupled training dynamics, including developmental bootstrap and mechanism death;
+- atom-splitting response-kernel non-identifiability with explicit
+  `IdentificationSet` output;
 - Tracr/RASP compiled transformers if dependencies permit.
 
 Metrics:
@@ -94,6 +100,7 @@ Metrics:
 - description length;
 - invariance under paraphrase/environment/checkpoint;
 - false mechanism rate on random controls.
+- identification-set diameter and distinguishable/indistinguishable evidence;
 - interaction matrix recovery error;
 - shared-MDL gain against independent mechanism descriptions.
 

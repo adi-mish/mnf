@@ -13,6 +13,7 @@ from mnf.benchmarks.shortcut import make_shortcut_dataset, shortcut_control
 from mnf.benchmarks.memorization import memorization_control
 from mnf.benchmarks.training_dynamics import make_training_emergence_trace, training_emergence_control
 from mnf.benchmarks.induction import make_induction_program, compare_induction_vs_memorization
+from mnf.benchmarks.identifiability import atom_splitting_identifiability_metrics
 from mnf.benchmarks.interactions import (
     capacity_competition_sweep,
     developmental_bootstrap_metrics,
@@ -46,6 +47,7 @@ __all__ = [
     "training_emergence_control",
     "make_induction_program",
     "compare_induction_vs_memorization",
+    "atom_splitting_identifiability_metrics",
     "capacity_competition_sweep",
     "developmental_bootstrap_metrics",
     "gating_metrics",
