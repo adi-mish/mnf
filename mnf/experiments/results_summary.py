@@ -200,15 +200,40 @@ def summarize_research_sweeps(data: Mapping[str, Any]) -> str:
             "",
         ])
         if tiny.get("available"):
+            site_summary = tiny.get("mean_activation_site_patch_consistency", {})
             lines.extend([
                 f"Mean final modular-addition accuracy: `{_fmt(tiny['mean_final_accuracy'])}`.",
                 f"Mean cyclic-shift consistency: input-a `{_fmt(tiny['mean_a_cyclic_shift_consistency'])}`, input-b `{_fmt(tiny['mean_b_cyclic_shift_consistency'])}`.",
                 f"Mean embedding-patch consistency: input-a `{_fmt(tiny['mean_a_embedding_patch_consistency'])}`, input-b `{_fmt(tiny['mean_b_embedding_patch_consistency'])}`.",
+            ])
+            if site_summary:
+                formatted_sites = ", ".join(f"{site}: `{_fmt(value)}`" for site, value in site_summary.items())
+                lines.append(f"Mean deeper activation-site patch consistency: {formatted_sites}.")
+            lines.append("")
+        else:
+            lines.extend([
+                f"Skipped: `{tiny['reason']}`.",
+                "",
+            ])
+
+    redundant_tiny = data.get("tiny_redundant_transformer_demo")
+    if redundant_tiny is not None:
+        lines.extend([
+            "## Tiny Redundant Transformer",
+            "",
+        ])
+        if redundant_tiny.get("available"):
+            lines.extend([
+                f"Mean base accuracy: `{_fmt(redundant_tiny['mean_base_accuracy'])}`.",
+                f"Mean route-only accuracy: route-a `{_fmt(redundant_tiny['mean_route_a_only_accuracy'])}`, route-b `{_fmt(redundant_tiny['mean_route_b_only_accuracy'])}`.",
+                f"Mean both-routes-ablated accuracy: `{_fmt(redundant_tiny['mean_both_routes_ablated_accuracy'])}`.",
+                f"Mean max single-ablation drop: `{_fmt(redundant_tiny['mean_max_single_ablation_drop'])}` versus dual-ablation drop `{_fmt(redundant_tiny['mean_dual_ablation_drop'])}`.",
+                f"Redundancy certified rate: `{_fmt(redundant_tiny['redundancy_certified_rate'])}`; single-ablation underweights rate: `{_fmt(redundant_tiny['single_ablation_underweights_rate'])}`.",
                 "",
             ])
         else:
             lines.extend([
-                f"Skipped: `{tiny['reason']}`.",
+                f"Skipped: `{redundant_tiny['reason']}`.",
                 "",
             ])
 

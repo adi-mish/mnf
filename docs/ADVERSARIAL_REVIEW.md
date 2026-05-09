@@ -95,13 +95,45 @@ merging, or rotation.
 interventions are approximate, entangled, distribution-shifting operations.
 
 **Current response.** The docs explicitly stop short of claiming real-model
-evidence. The repo now includes a learned tiny-transformer CPU smoke test for
-modular addition, plus a 20-seed robustness sweep showing high cyclic
-intervention consistency after training.
+evidence. The repo now includes 100-seed learned tiny-transformer CPU sweeps:
+one modular-addition transformer with high cyclic and activation-patching
+consistency, and one two-route redundant modular transformer where single
+ablations underweight routes while dual ablation collapses behavior.
 
 **Needed evidence.** A small real-model case study with activation hooks,
 matched baselines, and intervention-prediction error. This is the point where a
 GPU or dedicated model environment likely becomes necessary.
+
+## 7b. The redundant tiny transformer may be too explicit
+
+**Attack.** The redundant tiny transformer has two separate route modules by
+construction. It is therefore not evidence that an arbitrary transformer's
+hidden redundant routes can be discovered without architectural hints.
+
+**Current response.** The result is scoped as learned-weight evidence for the
+redundancy/certificate logic, not as hidden-route discovery. It does show the
+main isolated-circuit failure under training: either route alone remains
+sufficient, so a single-ablation baseline underweights the routes, while dual
+ablation reveals the causal mass.
+
+**Needed evidence.** Train a less explicitly separated transformer where
+redundant algorithms share the same residual stream, then recover the routes
+from activation-local atoms rather than from named route modules.
+
+## 7c. Activation-patching consistency can be task-position trivial
+
+**Attack.** For modular addition, patching the final readout token from a
+shifted source run may simply transplant the answer-bearing state. This is
+valid causal evidence, but it is weaker than decomposing attention q/k/v or MLP
+submodules into interpretable mechanisms.
+
+**Current response.** The benchmark now distinguishes shallow embedding patches
+from later final-token block patches and reports both. It does not claim q/k/v
+or MLP-local recovery.
+
+**Needed evidence.** Add hook-level decomposition for attention patterns,
+attention output, MLP preactivation, and MLP output, with negative controls
+where patching the wrong site or wrong token fails.
 
 ## 8. Mechanisticity score can hide arbitrary weights
 
@@ -129,7 +161,8 @@ strong version still needs three things:
 
 1. broader context-stability and abstention calibration beyond the current sweep;
 2. ecosystem gauge theory for fuzzy shared atoms beyond the minimal atlas-glue benchmark;
-3. real activation-intervention evidence against strong baselines.
+3. hidden-route recovery and real activation-intervention evidence against
+   strong baselines.
 
 The CPU-local repo can still make progress on the first two. The third likely
 requires model tooling and GPU beyond tiny cases.

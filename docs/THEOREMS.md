@@ -93,7 +93,10 @@ Here `m` and `n` are redundant routes. Single ablations compare `B_11` to
 drop of one.
 
 **Repo status.** `mnf/benchmarks/interactions/redundant_paths.py` and the
-interaction recovery suite validate this exactly.
+interaction recovery suite validate this exactly. `mnf/models/tiny_redundant.py`
+adds a learned-weight CPU witness: two transformer routes are trained so either
+route solves modular addition; single ablations have small drops while dual
+ablation collapses accuracy to chance in the 100-seed sweep.
 
 **Paper role.** This is the central formal break from isolated-circuit
 ontology. It implies that necessity tests must be factorial or Shapley-style

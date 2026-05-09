@@ -22,3 +22,5 @@ feature_baseline_seeds: [0, 1]
 include_tiny_transformer: True
 tiny_transformer_seeds: [0]
 tiny_transformer_steps: 120
+tiny_redundant_transformer_seeds: [0]
+tiny_redundant_transformer_steps: 120

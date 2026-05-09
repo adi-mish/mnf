@@ -226,3 +226,47 @@ def evaluate_embedding_patch_interventions(
         "a_embedding_patch_effect_rate": float(sum(a_effect) / len(a_effect)),
         "b_embedding_patch_effect_rate": float(sum(b_effect) / len(b_effect)),
     }
+
+
+def evaluate_activation_site_patching(
+    model: TinyModularAdditionTransformer,
+    modulus: int = 7,
+    module_names: Sequence[str] = ("embedding", "encoder.layers.0.norm1", "encoder.layers.0.norm2"),
+    deltas: Sequence[int] = (1, 2, 3),
+    device: str = "cpu",
+) -> dict[str, dict[str, float]]:
+    torch = _require_torch()
+    from mnf.models.patching import run_with_token_activation_patch
+
+    model.eval()
+    x, _ = modular_addition_dataset(modulus=modulus, device=device)
+    with torch.no_grad():
+        base_pred = model(x).argmax(dim=-1)
+        out: dict[str, dict[str, float]] = {}
+        for module_name in module_names:
+            # The embedding site carries each input token locally. Later block
+            # sites carry task information into the final readout token.
+            patch_position_for_source = {0: 0, 1: 1} if module_name == "embedding" else {0: 2, 1: 2}
+            site_metrics: dict[str, float] = {}
+            for source_position, patch_position in patch_position_for_source.items():
+                consistency = []
+                effect = []
+                for delta in deltas:
+                    source = x.clone()
+                    source[:, source_position] = (source[:, source_position] + delta) % modulus
+                    patched_logits = run_with_token_activation_patch(
+                        model,
+                        base_tokens=x,
+                        source_tokens=source,
+                        module_name=module_name,
+                        token_positions=(patch_position,),
+                    )
+                    pred = patched_logits.argmax(dim=-1)
+                    expected = (base_pred + delta) % modulus
+                    consistency.append(float((pred == expected).float().mean().detach().cpu()))
+                    effect.append(float((pred != base_pred).float().mean().detach().cpu()))
+                prefix = "a" if source_position == 0 else "b"
+                site_metrics[f"{prefix}_patch_consistency"] = float(sum(consistency) / len(consistency))
+                site_metrics[f"{prefix}_patch_effect_rate"] = float(sum(effect) / len(effect))
+            out[module_name] = site_metrics
+    return out

@@ -82,9 +82,14 @@ Required tasks:
 - random controls;
 - trained small transformers. Current status: an optional CPU tiny transformer
   learns modular addition over `C_7` and is evaluated by cyclic input-shift
-  interventions and embedding-output activation patching; the 20-seed local CPU
-  sweep reaches mean final accuracy `0.9990` with mean cyclic-shift and
-  embedding-patch consistency `0.9980` for both inputs.
+  interventions plus embedding/final-token block activation patching; the
+  100-seed local CPU sweep reaches mean final accuracy `0.9986` with mean
+  cyclic-shift and activation-patch consistency about `0.9971`.
+- trained redundant small transformers. Current status: a two-route CPU
+  transformer learns modular addition with either route sufficient; the 100-seed
+  local CPU sweep reaches base accuracy `1.0000`, route-only accuracies `0.9986`
+  and `0.9949`, dual-ablation drop `0.8571`, and single-ablation underweight
+  rate `0.9900`.
 - redundant-path, gating, support, and capacity-competition mechanism ecologies;
 - coupled training dynamics, including developmental bootstrap and mechanism death;
 - atom-splitting response-kernel non-identifiability with explicit

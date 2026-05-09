@@ -33,7 +33,8 @@ The central claim is that a mechanistic explanation is not a neuron list, SAE la
 - `docs/research_sweeps.json`: CPU-generated phase/sweep outputs for local benchmark experiments.
 - `docs/RESULTS_SUMMARY.md`: compact generated summary of the sweep outputs.
 - `docs/AGGRESSIVE_CPU_SUMMARY.md`: 1,000-seed CPU robustness summary for noisy/active interaction recovery.
-- `docs/TINY_TRANSFORMER_CPU_SUMMARY.md`: 20-seed CPU robustness summary for the learned tiny modular-addition transformer.
+- `docs/TINY_TRANSFORMER_CPU_SUMMARY.md`: 100-seed CPU robustness summary for the learned tiny modular-addition transformer.
+- `docs/REDUNDANT_TINY_TRANSFORMER_CPU_SUMMARY.md`: 100-seed CPU robustness summary for learned redundant-route transformers.
 
 ## Quick start
 

@@ -443,6 +443,11 @@ ablation recovers the redundant pair.
 
 **Benchmark link.** `mnf/benchmarks/interactions/redundant_paths.py` implements
 the exact Boolean case with `B_00 = 0` and `B_10 = B_01 = B_11 = 1`.
+`mnf/models/tiny_redundant.py` gives a learned-weight CPU analogue: two
+separately parameterized transformer routes are trained so either route is
+sufficient for modular addition. It is evidence for the redundancy certificate
+logic under learned weights, not a proof of hidden-route discovery in arbitrary
+transformers.
 
 ### Theorem 9: gating can be non-identifiable under marginal interventions
 
@@ -716,6 +721,7 @@ signals are insufficient:
 - Correlation graphs over-propose transitive dependencies without intervention
   validation.
 - Single ablations can miss redundant mechanisms.
+- Single-ablation baselines can underweight learned redundant routes.
 - Marginal interventions can miss gates.
 - Behavior-level factorial tables can be structurally ambiguous.
 - Single global charts can fail where context-indexed atlases glue cleanly.

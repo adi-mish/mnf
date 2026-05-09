@@ -80,8 +80,11 @@ These are useful and consistent, but their scope must stay limited:
   objective is fixed;
 - ecosystem gauge identifiability is a conjecture/proof obligation beyond the
   currently implemented cyclic case;
-- the tiny transformer result is learned-weight evidence, not pretrained
-  real-model evidence.
+- the tiny transformer results are learned-weight evidence, not pretrained
+  real-model evidence;
+- the redundant tiny transformer uses architecture-explicit routes, so it tests
+  the redundancy/certificate logic under learned weights but not hidden-route
+  discovery in an arbitrary transformer.
 
 ## Result Consistency Checks
 
@@ -93,9 +96,13 @@ artifacts:
 - transition best MOLT/global MSE ratio: about `0.0001`;
 - context-stability sweep changed-context rate: `0.7500`;
 - feature-baseline random false-mechanism rate: `0.6667`;
-- tiny transformer 20-seed mean accuracy: `0.9990`;
-- tiny transformer cyclic-shift consistency: about `0.9980` for both inputs;
-- tiny transformer embedding-patch consistency: about `0.9980` for both inputs;
+- tiny transformer 100-seed mean accuracy: `0.9986`;
+- tiny transformer cyclic-shift consistency: about `0.9971` for both inputs;
+- tiny transformer embedding/norm1/norm2 patch consistency: about `0.9971`;
+- redundant tiny transformer 100-seed mean base accuracy: `1.0000`;
+- redundant tiny transformer route-only accuracies: `0.9986` and `0.9949`;
+- redundant tiny transformer dual-ablation drop: `0.8571`, with
+  single-ablation underweight rate `0.9900`;
 - response-kernel atom-splitting output-only max distance: `0.0000`, with
   identification diameter `1.0000` and positive kernel distance once internal
   route markers are observed.

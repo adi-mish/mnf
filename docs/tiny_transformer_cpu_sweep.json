@@ -2,7 +2,7 @@
   "available": true,
   "modulus": 7,
   "steps": 160,
-  "n_seeds": 20,
+  "n_seeds": 100,
   "rows": [
     {
       "seed": 0,
@@ -46,6 +46,26 @@
         "b_embedding_patch_consistency": 1.0,
         "a_embedding_patch_effect_rate": 1.0,
         "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
       }
     },
     {
@@ -90,6 +110,26 @@
         "b_embedding_patch_consistency": 1.0,
         "a_embedding_patch_effect_rate": 1.0,
         "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
       }
     },
     {
@@ -134,6 +174,26 @@
         "b_embedding_patch_consistency": 1.0,
         "a_embedding_patch_effect_rate": 1.0,
         "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
       }
     },
     {
@@ -178,6 +238,26 @@
         "b_embedding_patch_consistency": 1.0,
         "a_embedding_patch_effect_rate": 1.0,
         "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
       }
     },
     {
@@ -222,6 +302,26 @@
         "b_embedding_patch_consistency": 1.0,
         "a_embedding_patch_effect_rate": 1.0,
         "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
       }
     },
     {
@@ -266,6 +366,26 @@
         "b_embedding_patch_consistency": 1.0,
         "a_embedding_patch_effect_rate": 1.0,
         "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
       }
     },
     {
@@ -310,6 +430,26 @@
         "b_embedding_patch_consistency": 1.0,
         "a_embedding_patch_effect_rate": 1.0,
         "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
       }
     },
     {
@@ -354,6 +494,26 @@
         "b_embedding_patch_consistency": 1.0,
         "a_embedding_patch_effect_rate": 1.0,
         "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
       }
     },
     {
@@ -398,6 +558,26 @@
         "b_embedding_patch_consistency": 1.0,
         "a_embedding_patch_effect_rate": 1.0,
         "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
       }
     },
     {
@@ -442,6 +622,26 @@
         "b_embedding_patch_consistency": 1.0,
         "a_embedding_patch_effect_rate": 1.0,
         "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
       }
     },
     {
@@ -486,6 +686,26 @@
         "b_embedding_patch_consistency": 0.9591836929321289,
         "a_embedding_patch_effect_rate": 0.9931972821553549,
         "b_embedding_patch_effect_rate": 0.9931972821553549
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 0.9591836929321289,
+          "a_patch_effect_rate": 0.9931972821553549,
+          "b_patch_consistency": 0.9591836929321289,
+          "b_patch_effect_rate": 0.9931972821553549
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 0.9591836929321289,
+          "a_patch_effect_rate": 0.9931972821553549,
+          "b_patch_consistency": 0.9591836929321289,
+          "b_patch_effect_rate": 0.9931972821553549
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 0.9591836929321289,
+          "a_patch_effect_rate": 0.9931972821553549,
+          "b_patch_consistency": 0.9591836929321289,
+          "b_patch_effect_rate": 0.9931972821553549
+        }
       }
     },
     {
@@ -530,6 +750,26 @@
         "b_embedding_patch_consistency": 1.0,
         "a_embedding_patch_effect_rate": 1.0,
         "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
       }
     },
     {
@@ -574,6 +814,26 @@
         "b_embedding_patch_consistency": 1.0,
         "a_embedding_patch_effect_rate": 1.0,
         "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
       }
     },
     {
@@ -618,6 +878,26 @@
         "b_embedding_patch_consistency": 1.0,
         "a_embedding_patch_effect_rate": 1.0,
         "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
       }
     },
     {
@@ -662,6 +942,26 @@
         "b_embedding_patch_consistency": 1.0,
         "a_embedding_patch_effect_rate": 1.0,
         "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
       }
     },
     {
@@ -706,6 +1006,26 @@
         "b_embedding_patch_consistency": 1.0,
         "a_embedding_patch_effect_rate": 1.0,
         "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
       }
     },
     {
@@ -750,6 +1070,26 @@
         "b_embedding_patch_consistency": 1.0,
         "a_embedding_patch_effect_rate": 1.0,
         "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
       }
     },
     {
@@ -794,6 +1134,26 @@
         "b_embedding_patch_consistency": 1.0,
         "a_embedding_patch_effect_rate": 1.0,
         "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
       }
     },
     {
@@ -838,6 +1198,26 @@
         "b_embedding_patch_consistency": 1.0,
         "a_embedding_patch_effect_rate": 1.0,
         "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
       }
     },
     {
@@ -882,12 +1262,5157 @@
         "b_embedding_patch_consistency": 1.0,
         "a_embedding_patch_effect_rate": 1.0,
         "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 20,
+      "training": {
+        "train_loss": [
+          2.063704252243042,
+          0.915606677532196,
+          0.08839134126901627,
+          0.020253648981451988,
+          0.009709615260362625,
+          0.006327537354081869,
+          0.004643794149160385,
+          0.0035989449825137854,
+          0.002886321162804961
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.8367347121238708,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0028567039407789707
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 21,
+      "training": {
+        "train_loss": [
+          2.302135944366455,
+          1.758493423461914,
+          0.5619200468063354,
+          0.07215079665184021,
+          0.017537936568260193,
+          0.008557179011404514,
+          0.005648513324558735,
+          0.004203487653285265,
+          0.003313653636723757
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.3877550959587097,
+          0.9591836929321289,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.003277916694059968
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 22,
+      "training": {
+        "train_loss": [
+          2.0092248916625977,
+          1.2897439002990723,
+          0.18106618523597717,
+          0.022012725472450256,
+          0.0062756105326116085,
+          0.0036364002153277397,
+          0.002680661389604211,
+          0.0021348432637751102,
+          0.0017608635826036334
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.5510203838348389,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0017451026942580938
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 23,
+      "training": {
+        "train_loss": [
+          2.0196540355682373,
+          1.2542405128479004,
+          0.202468603849411,
+          0.023682380095124245,
+          0.008914362639188766,
+          0.00556469289585948,
+          0.00412280298769474,
+          0.0032529709860682487,
+          0.002652684925124049
+        ],
+        "train_accuracy": [
+          0.12244898080825806,
+          0.6734693646430969,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0026274672709405422
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 24,
+      "training": {
+        "train_loss": [
+          2.0232622623443604,
+          1.325618863105774,
+          0.22575396299362183,
+          0.05929882824420929,
+          0.04619823768734932,
+          0.043434299528598785,
+          0.042443811893463135,
+          0.041687268763780594,
+          0.0411451980471611
+        ],
+        "train_accuracy": [
+          0.12244898080825806,
+          0.6326530575752258,
+          0.9795918464660645,
+          0.9795918464660645,
+          0.9795918464660645,
+          0.9795918464660645,
+          0.9795918464660645,
+          0.9795918464660645,
+          0.9795918464660645
+        ],
+        "final_accuracy": 0.9795918464660645,
+        "final_loss": 0.04111025109887123
+      },
+      "interventions": {
+        "base_accuracy": 0.9795918464660645,
+        "a_shift_effect_rate": 0.9931972821553549,
+        "b_shift_effect_rate": 0.9931972821553549,
+        "a_cyclic_shift_consistency": 0.9591836929321289,
+        "b_cyclic_shift_consistency": 0.9591836929321289,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 0.9591836929321289,
+        "b_embedding_patch_consistency": 0.9591836929321289,
+        "a_embedding_patch_effect_rate": 0.9931972821553549,
+        "b_embedding_patch_effect_rate": 0.9931972821553549
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 0.9591836929321289,
+          "a_patch_effect_rate": 0.9931972821553549,
+          "b_patch_consistency": 0.9591836929321289,
+          "b_patch_effect_rate": 0.9931972821553549
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 0.9591836929321289,
+          "a_patch_effect_rate": 0.9931972821553549,
+          "b_patch_consistency": 0.9591836929321289,
+          "b_patch_effect_rate": 0.9931972821553549
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 0.9591836929321289,
+          "a_patch_effect_rate": 0.9931972821553549,
+          "b_patch_consistency": 0.9591836929321289,
+          "b_patch_effect_rate": 0.9931972821553549
+        }
+      }
+    },
+    {
+      "seed": 25,
+      "training": {
+        "train_loss": [
+          2.2531864643096924,
+          1.632054090499878,
+          0.5885188579559326,
+          0.17639797925949097,
+          0.06881310045719147,
+          0.04949793219566345,
+          0.04330037534236908,
+          0.011316876858472824,
+          0.004620360676199198
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.3877550959587097,
+          0.8163265585899353,
+          0.9387755393981934,
+          0.9795918464660645,
+          0.9795918464660645,
+          0.9795918464660645,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.004487447440624237
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 26,
+      "training": {
+        "train_loss": [
+          2.1491219997406006,
+          1.5915956497192383,
+          0.4977365732192993,
+          0.10277798026800156,
+          0.018299564719200134,
+          0.007562772836536169,
+          0.004695217125117779,
+          0.003422789042815566,
+          0.0026749579701572657
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.5306122303009033,
+          0.8979591727256775,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0026452792808413506
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 27,
+      "training": {
+        "train_loss": [
+          1.9813989400863647,
+          1.3229933977127075,
+          0.261584609746933,
+          0.025479041039943695,
+          0.00763249397277832,
+          0.004415662959218025,
+          0.0032182657159864902,
+          0.0025329107884317636,
+          0.0020671857055276632
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.5102040767669678,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.002047703368589282
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 28,
+      "training": {
+        "train_loss": [
+          2.1385200023651123,
+          1.6251475811004639,
+          0.46701711416244507,
+          0.03969387710094452,
+          0.009943847544491291,
+          0.00553105678409338,
+          0.003988692536950111,
+          0.003139481181278825,
+          0.0025671538896858692
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.3469387888908386,
+          0.9387755393981934,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.002543211216107011
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 29,
+      "training": {
+        "train_loss": [
+          2.0217511653900146,
+          1.5147740840911865,
+          0.4224328398704529,
+          0.04092247784137726,
+          0.009905416518449783,
+          0.0052977618761360645,
+          0.003742264350876212,
+          0.002906249137595296,
+          0.0023506181314587593
+        ],
+        "train_accuracy": [
+          0.16326530277729034,
+          0.44897958636283875,
+          0.9795918464660645,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0023274903651326895
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 30,
+      "training": {
+        "train_loss": [
+          2.0997045040130615,
+          1.0530002117156982,
+          0.15837889909744263,
+          0.022115586325526237,
+          0.008482161909341812,
+          0.005527949426323175,
+          0.004192611202597618,
+          0.00336525309830904,
+          0.002781482180580497
+        ],
+        "train_accuracy": [
+          0.20408163964748383,
+          0.8775510191917419,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.00275668827816844
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 31,
+      "training": {
+        "train_loss": [
+          2.0395596027374268,
+          1.5606077909469604,
+          0.3879801630973816,
+          0.05110110715031624,
+          0.013443602249026299,
+          0.00662460271269083,
+          0.004297878593206406,
+          0.003136871149763465,
+          0.0024328993167728186
+        ],
+        "train_accuracy": [
+          0.08163265138864517,
+          0.4285714328289032,
+          0.9387755393981934,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0024048611521720886
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 32,
+      "training": {
+        "train_loss": [
+          2.0612099170684814,
+          1.4871078729629517,
+          0.23976904153823853,
+          0.030232392251491547,
+          0.010529755614697933,
+          0.006212850566953421,
+          0.0044067054986953735,
+          0.0033766620326787233,
+          0.002698053838685155
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.5306122303009033,
+          0.9795918464660645,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0026701155584305525
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 33,
+      "training": {
+        "train_loss": [
+          2.1306328773498535,
+          1.782692790031433,
+          0.5072175860404968,
+          0.08643227815628052,
+          0.015508394688367844,
+          0.0070396773517131805,
+          0.004659662023186684,
+          0.003484236542135477,
+          0.00274931313470006
+        ],
+        "train_accuracy": [
+          0.10204081982374191,
+          0.2857142984867096,
+          0.9387755393981934,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0027195264119654894
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 34,
+      "training": {
+        "train_loss": [
+          2.063469171524048,
+          1.5797077417373657,
+          0.3485586643218994,
+          0.03772633522748947,
+          0.009256142191588879,
+          0.005158767569810152,
+          0.0037651383318006992,
+          0.002991260262206197,
+          0.002467239275574684
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.4897959232330322,
+          0.9795918464660645,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0024452630896121264
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 35,
+      "training": {
+        "train_loss": [
+          1.9695643186569214,
+          1.3040074110031128,
+          0.12188798189163208,
+          0.018057456240057945,
+          0.007763709872961044,
+          0.005024675279855728,
+          0.003744790330529213,
+          0.0029488839209079742,
+          0.002394050359725952
+        ],
+        "train_accuracy": [
+          0.20408163964748383,
+          0.6734693646430969,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.002370717003941536
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 36,
+      "training": {
+        "train_loss": [
+          2.014556646347046,
+          1.207377552986145,
+          0.14053569734096527,
+          0.021551502868533134,
+          0.008526662364602089,
+          0.00534170214086771,
+          0.003906380385160446,
+          0.0030416459776461124,
+          0.0024546929635107517
+        ],
+        "train_accuracy": [
+          0.10204081982374191,
+          0.5918367505073547,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0024302941747009754
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 37,
+      "training": {
+        "train_loss": [
+          2.0346391201019287,
+          1.4502636194229126,
+          0.36199644207954407,
+          0.039399050176143646,
+          0.009388209320604801,
+          0.005165974143892527,
+          0.0037410485092550516,
+          0.002949212212115526,
+          0.0024128970690071583
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.6122449040412903,
+          0.9591836929321289,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.002390387700870633
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 38,
+      "training": {
+        "train_loss": [
+          2.211263656616211,
+          1.6733267307281494,
+          0.46832984685897827,
+          0.09160300344228745,
+          0.022103220224380493,
+          0.008448606356978416,
+          0.005338909104466438,
+          0.003972881007939577,
+          0.003162181004881859
+        ],
+        "train_accuracy": [
+          0.12244898080825806,
+          0.5510203838348389,
+          0.9795918464660645,
+          0.9795918464660645,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0031297693494707346
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 39,
+      "training": {
+        "train_loss": [
+          1.980323314666748,
+          1.299994945526123,
+          0.27498766779899597,
+          0.07036905735731125,
+          0.016683317720890045,
+          0.005138445645570755,
+          0.0031882040202617645,
+          0.0023870908189564943,
+          0.0019208573503419757
+        ],
+        "train_accuracy": [
+          0.12244898080825806,
+          0.5918367505073547,
+          0.918367326259613,
+          0.9795918464660645,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.001902155578136444
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 40,
+      "training": {
+        "train_loss": [
+          2.1194207668304443,
+          1.469577670097351,
+          0.28706586360931396,
+          0.033243801444768906,
+          0.00990518182516098,
+          0.005769267212599516,
+          0.004191069398075342,
+          0.003288769628852606,
+          0.002679984550923109
+        ],
+        "train_accuracy": [
+          0.16326530277729034,
+          0.5102040767669678,
+          0.9795918464660645,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.002654534298926592
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 41,
+      "training": {
+        "train_loss": [
+          2.1631903648376465,
+          1.5318619012832642,
+          0.35887590050697327,
+          0.04073859006166458,
+          0.011649109423160553,
+          0.006514436565339565,
+          0.004665397573262453,
+          0.00365226692520082,
+          0.0029779395554214716
+        ],
+        "train_accuracy": [
+          0.16326530277729034,
+          0.5510203838348389,
+          0.9591836929321289,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.002949859481304884
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 42,
+      "training": {
+        "train_loss": [
+          2.231982707977295,
+          1.704013466835022,
+          0.463540256023407,
+          0.07980555295944214,
+          0.08235346525907516,
+          0.032144613564014435,
+          0.007886262610554695,
+          0.004889858420938253,
+          0.003631944302469492
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.36734694242477417,
+          0.9387755393981934,
+          0.9795918464660645,
+          0.9591836929321289,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0035909286234527826
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 43,
+      "training": {
+        "train_loss": [
+          2.143003463745117,
+          1.5092697143554688,
+          0.4011281728744507,
+          0.1236455962061882,
+          0.08434763550758362,
+          0.04704294353723526,
+          0.04335784539580345,
+          0.042160943150520325,
+          0.04152505099773407
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.5306122303009033,
+          0.9387755393981934,
+          0.9591836929321289,
+          0.9591836929321289,
+          0.9795918464660645,
+          0.9795918464660645,
+          0.9795918464660645,
+          0.9795918464660645
+        ],
+        "final_accuracy": 0.9795918464660645,
+        "final_loss": 0.041497837752103806
+      },
+      "interventions": {
+        "base_accuracy": 0.9795918464660645,
+        "a_shift_effect_rate": 0.9931972821553549,
+        "b_shift_effect_rate": 0.9931972821553549,
+        "a_cyclic_shift_consistency": 0.9591836929321289,
+        "b_cyclic_shift_consistency": 0.9591836929321289,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 0.9591836929321289,
+        "b_embedding_patch_consistency": 0.9591836929321289,
+        "a_embedding_patch_effect_rate": 0.9931972821553549,
+        "b_embedding_patch_effect_rate": 0.9931972821553549
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 0.9591836929321289,
+          "a_patch_effect_rate": 0.9931972821553549,
+          "b_patch_consistency": 0.9591836929321289,
+          "b_patch_effect_rate": 0.9931972821553549
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 0.9591836929321289,
+          "a_patch_effect_rate": 0.9931972821553549,
+          "b_patch_consistency": 0.9591836929321289,
+          "b_patch_effect_rate": 0.9931972821553549
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 0.9591836929321289,
+          "a_patch_effect_rate": 0.9931972821553549,
+          "b_patch_consistency": 0.9591836929321289,
+          "b_patch_effect_rate": 0.9931972821553549
+        }
+      }
+    },
+    {
+      "seed": 44,
+      "training": {
+        "train_loss": [
+          2.159893035888672,
+          1.5697096586227417,
+          0.3183416724205017,
+          0.04702024906873703,
+          0.013556435704231262,
+          0.007240304723381996,
+          0.004987465683370829,
+          0.00377272698096931,
+          0.002990130567923188
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.5102040767669678,
+          0.9795918464660645,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0029582250863313675
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 45,
+      "training": {
+        "train_loss": [
+          2.1089107990264893,
+          1.4831609725952148,
+          0.33020931482315063,
+          0.04300384223461151,
+          0.010859712027013302,
+          0.006011879537254572,
+          0.004286428447812796,
+          0.003334238426759839,
+          0.0027023586444556713
+        ],
+        "train_accuracy": [
+          0.16326530277729034,
+          0.5510203838348389,
+          0.9591836929321289,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0026761330664157867
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 46,
+      "training": {
+        "train_loss": [
+          2.0253334045410156,
+          1.3387446403503418,
+          0.25918588042259216,
+          0.04210065305233002,
+          0.011470667086541653,
+          0.005914017092436552,
+          0.00399040849879384,
+          0.0029859759379178286,
+          0.0023539287503808737
+        ],
+        "train_accuracy": [
+          0.18367347121238708,
+          0.5714285969734192,
+          0.9795918464660645,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0023283588234335184
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 47,
+      "training": {
+        "train_loss": [
+          1.9932374954223633,
+          1.4401084184646606,
+          0.48977938294410706,
+          0.26964256167411804,
+          0.1979845017194748,
+          0.10957054048776627,
+          0.052249640226364136,
+          0.04858633875846863,
+          0.042558055371046066
+        ],
+        "train_accuracy": [
+          0.18367347121238708,
+          0.4897959232330322,
+          0.8571428656578064,
+          0.8775510191917419,
+          0.8979591727256775,
+          0.9795918464660645,
+          1.0,
+          0.9795918464660645,
+          0.9795918464660645
+        ],
+        "final_accuracy": 0.9795918464660645,
+        "final_loss": 0.042364709079265594
+      },
+      "interventions": {
+        "base_accuracy": 0.9795918464660645,
+        "a_shift_effect_rate": 0.9931972821553549,
+        "b_shift_effect_rate": 0.9931972821553549,
+        "a_cyclic_shift_consistency": 0.9591836929321289,
+        "b_cyclic_shift_consistency": 0.9591836929321289,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 0.9591836929321289,
+        "b_embedding_patch_consistency": 0.9591836929321289,
+        "a_embedding_patch_effect_rate": 0.9931972821553549,
+        "b_embedding_patch_effect_rate": 0.9931972821553549
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 0.9591836929321289,
+          "a_patch_effect_rate": 0.9931972821553549,
+          "b_patch_consistency": 0.9591836929321289,
+          "b_patch_effect_rate": 0.9931972821553549
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 0.9591836929321289,
+          "a_patch_effect_rate": 0.9931972821553549,
+          "b_patch_consistency": 0.9591836929321289,
+          "b_patch_effect_rate": 0.9931972821553549
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 0.9591836929321289,
+          "a_patch_effect_rate": 0.9931972821553549,
+          "b_patch_consistency": 0.9591836929321289,
+          "b_patch_effect_rate": 0.9931972821553549
+        }
+      }
+    },
+    {
+      "seed": 48,
+      "training": {
+        "train_loss": [
+          2.0344417095184326,
+          1.1350576877593994,
+          0.16526611149311066,
+          0.02316303364932537,
+          0.008666818030178547,
+          0.005363045260310173,
+          0.003940734546631575,
+          0.0030921250581741333,
+          0.0025122354272753
+        ],
+        "train_accuracy": [
+          0.16326530277729034,
+          0.7142857313156128,
+          0.9795918464660645,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0024879497941583395
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 49,
+      "training": {
+        "train_loss": [
+          1.9790186882019043,
+          1.0740448236465454,
+          0.11194232106208801,
+          0.015307049266994,
+          0.006430246401578188,
+          0.004227899946272373,
+          0.0031964245717972517,
+          0.002549748634919524,
+          0.00209524342790246
+        ],
+        "train_accuracy": [
+          0.10204081982374191,
+          0.6530612111091614,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.002076013246551156
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 50,
+      "training": {
+        "train_loss": [
+          2.0215630531311035,
+          1.3234126567840576,
+          0.2089419662952423,
+          0.030566858127713203,
+          0.011066663078963757,
+          0.006539881229400635,
+          0.004615920130163431,
+          0.0035121978726238012,
+          0.0027865918818861246
+        ],
+        "train_accuracy": [
+          0.16326530277729034,
+          0.5918367505073547,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0027568042278289795
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 51,
+      "training": {
+        "train_loss": [
+          2.348933219909668,
+          1.8135852813720703,
+          0.91942298412323,
+          0.24594703316688538,
+          0.02792351320385933,
+          0.008743001148104668,
+          0.005477919243276119,
+          0.00410766527056694,
+          0.0032864422537386417
+        ],
+        "train_accuracy": [
+          0.12244898080825806,
+          0.20408163964748383,
+          0.8367347121238708,
+          0.9387755393981934,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0032530338503420353
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 52,
+      "training": {
+        "train_loss": [
+          2.055387496948242,
+          1.296202301979065,
+          0.3008058965206146,
+          0.036589913070201874,
+          0.01094929687678814,
+          0.006092044059187174,
+          0.004289304371923208,
+          0.003288324922323227,
+          0.0026310698594897985
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.5714285969734192,
+          0.9795918464660645,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.002603991189971566
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 53,
+      "training": {
+        "train_loss": [
+          2.0758352279663086,
+          1.5003902912139893,
+          0.37355220317840576,
+          0.041819874197244644,
+          0.010622242465615273,
+          0.00565892131999135,
+          0.004038231913000345,
+          0.0031637020874768496,
+          0.00258589256554842
+        ],
+        "train_accuracy": [
+          0.12244898080825806,
+          0.5306122303009033,
+          0.9591836929321289,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0025618402287364006
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 54,
+      "training": {
+        "train_loss": [
+          2.0520033836364746,
+          1.3387603759765625,
+          0.21142621338367462,
+          0.03143433853983879,
+          0.010965346358716488,
+          0.006436839234083891,
+          0.004589674063026905,
+          0.003538413206115365,
+          0.002843343885615468
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.6122449040412903,
+          0.9795918464660645,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.002814679406583309
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 55,
+      "training": {
+        "train_loss": [
+          1.9978036880493164,
+          1.3321295976638794,
+          0.19523148238658905,
+          0.054700545966625214,
+          0.042980559170246124,
+          0.006781738717108965,
+          0.0033125020563602448,
+          0.002411099150776863,
+          0.0019319974817335606
+        ],
+        "train_accuracy": [
+          0.12244898080825806,
+          0.6938775777816772,
+          0.9795918464660645,
+          0.9795918464660645,
+          0.9795918464660645,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.001913255313411355
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 56,
+      "training": {
+        "train_loss": [
+          1.986425757408142,
+          1.1005141735076904,
+          0.1127454861998558,
+          0.018738897517323494,
+          0.007994788698852062,
+          0.0052572330459952354,
+          0.0039523509331047535,
+          0.0031330944038927555,
+          0.0025587710551917553
+        ],
+        "train_accuracy": [
+          0.08163265138864517,
+          0.7346938848495483,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.002534532221034169
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 57,
+      "training": {
+        "train_loss": [
+          2.0573339462280273,
+          1.564529538154602,
+          0.2806072235107422,
+          0.044636473059654236,
+          0.014606870710849762,
+          0.007956468500196934,
+          0.005347035359591246,
+          0.0039449697360396385,
+          0.0030685586389154196
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.5510203838348389,
+          0.9795918464660645,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.003033366519957781
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 58,
+      "training": {
+        "train_loss": [
+          2.1842451095581055,
+          1.6180528402328491,
+          0.34603971242904663,
+          0.033960409462451935,
+          0.011086798273026943,
+          0.006687512155622244,
+          0.00492906803265214,
+          0.0038978008087724447,
+          0.003190120216459036
+        ],
+        "train_accuracy": [
+          0.16326530277729034,
+          0.44897958636283875,
+          0.9591836929321289,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0031603865791112185
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 59,
+      "training": {
+        "train_loss": [
+          2.3017165660858154,
+          1.7274047136306763,
+          0.3572405278682709,
+          0.059842076152563095,
+          0.013720936141908169,
+          0.007203602232038975,
+          0.0049755568616092205,
+          0.003812106093391776,
+          0.00306260515935719
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.40816327929496765,
+          0.9591836929321289,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0030318063218146563
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 60,
+      "training": {
+        "train_loss": [
+          2.062136173248291,
+          1.4605536460876465,
+          0.21160100400447845,
+          0.026778222993016243,
+          0.009235871955752373,
+          0.005514564458280802,
+          0.003974273335188627,
+          0.00308981048874557,
+          0.002497689565643668
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.4285714328289032,
+          0.9795918464660645,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.002473139204084873
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 61,
+      "training": {
+        "train_loss": [
+          2.0163509845733643,
+          1.3050144910812378,
+          0.13845057785511017,
+          0.019341276958584785,
+          0.007785703055560589,
+          0.005044168792665005,
+          0.003775523044168949,
+          0.0029925862327218056,
+          0.002447189297527075
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.5714285969734192,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0024242380168288946
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 62,
+      "training": {
+        "train_loss": [
+          2.2095906734466553,
+          1.8211380243301392,
+          0.6553316116333008,
+          0.07592219859361649,
+          0.014075874350965023,
+          0.006665160413831472,
+          0.0045311786234378815,
+          0.0034912151750177145,
+          0.0028258534148335457
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.3877550959587097,
+          0.7755101919174194,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0027984799817204475
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 63,
+      "training": {
+        "train_loss": [
+          2.165243148803711,
+          1.6707220077514648,
+          0.3766723573207855,
+          0.04826173558831215,
+          0.011911001987755299,
+          0.006299299653619528,
+          0.004396262113004923,
+          0.0033866874873638153,
+          0.002731052227318287
+        ],
+        "train_accuracy": [
+          0.16326530277729034,
+          0.4285714328289032,
+          0.9795918464660645,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0027040690183639526
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 64,
+      "training": {
+        "train_loss": [
+          2.058058738708496,
+          1.3455722332000732,
+          0.2487456202507019,
+          0.029839107766747475,
+          0.010364142246544361,
+          0.0060483976267278194,
+          0.0043503777123987675,
+          0.00338359153829515,
+          0.0027381759136915207
+        ],
+        "train_accuracy": [
+          0.18367347121238708,
+          0.5918367505073547,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0027114092372357845
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 65,
+      "training": {
+        "train_loss": [
+          2.0909371376037598,
+          1.37845778465271,
+          0.27791109681129456,
+          0.029120514169335365,
+          0.008713348768651485,
+          0.005020566284656525,
+          0.0036442368291318417,
+          0.002860012464225292,
+          0.0023293187841773033
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.5918367505073547,
+          0.9795918464660645,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.002307119080796838
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 66,
+      "training": {
+        "train_loss": [
+          2.1614902019500732,
+          1.5655579566955566,
+          0.2705972492694855,
+          0.03813391923904419,
+          0.012748194858431816,
+          0.007375318557024002,
+          0.005208329763263464,
+          0.003983890637755394,
+          0.0031774998642504215
+        ],
+        "train_accuracy": [
+          0.08163265138864517,
+          0.2857142984867096,
+          0.9795918464660645,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.003144285874441266
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 67,
+      "training": {
+        "train_loss": [
+          2.031902313232422,
+          1.2376939058303833,
+          0.18621483445167542,
+          0.02733014151453972,
+          0.009988936595618725,
+          0.006078853737562895,
+          0.004422907717525959,
+          0.003452590899541974,
+          0.0027986771892756224
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.6326530575752258,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0027714790776371956
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 68,
+      "training": {
+        "train_loss": [
+          2.1701362133026123,
+          1.7036246061325073,
+          0.50287264585495,
+          0.05278785526752472,
+          0.012095946818590164,
+          0.006525903940200806,
+          0.004660665523260832,
+          0.0036516766995191574,
+          0.0029794739093631506
+        ],
+        "train_accuracy": [
+          0.12244898080825806,
+          0.3265306055545807,
+          0.9387755393981934,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0029514520429074764
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 69,
+      "training": {
+        "train_loss": [
+          1.974967122077942,
+          1.1874128580093384,
+          0.15524348616600037,
+          0.028960371389985085,
+          0.009341820143163204,
+          0.005166823975741863,
+          0.0036065110471099615,
+          0.002752954140305519,
+          0.0021989336237311363
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.5918367505073547,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0021762805990874767
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 70,
+      "training": {
+        "train_loss": [
+          2.2021236419677734,
+          1.6653766632080078,
+          0.3991672396659851,
+          0.05283188819885254,
+          0.01425648108124733,
+          0.00784128438681364,
+          0.005455994047224522,
+          0.004144324455410242,
+          0.0032871298026293516
+        ],
+        "train_accuracy": [
+          0.16326530277729034,
+          0.4897959232330322,
+          0.9795918464660645,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0032518834341317415
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 71,
+      "training": {
+        "train_loss": [
+          2.0935137271881104,
+          1.5205373764038086,
+          0.2775319218635559,
+          0.06589216738939285,
+          0.04741320759057999,
+          0.04394013062119484,
+          0.04258072003722191,
+          0.041743118315935135,
+          0.04018297418951988
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.5510203838348389,
+          0.9795918464660645,
+          0.9795918464660645,
+          0.9795918464660645,
+          0.9795918464660645,
+          0.9795918464660645,
+          0.9795918464660645,
+          0.9795918464660645
+        ],
+        "final_accuracy": 0.9795918464660645,
+        "final_loss": 0.03980446979403496
+      },
+      "interventions": {
+        "base_accuracy": 0.9795918464660645,
+        "a_shift_effect_rate": 0.9931972821553549,
+        "b_shift_effect_rate": 0.9931972821553549,
+        "a_cyclic_shift_consistency": 0.9591836929321289,
+        "b_cyclic_shift_consistency": 0.9591836929321289,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 0.9591836929321289,
+        "b_embedding_patch_consistency": 0.9591836929321289,
+        "a_embedding_patch_effect_rate": 0.9931972821553549,
+        "b_embedding_patch_effect_rate": 0.9931972821553549
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 0.9591836929321289,
+          "a_patch_effect_rate": 0.9931972821553549,
+          "b_patch_consistency": 0.9591836929321289,
+          "b_patch_effect_rate": 0.9931972821553549
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 0.9591836929321289,
+          "a_patch_effect_rate": 0.9931972821553549,
+          "b_patch_consistency": 0.9591836929321289,
+          "b_patch_effect_rate": 0.9931972821553549
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 0.9591836929321289,
+          "a_patch_effect_rate": 0.9931972821553549,
+          "b_patch_consistency": 0.9591836929321289,
+          "b_patch_effect_rate": 0.9931972821553549
+        }
+      }
+    },
+    {
+      "seed": 72,
+      "training": {
+        "train_loss": [
+          2.0218968391418457,
+          1.4403432607650757,
+          0.3280274569988251,
+          0.04868931323289871,
+          0.014342895708978176,
+          0.007393945939838886,
+          0.004884737078100443,
+          0.0036084880121052265,
+          0.0028202328830957413
+        ],
+        "train_accuracy": [
+          0.16326530277729034,
+          0.44897958636283875,
+          0.9795918464660645,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.002788632409647107
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 73,
+      "training": {
+        "train_loss": [
+          2.0003395080566406,
+          1.0838117599487305,
+          0.11984113603830338,
+          0.015729842707514763,
+          0.006285657174885273,
+          0.003967149183154106,
+          0.002955534728243947,
+          0.0023449664004147053,
+          0.0019253144273534417
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.795918345451355,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0019077068427577615
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 74,
+      "training": {
+        "train_loss": [
+          2.082838296890259,
+          1.3018840551376343,
+          0.21852730214595795,
+          0.031922340393066406,
+          0.009723583236336708,
+          0.005667697638273239,
+          0.004078557249158621,
+          0.0031791813671588898,
+          0.002578289480879903
+        ],
+        "train_accuracy": [
+          0.18367347121238708,
+          0.6326530575752258,
+          0.9591836929321289,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0025533149018883705
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 75,
+      "training": {
+        "train_loss": [
+          2.065359115600586,
+          1.3012888431549072,
+          0.2715536952018738,
+          0.06779277324676514,
+          0.029893575236201286,
+          0.02020604908466339,
+          0.007238867226988077,
+          0.0042601898312568665,
+          0.003144534770399332
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.5918367505073547,
+          0.9795918464660645,
+          0.9795918464660645,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.003105101641267538
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 76,
+      "training": {
+        "train_loss": [
+          2.209743022918701,
+          1.443297266960144,
+          0.3870902955532074,
+          0.053626056760549545,
+          0.014832515269517899,
+          0.008032146841287613,
+          0.00560337258502841,
+          0.0042953514494001865,
+          0.0034421044401824474
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.5918367505073547,
+          0.8979591727256775,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0034070261754095554
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 77,
+      "training": {
+        "train_loss": [
+          1.9667329788208008,
+          1.3504878282546997,
+          0.3163972496986389,
+          0.08619514852762222,
+          0.011938861571252346,
+          0.00433098990470171,
+          0.0026983898133039474,
+          0.0020438057836145163,
+          0.0016536741750314832
+        ],
+        "train_accuracy": [
+          0.18367347121238708,
+          0.5714285969734192,
+          0.9591836929321289,
+          0.9795918464660645,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0016378508880734444
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 78,
+      "training": {
+        "train_loss": [
+          1.9889988899230957,
+          1.421424388885498,
+          0.23158887028694153,
+          0.03617856279015541,
+          0.009099189192056656,
+          0.004733871668577194,
+          0.003308317856863141,
+          0.002541318302974105,
+          0.002035591984167695
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.44897958636283875,
+          0.9795918464660645,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0020146674942225218
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 79,
+      "training": {
+        "train_loss": [
+          2.0359930992126465,
+          1.608870029449463,
+          0.47860580682754517,
+          0.11682625114917755,
+          0.053024303168058395,
+          0.044351499527692795,
+          0.008880862966179848,
+          0.0037907587829977274,
+          0.0023740180768072605
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.3877550959587097,
+          0.9387755393981934,
+          0.9795918464660645,
+          0.9795918464660645,
+          0.9795918464660645,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0023390650749206543
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 80,
+      "training": {
+        "train_loss": [
+          2.147489309310913,
+          1.6055089235305786,
+          0.3681621253490448,
+          0.04542024806141853,
+          0.014066510833799839,
+          0.008050790056586266,
+          0.00574182253330946,
+          0.004426266066730022,
+          0.0035491655580699444
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.3877550959587097,
+          0.9591836929321289,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0035128274466842413
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 81,
+      "training": {
+        "train_loss": [
+          2.0816450119018555,
+          1.7205575704574585,
+          0.36121708154678345,
+          0.04053336754441261,
+          0.010682602412998676,
+          0.006038764491677284,
+          0.004333148710429668,
+          0.003383195260539651,
+          0.0027485894970595837
+        ],
+        "train_accuracy": [
+          0.12244898080825806,
+          0.4897959232330322,
+          0.9591836929321289,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0027222849894315004
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 82,
+      "training": {
+        "train_loss": [
+          2.0027692317962646,
+          1.2095439434051514,
+          0.21733860671520233,
+          0.025383422151207924,
+          0.008085343986749649,
+          0.004745726473629475,
+          0.0034198295325040817,
+          0.002661485690623522,
+          0.00215545273385942
+        ],
+        "train_accuracy": [
+          0.12244898080825806,
+          0.6530612111091614,
+          0.9795918464660645,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.002134469570592046
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 83,
+      "training": {
+        "train_loss": [
+          2.1910910606384277,
+          1.7272419929504395,
+          0.41167590022087097,
+          0.0608818344771862,
+          0.01564306765794754,
+          0.00814603641629219,
+          0.005580439697951078,
+          0.004218929447233677,
+          0.0033469973132014275
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.5510203838348389,
+          0.9591836929321289,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0033114016987383366
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 84,
+      "training": {
+        "train_loss": [
+          2.189204216003418,
+          1.4344755411148071,
+          0.31173762679100037,
+          0.05783919245004654,
+          0.01603788696229458,
+          0.008349182084202766,
+          0.005684224888682365,
+          0.004286576993763447,
+          0.0034002638421952724
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.5918367505073547,
+          0.9795918464660645,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.003364238189533353
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 85,
+      "training": {
+        "train_loss": [
+          2.2462100982666016,
+          1.6301661729812622,
+          0.3579704463481903,
+          0.05475131794810295,
+          0.017215747386217117,
+          0.009187187068164349,
+          0.006169941276311874,
+          0.004584969487041235,
+          0.0035912147723138332
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.4897959232330322,
+          0.9795918464660645,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.003551166970282793
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 86,
+      "training": {
+        "train_loss": [
+          2.129619836807251,
+          1.4942535161972046,
+          0.4467245638370514,
+          0.07968273758888245,
+          0.01773032546043396,
+          0.008220421150326729,
+          0.005351703613996506,
+          0.003955159801989794,
+          0.003100664122030139
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.3877550959587097,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0030663551297038794
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 87,
+      "training": {
+        "train_loss": [
+          2.1475777626037598,
+          1.4440902471542358,
+          0.30310454964637756,
+          0.03912002965807915,
+          0.012504876591265202,
+          0.00720561295747757,
+          0.00509625906124711,
+          0.003906884230673313,
+          0.003124522278085351
+        ],
+        "train_accuracy": [
+          0.16326530277729034,
+          0.5918367505073547,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0030923555605113506
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 88,
+      "training": {
+        "train_loss": [
+          2.0288875102996826,
+          1.1709438562393188,
+          0.3957434594631195,
+          0.13007181882858276,
+          0.02660987339913845,
+          0.008933424949645996,
+          0.005049813538789749,
+          0.0035170214250683784,
+          0.0026798686012625694
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.5714285969734192,
+          0.9591836929321289,
+          0.9795918464660645,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0026474688202142715
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 89,
+      "training": {
+        "train_loss": [
+          2.1893117427825928,
+          1.631726622581482,
+          0.3164774179458618,
+          0.03173227608203888,
+          0.009912032634019852,
+          0.0057373628951609135,
+          0.0041952840983867645,
+          0.003320163581520319,
+          0.0027272331062704325
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.4897959232330322,
+          0.9591836929321289,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0027024243026971817
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 90,
+      "training": {
+        "train_loss": [
+          2.0875749588012695,
+          1.708377480506897,
+          0.335880309343338,
+          0.032337311655282974,
+          0.010007948614656925,
+          0.006033765617758036,
+          0.004424439277499914,
+          0.0034774334635585546,
+          0.0028283237479627132
+        ],
+        "train_accuracy": [
+          0.12244898080825806,
+          0.40816327929496765,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.002801100257784128
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 91,
+      "training": {
+        "train_loss": [
+          2.1065475940704346,
+          1.4383951425552368,
+          0.29423660039901733,
+          0.04391749948263168,
+          0.010764548555016518,
+          0.005824523512274027,
+          0.004145083483308554,
+          0.0032325955107808113,
+          0.00263199326582253
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.6734693646430969,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.002607117174193263
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 92,
+      "training": {
+        "train_loss": [
+          2.094029188156128,
+          1.1719040870666504,
+          0.3164210915565491,
+          0.0891028642654419,
+          0.025629092007875443,
+          0.011280345730483532,
+          0.023140301927924156,
+          0.0069118705578148365,
+          0.003967233933508396
+        ],
+        "train_accuracy": [
+          0.12244898080825806,
+          0.7346938848495483,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.003895182628184557
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 93,
+      "training": {
+        "train_loss": [
+          2.267819404602051,
+          1.612066626548767,
+          0.5461763739585876,
+          0.10539747774600983,
+          0.017200887203216553,
+          0.00825017224997282,
+          0.0056148008443415165,
+          0.0043132109567523,
+          0.003475191304460168
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.36734694242477417,
+          0.9387755393981934,
+          0.9795918464660645,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0034405847545713186
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 94,
+      "training": {
+        "train_loss": [
+          1.9824408292770386,
+          1.0919451713562012,
+          0.2236396074295044,
+          0.051101990044116974,
+          0.009884733706712723,
+          0.004566737450659275,
+          0.0030381716787815094,
+          0.0023159198462963104,
+          0.0018669933779165149
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.6122449040412903,
+          0.9591836929321289,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0018487347988411784
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 95,
+      "training": {
+        "train_loss": [
+          2.0433340072631836,
+          1.4393072128295898,
+          0.29119494557380676,
+          0.02751491591334343,
+          0.008314481005072594,
+          0.004799425136297941,
+          0.0034517506137490273,
+          0.0026858022902160883,
+          0.002172552514821291
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.6326530575752258,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.002151197986677289
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 96,
+      "training": {
+        "train_loss": [
+          2.156360387802124,
+          1.6700410842895508,
+          0.6631380915641785,
+          0.12101740390062332,
+          0.02073942869901657,
+          0.008399954065680504,
+          0.005297201685607433,
+          0.0039057652465999126,
+          0.003081264905631542
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.3469387888908386,
+          0.8571428656578064,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.0030483307782560587
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 97,
+      "training": {
+        "train_loss": [
+          2.1287853717803955,
+          1.525761365890503,
+          0.4800574779510498,
+          0.07970613986253738,
+          0.015383276157081127,
+          0.006696663331240416,
+          0.004395186435431242,
+          0.003319884417578578,
+          0.002649459056556225
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.5102040767669678,
+          0.8979591727256775,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.002622151281684637
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 98,
+      "training": {
+        "train_loss": [
+          2.0608837604522705,
+          1.5262196063995361,
+          0.3169917166233063,
+          0.02991219237446785,
+          0.009347479790449142,
+          0.0055222040973603725,
+          0.004037564154714346,
+          0.0031736663077026606,
+          0.002585551468655467
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.5306122303009033,
+          0.9795918464660645,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "final_accuracy": 1.0,
+        "final_loss": 0.002560970140621066
+      },
+      "interventions": {
+        "base_accuracy": 1.0,
+        "a_shift_effect_rate": 1.0,
+        "b_shift_effect_rate": 1.0,
+        "a_cyclic_shift_consistency": 1.0,
+        "b_cyclic_shift_consistency": 1.0,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 1.0,
+        "b_embedding_patch_consistency": 1.0,
+        "a_embedding_patch_effect_rate": 1.0,
+        "b_embedding_patch_effect_rate": 1.0
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 1.0,
+          "a_patch_effect_rate": 1.0,
+          "b_patch_consistency": 1.0,
+          "b_patch_effect_rate": 1.0
+        }
+      }
+    },
+    {
+      "seed": 99,
+      "training": {
+        "train_loss": [
+          2.0076816082000732,
+          1.4401503801345825,
+          0.2464417666196823,
+          0.09983987361192703,
+          0.08589436858892441,
+          0.08283109217882156,
+          0.08151517808437347,
+          0.08072895556688309,
+          0.08037896454334259
+        ],
+        "train_accuracy": [
+          0.1428571492433548,
+          0.40816327929496765,
+          0.9387755393981934,
+          0.9591836929321289,
+          0.9591836929321289,
+          0.9591836929321289,
+          0.9591836929321289,
+          0.9591836929321289,
+          0.9591836929321289
+        ],
+        "final_accuracy": 0.9591836929321289,
+        "final_loss": 0.08039093762636185
+      },
+      "interventions": {
+        "base_accuracy": 0.9591836929321289,
+        "a_shift_effect_rate": 0.9863945643107096,
+        "b_shift_effect_rate": 0.9863945643107096,
+        "a_cyclic_shift_consistency": 0.918367326259613,
+        "b_cyclic_shift_consistency": 0.918367326259613,
+        "a_zero_original_accuracy": 0.1428571492433548,
+        "b_zero_original_accuracy": 0.1428571492433548
+      },
+      "activation_patching": {
+        "a_embedding_patch_consistency": 0.918367326259613,
+        "b_embedding_patch_consistency": 0.918367326259613,
+        "a_embedding_patch_effect_rate": 0.9863945643107096,
+        "b_embedding_patch_effect_rate": 0.9863945643107096
+      },
+      "activation_site_patching": {
+        "embedding": {
+          "a_patch_consistency": 0.918367326259613,
+          "a_patch_effect_rate": 0.9863945643107096,
+          "b_patch_consistency": 0.918367326259613,
+          "b_patch_effect_rate": 0.9863945643107096
+        },
+        "encoder.layers.0.norm1": {
+          "a_patch_consistency": 0.918367326259613,
+          "a_patch_effect_rate": 0.9863945643107096,
+          "b_patch_consistency": 0.918367326259613,
+          "b_patch_effect_rate": 0.9863945643107096
+        },
+        "encoder.layers.0.norm2": {
+          "a_patch_consistency": 0.918367326259613,
+          "a_patch_effect_rate": 0.9863945643107096,
+          "b_patch_consistency": 0.918367326259613,
+          "b_patch_effect_rate": 0.9863945643107096
+        }
       }
     }
   ],
-  "mean_final_accuracy": 0.9989795923233032,
-  "mean_a_cyclic_shift_consistency": 0.9979591846466065,
-  "mean_b_cyclic_shift_consistency": 0.9979591846466065,
-  "mean_a_embedding_patch_consistency": 0.9979591846466065,
-  "mean_b_embedding_patch_consistency": 0.9979591846466065
+  "mean_final_accuracy": 0.9985714292526245,
+  "mean_a_cyclic_shift_consistency": 0.9971428579092025,
+  "mean_b_cyclic_shift_consistency": 0.9971428579092025,
+  "mean_a_embedding_patch_consistency": 0.9971428579092025,
+  "mean_b_embedding_patch_consistency": 0.9971428579092025,
+  "mean_activation_site_patch_consistency": {
+    "embedding": 0.9971428579092025,
+    "encoder.layers.0.norm1": 0.9971428579092025,
+    "encoder.layers.0.norm2": 0.9971428579092025
+  }
 }

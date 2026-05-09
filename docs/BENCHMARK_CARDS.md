@@ -275,9 +275,18 @@ point-identified by the available observations.
 - **File:** `mnf/models/tiny_transformer.py`
 - **Mechanism:** a one-layer CPU transformer learns modular addition over `C_7`
 - **State types:** token states with cyclic counterfactual shifts
-- **Interventions:** shift either input token modulo `7`; patch source-token embedding activations into the base run and check output rotation consistency
+- **Interventions:** shift either input token modulo `7`; patch source-token embedding activations and final-token block activations into the base run and check output rotation consistency
 - **Expected failure mode:** synthetic executable benchmarks do not exercise learned weights
-- **Current result:** the CPU smoke reaches perfect modular-addition accuracy in the current environment and has near-perfect cyclic-shift and embedding-patch consistency for both inputs
+- **Current result:** the 100-seed CPU sweep reaches mean final accuracy `0.9986` with mean cyclic-shift, embedding-patch, `norm1`, and `norm2` patch consistency `0.9971`
+
+## Tiny learned redundant modular transformer
+
+- **File:** `mnf/models/tiny_redundant.py`
+- **Mechanism:** two learned transformer routes redundantly solve modular addition over `C_7`
+- **State types:** route-specific token streams and logits
+- **Interventions:** evaluate the full model, route-a only, route-b only, and both routes ablated
+- **Expected failure mode:** single-ablation necessity rejects or underweights redundant learned routes
+- **Current result:** the 100-seed CPU sweep has mean base accuracy `1.0000`, mean route-only accuracies `0.9986` and `0.9949`, mean both-routes-ablated accuracy `0.1429`, and redundancy/single-ablation-underweight rates `0.9900`
 
 ## Developmental bootstrap
 
@@ -312,4 +321,5 @@ point-identified by the available observations.
 | Table aliasing | output table cannot orient a directed gate without internal evidence |
 | Atom-splitting identifiability | output-only response kernel cannot distinguish split versus merged redundant routes |
 | No global chart | chart identity is gauge/context dependent |
-| Tiny learned modular transformer | input-token mechanisms are only tested at embedding-output patch sites, not localized inside attention/MLP submodules |
+| Tiny learned modular transformer | input-token mechanisms are tested at embedding and final-token block sites, but not yet decomposed into attention q/k/v or MLP submodules |
+| Tiny learned redundant modular transformer | redundancy is architecture-explicit because the two learned routes are separate modules |

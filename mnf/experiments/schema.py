@@ -82,6 +82,7 @@ def validate_research_sweeps(data: Mapping[str, Any]) -> SchemaValidation:
         "induction_demo",
         "interaction_suite",
         "superposition_phase",
+        "tiny_redundant_transformer_demo",
         "training_emergence",
         "transition_atom_sweep",
     )
@@ -107,4 +108,11 @@ def validate_research_sweeps(data: Mapping[str, Any]) -> SchemaValidation:
         _require_numeric(data, ("tiny_transformer_demo", "mean_b_cyclic_shift_consistency"), errors)
         _require_numeric(data, ("tiny_transformer_demo", "mean_a_embedding_patch_consistency"), errors)
         _require_numeric(data, ("tiny_transformer_demo", "mean_b_embedding_patch_consistency"), errors)
+        _require_path(data, ("tiny_transformer_demo", "mean_activation_site_patch_consistency"), errors)
+    _require_path(data, ("tiny_redundant_transformer_demo", "available"), errors)
+    if data.get("tiny_redundant_transformer_demo", {}).get("available"):
+        _require_numeric(data, ("tiny_redundant_transformer_demo", "mean_base_accuracy"), errors)
+        _require_numeric(data, ("tiny_redundant_transformer_demo", "mean_max_single_ablation_drop"), errors)
+        _require_numeric(data, ("tiny_redundant_transformer_demo", "mean_dual_ablation_drop"), errors)
+        _require_numeric(data, ("tiny_redundant_transformer_demo", "redundancy_certified_rate"), errors)
     return SchemaValidation(tuple(errors))

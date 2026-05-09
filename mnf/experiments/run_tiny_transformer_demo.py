@@ -5,6 +5,7 @@ from collections.abc import Sequence
 import numpy as np
 
 from mnf.models import (
+    evaluate_activation_site_patching,
     evaluate_embedding_patch_interventions,
     evaluate_modular_interventions,
     torch_available,
@@ -25,14 +26,33 @@ def run(
         model, training = train_tiny_modular_addition(modulus=modulus, steps=steps, seed=seed)
         interventions = evaluate_modular_interventions(model, modulus=modulus)
         activation_patching = evaluate_embedding_patch_interventions(model, modulus=modulus)
+        activation_site_patching = evaluate_activation_site_patching(model, modulus=modulus)
         rows.append(
             {
                 "seed": seed,
                 "training": training.as_dict(),
                 "interventions": interventions,
                 "activation_patching": activation_patching,
+                "activation_site_patching": activation_site_patching,
             }
         )
+
+    site_names = tuple(rows[0]["activation_site_patching"]) if rows else ()
+    mean_site_patch_consistency = {
+        site: float(
+            np.mean(
+                [
+                    (
+                        row["activation_site_patching"][site]["a_patch_consistency"]
+                        + row["activation_site_patching"][site]["b_patch_consistency"]
+                    )
+                    / 2.0
+                    for row in rows
+                ]
+            )
+        )
+        for site in site_names
+    }
 
     return {
         "available": True,
@@ -53,4 +73,5 @@ def run(
         "mean_b_embedding_patch_consistency": float(
             np.mean([row["activation_patching"]["b_embedding_patch_consistency"] for row in rows])
         ),
+        "mean_activation_site_patch_consistency": mean_site_patch_consistency,
     }

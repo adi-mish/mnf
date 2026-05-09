@@ -21,6 +21,7 @@ from mnf.experiments import (
     run_induction_demo,
     run_interaction_suite,
     run_superposition_phase,
+    run_tiny_redundant_transformer_demo,
     run_tiny_transformer_demo,
     run_training_emergence,
     run_transition_atom_sweep,
@@ -52,6 +53,8 @@ DEFAULT_CONFIG = {
     "include_tiny_transformer": True,
     "tiny_transformer_seeds": (0, 1, 2),
     "tiny_transformer_steps": 160,
+    "tiny_redundant_transformer_seeds": (0, 1, 2),
+    "tiny_redundant_transformer_steps": 160,
 }
 
 
@@ -130,6 +133,14 @@ def main() -> None:
             run_tiny_transformer_demo.run(
                 seeds=tuple(config["tiny_transformer_seeds"]),
                 steps=int(config["tiny_transformer_steps"]),
+            )
+            if bool(config["include_tiny_transformer"])
+            else {"available": False, "reason": "disabled by config"}
+        ),
+        "tiny_redundant_transformer_demo": (
+            run_tiny_redundant_transformer_demo.run(
+                seeds=tuple(config["tiny_redundant_transformer_seeds"]),
+                steps=int(config["tiny_redundant_transformer_steps"]),
             )
             if bool(config["include_tiny_transformer"])
             else {"available": False, "reason": "disabled by config"}

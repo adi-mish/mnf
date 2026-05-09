@@ -75,6 +75,15 @@ Best MOLT/global MSE ratio: `0.0001` at gate separation `4.0` and noise `0.0`.
 Mean final modular-addition accuracy: `1.0000`.
 Mean cyclic-shift consistency: input-a `1.0000`, input-b `1.0000`.
 Mean embedding-patch consistency: input-a `1.0000`, input-b `1.0000`.
+Mean deeper activation-site patch consistency: embedding: `1.0000`, encoder.layers.0.norm1: `1.0000`, encoder.layers.0.norm2: `1.0000`.
+
+## Tiny Redundant Transformer
+
+Mean base accuracy: `1.0000`.
+Mean route-only accuracy: route-a `0.9932`, route-b `0.9796`.
+Mean both-routes-ablated accuracy: `0.1429`.
+Mean max single-ablation drop: `0.0204` versus dual-ablation drop `0.8571`.
+Redundancy certified rate: `1.0000`; single-ablation underweights rate: `1.0000`.
 
 ## Training Emergence
 

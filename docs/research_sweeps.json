@@ -5543,6 +5543,26 @@
           "b_embedding_patch_consistency": 1.0,
           "a_embedding_patch_effect_rate": 1.0,
           "b_embedding_patch_effect_rate": 1.0
+        },
+        "activation_site_patching": {
+          "embedding": {
+            "a_patch_consistency": 1.0,
+            "a_patch_effect_rate": 1.0,
+            "b_patch_consistency": 1.0,
+            "b_patch_effect_rate": 1.0
+          },
+          "encoder.layers.0.norm1": {
+            "a_patch_consistency": 1.0,
+            "a_patch_effect_rate": 1.0,
+            "b_patch_consistency": 1.0,
+            "b_patch_effect_rate": 1.0
+          },
+          "encoder.layers.0.norm2": {
+            "a_patch_consistency": 1.0,
+            "a_patch_effect_rate": 1.0,
+            "b_patch_consistency": 1.0,
+            "b_patch_effect_rate": 1.0
+          }
         }
       },
       {
@@ -5587,6 +5607,26 @@
           "b_embedding_patch_consistency": 1.0,
           "a_embedding_patch_effect_rate": 1.0,
           "b_embedding_patch_effect_rate": 1.0
+        },
+        "activation_site_patching": {
+          "embedding": {
+            "a_patch_consistency": 1.0,
+            "a_patch_effect_rate": 1.0,
+            "b_patch_consistency": 1.0,
+            "b_patch_effect_rate": 1.0
+          },
+          "encoder.layers.0.norm1": {
+            "a_patch_consistency": 1.0,
+            "a_patch_effect_rate": 1.0,
+            "b_patch_consistency": 1.0,
+            "b_patch_effect_rate": 1.0
+          },
+          "encoder.layers.0.norm2": {
+            "a_patch_consistency": 1.0,
+            "a_patch_effect_rate": 1.0,
+            "b_patch_consistency": 1.0,
+            "b_patch_effect_rate": 1.0
+          }
         }
       },
       {
@@ -5631,6 +5671,26 @@
           "b_embedding_patch_consistency": 1.0,
           "a_embedding_patch_effect_rate": 1.0,
           "b_embedding_patch_effect_rate": 1.0
+        },
+        "activation_site_patching": {
+          "embedding": {
+            "a_patch_consistency": 1.0,
+            "a_patch_effect_rate": 1.0,
+            "b_patch_consistency": 1.0,
+            "b_patch_effect_rate": 1.0
+          },
+          "encoder.layers.0.norm1": {
+            "a_patch_consistency": 1.0,
+            "a_patch_effect_rate": 1.0,
+            "b_patch_consistency": 1.0,
+            "b_patch_effect_rate": 1.0
+          },
+          "encoder.layers.0.norm2": {
+            "a_patch_consistency": 1.0,
+            "a_patch_effect_rate": 1.0,
+            "b_patch_consistency": 1.0,
+            "b_patch_effect_rate": 1.0
+          }
         }
       }
     ],
@@ -5638,7 +5698,91 @@
     "mean_a_cyclic_shift_consistency": 1.0,
     "mean_b_cyclic_shift_consistency": 1.0,
     "mean_a_embedding_patch_consistency": 1.0,
-    "mean_b_embedding_patch_consistency": 1.0
+    "mean_b_embedding_patch_consistency": 1.0,
+    "mean_activation_site_patch_consistency": {
+      "embedding": 1.0,
+      "encoder.layers.0.norm1": 1.0,
+      "encoder.layers.0.norm2": 1.0
+    }
+  },
+  "tiny_redundant_transformer_demo": {
+    "available": true,
+    "modulus": 7,
+    "steps": 160,
+    "n_seeds": 3,
+    "rows": [
+      {
+        "seed": 0,
+        "training": {
+          "final_loss": 0.012495217844843864,
+          "base_accuracy": 1.0,
+          "route_a_only_accuracy": 1.0,
+          "route_b_only_accuracy": 1.0
+        },
+        "interventions": {
+          "base_accuracy": 1.0,
+          "route_a_only_accuracy": 1.0,
+          "route_b_only_accuracy": 1.0,
+          "both_routes_ablated_accuracy": 0.1428571492433548,
+          "drop_when_ablate_route_a": 0.0,
+          "drop_when_ablate_route_b": 0.0,
+          "max_single_ablation_drop": 0.0,
+          "dual_ablation_drop": 0.8571428507566452,
+          "single_ablation_underweights": true,
+          "redundancy_certified": true
+        }
+      },
+      {
+        "seed": 1,
+        "training": {
+          "final_loss": 0.16056376695632935,
+          "base_accuracy": 1.0,
+          "route_a_only_accuracy": 0.9795918464660645,
+          "route_b_only_accuracy": 0.9387755393981934
+        },
+        "interventions": {
+          "base_accuracy": 1.0,
+          "route_a_only_accuracy": 0.9795918464660645,
+          "route_b_only_accuracy": 0.9387755393981934,
+          "both_routes_ablated_accuracy": 0.1428571492433548,
+          "drop_when_ablate_route_a": 0.06122446060180664,
+          "drop_when_ablate_route_b": 0.020408153533935547,
+          "max_single_ablation_drop": 0.06122446060180664,
+          "dual_ablation_drop": 0.8571428507566452,
+          "single_ablation_underweights": true,
+          "redundancy_certified": true
+        }
+      },
+      {
+        "seed": 2,
+        "training": {
+          "final_loss": 0.009408611804246902,
+          "base_accuracy": 1.0,
+          "route_a_only_accuracy": 1.0,
+          "route_b_only_accuracy": 1.0
+        },
+        "interventions": {
+          "base_accuracy": 1.0,
+          "route_a_only_accuracy": 1.0,
+          "route_b_only_accuracy": 1.0,
+          "both_routes_ablated_accuracy": 0.1428571492433548,
+          "drop_when_ablate_route_a": 0.0,
+          "drop_when_ablate_route_b": 0.0,
+          "max_single_ablation_drop": 0.0,
+          "dual_ablation_drop": 0.8571428507566452,
+          "single_ablation_underweights": true,
+          "redundancy_certified": true
+        }
+      }
+    ],
+    "mean_base_accuracy": 1.0,
+    "mean_route_a_only_accuracy": 0.9931972821553549,
+    "mean_route_b_only_accuracy": 0.9795918464660645,
+    "mean_both_routes_ablated_accuracy": 0.1428571492433548,
+    "mean_max_single_ablation_drop": 0.020408153533935547,
+    "mean_dual_ablation_drop": 0.8571428507566452,
+    "redundancy_certified_rate": 1.0,
+    "single_ablation_underweights_rate": 1.0
   },
   "training_emergence": {
     "rows": [
