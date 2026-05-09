@@ -5,9 +5,11 @@ from mnf.models import (
     evaluate_embedding_patch_interventions,
     evaluate_modular_interventions,
     evaluate_redundant_route_interventions,
+    evaluate_shared_residual_route_interventions,
     torch_available,
     train_tiny_modular_addition,
     train_tiny_redundant_modular_transformer,
+    train_tiny_shared_residual_redundant_transformer,
 )
 
 
@@ -53,3 +55,23 @@ def test_tiny_redundant_transformer_recovers_redundant_routes_on_cpu():
     assert interventions["dual_ablation_drop"] >= 0.75
     assert interventions["single_ablation_underweights"] is True
     assert interventions["redundancy_certified"] is True
+
+
+@pytest.mark.slow
+def test_tiny_shared_residual_transformer_recovers_redundant_readouts_on_cpu():
+    if not torch_available():
+        return
+
+    model, training = train_tiny_shared_residual_redundant_transformer(seed=0, steps=120)
+    interventions = evaluate_shared_residual_route_interventions(model)
+    accounting = model.parameter_accounting()
+
+    assert training.base_accuracy >= 0.95
+    assert interventions["route_a_only_accuracy"] >= 0.95
+    assert interventions["route_b_only_accuracy"] >= 0.95
+    assert interventions["both_routes_ablated_accuracy"] <= 0.2
+    assert interventions["max_single_ablation_drop"] <= 0.1
+    assert interventions["dual_ablation_drop"] >= 0.75
+    assert interventions["single_ablation_underweights"] is True
+    assert interventions["redundancy_certified"] is True
+    assert accounting["shared_parameter_gain"] > 0

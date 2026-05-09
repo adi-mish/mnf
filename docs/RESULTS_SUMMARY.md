@@ -86,6 +86,15 @@ Mean both-routes-ablated accuracy: `0.1429`.
 Mean max single-ablation drop: `0.0204` versus dual-ablation drop `0.8571`.
 Redundancy certified rate: `1.0000`; single-ablation underweights rate: `1.0000`.
 
+## Tiny Shared-Residual Redundant Transformer
+
+Mean base accuracy: `1.0000`.
+Mean route-only accuracy: route-a `1.0000`, route-b `1.0000`.
+Mean both-routes-ablated accuracy: `0.1429`.
+Mean max single-ablation drop: `0.0000` versus dual-ablation drop `0.8571`.
+Redundancy certified rate: `1.0000`; single-ablation underweights rate: `1.0000`.
+Shared residual parameter gain: `8896` parameters (`0.4873` of independent-route parameters).
+
 ## Training Emergence
 
 Mean mechanism lead: `8.6000` steps.

@@ -114,11 +114,13 @@ hidden redundant routes can be discovered without architectural hints.
 redundancy/certificate logic, not as hidden-route discovery. It does show the
 main isolated-circuit failure under training: either route alone remains
 sufficient, so a single-ablation baseline underweights the routes, while dual
-ablation reveals the causal mass.
+ablation reveals the causal mass. A newer shared-residual version removes the
+separate-transformer-stack objection by reusing one encoder/residual stream and
+placing redundancy in the readout routes; it still has named route heads.
 
 **Needed evidence.** Train a less explicitly separated transformer where
-redundant algorithms share the same residual stream, then recover the routes
-from activation-local atoms rather than from named route modules.
+redundant algorithms are not named readout heads, then recover the routes from
+activation-local atoms rather than from named route modules.
 
 ## 7c. Activation-patching consistency can be task-position trivial
 

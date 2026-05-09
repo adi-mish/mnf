@@ -104,6 +104,11 @@ artifacts:
 - redundant tiny transformer route-only accuracies: `0.9986` and `0.9949`;
 - redundant tiny transformer dual-ablation drop: `0.8571`, with
   single-ablation underweight rate `0.9900`;
+- shared-residual redundant tiny transformer route-only accuracies: `0.9994`
+  and `0.9994`;
+- shared-residual redundant tiny transformer dual-ablation drop: `0.8565`,
+  single-ablation underweight rate `1.0000`, and shared parameter gain ratio
+  `0.4873`;
 - response-kernel atom-splitting output-only max distance: `0.0000`, with
   identification diameter `1.0000` and positive kernel distance once internal
   route markers are observed.

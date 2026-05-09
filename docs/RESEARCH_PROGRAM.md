@@ -90,6 +90,11 @@ Required tasks:
   local CPU sweep reaches base accuracy `1.0000`, route-only accuracies `0.9986`
   and `0.9949`, dual-ablation drop `0.8571`, and single-ablation underweight
   rate `0.9900`.
+- trained shared-residual redundant small transformers. Current status: one CPU
+  transformer reuses a shared residual stream for two independently sufficient
+  readout routes; the 100-seed local CPU sweep reaches base accuracy `0.9994`,
+  route-only accuracies `0.9994` and `0.9994`, dual-ablation drop `0.8565`, and
+  shared parameter gain ratio `0.4873`.
 - redundant-path, gating, support, and capacity-competition mechanism ecologies;
 - coupled training dynamics, including developmental bootstrap and mechanism death;
 - atom-splitting response-kernel non-identifiability with explicit

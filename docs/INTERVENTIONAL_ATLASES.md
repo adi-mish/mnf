@@ -128,7 +128,8 @@ systems, explicitly reports one response-kernel non-identifiability witness, and
 includes one learned-weight tiny transformer smoke test for modular addition
 with embedding and final-token block activation patching. It also includes a
 learned two-route tiny transformer where single ablations underweight redundant
-routes and dual ablation reveals the missing causal mass. It does not yet prove
-that the same machinery recovers hidden mechanisms from external pretrained
-transformer activations. That remains the next substantive step before broad
-real-model claims.
+routes and dual ablation reveals the missing causal mass, plus a shared-residual
+variant where the redundant readouts reuse one learned encoder. It does not yet
+prove that the same machinery recovers hidden mechanisms from external
+pretrained transformer activations. That remains the next substantive step
+before broad real-model claims.

@@ -447,7 +447,9 @@ the exact Boolean case with `B_00 = 0` and `B_10 = B_01 = B_11 = 1`.
 separately parameterized transformer routes are trained so either route is
 sufficient for modular addition. It is evidence for the redundancy certificate
 logic under learned weights, not a proof of hidden-route discovery in arbitrary
-transformers.
+transformers. `mnf/models/tiny_shared_residual.py` reduces the architectural
+separation by reusing one residual stream and placing redundancy in two readout
+routes, which also gives an executable shared-MDL reuse witness.
 
 ### Theorem 9: gating can be non-identifiable under marginal interventions
 

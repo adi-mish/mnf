@@ -15,17 +15,27 @@ from mnf.models.tiny_redundant import (
     run_redundant_cpu_sweep,
     train_tiny_redundant_modular_transformer,
 )
+from mnf.models.tiny_shared_residual import (
+    TinySharedResidualRedundantTransformer,
+    evaluate_shared_residual_route_interventions,
+    run_shared_residual_redundant_cpu_sweep,
+    train_tiny_shared_residual_redundant_transformer,
+)
 
 __all__ = [
     "TinyModularAdditionTransformer",
     "TinyRedundantModularTransformer",
+    "TinySharedResidualRedundantTransformer",
     "torch_available",
     "modular_addition_dataset",
     "train_tiny_modular_addition",
     "train_tiny_redundant_modular_transformer",
+    "train_tiny_shared_residual_redundant_transformer",
     "evaluate_modular_interventions",
     "evaluate_embedding_patch_interventions",
     "evaluate_activation_site_patching",
     "evaluate_redundant_route_interventions",
+    "evaluate_shared_residual_route_interventions",
     "run_redundant_cpu_sweep",
+    "run_shared_residual_redundant_cpu_sweep",
 ]

@@ -97,6 +97,9 @@ interaction recovery suite validate this exactly. `mnf/models/tiny_redundant.py`
 adds a learned-weight CPU witness: two transformer routes are trained so either
 route solves modular addition; single ablations have small drops while dual
 ablation collapses accuracy to chance in the 100-seed sweep.
+`mnf/models/tiny_shared_residual.py` strengthens the witness by reusing one
+shared encoder/residual stream with two independently sufficient readout routes,
+so the redundancy also carries a positive shared-MDL parameter gain.
 
 **Paper role.** This is the central formal break from isolated-circuit
 ontology. It implies that necessity tests must be factorial or Shapley-style

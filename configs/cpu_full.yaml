@@ -24,3 +24,5 @@ tiny_transformer_seeds: [0, 1, 2]
 tiny_transformer_steps: 160
 tiny_redundant_transformer_seeds: [0, 1, 2]
 tiny_redundant_transformer_steps: 160
+tiny_shared_residual_transformer_seeds: [0, 1, 2]
+tiny_shared_residual_transformer_steps: 160

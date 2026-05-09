@@ -243,6 +243,32 @@ def summarize_research_sweeps(data: Mapping[str, Any]) -> str:
                 "",
             ])
 
+    shared_residual_tiny = data.get("tiny_shared_residual_transformer_demo")
+    if shared_residual_tiny is not None:
+        lines.extend([
+            "## Tiny Shared-Residual Redundant Transformer",
+            "",
+        ])
+        if shared_residual_tiny.get("available"):
+            accounting = shared_residual_tiny.get("parameter_accounting", {})
+            lines.extend([
+                f"Mean base accuracy: `{_fmt(shared_residual_tiny['mean_base_accuracy'])}`.",
+                f"Mean route-only accuracy: route-a `{_fmt(shared_residual_tiny['mean_route_a_only_accuracy'])}`, route-b `{_fmt(shared_residual_tiny['mean_route_b_only_accuracy'])}`.",
+                f"Mean both-routes-ablated accuracy: `{_fmt(shared_residual_tiny['mean_both_routes_ablated_accuracy'])}`.",
+                f"Mean max single-ablation drop: `{_fmt(shared_residual_tiny['mean_max_single_ablation_drop'])}` versus dual-ablation drop `{_fmt(shared_residual_tiny['mean_dual_ablation_drop'])}`.",
+                f"Redundancy certified rate: `{_fmt(shared_residual_tiny['redundancy_certified_rate'])}`; single-ablation underweights rate: `{_fmt(shared_residual_tiny['single_ablation_underweights_rate'])}`.",
+            ])
+            if accounting:
+                lines.append(
+                    f"Shared residual parameter gain: `{accounting['shared_parameter_gain']}` parameters (`{_fmt(accounting['shared_parameter_gain_ratio'])}` of independent-route parameters)."
+                )
+            lines.append("")
+        else:
+            lines.extend([
+                f"Skipped: `{shared_residual_tiny['reason']}`.",
+                "",
+            ])
+
     training = data["training_emergence"]
     lines.extend([
         "## Training Emergence",

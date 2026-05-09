@@ -83,6 +83,7 @@ def validate_research_sweeps(data: Mapping[str, Any]) -> SchemaValidation:
         "interaction_suite",
         "superposition_phase",
         "tiny_redundant_transformer_demo",
+        "tiny_shared_residual_transformer_demo",
         "training_emergence",
         "transition_atom_sweep",
     )
@@ -116,4 +117,15 @@ def validate_research_sweeps(data: Mapping[str, Any]) -> SchemaValidation:
         _require_numeric(data, ("tiny_redundant_transformer_demo", "mean_max_single_ablation_drop"), errors)
         _require_numeric(data, ("tiny_redundant_transformer_demo", "mean_dual_ablation_drop"), errors)
         _require_numeric(data, ("tiny_redundant_transformer_demo", "redundancy_certified_rate"), errors)
+    _require_path(data, ("tiny_shared_residual_transformer_demo", "available"), errors)
+    if data.get("tiny_shared_residual_transformer_demo", {}).get("available"):
+        _require_numeric(data, ("tiny_shared_residual_transformer_demo", "mean_base_accuracy"), errors)
+        _require_numeric(data, ("tiny_shared_residual_transformer_demo", "mean_max_single_ablation_drop"), errors)
+        _require_numeric(data, ("tiny_shared_residual_transformer_demo", "mean_dual_ablation_drop"), errors)
+        _require_numeric(data, ("tiny_shared_residual_transformer_demo", "redundancy_certified_rate"), errors)
+        _require_numeric(
+            data,
+            ("tiny_shared_residual_transformer_demo", "parameter_accounting", "shared_parameter_gain_ratio"),
+            errors,
+        )
     return SchemaValidation(tuple(errors))

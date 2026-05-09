@@ -5807,6 +5807,94 @@
     "redundancy_certified_rate": 1.0,
     "single_ablation_underweights_rate": 1.0
   },
+  "tiny_shared_residual_transformer_demo": {
+    "available": true,
+    "modulus": 7,
+    "steps": 160,
+    "n_seeds": 3,
+    "parameter_accounting": {
+      "shared_core_parameters": 8896,
+      "route_a_parameters": 231,
+      "route_b_parameters": 231,
+      "shared_total_parameters": 9358,
+      "independent_total_parameters": 18254,
+      "shared_parameter_gain": 8896,
+      "shared_parameter_gain_ratio": 0.48734523939958363
+    },
+    "rows": [
+      {
+        "seed": 0,
+        "training": {
+          "final_loss": 0.009877556934952736,
+          "base_accuracy": 1.0,
+          "route_a_only_accuracy": 1.0,
+          "route_b_only_accuracy": 1.0
+        },
+        "interventions": {
+          "base_accuracy": 1.0,
+          "route_a_only_accuracy": 1.0,
+          "route_b_only_accuracy": 1.0,
+          "both_routes_ablated_accuracy": 0.1428571492433548,
+          "drop_when_ablate_route_a": 0.0,
+          "drop_when_ablate_route_b": 0.0,
+          "max_single_ablation_drop": 0.0,
+          "dual_ablation_drop": 0.8571428507566452,
+          "single_ablation_underweights": true,
+          "redundancy_certified": true
+        }
+      },
+      {
+        "seed": 1,
+        "training": {
+          "final_loss": 0.008797614835202694,
+          "base_accuracy": 1.0,
+          "route_a_only_accuracy": 1.0,
+          "route_b_only_accuracy": 1.0
+        },
+        "interventions": {
+          "base_accuracy": 1.0,
+          "route_a_only_accuracy": 1.0,
+          "route_b_only_accuracy": 1.0,
+          "both_routes_ablated_accuracy": 0.1428571492433548,
+          "drop_when_ablate_route_a": 0.0,
+          "drop_when_ablate_route_b": 0.0,
+          "max_single_ablation_drop": 0.0,
+          "dual_ablation_drop": 0.8571428507566452,
+          "single_ablation_underweights": true,
+          "redundancy_certified": true
+        }
+      },
+      {
+        "seed": 2,
+        "training": {
+          "final_loss": 0.010043839924037457,
+          "base_accuracy": 1.0,
+          "route_a_only_accuracy": 1.0,
+          "route_b_only_accuracy": 1.0
+        },
+        "interventions": {
+          "base_accuracy": 1.0,
+          "route_a_only_accuracy": 1.0,
+          "route_b_only_accuracy": 1.0,
+          "both_routes_ablated_accuracy": 0.1428571492433548,
+          "drop_when_ablate_route_a": 0.0,
+          "drop_when_ablate_route_b": 0.0,
+          "max_single_ablation_drop": 0.0,
+          "dual_ablation_drop": 0.8571428507566452,
+          "single_ablation_underweights": true,
+          "redundancy_certified": true
+        }
+      }
+    ],
+    "mean_base_accuracy": 1.0,
+    "mean_route_a_only_accuracy": 1.0,
+    "mean_route_b_only_accuracy": 1.0,
+    "mean_both_routes_ablated_accuracy": 0.1428571492433548,
+    "mean_max_single_ablation_drop": 0.0,
+    "mean_dual_ablation_drop": 0.8571428507566452,
+    "redundancy_certified_rate": 1.0,
+    "single_ablation_underweights_rate": 1.0
+  },
   "training_emergence": {
     "rows": [
       {
