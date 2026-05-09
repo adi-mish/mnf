@@ -147,6 +147,35 @@ accuracy `0.9635`.
 **Status.** This is a proposition, not a deep theorem, but it is central. It
 formalizes why labelability is weaker than mechanisticity.
 
+### Proposition 2b: labelability without causal use
+
+**Setup.** A representation contains a direction `v` from which a binary label
+can be decoded, but the model output does not depend on that direction:
+
+```text
+X = Z + s(Y)v
+O = epsilon
+```
+
+where `Z` and `epsilon` are independent noise terms.
+
+**Claim.** Linear probes and unsupervised directions can achieve high label
+accuracy while intervention/correlation along the proposed feature has near-zero
+causal-use score.
+
+**Proof sketch.** Since `X @ v` separates the two label classes, a linear probe
+recovers `Y`. Since `O` is independent of both `Y` and `X @ v`, changing or
+measuring that direction does not predict output change. Decodability is
+therefore insufficient for mechanism acceptance.
+
+**Benchmark link.** `mnf/baselines/features.py` compares linear-probe,
+PCA-first, and random-search baselines on random-labelable versus trained-used
+controls. The random-labelable case has high label accuracy and low causal-use
+score; the trained-used case has high causal-use score.
+
+**Status.** This strengthens the shortcut proposition: even without an
+environment shift, a labelable feature can be unused.
+
 ### Theorem 3: hierarchy absorption boundary
 
 **Setup.** Let `C => P`, where `C` is a child feature and `P` is a parent

@@ -90,6 +90,31 @@ interaction recovery suite validate this exactly.
 ontology. It implies that necessity tests must be factorial or Shapley-style
 when redundancy is plausible.
 
+## Proposition B0: labelability is not causal use
+
+**Claim.** A feature direction can decode a semantic label with high accuracy
+while the model output is independent of that direction.
+
+**Construction.** Let:
+
+```text
+X = Z + s(Y) v
+O = noise
+```
+
+where `Y` is a binary label, `s(Y)` is `+1` or `-1`, `v` is a unit direction,
+and `Z` is independent nuisance variation. Linear probes recover `Y` from
+`X @ v`, but interventions along `v` do not predict changes in `O`.
+
+**Repo status.** `mnf/baselines/features.py` compares linear-probe, PCA-first,
+and random-search directions on random-labelable versus trained-used controls.
+The random-labelable setting has high label accuracy but low causal-use score,
+so accepting directions on labelability alone creates false mechanisms.
+
+**Paper role.** This proposition is the local baseline analogue of the SAE
+sanity-check literature: decodability is an atom proposal, not a mechanism
+certificate.
+
 ## Theorem C: gating can be non-identifiable from marginal interventions
 
 **Claim.** Marginal interventions are insufficient in general for identifying
@@ -155,7 +180,10 @@ annihilates all lower-order terms and leaves the coefficient of the full
 monomial over `S`.
 
 **Repo status.** `mnf/benchmarks/interactions/higher_order.py` gives a
-triple-gate contrast of `1.0`.
+triple-gate contrast of `1.0`. `mnf/interactions/higher_order.py` also makes
+the search evidence explicit: a pairwise-only table marks the triple contrast
+as `unobserved`, while the order-3 table recovers a positive higher-order
+interaction.
 
 **Paper role.** This marks the boundary of the current pairwise engine and
 gives a principled next intervention when pairwise residuals remain.
