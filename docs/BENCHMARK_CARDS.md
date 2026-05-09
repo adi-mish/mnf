@@ -220,6 +220,24 @@ mechanism recovery.
 - **Expected failure mode:** fixed one-shot designs either under-sample noisy contrasts or over-spend on already stable pairs
 - **Current result:** noiseless recovery terminates at the `22`-state pairwise design; noisy recovery allocates additional measurements to unstable labels and is compared against uniform and random repeated designs at matched budgets
 
+## Table aliasing
+
+- **File:** `mnf/benchmarks/interactions/table_aliasing.py`
+- **Mechanism:** directed gate and symmetric AND synergy induce the same four-cell output table
+- **State types:** binary mechanism-strength states plus internal trace variables
+- **Interventions:** pairwise factorial table plus internal gate-orientation evidence
+- **Expected failure mode:** behavior-only interaction labels are mistaken for structural labels
+- **Current result:** behavior-only evidence reports `ambiguous_without_internal_evidence`; internal evidence orients the directed gate as `m_to_n`
+
+## No global chart
+
+- **File:** `mnf/benchmarks/atlas/no_global_chart.py`
+- **Mechanism:** the same activation coordinate needs identity or flipped gauge depending on context
+- **State types:** scalar chart coordinates with a context label
+- **Interventions:** chart gluing under candidate gauge transforms
+- **Expected failure mode:** a single global dictionary is forced where a context-indexed atlas is required
+- **Current result:** best global glue error is nonzero, while context-indexed gluing has zero error
+
 ## Higher-order interaction
 
 - **File:** `mnf/benchmarks/interactions/higher_order.py`

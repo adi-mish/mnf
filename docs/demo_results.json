@@ -453,6 +453,98 @@
         }
       }
     },
+    "table_aliasing": {
+      "directed_table": {
+        "y00": 0.0,
+        "y10": 0.0,
+        "y01": 0.0,
+        "y11": 1.0,
+        "joint_effect": 1.0,
+        "effect_m_when_n_off": 0.0,
+        "effect_m_when_n_on": 1.0,
+        "effect_n_when_m_off": 0.0,
+        "effect_n_when_m_on": 1.0,
+        "drop_m_from_joint": 1.0,
+        "drop_n_from_joint": 1.0,
+        "dual_ablation_drop": 1.0,
+        "synergy": 1.0,
+        "compensation_score": 0.0,
+        "redundancy_score": 0.0,
+        "competition_score": 0.0,
+        "gate_m_to_n": 1.0,
+        "gate_n_to_m": 1.0
+      },
+      "symmetric_table": {
+        "y00": 0.0,
+        "y10": 0.0,
+        "y01": 0.0,
+        "y11": 1.0,
+        "joint_effect": 1.0,
+        "effect_m_when_n_off": 0.0,
+        "effect_m_when_n_on": 1.0,
+        "effect_n_when_m_off": 0.0,
+        "effect_n_when_m_on": 1.0,
+        "drop_m_from_joint": 1.0,
+        "drop_n_from_joint": 1.0,
+        "dual_ablation_drop": 1.0,
+        "synergy": 1.0,
+        "compensation_score": 0.0,
+        "redundancy_score": 0.0,
+        "competition_score": 0.0,
+        "gate_m_to_n": 1.0,
+        "gate_n_to_m": 1.0
+      },
+      "saturation_table": {
+        "y00": 0.0,
+        "y10": 1.0,
+        "y01": 1.0,
+        "y11": 1.0,
+        "joint_effect": 1.0,
+        "effect_m_when_n_off": 1.0,
+        "effect_m_when_n_on": 0.0,
+        "effect_n_when_m_off": 1.0,
+        "effect_n_when_m_on": 0.0,
+        "drop_m_from_joint": 0.0,
+        "drop_n_from_joint": 0.0,
+        "dual_ablation_drop": 1.0,
+        "synergy": -1.0,
+        "compensation_score": 1.0,
+        "redundancy_score": 1.0,
+        "competition_score": 0.0,
+        "gate_m_to_n": -1.0,
+        "gate_n_to_m": -1.0
+      },
+      "directed_equals_symmetric_table": true,
+      "behavior_only": {
+        "phenomenological_label": "synergistic_or_gated",
+        "structural_label": "ambiguous_without_internal_evidence",
+        "orientation": "unoriented",
+        "internal_gate_m_to_n": 0.0,
+        "internal_gate_n_to_m": 0.0,
+        "ambiguity_reason": "same output factorial table can arise from directed gates, symmetric synergy, or saturation",
+        "is_ambiguous": true
+      },
+      "directed_structural": {
+        "phenomenological_label": "synergistic_or_gated",
+        "structural_label": "directed_gate",
+        "orientation": "m_to_n",
+        "internal_gate_m_to_n": 1.0,
+        "internal_gate_n_to_m": 0.0,
+        "ambiguity_reason": "",
+        "is_ambiguous": false
+      },
+      "symmetric_structural": {
+        "phenomenological_label": "synergistic_or_gated",
+        "structural_label": "ambiguous_without_internal_evidence",
+        "orientation": "unoriented",
+        "internal_gate_m_to_n": 0.0,
+        "internal_gate_n_to_m": 0.0,
+        "ambiguity_reason": "same output factorial table can arise from directed gates, symmetric synergy, or saturation",
+        "is_ambiguous": true
+      },
+      "gate_to_worker_internal": 1.0,
+      "worker_to_gate_internal": 0.0
+    },
     "interaction_recovery": {
       "design_size": 22,
       "n_pairs": 15,
@@ -2048,6 +2140,85 @@
         ]
       ]
     }
+  },
+  "atlas_suite": {
+    "no_global_chart": {
+      "identity_glue_error": 0.25,
+      "flip_glue_error": 0.25,
+      "best_global_gauge": "identity",
+      "best_global_glue_error": 0.25,
+      "context_indexed_glue_error": 0.0,
+      "requires_context_indexed_gauge": true,
+      "n_samples": 10
+    }
+  },
+  "certificate_demo": {
+    "report": {
+      "names": [
+        "compact_but_weak",
+        "faithful_but_long",
+        "dominated"
+      ],
+      "pareto_indices": [
+        0,
+        1
+      ],
+      "accepted": [
+        "compact_but_weak",
+        "faithful_but_long"
+      ],
+      "rejected": {
+        "dominated": [
+          "intervention_error",
+          "glue_error",
+          "uncertainty",
+          "effect"
+        ]
+      },
+      "certificates": {
+        "compact_but_weak": {
+          "obs_error": 0.0,
+          "intervention_error": 0.08,
+          "invariance_error": 0.0,
+          "glue_error": 0.02,
+          "naturalness_cost": 0.0,
+          "closure_error": 0.0,
+          "shared_description_length": 1.0,
+          "effect": 0.45,
+          "uncertainty": 0.04,
+          "confidence_intervals": {}
+        },
+        "faithful_but_long": {
+          "obs_error": 0.0,
+          "intervention_error": 0.01,
+          "invariance_error": 0.0,
+          "glue_error": 0.01,
+          "naturalness_cost": 0.0,
+          "closure_error": 0.0,
+          "shared_description_length": 4.0,
+          "effect": 0.45,
+          "uncertainty": 0.02,
+          "confidence_intervals": {}
+        },
+        "dominated": {
+          "obs_error": 0.0,
+          "intervention_error": 0.2,
+          "invariance_error": 0.0,
+          "glue_error": 0.1,
+          "naturalness_cost": 0.0,
+          "closure_error": 0.0,
+          "shared_description_length": 5.0,
+          "effect": 0.1,
+          "uncertainty": 0.2,
+          "confidence_intervals": {}
+        }
+      }
+    },
+    "lagrangian_rank_effect_weighted": [
+      "compact_but_weak",
+      "faithful_but_long",
+      "dominated"
+    ]
   },
   "adversarial_controls": {
     "random_vs_trained": {

@@ -55,7 +55,9 @@ separate these mechanisms.
 
 **Current response.** The current classifier uses separate redundancy and
 competition scores, but the distinction is heuristic outside clean synthetic
-worlds.
+worlds. The table-aliasing benchmark now makes this limitation explicit:
+behavior-only evidence can be structurally ambiguous, and directed structural
+labels require internal evidence.
 
 **Needed evidence.** Add mediation/support probes and output uncertainty over
 interaction type. Real models will likely require multiple behavior metrics and
@@ -68,6 +70,8 @@ decompositions by changing the code language, atom granularity, or interaction
 cost.
 
 **Current response.** The theorem is now stated only relative to a fixed code.
+The atlas module now makes gauge/gluing an explicit object, including a minimal
+case where no single global gauge is adequate.
 
 **Needed evidence.** Prove gauge-invariant comparisons or report sensitivity to
 reasonable code families.
@@ -108,7 +112,9 @@ Eff * exp(-(lambda_int E_int + lambda_inv E_inv + lambda_nat E_nat + beta K))
 depends on hyperparameters. Different choices can reorder mechanisms.
 
 **Current response.** The score is an operational scaffold, not a final
-universal metric.
+universal metric. `mnf/certificates` now exposes certificate vectors,
+thresholds, and Pareto fronts so scalar Lagrangians are only explicit search
+utilities.
 
 **Needed evidence.** Report Pareto fronts over effect, intervention error,
 invariance, naturalness, and description length. Avoid relying on a single
@@ -119,8 +125,8 @@ scalar score for main claims.
 The theory is internally much tighter than the initial PLAN2 sketch, but the
 strong version still needs three things:
 
-1. context-stability and abstention for interaction labels;
-2. ecosystem gauge theory for fuzzy shared atoms;
+1. broader context-stability and abstention calibration;
+2. ecosystem gauge theory for fuzzy shared atoms beyond the minimal atlas-glue benchmark;
 3. real activation-intervention evidence against strong baselines.
 
 The CPU-local repo can still make progress on the first two. The third likely

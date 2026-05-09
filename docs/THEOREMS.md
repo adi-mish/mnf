@@ -265,6 +265,60 @@ states for the six-mechanism suite plus repeated-measurement behavior under
 noise. The same benchmark reports matched-budget uniform and random repeated
 designs as non-adaptive baselines.
 
+## Proposition E4: behavior-table structural ambiguity
+
+**Claim.** A four-cell output factorial table does not in general identify the
+structural interaction type or its orientation.
+
+**Construction.** The directed gate:
+
+```text
+Y = gate and worker
+```
+
+and the symmetric AND synergy:
+
+```text
+Y = left and right
+```
+
+induce the same output table:
+
+```text
+Y_00 = 0, Y_10 = 0, Y_01 = 0, Y_11 = 1.
+```
+
+The output contrast is positive in both cases. The table alone can justify the
+phenomenological label `synergistic_or_gated`, but it cannot orient the gate or
+distinguish a directed gate from symmetric synergy. Internal evidence, such as
+a downstream variable whose response to `worker` depends on `gate`, is required.
+
+**Repo status.** `mnf/interactions/structural.py` returns
+`ambiguous_without_internal_evidence` from the output table and
+`mnf/benchmarks/interactions/table_aliasing.py` orients the directed gate only
+after internal evidence is supplied.
+
+**Paper role.** This is the formal reason structural labels should be stricter
+than behavior-level interaction labels.
+
+## Proposition E5: context-gluing obstruction
+
+**Claim.** There are settings where two local charts have low local error, but
+no single global gauge glues them across contexts. A context-indexed atlas can
+have lower gluing error than any global chart.
+
+**Construction.** Let one chart read `z = activation`. Let the target chart read
+`z = activation` in one context and `z = 1 - activation` in another. Identity
+gauge is exact in the first context and wrong in the second; the flip gauge has
+the opposite failure. A context-indexed gauge is exact in both.
+
+**Repo status.** `mnf/atlas/glue.py` implements gluing error, and
+`mnf/benchmarks/atlas/no_global_chart.py` reports nonzero best-global glue error
+with zero context-indexed glue error.
+
+**Paper role.** This is the minimal atlas theorem: a single global feature
+dictionary can be strictly worse than a chart cover with explicit gluing.
+
 ## Theorem F: shared-MDL atom reuse
 
 **Claim.** If two mechanisms can either duplicate an atom or share it, shared
@@ -333,7 +387,8 @@ overclaiming.
 The CPU-local theory now has a coherent theorem package and executable
 witnesses for the main new claims: redundancy, gating, pairwise recovery,
 higher-order contrasts, approximate contrast stability, active repeated
-intervention design, shared MDL, and capacity competition.
+intervention design, behavior-table structural ambiguity, context-gluing
+obstruction, shared MDL, and capacity competition.
 
 The adversarial review in `docs/ADVERSARIAL_REVIEW.md` identifies the main
 remaining attack surfaces: context-dependent pair labels, additive-label

@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import argparse
+import ast
 import json
 import sys
 from pathlib import Path
@@ -8,7 +10,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from mnf.experiments import (
     run_adversarial_controls,
     run_absorption_phase,
+    run_atlas_suite,
     run_baseline_comparison,
+    run_certificate_demo,
     run_cyclic_baseline_comparison,
     run_cyclic_noise_sweep,
     run_ground_truth_suite,
@@ -20,30 +24,99 @@ from mnf.experiments import (
 )
 
 
+DEFAULT_CONFIG = {
+    "absorption_n": 5000,
+    "absorption_seeds": (0, 1, 2, 3, 4),
+    "induction_seeds": tuple(range(20)),
+    "interaction_seeds": tuple(range(20)),
+    "coactivations": (0.005, 0.01, 0.03, 0.05, 0.1, 0.2, 0.4, 0.7),
+    "decoder_cosines": (0.0, 0.15, 0.3, 0.5, 0.7, 0.9, 1.0),
+    "overlaps": (0.0, 0.25, 0.5, 0.75, 1.0),
+    "redundancy_weights": (0.0, 0.1, 0.25, 0.5, 0.75, 1.0, 1.5),
+    "synergy_weights": (0.0, 0.1, 0.25, 0.5, 0.75, 1.0, 1.5),
+    "noisy_recovery_noise_levels": (0.0, 0.005, 0.01, 0.02, 0.03, 0.05, 0.08, 0.12, 0.2, 0.3),
+    "noisy_recovery_seeds": tuple(range(200)),
+    "active_design_noise_levels": (0.0, 0.005, 0.01, 0.02, 0.03, 0.04),
+    "active_design_seeds": tuple(range(100)),
+    "active_baseline_budgets": (22, 64, 256),
+    "cyclic_noise_n": 3000,
+    "cyclic_noise_seeds": (0, 1, 2, 3, 4),
+    "transition_n": 6000,
+    "transition_seeds": (0, 1, 2, 3, 4),
+    "training_seeds": (0, 1, 2, 3, 4),
+}
+
+
+def _parse_config_value(value: str) -> object:
+    value = value.strip()
+    if value.startswith("[") or value.startswith("(") or value.startswith("{"):
+        parsed = ast.literal_eval(value)
+        if isinstance(parsed, list):
+            return tuple(parsed)
+        return parsed
+    try:
+        return ast.literal_eval(value)
+    except (SyntaxError, ValueError):
+        return value.strip("\"'")
+
+
+def load_config(path: Path | None) -> dict[str, object]:
+    config = dict(DEFAULT_CONFIG)
+    if path is None:
+        return config
+    for raw_line in path.read_text().splitlines():
+        line = raw_line.split("#", 1)[0].strip()
+        if not line:
+            continue
+        if ":" not in line:
+            raise ValueError(f"invalid config line: {raw_line!r}")
+        key, value = line.split(":", 1)
+        key = key.strip()
+        if key not in config:
+            raise ValueError(f"unknown config key: {key}")
+        config[key] = _parse_config_value(value)
+    return config
+
+
 def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--config", type=Path, default=None, help="Optional simple YAML-style CPU sweep config")
+    args = parser.parse_args()
+    config = load_config(args.config)
     out = {
-        "absorption_phase": run_absorption_phase.run(n=5000, seeds=(0, 1, 2, 3, 4)),
+        "absorption_phase": run_absorption_phase.run(
+            n=int(config["absorption_n"]),
+            seeds=tuple(config["absorption_seeds"]),
+        ),
         "adversarial_controls": run_adversarial_controls.run(),
         "baseline_comparison": run_baseline_comparison.run(),
         "cyclic_baseline_comparison": run_cyclic_baseline_comparison.run(),
         "ground_truth_suite": run_ground_truth_suite.run(),
-        "induction_demo": run_induction_demo.run(seeds=tuple(range(20))),
+        "induction_demo": run_induction_demo.run(seeds=tuple(config["induction_seeds"])),
         "interaction_suite": run_interaction_suite.run(
-            seeds=tuple(range(20)),
-            coactivations=(0.005, 0.01, 0.03, 0.05, 0.1, 0.2, 0.4, 0.7),
-            decoder_cosines=(0.0, 0.15, 0.3, 0.5, 0.7, 0.9, 1.0),
-            overlaps=(0.0, 0.25, 0.5, 0.75, 1.0),
-            redundancy_weights=(0.0, 0.1, 0.25, 0.5, 0.75, 1.0, 1.5),
-            synergy_weights=(0.0, 0.1, 0.25, 0.5, 0.75, 1.0, 1.5),
-            noisy_recovery_noise_levels=(0.0, 0.005, 0.01, 0.02, 0.03, 0.05, 0.08, 0.12, 0.2, 0.3),
-            noisy_recovery_seeds=tuple(range(200)),
-            active_design_noise_levels=(0.0, 0.005, 0.01, 0.02, 0.03, 0.04),
-            active_design_seeds=tuple(range(100)),
-            active_baseline_budgets=(22, 64, 256),
+            seeds=tuple(config["interaction_seeds"]),
+            coactivations=tuple(config["coactivations"]),
+            decoder_cosines=tuple(config["decoder_cosines"]),
+            overlaps=tuple(config["overlaps"]),
+            redundancy_weights=tuple(config["redundancy_weights"]),
+            synergy_weights=tuple(config["synergy_weights"]),
+            noisy_recovery_noise_levels=tuple(config["noisy_recovery_noise_levels"]),
+            noisy_recovery_seeds=tuple(config["noisy_recovery_seeds"]),
+            active_design_noise_levels=tuple(config["active_design_noise_levels"]),
+            active_design_seeds=tuple(config["active_design_seeds"]),
+            active_baseline_budgets=tuple(config["active_baseline_budgets"]),
         ),
-        "cyclic_noise_sweep": run_cyclic_noise_sweep.run(n=3000, seeds=(0, 1, 2, 3, 4)),
-        "transition_atom_sweep": run_transition_atom_sweep.run(n=6000, seeds=(0, 1, 2, 3, 4)),
-        "training_emergence": run_training_emergence.run(seeds=(0, 1, 2, 3, 4)),
+        "atlas_suite": run_atlas_suite.run(),
+        "certificate_demo": run_certificate_demo.run(),
+        "cyclic_noise_sweep": run_cyclic_noise_sweep.run(
+            n=int(config["cyclic_noise_n"]),
+            seeds=tuple(config["cyclic_noise_seeds"]),
+        ),
+        "transition_atom_sweep": run_transition_atom_sweep.run(
+            n=int(config["transition_n"]),
+            seeds=tuple(config["transition_seeds"]),
+        ),
+        "training_emergence": run_training_emergence.run(seeds=tuple(config["training_seeds"])),
         "superposition_phase": run_superposition_phase.run(),
     }
     print(json.dumps(out, indent=2))

@@ -87,6 +87,11 @@ def summarize_research_sweeps(data: Mapping[str, Any]) -> str:
             lines.append(
                 f"Interaction recovery F1: `{_fmt(recovery['recovery']['f1'])}` over `{recovery['n_pairs']}` mechanism pairs using `{recovery['design_size']}` intervention states."
             )
+        table_aliasing = interaction.get("table_aliasing")
+        if table_aliasing is not None:
+            lines.append(
+                f"Structural aliasing: behavior-only label `{table_aliasing['behavior_only']['structural_label']}`; internal evidence orients the directed gate as `{table_aliasing['directed_structural']['orientation']}`."
+            )
         if context_stability is not None:
             lines.append(
                 f"Context-stability changed pairs: `{context_stability['n_changed_pairs']}` of `{context_stability['n_pairs']}`; the focal pair changes from `{context_stability['focal_context_on_label']}` to `{context_stability['focal_context_off_label']}`."
@@ -120,6 +125,27 @@ def summarize_research_sweeps(data: Mapping[str, Any]) -> str:
                 f"Active-vs-baseline at noise `0.02`, budget `64`: active stable rate `{_fmt(baseline_row['active_stable_rate'])}`, uniform `{_fmt(baseline_row['uniform_stable_rate'])}`, random `{_fmt(baseline_row['random_stable_rate'])}`."
             )
         lines.append("")
+
+    atlas = data.get("atlas_suite")
+    if atlas is not None:
+        no_global = atlas["no_global_chart"]
+        lines.extend([
+            "## Atlas Gluing",
+            "",
+            f"Best global glue error: `{_fmt(no_global['best_global_glue_error'])}` versus context-indexed glue error `{_fmt(no_global['context_indexed_glue_error'])}`.",
+            "",
+        ])
+
+    certificate = data.get("certificate_demo")
+    if certificate is not None:
+        report = certificate["report"]
+        lines.extend([
+            "## Certificate Vectors",
+            "",
+            f"Pareto frontier indices: `{report['pareto_indices']}`.",
+            f"Accepted certificates: `{report['accepted']}`.",
+            "",
+        ])
 
     transition_rows = data["transition_atom_sweep"]["rows"]
     best_transition = min(transition_rows, key=lambda row: row["molt_to_global_mse_ratio"])

@@ -23,6 +23,12 @@ torch = ["torch>=2.0"]
 testpaths = ["tests"]
 pythonpath = ["."]
 addopts = "-q"
+markers = [
+  "unit: fast deterministic unit tests",
+  "smoke: integration smoke tests over several components",
+  "slow: longer CPU sweeps or integration tests",
+  "stochastic: tests that exercise seeded stochastic behavior",
+]
 
 [tool.setuptools.packages.find]
 where = ["."]

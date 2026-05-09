@@ -2,28 +2,30 @@
 
 ## Target paper
 
-**Interactive Mechanistic Normal Forms: Causal Mechanism Ecologies in Neural Networks**
+**Interventional Mechanism Atlases: Causal Mechanism Ecologies in Neural Networks**
 
-Core claim: mechanistic interpretability should recover graded, interacting,
-minimum-description-length causal mechanism ecosystems, not merely label neurons,
-sparse latents, or isolated circuits.
+Core claim: mechanistic interpretability should recover context-indexed,
+gauge-aware, graded, interacting, minimum-description-length causal mechanism
+atlases, not merely label neurons, sparse latents, or isolated circuits.
 
 ## Landmark contribution stack
 
 A NeurIPS-best-paper-caliber version needs four contributions in one paper:
 
-1. **Theory:** formal definitions of natural causal abstraction, fuzzy mechanisms, typed variables, transition atoms, shared MDL, interaction terms, and falsifiability criteria.
-2. **Theorems and propositions:** feature absorption, typed-feature identifiability up to gauge, isolated-circuit fallacy, gating non-identifiability under marginal interventions, shared-MDL preference, developmental bootstrapping, sparse mechanism packing scores, and vacuity of unconstrained abstraction.
-3. **Benchmark:** MechanismLab 2.0, a ground-truth suite spanning scalar, hierarchical, cyclic, relational, transition-only, interaction/ecology, compiled, trained, and random-control systems.
-4. **Algorithm:** Mechanism Ecology Discovery, which recovers executable mechanisms and interaction matrices and beats probes, flat SAEs, and component-level circuit discovery on intervention prediction.
+1. **Theory:** natural causal abstraction, fuzzy mechanisms, typed variables, transition atoms, gauge/gluing, certificate vectors, shared MDL, interaction terms, and falsifiability criteria.
+2. **Theorems and propositions:** feature absorption, typed-feature identifiability up to gauge, behavior-table structural ambiguity, context-gluing obstruction, isolated-circuit fallacy, gating non-identifiability under marginal interventions, shared-MDL preference, developmental bootstrapping, sparse mechanism packing scores, and vacuity of unconstrained abstraction.
+3. **Benchmark:** MechanismLab 3.0, a ground-truth suite spanning scalar, hierarchical, cyclic, relational, transition-only, atlas/gluing, structural-aliasing, interaction/ecology, compiled, trained, and random-control systems.
+4. **Algorithm:** Mechanism Ecology Discovery with Atlases, which recovers executable mechanisms, context-indexed charts, certificates, and interaction matrices and beats probes, flat SAEs, and component-level circuit discovery on intervention prediction.
 
 ## Phase 0: repository hardening
 
 - Add CI.
 - Add deterministic seeds for all tests.
+- Add pytest markers for quick, slow, smoke, and stochastic tests.
 - Add type checking with pyright or mypy.
 - Add richer plotting scripts.
 - Add experiment config files.
+- Add result schemas with validation.
 - Add benchmark cards documenting each synthetic mechanism.
 
 ## Phase 1: formal theory
@@ -34,6 +36,7 @@ Write a formal paper draft with:
 - intervention algebra;
 - naturalness constraints;
 - typed state spaces and gauge symmetries;
+- context-indexed atlas charts and gluing errors;
 - distinction between decodable / represented / used / mechanistic;
 - state atoms and transition atoms;
 - fuzzy mechanism membership;
@@ -41,6 +44,7 @@ Write a formal paper draft with:
 - shared-MDL accounting for atom reuse;
 - MDL objective;
 - theorem statements.
+- certificate-vector acceptance and Pareto comparison.
 
 First proofs to complete:
 
@@ -50,7 +54,9 @@ First proofs to complete:
 4. Non-identifiability/vacuity under arbitrary nonlinear alignments.
 5. Isolated-circuit fallacy under redundant paths.
 6. Gating non-identifiability under marginal interventions.
-7. Shared-MDL preference for reusable atoms.
+7. Behavior-table ambiguity under identical four-cell outputs.
+8. Context-gluing obstruction for non-global charts.
+9. Shared-MDL preference for reusable atoms.
 
 ## Phase 2: MechanismLab benchmark
 

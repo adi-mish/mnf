@@ -116,7 +116,8 @@ The remedy is not only larger flat SAEs.  The remedy is structured dictionaries 
 ## 9. Mechanism ecologies
 
 Interactive MNF upgrades MNF from isolated explanations to mechanism
-ecologies. The target object is not an isolated circuit but an ecosystem:
+ecologies. The PLAN3 version tightens this again into an interventional
+mechanism atlas. The target object is not an isolated circuit but an ecosystem:
 
 ```text
 E_D = (A*, M, R, H_E, alpha, gamma, Omega)
@@ -148,6 +149,18 @@ Interactions are first-class:
 The repo implements these ideas in `mnf/mechanisms`, `mnf/interactions`, and
 `mnf/benchmarks/interactions`.
 
+The atlas version adds context-indexed charts and gauges:
+
+```text
+A_D = (U, C, M, R, H, alpha, gamma, Omega, G, K)
+```
+
+where `C` is a chart/context cover and `G` is the allowed gauge structure. On
+chart overlap, gluing error measures whether two local explanations agree up to
+an allowed transformation. `mnf/atlas` implements this metric, and the
+no-global-chart benchmark shows a case where context-indexed gluing has zero
+error but every single global gauge has nonzero error.
+
 The practical intervention engine uses pairwise factorial designs first. For
 `K` mechanisms, full factorial recovery costs `2^K` states, while the pairwise
 all-on-context design costs only:
@@ -178,11 +191,23 @@ other mechanisms are on and synergistic when a background switch is off. The
 context-stability benchmark is a deliberately small counterexample: it forces
 the repo to report which pair labels change under background interventions.
 
+Behavior-level interaction labels are not automatically structural labels. A
+directed gate and a symmetric AND synergy can have the same four-cell output
+table. The structural-interaction layer therefore abstains without internal
+evidence and orients gates only when activation-local or internal-variable
+evidence is supplied.
+
 The active-design version uses the same margins operationally: first cover the
 deduplicated pairwise design, then spend extra measurements on states that
 participate in unstable pair labels. In noiseless finite benchmarks this ends
 after the pairwise design; under noise it reports instability rather than
 forcing a label when margins are too small.
+
+Mechanisticity is also better treated as a certificate vector than as one final
+scalar. `mnf/certificates` tracks observation error, intervention error,
+invariance error, glue error, naturalness cost, closure error, shared
+description length, effect, and uncertainty. Scalar Lagrangians remain useful
+for search, but final claims should report thresholds or Pareto fronts.
 
 ## 10. Circuits as minimal causal subprograms
 
@@ -234,3 +259,5 @@ MNF is in trouble if:
 - factorial interventions do not improve on single-ablation mechanism tests;
 - shared-MDL accounting does not predict reusable atoms better than independent
   circuit descriptions.
+- behavior-only structural labels cannot be improved by internal evidence;
+- atlas gluing adds complexity without improving intervention prediction.

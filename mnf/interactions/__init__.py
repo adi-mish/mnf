@@ -45,6 +45,7 @@ from mnf.interactions.overlap import pairwise_overlap_matrix, soft_jaccard, weig
 from mnf.interactions.recovery import InteractionRecoveryReport, edge_f1, label_recovery_report, threshold_edges
 from mnf.interactions.redundancy import compensation_from_factorial, redundancy_from_factorial, single_ablation_misses_pair
 from mnf.interactions.shapley import pairwise_shapley_values
+from mnf.interactions.structural import StructuralInteractionEvidence, structural_interaction_evidence
 from mnf.interactions.uncertainty import EffectInterval, bootstrap_factorial_effects, noisy_factorial_samples
 
 __all__ = [
@@ -92,6 +93,8 @@ __all__ = [
     "compensation_from_factorial",
     "single_ablation_misses_pair",
     "pairwise_shapley_values",
+    "StructuralInteractionEvidence",
+    "structural_interaction_evidence",
     "EffectInterval",
     "bootstrap_factorial_effects",
     "noisy_factorial_samples",

@@ -1,6 +1,10 @@
+import pytest
+
 from mnf.experiments.run_interaction_suite import run
 
 
+@pytest.mark.smoke
+@pytest.mark.slow
 def test_interaction_suite_smoke():
     out = run(seeds=(0, 1), coactivations=(0.01, 0.1), decoder_cosines=(0.2, 0.9), overlaps=(0.0, 1.0))
     assert out["redundant_paths"]["single_ablation_misses_pair"] is True

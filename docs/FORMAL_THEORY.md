@@ -517,7 +517,48 @@ six-mechanism suite in `22` unique states without noise and allocates more
 measurements to unstable contrasts as noise increases. It also compares against
 uniform and random repeated designs at matched budgets.
 
-### Theorem 15: shared-MDL preference for reusable atoms
+### Proposition 15: behavior-table structural ambiguity
+
+**Setup.** Two systems induce the same output-level factorial table.
+
+**Claim.** Output-level factorial data cannot in general identify a structural
+gate orientation. A directed gate `Y = gate and worker` and a symmetric synergy
+`Y = left and right` both produce:
+
+```text
+Y_00 = 0, Y_10 = 0, Y_01 = 0, Y_11 = 1.
+```
+
+The table supports the phenomenological label `synergistic_or_gated`, but not a
+directed structural label.
+
+**Proof sketch.** The two structural equations induce identical observable
+tables, so any behavior-only estimator must output the same result for both.
+If the true structural labels differ, behavior-only evidence is insufficient.
+
+**Benchmark link.** `mnf/benchmarks/interactions/table_aliasing.py` implements
+the aliasing pair. `mnf/interactions/structural.py` abstains without internal
+evidence and orients the directed gate only when internal orientation evidence
+is supplied.
+
+### Proposition 16: context-gluing obstruction
+
+**Setup.** Two local charts encode an overlapping activation coordinate but
+require different gauges in different contexts.
+
+**Claim.** A context-indexed atlas can have lower gluing error than any single
+global gauge.
+
+**Proof sketch.** Let the source chart read `z = activation`. Let the target
+chart read `z = activation` in context `A` and `z = 1 - activation` in context
+`B`. Identity gauge is exact on `A`; flip gauge is exact on `B`; each is wrong
+on the other context. A context-indexed gauge can choose identity on `A` and
+flip on `B`, giving zero gluing error.
+
+**Benchmark link.** `mnf/benchmarks/atlas/no_global_chart.py` reports nonzero
+best-global gluing error and zero context-indexed gluing error.
+
+### Theorem 17: shared-MDL preference for reusable atoms
 
 **Setup.** Two mechanisms can either duplicate a typed atom or share it.
 
@@ -537,7 +578,7 @@ description lengths. The implementation uses `MechanismEcosystem` to compute
 **Benchmark link.** `mnf/benchmarks/interactions/shared_atom_reuse.py` gives a
 toy route atom reused by two lookup mechanisms.
 
-### Proposition 16: developmental bootstrapping
+### Proposition 18: developmental bootstrapping
 
 **Setup.** Mechanism strengths follow:
 
@@ -572,6 +613,8 @@ signals are insufficient:
   validation.
 - Single ablations can miss redundant mechanisms.
 - Marginal interventions can miss gates.
+- Behavior-level factorial tables can be structurally ambiguous.
+- Single global charts can fail where context-indexed atlases glue cleanly.
 - Independent MDL can miss reusable shared atoms.
 - Mechanisms can support, suppress, or compete with each other during training.
 

@@ -36,12 +36,22 @@ Shared-MDL gain for reused route atom: `1.7500`.
 Maximum capacity-competition score in the sweep: `2.8000`.
 Factorial interaction phase-diagram rows: `49`.
 Interaction recovery F1: `1.0000` over `15` mechanism pairs using `22` intervention states.
+Structural aliasing: behavior-only label `ambiguous_without_internal_evidence`; internal evidence orients the directed gate as `m_to_n`.
 Context-stability changed pairs: `3` of `6`; the focal pair changes from `additive` to `synergistic_or_gated`.
 Higher-order triple-gate contrast: `1.0000` using `8` intervention states.
 Noisy recovery all-correct rate: `1.0000` at noise `0.005` and `0.0000` at noise `0.3`.
 Noisy recovery abstention rate: `0.0000` at noise `0.005` and `1.0000` at noise `0.3`.
 Active design mean measurements: `22.0000` at noise `0.0` and `79.9900` at noise `0.04` with accuracy `0.9113`.
 Active-vs-baseline at noise `0.02`, budget `64`: active stable rate `1.0000`, uniform `0.9000`, random `0.0900`.
+
+## Atlas Gluing
+
+Best global glue error: `0.2500` versus context-indexed glue error `0.0000`.
+
+## Certificate Vectors
+
+Pareto frontier indices: `[0, 1]`.
+Accepted certificates: `['compact_but_weak', 'faithful_but_long']`.
 
 ## Transition Atoms
 

@@ -38,6 +38,10 @@ This scaffold was designed around the following research directions:
   https://openreview.net/pdf?id=d63a4AM4hb
 - Tracr compiled transformers as a ground-truth lab:
   https://arxiv.org/abs/2301.05062
+- MIB mechanistic interpretability benchmark:
+  https://arxiv.org/abs/2504.13151
+- Interpretive equivalence across neural networks:
+  https://arxiv.org/abs/2603.30002
 - Automated circuit discovery:
   https://arxiv.org/abs/2304.14997
 - Causal scrubbing:
@@ -48,6 +52,8 @@ This scaffold was designed around the following research directions:
   https://transformer-circuits.pub/2025/attribution-graphs/methods.html
 - Gemma Scope open interpretability tool suite:
   https://deepmind.google/models/gemma/gemma-scope/
+- Sparse mixtures of linear transforms:
+  https://transformer-circuits.pub/2025/bulk-update/index.html
 - Refusal mediated by a single direction:
   https://arxiv.org/abs/2406.11717
 - Emotion concepts and their function in Claude Sonnet 4.5:

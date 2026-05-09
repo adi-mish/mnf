@@ -21,6 +21,7 @@ from mnf.benchmarks.interactions import (
     redundant_paths_metrics,
     shared_atom_reuse_metrics,
     synergistic_paths_metrics,
+    table_aliasing_metrics,
 )
 from mnf.interactions import (
     build_interaction_matrix,
@@ -83,6 +84,7 @@ def run(
         "shared_atom_reuse": shared_atom_reuse_metrics(),
         "cooperative_routing": cooperative_routing_metrics(),
         "context_stability": context_stability_metrics(),
+        "table_aliasing": table_aliasing_metrics(),
         "interaction_recovery": recovery,
         "noisy_interaction_recovery": noisy_recovery,
         "active_design": active_design,

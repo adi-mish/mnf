@@ -125,6 +125,23 @@ perturbed. It also reports the abstention rate from the margin-stability
 classifier. This is a synthetic margin check, not a substitute for real
 activation intervention uncertainty.
 
+## Structural Evidence
+
+Output tables are phenomenological. They do not always identify the structural
+interaction type. `mnf/interactions/structural.py` therefore separates:
+
+```text
+phenomenological_label
+structural_label
+orientation
+internal evidence
+```
+
+The table-aliasing benchmark gives two systems with the same four-cell output
+table: a directed gate and a symmetric AND synergy. Behavior-only evidence
+returns `ambiguous_without_internal_evidence`; internal trace evidence orients
+the directed gate.
+
 ## Context Stability
 
 Pairwise labels are selected-context claims. Holding all non-pair mechanisms on
@@ -155,9 +172,9 @@ than left as an unbaselined heuristic.
 
 ## What remains before real models
 
-The CPU implementation now covers the pairwise interaction engine, shared-MDL
-accounting, uncertainty, active repeated-measurement design, and synthetic
-recovery. The next CPU-only gaps are:
+The CPU implementation now covers the pairwise interaction engine, structural
+evidence separation, shared-MDL accounting, uncertainty, active
+repeated-measurement design, and synthetic recovery. The next CPU-only gaps are:
 
 - higher-order interaction search over many candidate subsets;
 - richer context-shifted environments beyond the current minimal counterexample;

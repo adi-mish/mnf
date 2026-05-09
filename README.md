@@ -9,22 +9,27 @@ The central claim is that a mechanistic explanation is not a neuron list, SAE la
 - `mnf/core`: typed state spaces, interventions, causal programs, MNF scoring, MDL proxies, graph metrics.
 - `mnf/mechanisms`: fuzzy mechanisms, mechanism-strength interventions, shared atom accounting, and ecosystem-level shared MDL.
 - `mnf/interactions`: pairwise factorial effects, redundancy/gating/synergy metrics, capacity competition, support, gradient coupling, Shapley allocation, and coupled dynamics.
+- `mnf/certificates`: certificate vectors, Pareto ordering, thresholds, and report helpers for mechanism claims.
+- `mnf/atlas`: context-indexed chart and gauge/gluing utilities for interventional mechanism atlases.
 - `mnf/charts`: simple linear charts, cyclic typed charts, hierarchical feature absorption utilities, MOLT-like transition atoms, and a tiny optional PyTorch TopK SAE.
 - `mnf/baselines`: lightweight baseline selectors and scalar/PCA-style chart comparisons.
 - `mnf/discovery`: prototype Atlas-Causal Discovery pipeline plus a minimal Mechanism Ecology Discovery adapter for pairwise interaction recovery.
 - `mnf/benchmarks`: synthetic ground-truth systems for causal chains, gated/XOR programs, induction match-copy, relational lookup, modular arithmetic, transition-only maps, sparse superposition, hierarchical absorption, cyclic weekday features, shortcut controls, memorization controls, training-emergence controls, interaction/ecology controls, and random-vs-trained controls.
 - `mnf/experiments`: runnable demos and CPU-only phase sweeps for the benchmark families.
-- `tests`: 73 passing tests that exercise all core components.
+- `tests`: 83 passing tests that exercise all core components.
 - `docs/THEORY.md`: detailed theory.
+- `docs/INTERVENTIONAL_ATLASES.md`: iMNF-2 atlas, certificate-vector, gauge/gluing, and structural-interaction formulation.
 - `docs/FORMAL_THEORY.md`: theorem candidates and proof sketches connected to benchmarks.
 - `docs/INTERACTION_CALCULUS.md`: executable iMNF interaction metrics, intervention designs, uncertainty, and recovery metrics.
 - `docs/THEOREMS.md`: proof-obligation package for the iMNF claims and their benchmark witnesses.
 - `docs/ADVERSARIAL_REVIEW.md`: adversarial review of the current theory claims, attack surfaces, and required evidence.
+- `docs/TESTING.md`: quick, slow, smoke, and stochastic test-suite conventions.
 - `docs/RESEARCH_PROGRAM.md`: aggressive NeurIPS-scale research plan.
 - `docs/BENCHMARK_CARDS.md`: documented MechanismLab benchmark cards.
 - `docs/demo_results.json`: output of the demos on the current environment.
 - `docs/research_sweeps.json`: CPU-generated phase/sweep outputs for local benchmark experiments.
 - `docs/RESULTS_SUMMARY.md`: compact generated summary of the sweep outputs.
+- `docs/AGGRESSIVE_CPU_SUMMARY.md`: 1,000-seed CPU robustness summary for noisy/active interaction recovery.
 
 ## Quick start
 
@@ -32,12 +37,13 @@ The central claim is that a mechanistic explanation is not a neuron list, SAE la
 cd mechanistic-normal-forms
 python -m pip install -e '.[dev]'
 pytest -q
+pytest -q -m "not slow"
 python scripts/run_all_demos.py
-python scripts/run_research_sweeps.py
+python scripts/run_research_sweeps.py --config configs/cpu_full.yaml
 python scripts/write_results_summary.py
 ```
 
-The repo was tested in the current environment with Python 3.13.2.  All 73 tests passed.
+The repo was tested in the current environment with Python 3.13.2.  All 83 tests passed.
 
 ## What this is not
 

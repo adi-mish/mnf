@@ -1,0 +1,20 @@
+# Simple key/value config parsed by scripts/run_research_sweeps.py.
+absorption_n: 1000
+absorption_seeds: [0, 1]
+induction_seeds: [0, 1, 2, 3]
+interaction_seeds: [0, 1]
+coactivations: [0.01, 0.1]
+decoder_cosines: [0.2, 0.9]
+overlaps: [0.0, 1.0]
+redundancy_weights: [0.0, 0.5, 1.0]
+synergy_weights: [0.0, 0.5, 1.0]
+noisy_recovery_noise_levels: [0.0, 0.02, 0.08]
+noisy_recovery_seeds: [0, 1, 2, 3, 4]
+active_design_noise_levels: [0.0, 0.02, 0.03]
+active_design_seeds: [0, 1, 2, 3, 4]
+active_baseline_budgets: [22, 64]
+cyclic_noise_n: 1000
+cyclic_noise_seeds: [0, 1]
+transition_n: 1200
+transition_seeds: [0, 1]
+training_seeds: [0, 1]

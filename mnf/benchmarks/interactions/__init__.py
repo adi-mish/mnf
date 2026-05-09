@@ -24,6 +24,12 @@ from mnf.benchmarks.interactions.recovery_suite import (
 from mnf.benchmarks.interactions.redundant_paths import redundant_or_behavior, redundant_paths_metrics
 from mnf.benchmarks.interactions.shared_atom_reuse import make_shared_atom_ecosystem, shared_atom_reuse_metrics
 from mnf.benchmarks.interactions.synergistic_paths import and_synergy_behavior, synergistic_paths_metrics
+from mnf.benchmarks.interactions.table_aliasing import (
+    directed_gate_behavior,
+    structural_aliasing_report,
+    symmetric_synergy_behavior,
+    table_aliasing_metrics,
+)
 
 __all__ = [
     "active_design_trial",
@@ -55,4 +61,8 @@ __all__ = [
     "shared_atom_reuse_metrics",
     "and_synergy_behavior",
     "synergistic_paths_metrics",
+    "directed_gate_behavior",
+    "symmetric_synergy_behavior",
+    "table_aliasing_metrics",
+    "structural_aliasing_report",
 ]
