@@ -76,6 +76,7 @@ def validate_research_sweeps(data: Mapping[str, Any]) -> SchemaValidation:
         "certificate_demo",
         "cyclic_baseline_comparison",
         "cyclic_noise_sweep",
+        "feature_baseline_suite",
         "ground_truth_suite",
         "induction_demo",
         "interaction_suite",
@@ -93,6 +94,8 @@ def validate_research_sweeps(data: Mapping[str, Any]) -> SchemaValidation:
     _require_numeric(data, ("atlas_suite", "no_global_chart", "best_global_glue_error"), errors)
     _require_numeric(data, ("atlas_suite", "no_global_chart", "context_indexed_glue_error"), errors)
     _require_path(data, ("certificate_demo", "report", "pareto_indices"), errors)
+    _require_numeric(data, ("feature_baseline_suite", "mean_random_false_mechanism_rate"), errors)
+    _require_numeric(data, ("feature_baseline_suite", "mean_trained_causal_use_score"), errors)
     _require_path(data, ("tiny_transformer_demo", "available"), errors)
     if data.get("tiny_transformer_demo", {}).get("available"):
         _require_numeric(data, ("tiny_transformer_demo", "mean_final_accuracy"), errors)

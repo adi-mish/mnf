@@ -29,6 +29,9 @@ A NeurIPS-best-paper-caliber version needs four contributions in one paper:
   validates required top-level sections and key atlas/certificate/interaction
   fields before writing JSON.
 - Add benchmark cards documenting each synthetic mechanism.
+- Add lightweight feature baselines. Current status: linear probe, PCA-first,
+  and random-search directions are compared on random-labelable versus
+  trained-used controls.
 
 ## Phase 1: formal theory
 

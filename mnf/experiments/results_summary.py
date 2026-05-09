@@ -43,6 +43,16 @@ def summarize_research_sweeps(data: Mapping[str, Any]) -> str:
         "",
     ])
 
+    feature_baselines = data.get("feature_baseline_suite")
+    if feature_baselines is not None:
+        lines.extend([
+            "## Feature Baselines",
+            "",
+            f"Mean false-mechanism rate on random labelable controls: `{_fmt(feature_baselines['mean_random_false_mechanism_rate'])}`.",
+            f"Mean causal-use score: random labelable `{_fmt(feature_baselines['mean_random_causal_use_score'])}` versus trained-used `{_fmt(feature_baselines['mean_trained_causal_use_score'])}`.",
+            "",
+        ])
+
     cyclic_rows = data["cyclic_baseline_comparison"]["rows"]
     low_noise = cyclic_rows[0]
     high_noise = cyclic_rows[-1]

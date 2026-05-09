@@ -112,6 +112,15 @@ mechanism recovery.
 - **Expected failure mode:** labelability baseline selects the train shortcut
 - **Current result:** train-only selector chooses `shortcut` and gets shifted accuracy below `0.2`; invariance selector chooses `causal` and gets shifted accuracy above `0.9`
 
+## Feature baseline suite
+
+- **File:** `mnf/baselines/features.py`
+- **Mechanism:** labelable representation is compared with a representation whose feature is actually routed into output
+- **State types:** linear feature directions
+- **Interventions:** compare label accuracy with causal-use correlation along the proposed direction
+- **Expected failure mode:** probes, PCA, or random-search directions are accepted because they decode the label even when the output ignores that feature
+- **Current result:** random labelable controls have high label accuracy but low causal-use score; trained-used controls have high causal-use score
+
 ## Memorizing alignment
 
 - **File:** `mnf/benchmarks/memorization.py`

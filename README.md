@@ -13,7 +13,7 @@ The central claim is that a mechanistic explanation is not a neuron list, SAE la
 - `mnf/atlas`: context-indexed chart and gauge/gluing utilities for interventional mechanism atlases.
 - `mnf/charts`: simple linear charts, cyclic typed charts, hierarchical feature absorption utilities, MOLT-like transition atoms, and a tiny optional PyTorch TopK SAE.
 - `mnf/models`: optional tiny CPU transformer components for learned-mechanism smoke tests.
-- `mnf/baselines`: lightweight baseline selectors and scalar/PCA-style chart comparisons.
+- `mnf/baselines`: lightweight probe, PCA, random-feature, shortcut-selection, and scalar/PCA-style chart comparisons.
 - `mnf/discovery`: prototype Atlas-Causal Discovery pipeline plus a minimal Mechanism Ecology Discovery adapter for pairwise interaction recovery.
 - `mnf/benchmarks`: synthetic ground-truth systems for causal chains, gated/XOR programs, induction match-copy, relational lookup, modular arithmetic, transition-only maps, sparse superposition, hierarchical absorption, cyclic weekday features, shortcut controls, memorization controls, training-emergence controls, interaction/ecology controls, and random-vs-trained controls.
 - `mnf/experiments`: runnable demos and CPU-only phase sweeps for the benchmark families.

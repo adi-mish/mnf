@@ -467,6 +467,305 @@
       }
     }
   },
+  "feature_baseline_suite": {
+    "rows": [
+      {
+        "random_labelable": {
+          "rows": [
+            {
+              "name": "linear_probe",
+              "label_accuracy": 0.962890625,
+              "causal_use_score": 0.05925075355525526,
+              "description_length": 1.0,
+              "false_mechanism": true
+            },
+            {
+              "name": "pca_first",
+              "label_accuracy": 0.962890625,
+              "causal_use_score": 0.06286003825019426,
+              "description_length": 0.5,
+              "false_mechanism": true
+            },
+            {
+              "name": "random_search",
+              "label_accuracy": 0.87890625,
+              "causal_use_score": 0.04310739658801823,
+              "description_length": 2.0,
+              "false_mechanism": false
+            }
+          ],
+          "false_mechanism_rate": 0.6666666666666666,
+          "mean_label_accuracy": 0.9348958333333334,
+          "mean_causal_use_score": 0.055072729464489246
+        },
+        "trained_used": {
+          "rows": [
+            {
+              "name": "linear_probe",
+              "label_accuracy": 0.962890625,
+              "causal_use_score": 0.8891162599665411,
+              "description_length": 1.0,
+              "false_mechanism": false
+            },
+            {
+              "name": "pca_first",
+              "label_accuracy": 0.962890625,
+              "causal_use_score": 0.8846754798636581,
+              "description_length": 0.5,
+              "false_mechanism": false
+            },
+            {
+              "name": "random_search",
+              "label_accuracy": 0.87890625,
+              "causal_use_score": 0.752733433363781,
+              "description_length": 2.0,
+              "false_mechanism": false
+            }
+          ],
+          "false_mechanism_rate": 0.0,
+          "mean_label_accuracy": 0.9348958333333334,
+          "mean_causal_use_score": 0.8421750577313268
+        }
+      },
+      {
+        "random_labelable": {
+          "rows": [
+            {
+              "name": "linear_probe",
+              "label_accuracy": 0.9794921875,
+              "causal_use_score": 0.0039150005645864966,
+              "description_length": 1.0,
+              "false_mechanism": true
+            },
+            {
+              "name": "pca_first",
+              "label_accuracy": 0.9755859375,
+              "causal_use_score": 0.008130718914881123,
+              "description_length": 0.5,
+              "false_mechanism": true
+            },
+            {
+              "name": "random_search",
+              "label_accuracy": 0.8232421875,
+              "causal_use_score": 0.005456699487540509,
+              "description_length": 2.0,
+              "false_mechanism": false
+            }
+          ],
+          "false_mechanism_rate": 0.6666666666666666,
+          "mean_label_accuracy": 0.9261067708333334,
+          "mean_causal_use_score": 0.005834139655669375
+        },
+        "trained_used": {
+          "rows": [
+            {
+              "name": "linear_probe",
+              "label_accuracy": 0.9794921875,
+              "causal_use_score": 0.8933635510300482,
+              "description_length": 1.0,
+              "false_mechanism": false
+            },
+            {
+              "name": "pca_first",
+              "label_accuracy": 0.9755859375,
+              "causal_use_score": 0.8897522531487485,
+              "description_length": 0.5,
+              "false_mechanism": false
+            },
+            {
+              "name": "random_search",
+              "label_accuracy": 0.8232421875,
+              "causal_use_score": 0.671940293737633,
+              "description_length": 2.0,
+              "false_mechanism": false
+            }
+          ],
+          "false_mechanism_rate": 0.0,
+          "mean_label_accuracy": 0.9261067708333334,
+          "mean_causal_use_score": 0.8183520326388098
+        }
+      },
+      {
+        "random_labelable": {
+          "rows": [
+            {
+              "name": "linear_probe",
+              "label_accuracy": 0.9794921875,
+              "causal_use_score": 0.03505065566386074,
+              "description_length": 1.0,
+              "false_mechanism": true
+            },
+            {
+              "name": "pca_first",
+              "label_accuracy": 0.9794921875,
+              "causal_use_score": 0.031162256807032815,
+              "description_length": 0.5,
+              "false_mechanism": true
+            },
+            {
+              "name": "random_search",
+              "label_accuracy": 0.8427734375,
+              "causal_use_score": 0.006038572069582318,
+              "description_length": 2.0,
+              "false_mechanism": false
+            }
+          ],
+          "false_mechanism_rate": 0.6666666666666666,
+          "mean_label_accuracy": 0.9339192708333334,
+          "mean_causal_use_score": 0.024083828180158626
+        },
+        "trained_used": {
+          "rows": [
+            {
+              "name": "linear_probe",
+              "label_accuracy": 0.9794921875,
+              "causal_use_score": 0.8936442595485494,
+              "description_length": 1.0,
+              "false_mechanism": false
+            },
+            {
+              "name": "pca_first",
+              "label_accuracy": 0.9794921875,
+              "causal_use_score": 0.8886188755460129,
+              "description_length": 0.5,
+              "false_mechanism": false
+            },
+            {
+              "name": "random_search",
+              "label_accuracy": 0.8427734375,
+              "causal_use_score": 0.6977736931086086,
+              "description_length": 2.0,
+              "false_mechanism": false
+            }
+          ],
+          "false_mechanism_rate": 0.0,
+          "mean_label_accuracy": 0.9339192708333334,
+          "mean_causal_use_score": 0.8266789427343904
+        }
+      },
+      {
+        "random_labelable": {
+          "rows": [
+            {
+              "name": "linear_probe",
+              "label_accuracy": 0.9716796875,
+              "causal_use_score": 0.04100622594188474,
+              "description_length": 1.0,
+              "false_mechanism": true
+            },
+            {
+              "name": "pca_first",
+              "label_accuracy": 0.9716796875,
+              "causal_use_score": 0.04083745771317867,
+              "description_length": 0.5,
+              "false_mechanism": true
+            },
+            {
+              "name": "random_search",
+              "label_accuracy": 0.8447265625,
+              "causal_use_score": 0.025178727511438858,
+              "description_length": 2.0,
+              "false_mechanism": false
+            }
+          ],
+          "false_mechanism_rate": 0.6666666666666666,
+          "mean_label_accuracy": 0.9293619791666666,
+          "mean_causal_use_score": 0.03567413705550076
+        },
+        "trained_used": {
+          "rows": [
+            {
+              "name": "linear_probe",
+              "label_accuracy": 0.9716796875,
+              "causal_use_score": 0.8866566273892366,
+              "description_length": 1.0,
+              "false_mechanism": false
+            },
+            {
+              "name": "pca_first",
+              "label_accuracy": 0.9716796875,
+              "causal_use_score": 0.8837612197882136,
+              "description_length": 0.5,
+              "false_mechanism": false
+            },
+            {
+              "name": "random_search",
+              "label_accuracy": 0.8447265625,
+              "causal_use_score": 0.6920180273806066,
+              "description_length": 2.0,
+              "false_mechanism": false
+            }
+          ],
+          "false_mechanism_rate": 0.0,
+          "mean_label_accuracy": 0.9293619791666666,
+          "mean_causal_use_score": 0.8208119581860189
+        }
+      },
+      {
+        "random_labelable": {
+          "rows": [
+            {
+              "name": "linear_probe",
+              "label_accuracy": 0.9755859375,
+              "causal_use_score": 0.0015417760978662049,
+              "description_length": 1.0,
+              "false_mechanism": true
+            },
+            {
+              "name": "pca_first",
+              "label_accuracy": 0.9736328125,
+              "causal_use_score": 0.0025447764005807768,
+              "description_length": 0.5,
+              "false_mechanism": true
+            },
+            {
+              "name": "random_search",
+              "label_accuracy": 0.8623046875,
+              "causal_use_score": 0.00828818694741598,
+              "description_length": 2.0,
+              "false_mechanism": false
+            }
+          ],
+          "false_mechanism_rate": 0.6666666666666666,
+          "mean_label_accuracy": 0.9371744791666666,
+          "mean_causal_use_score": 0.004124913148620987
+        },
+        "trained_used": {
+          "rows": [
+            {
+              "name": "linear_probe",
+              "label_accuracy": 0.9755859375,
+              "causal_use_score": 0.8852484705973171,
+              "description_length": 1.0,
+              "false_mechanism": false
+            },
+            {
+              "name": "pca_first",
+              "label_accuracy": 0.9736328125,
+              "causal_use_score": 0.8788854645083416,
+              "description_length": 0.5,
+              "false_mechanism": false
+            },
+            {
+              "name": "random_search",
+              "label_accuracy": 0.8623046875,
+              "causal_use_score": 0.7391223562719234,
+              "description_length": 2.0,
+              "false_mechanism": false
+            }
+          ],
+          "false_mechanism_rate": 0.0,
+          "mean_label_accuracy": 0.9371744791666666,
+          "mean_causal_use_score": 0.8344187637925273
+        }
+      }
+    ],
+    "n_seeds": 5,
+    "mean_random_false_mechanism_rate": 0.6666666666666666,
+    "mean_trained_false_mechanism_rate": 0.0,
+    "mean_random_causal_use_score": 0.0249579495008878,
+    "mean_trained_causal_use_score": 0.8284873510166146
+  },
   "cyclic_baseline_comparison": {
     "rows": [
       {

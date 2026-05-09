@@ -18,6 +18,11 @@ This file is generated from `docs/research_sweeps.json`.
 | train-only | shortcut | 0.9805 | 0.1075 | 0.8730 |
 | invariance | causal | 0.9620 | 0.9635 | 0.0015 |
 
+## Feature Baselines
+
+Mean false-mechanism rate on random labelable controls: `0.6667`.
+Mean causal-use score: random labelable `0.0250` versus trained-used `0.8285`.
+
 ## Cyclic Baseline
 
 At noise `0.0`, typed rotation error is `0.0000` versus scalar rotation error `0.5729`.
