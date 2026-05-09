@@ -19,9 +19,11 @@ from mnf.experiments import (
     run_induction_demo,
     run_interaction_suite,
     run_superposition_phase,
+    run_tiny_transformer_demo,
     run_training_emergence,
     run_transition_atom_sweep,
 )
+from mnf.experiments.schema import validate_research_sweeps
 
 
 DEFAULT_CONFIG = {
@@ -44,6 +46,9 @@ DEFAULT_CONFIG = {
     "transition_n": 6000,
     "transition_seeds": (0, 1, 2, 3, 4),
     "training_seeds": (0, 1, 2, 3, 4),
+    "include_tiny_transformer": True,
+    "tiny_transformer_seeds": (0, 1, 2),
+    "tiny_transformer_steps": 160,
 }
 
 
@@ -116,10 +121,20 @@ def main() -> None:
             n=int(config["transition_n"]),
             seeds=tuple(config["transition_seeds"]),
         ),
+        "tiny_transformer_demo": (
+            run_tiny_transformer_demo.run(
+                seeds=tuple(config["tiny_transformer_seeds"]),
+                steps=int(config["tiny_transformer_steps"]),
+            )
+            if bool(config["include_tiny_transformer"])
+            else {"available": False, "reason": "disabled by config"}
+        ),
         "training_emergence": run_training_emergence.run(seeds=tuple(config["training_seeds"])),
         "superposition_phase": run_superposition_phase.run(),
     }
-    print(json.dumps(out, indent=2))
+    serializable = json.loads(json.dumps(out))
+    validate_research_sweeps(serializable).raise_for_errors()
+    print(json.dumps(serializable, indent=2))
 
 
 if __name__ == "__main__":

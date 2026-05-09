@@ -38,7 +38,9 @@ Factorial interaction phase-diagram rows: `49`.
 Interaction recovery F1: `1.0000` over `15` mechanism pairs using `22` intervention states.
 Structural aliasing: behavior-only label `ambiguous_without_internal_evidence`; internal evidence orients the directed gate as `m_to_n`.
 Context-stability changed pairs: `3` of `6`; the focal pair changes from `additive` to `synergistic_or_gated`.
+Context-stability sweep changed-context rate: `0.7500` over `16` parameter settings.
 Higher-order triple-gate contrast: `1.0000` using `8` intervention states.
+Pairwise-only higher-order search labels: `{'unobserved': 1}`; order-3 search labels: `{'positive_higher_order': 1}`.
 Noisy recovery all-correct rate: `1.0000` at noise `0.005` and `0.0000` at noise `0.3`.
 Noisy recovery abstention rate: `0.0000` at noise `0.005` and `1.0000` at noise `0.3`.
 Active design mean measurements: `22.0000` at noise `0.0` and `79.9900` at noise `0.04` with accuracy `0.9113`.
@@ -56,6 +58,11 @@ Accepted certificates: `['compact_but_weak', 'faithful_but_long']`.
 ## Transition Atoms
 
 Best MOLT/global MSE ratio: `0.0001` at gate separation `4.0` and noise `0.0`.
+
+## Tiny Transformer
+
+Mean final modular-addition accuracy: `1.0000`.
+Mean cyclic-shift consistency: input-a `1.0000`, input-b `1.0000`.
 
 ## Training Emergence
 

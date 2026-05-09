@@ -22,6 +22,7 @@ from mnf.experiments import (
     run_mechanismlab_demo,
     run_random_control_demo,
     run_superposition_phase,
+    run_tiny_transformer_demo,
     run_training_emergence,
     run_transition_atom_sweep,
 )
@@ -45,6 +46,7 @@ def main() -> None:
         "random_control_demo": run_random_control_demo.run(),
         "mechanismlab_demo": run_mechanismlab_demo.run(),
         "transition_atom_sweep_first_rows": run_transition_atom_sweep.run()["rows"][:5],
+        "tiny_transformer_demo": run_tiny_transformer_demo.run(seeds=(0,), steps=120),
         "training_emergence": run_training_emergence.run(),
         "superposition_phase_first_rows": run_superposition_phase.run()["rows"][:5],
     }

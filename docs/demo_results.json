@@ -413,7 +413,57 @@
     "higher_order": {
       "pairwise_design_size": 7,
       "triple_design_size": 8,
-      "third_order_effect": 1.0
+      "third_order_effect": 1.0,
+      "pairwise_only_search": {
+        "n_contrasts": 1,
+        "label_counts": {
+          "unobserved": 1
+        },
+        "detected": []
+      },
+      "triple_search": {
+        "n_contrasts": 1,
+        "label_counts": {
+          "positive_higher_order": 1
+        },
+        "detected": [
+          {
+            "subset": [
+              "gate_a",
+              "gate_b",
+              "worker"
+            ],
+            "order": 3,
+            "effect": 1.0,
+            "label": "positive_higher_order",
+            "tolerance": 1e-07,
+            "uncertainty": 0.0,
+            "missing_cells": 0
+          }
+        ]
+      },
+      "k_way_sweep": {
+        "rows": [
+          {
+            "order": 3,
+            "design_size": 8,
+            "effect": 1.0,
+            "label": "positive_higher_order"
+          },
+          {
+            "order": 4,
+            "design_size": 16,
+            "effect": 1.0,
+            "label": "positive_higher_order"
+          },
+          {
+            "order": 5,
+            "design_size": 32,
+            "effect": 1.0,
+            "label": "positive_higher_order"
+          }
+        ]
+      }
     },
     "shared_atom_reuse": {
       "atom_overlap": 0.3333333333333333,
@@ -452,6 +502,140 @@
           "context_off": "additive"
         }
       }
+    },
+    "context_stability_sweep": {
+      "rows": [
+        {
+          "synergy_on": 0.0,
+          "synergy_off": 0.0,
+          "stable_label_rate": 1.0,
+          "n_changed_pairs": 0,
+          "focal_context_on_label": "additive",
+          "focal_context_off_label": "additive"
+        },
+        {
+          "synergy_on": 0.0,
+          "synergy_off": 0.25,
+          "stable_label_rate": 0.3333333333333333,
+          "n_changed_pairs": 4,
+          "focal_context_on_label": "additive",
+          "focal_context_off_label": "synergistic_or_gated"
+        },
+        {
+          "synergy_on": 0.0,
+          "synergy_off": 0.5,
+          "stable_label_rate": 0.5,
+          "n_changed_pairs": 3,
+          "focal_context_on_label": "additive",
+          "focal_context_off_label": "synergistic_or_gated"
+        },
+        {
+          "synergy_on": 0.0,
+          "synergy_off": 1.0,
+          "stable_label_rate": 0.5,
+          "n_changed_pairs": 3,
+          "focal_context_on_label": "additive",
+          "focal_context_off_label": "synergistic_or_gated"
+        },
+        {
+          "synergy_on": 0.25,
+          "synergy_off": 0.0,
+          "stable_label_rate": 0.5,
+          "n_changed_pairs": 3,
+          "focal_context_on_label": "synergistic_or_gated",
+          "focal_context_off_label": "additive"
+        },
+        {
+          "synergy_on": 0.25,
+          "synergy_off": 0.25,
+          "stable_label_rate": 1.0,
+          "n_changed_pairs": 0,
+          "focal_context_on_label": "synergistic_or_gated",
+          "focal_context_off_label": "synergistic_or_gated"
+        },
+        {
+          "synergy_on": 0.25,
+          "synergy_off": 0.5,
+          "stable_label_rate": 0.5,
+          "n_changed_pairs": 3,
+          "focal_context_on_label": "synergistic_or_gated",
+          "focal_context_off_label": "synergistic_or_gated"
+        },
+        {
+          "synergy_on": 0.25,
+          "synergy_off": 1.0,
+          "stable_label_rate": 0.6666666666666666,
+          "n_changed_pairs": 2,
+          "focal_context_on_label": "synergistic_or_gated",
+          "focal_context_off_label": "synergistic_or_gated"
+        },
+        {
+          "synergy_on": 0.5,
+          "synergy_off": 0.0,
+          "stable_label_rate": 0.5,
+          "n_changed_pairs": 3,
+          "focal_context_on_label": "synergistic_or_gated",
+          "focal_context_off_label": "additive"
+        },
+        {
+          "synergy_on": 0.5,
+          "synergy_off": 0.25,
+          "stable_label_rate": 0.6666666666666666,
+          "n_changed_pairs": 2,
+          "focal_context_on_label": "synergistic_or_gated",
+          "focal_context_off_label": "synergistic_or_gated"
+        },
+        {
+          "synergy_on": 0.5,
+          "synergy_off": 0.5,
+          "stable_label_rate": 1.0,
+          "n_changed_pairs": 0,
+          "focal_context_on_label": "synergistic_or_gated",
+          "focal_context_off_label": "synergistic_or_gated"
+        },
+        {
+          "synergy_on": 0.5,
+          "synergy_off": 1.0,
+          "stable_label_rate": 0.6666666666666666,
+          "n_changed_pairs": 2,
+          "focal_context_on_label": "synergistic_or_gated",
+          "focal_context_off_label": "synergistic_or_gated"
+        },
+        {
+          "synergy_on": 1.0,
+          "synergy_off": 0.0,
+          "stable_label_rate": 0.5,
+          "n_changed_pairs": 3,
+          "focal_context_on_label": "synergistic_or_gated",
+          "focal_context_off_label": "additive"
+        },
+        {
+          "synergy_on": 1.0,
+          "synergy_off": 0.25,
+          "stable_label_rate": 0.6666666666666666,
+          "n_changed_pairs": 2,
+          "focal_context_on_label": "synergistic_or_gated",
+          "focal_context_off_label": "synergistic_or_gated"
+        },
+        {
+          "synergy_on": 1.0,
+          "synergy_off": 0.5,
+          "stable_label_rate": 0.6666666666666666,
+          "n_changed_pairs": 2,
+          "focal_context_on_label": "synergistic_or_gated",
+          "focal_context_off_label": "synergistic_or_gated"
+        },
+        {
+          "synergy_on": 1.0,
+          "synergy_off": 1.0,
+          "stable_label_rate": 1.0,
+          "n_changed_pairs": 0,
+          "focal_context_on_label": "synergistic_or_gated",
+          "focal_context_off_label": "synergistic_or_gated"
+        }
+      ],
+      "n_rows": 16,
+      "changed_context_rate": 0.75
     },
     "table_aliasing": {
       "directed_table": {
@@ -2582,6 +2766,51 @@
       "molt_description_length": 1.0625
     }
   ],
+  "tiny_transformer_demo": {
+    "available": true,
+    "modulus": 7,
+    "steps": 120,
+    "n_seeds": 1,
+    "rows": [
+      {
+        "seed": 0,
+        "training": {
+          "train_loss": [
+            2.069897174835205,
+            1.4045920372009277,
+            0.1875235140323639,
+            0.031572505831718445,
+            0.01120234839618206,
+            0.0064990161918103695,
+            0.004568654578179121
+          ],
+          "train_accuracy": [
+            0.1428571492433548,
+            0.5918367505073547,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "final_accuracy": 1.0,
+          "final_loss": 0.004500989336520433
+        },
+        "interventions": {
+          "base_accuracy": 1.0,
+          "a_shift_effect_rate": 1.0,
+          "b_shift_effect_rate": 1.0,
+          "a_cyclic_shift_consistency": 1.0,
+          "b_cyclic_shift_consistency": 1.0,
+          "a_zero_original_accuracy": 0.1428571492433548,
+          "b_zero_original_accuracy": 0.1428571492433548
+        }
+      }
+    ],
+    "mean_final_accuracy": 1.0,
+    "mean_a_cyclic_shift_consistency": 1.0,
+    "mean_b_cyclic_shift_consistency": 1.0
+  },
   "training_emergence": {
     "rows": [
       {

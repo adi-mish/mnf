@@ -10,6 +10,10 @@ python3 scripts/run_research_sweeps.py --config configs/cpu_quick.yaml
 python3 scripts/run_research_sweeps.py --config configs/cpu_full.yaml
 ```
 
+`scripts/run_research_sweeps.py` validates the generated result object against a
+minimal schema before writing JSON. The quick and full configs both include the
+optional tiny-transformer smoke when PyTorch is installed.
+
 Markers:
 
 - `unit`: fast deterministic unit tests.

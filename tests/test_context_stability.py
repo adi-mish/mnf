@@ -1,4 +1,4 @@
-from mnf.benchmarks.interactions.context_stability import context_labels, context_stability_metrics
+from mnf.benchmarks.interactions.context_stability import context_labels, context_stability_metrics, context_stability_sweep
 from mnf.interactions import FactorialEffects, classify_pairwise_interaction_with_uncertainty
 
 
@@ -24,3 +24,9 @@ def test_uncertain_classifier_abstains_near_margin():
 
     assert classify_pairwise_interaction_with_uncertainty(effects, tol=0.1) == "uncertain"
     assert classify_pairwise_interaction_with_uncertainty(effects, tol=0.01) == "synergistic_or_gated"
+
+
+def test_context_stability_sweep_reports_changed_contexts():
+    sweep = context_stability_sweep(synergy_on_values=(0.0, 1.0), synergy_off_values=(0.0, 1.0))
+    assert sweep["n_rows"] == 4
+    assert sweep["changed_context_rate"] > 0.0

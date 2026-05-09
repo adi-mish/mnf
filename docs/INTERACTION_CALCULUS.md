@@ -174,11 +174,12 @@ than left as an unbaselined heuristic.
 
 The CPU implementation now covers the pairwise interaction engine, structural
 evidence separation, shared-MDL accounting, uncertainty, active
-repeated-measurement design, and synthetic recovery. The next CPU-only gaps are:
+repeated-measurement design, higher-order search with explicit abstention when
+the table is under-observed, context-stability sweeps, and synthetic recovery.
+The next CPU-only gaps are:
 
-- higher-order interaction search over many candidate subsets;
-- richer context-shifted environments beyond the current minimal counterexample;
 - proof hardening for ecosystem-level approximate/noisy settings.
+- broader learned tiny-transformer tasks beyond modular addition.
 
 The next non-CPU-local gap is real-model activation intervention: TransformerLens
 or equivalent hooks, model weights, and likely GPU for anything beyond tiny

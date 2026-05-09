@@ -25,7 +25,9 @@ A NeurIPS-best-paper-caliber version needs four contributions in one paper:
 - Add type checking with pyright or mypy.
 - Add richer plotting scripts.
 - Add experiment config files.
-- Add result schemas with validation.
+- Add result schemas with validation. Current status: `scripts/run_research_sweeps.py`
+  validates required top-level sections and key atlas/certificate/interaction
+  fields before writing JSON.
 - Add benchmark cards documenting each synthetic mechanism.
 
 ## Phase 1: formal theory
@@ -72,7 +74,9 @@ Required tasks:
 - relational subject-relation-object lookup;
 - transition-only synthetic MLPs;
 - random controls;
-- trained small transformers;
+- trained small transformers. Current status: an optional CPU tiny transformer
+  learns modular addition over `C_7` and is evaluated by cyclic input-shift
+  interventions;
 - redundant-path, gating, support, and capacity-competition mechanism ecologies;
 - coupled training dynamics, including developmental bootstrap and mechanism death;
 - Tracr/RASP compiled transformers if dependencies permit.

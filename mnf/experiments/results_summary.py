@@ -96,9 +96,17 @@ def summarize_research_sweeps(data: Mapping[str, Any]) -> str:
             lines.append(
                 f"Context-stability changed pairs: `{context_stability['n_changed_pairs']}` of `{context_stability['n_pairs']}`; the focal pair changes from `{context_stability['focal_context_on_label']}` to `{context_stability['focal_context_off_label']}`."
             )
+        context_sweep = interaction.get("context_stability_sweep")
+        if context_sweep is not None:
+            lines.append(
+                f"Context-stability sweep changed-context rate: `{_fmt(context_sweep['changed_context_rate'])}` over `{context_sweep['n_rows']}` parameter settings."
+            )
         if higher_order is not None:
             lines.append(
                 f"Higher-order triple-gate contrast: `{_fmt(higher_order['third_order_effect'])}` using `{higher_order['triple_design_size']}` intervention states."
+            )
+            lines.append(
+                f"Pairwise-only higher-order search labels: `{higher_order['pairwise_only_search']['label_counts']}`; order-3 search labels: `{higher_order['triple_search']['label_counts']}`."
             )
         if noisy is not None:
             low_noise = noisy["rows"][1] if len(noisy["rows"]) > 1 else noisy["rows"][0]
@@ -155,6 +163,24 @@ def summarize_research_sweeps(data: Mapping[str, Any]) -> str:
         f"Best MOLT/global MSE ratio: `{_fmt(best_transition['molt_to_global_mse_ratio'])}` at gate separation `{best_transition['gate_separation']}` and noise `{best_transition['noise']}`.",
         "",
     ])
+
+    tiny = data.get("tiny_transformer_demo")
+    if tiny is not None:
+        lines.extend([
+            "## Tiny Transformer",
+            "",
+        ])
+        if tiny.get("available"):
+            lines.extend([
+                f"Mean final modular-addition accuracy: `{_fmt(tiny['mean_final_accuracy'])}`.",
+                f"Mean cyclic-shift consistency: input-a `{_fmt(tiny['mean_a_cyclic_shift_consistency'])}`, input-b `{_fmt(tiny['mean_b_cyclic_shift_consistency'])}`.",
+                "",
+            ])
+        else:
+            lines.extend([
+                f"Skipped: `{tiny['reason']}`.",
+                "",
+            ])
 
     training = data["training_emergence"]
     lines.extend([

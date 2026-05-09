@@ -18,3 +18,6 @@ cyclic_noise_seeds: [0, 1, 2, 3, 4]
 transition_n: 6000
 transition_seeds: [0, 1, 2, 3, 4]
 training_seeds: [0, 1, 2, 3, 4]
+include_tiny_transformer: True
+tiny_transformer_seeds: [0, 1, 2]
+tiny_transformer_steps: 160

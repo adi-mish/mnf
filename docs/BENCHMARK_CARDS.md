@@ -245,7 +245,16 @@ mechanism recovery.
 - **State types:** binary mechanism-strength states
 - **Interventions:** sparse higher-order factorial design
 - **Expected failure mode:** pairwise-only recovery misses that some mechanisms require higher-order contrasts
-- **Current result:** third-order triple-gate contrast is `1.0` using the full sparse order-3 design
+- **Current result:** pairwise-only search reports the triple as `unobserved`; order-3 search recovers a positive third-order contrast of `1.0`, and the k-way sweep recovers orders `3`, `4`, and `5`
+
+## Tiny learned modular transformer
+
+- **File:** `mnf/models/tiny_transformer.py`
+- **Mechanism:** a one-layer CPU transformer learns modular addition over `C_7`
+- **State types:** token states with cyclic counterfactual shifts
+- **Interventions:** shift either input token modulo `7` and check output rotation consistency
+- **Expected failure mode:** synthetic executable benchmarks do not exercise learned weights
+- **Current result:** the CPU smoke reaches perfect modular-addition accuracy in the current environment and has near-perfect cyclic-shift consistency for both inputs
 
 ## Developmental bootstrap
 
