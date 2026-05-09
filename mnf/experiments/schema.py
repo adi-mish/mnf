@@ -109,6 +109,7 @@ def validate_research_sweeps(data: Mapping[str, Any]) -> SchemaValidation:
         _require_numeric(data, ("tiny_transformer_demo", "mean_a_embedding_patch_consistency"), errors)
         _require_numeric(data, ("tiny_transformer_demo", "mean_b_embedding_patch_consistency"), errors)
         _require_path(data, ("tiny_transformer_demo", "mean_activation_site_patch_consistency"), errors)
+        _require_path(data, ("tiny_transformer_demo", "mean_activation_site_wrong_token_consistency"), errors)
     _require_path(data, ("tiny_redundant_transformer_demo", "available"), errors)
     if data.get("tiny_redundant_transformer_demo", {}).get("available"):
         _require_numeric(data, ("tiny_redundant_transformer_demo", "mean_base_accuracy"), errors)

@@ -27,6 +27,10 @@ patched from source runs.
   - `embedding`: `0.9971`
   - `encoder.layers.0.norm1`: `0.9971`
   - `encoder.layers.0.norm2`: `0.9971`
+- Mean wrong-token patch consistency controls:
+  - `embedding`: `0.0000`
+  - `encoder.layers.0.norm1`: `0.0000`
+  - `encoder.layers.0.norm2`: `0.0000`
 - Minimum embedding-patch consistency across seeds and input positions:
   `0.9184`
 
@@ -36,8 +40,10 @@ This is a learned-weight smoke test, not a large-language-model result. It
 does show that the typed cyclic intervention machinery can be applied after
 training a tiny transformer on CPU, and that the same counterfactual claim can
 be checked by patching learned activations at the embedding-output site and at
-later residual-stream normalization sites. This closes one PLAN4 CPU gap, but
-only in a tiny model with a simple modular task.
+later residual-stream normalization sites. Wrong-token controls stay at `0.0`,
+so the positive effect is not a generic consequence of injecting any shifted
+source activation. This closes one PLAN4 CPU gap, but only in a tiny model with
+a simple modular task.
 
 The next step that changes the claim qualitatively is activation-local
 mechanism recovery in external transformer tooling. Tracr, TransformerLens, and

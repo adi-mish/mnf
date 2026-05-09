@@ -53,6 +53,21 @@ def run(
         )
         for site in site_names
     }
+    mean_site_wrong_token_consistency = {
+        site: float(
+            np.mean(
+                [
+                    (
+                        row["activation_site_patching"][site]["a_wrong_token_consistency"]
+                        + row["activation_site_patching"][site]["b_wrong_token_consistency"]
+                    )
+                    / 2.0
+                    for row in rows
+                ]
+            )
+        )
+        for site in site_names
+    }
 
     return {
         "available": True,
@@ -74,4 +89,5 @@ def run(
             np.mean([row["activation_patching"]["b_embedding_patch_consistency"] for row in rows])
         ),
         "mean_activation_site_patch_consistency": mean_site_patch_consistency,
+        "mean_activation_site_wrong_token_consistency": mean_site_wrong_token_consistency,
     }

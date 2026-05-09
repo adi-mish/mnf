@@ -98,7 +98,8 @@ artifacts:
 - feature-baseline random false-mechanism rate: `0.6667`;
 - tiny transformer 100-seed mean accuracy: `0.9986`;
 - tiny transformer cyclic-shift consistency: about `0.9971` for both inputs;
-- tiny transformer embedding/norm1/norm2 patch consistency: about `0.9971`;
+- tiny transformer embedding/norm1/norm2 patch consistency: about `0.9971`,
+  with wrong-token patch controls at `0.0000`;
 - redundant tiny transformer 100-seed mean base accuracy: `1.0000`;
 - redundant tiny transformer route-only accuracies: `0.9986` and `0.9949`;
 - redundant tiny transformer dual-ablation drop: `0.8571`, with

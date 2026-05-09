@@ -76,6 +76,7 @@ Mean final modular-addition accuracy: `1.0000`.
 Mean cyclic-shift consistency: input-a `1.0000`, input-b `1.0000`.
 Mean embedding-patch consistency: input-a `1.0000`, input-b `1.0000`.
 Mean deeper activation-site patch consistency: embedding: `1.0000`, encoder.layers.0.norm1: `1.0000`, encoder.layers.0.norm2: `1.0000`.
+Mean wrong-token patch consistency controls: embedding: `0.0000`, encoder.layers.0.norm1: `0.0000`, encoder.layers.0.norm2: `0.0000`.
 
 ## Tiny Redundant Transformer
 

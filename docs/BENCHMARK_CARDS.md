@@ -277,7 +277,7 @@ point-identified by the available observations.
 - **State types:** token states with cyclic counterfactual shifts
 - **Interventions:** shift either input token modulo `7`; patch source-token embedding activations and final-token block activations into the base run and check output rotation consistency
 - **Expected failure mode:** synthetic executable benchmarks do not exercise learned weights
-- **Current result:** the 100-seed CPU sweep reaches mean final accuracy `0.9986` with mean cyclic-shift, embedding-patch, `norm1`, and `norm2` patch consistency `0.9971`
+- **Current result:** the 100-seed CPU sweep reaches mean final accuracy `0.9986` with mean cyclic-shift, embedding-patch, `norm1`, and `norm2` patch consistency `0.9971`; wrong-token patch controls are `0.0`
 
 ## Tiny learned redundant modular transformer
 

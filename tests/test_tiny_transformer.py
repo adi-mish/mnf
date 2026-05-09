@@ -31,6 +31,10 @@ def test_tiny_transformer_learns_modular_addition_on_cpu():
     assert site_patching["encoder.layers.0.norm1"]["b_patch_consistency"] >= 0.95
     assert site_patching["encoder.layers.0.norm2"]["a_patch_consistency"] >= 0.95
     assert site_patching["encoder.layers.0.norm2"]["b_patch_consistency"] >= 0.95
+    assert site_patching["encoder.layers.0.norm1"]["a_wrong_token_consistency"] <= 0.2
+    assert site_patching["encoder.layers.0.norm1"]["b_wrong_token_consistency"] <= 0.2
+    assert site_patching["encoder.layers.0.norm2"]["a_wrong_token_consistency"] <= 0.2
+    assert site_patching["encoder.layers.0.norm2"]["b_wrong_token_consistency"] <= 0.2
 
 
 @pytest.mark.slow

@@ -3017,20 +3017,26 @@
           "embedding": {
             "a_patch_consistency": 1.0,
             "a_patch_effect_rate": 1.0,
+            "a_wrong_token_consistency": 0.0,
             "b_patch_consistency": 1.0,
-            "b_patch_effect_rate": 1.0
+            "b_patch_effect_rate": 1.0,
+            "b_wrong_token_consistency": 0.0
           },
           "encoder.layers.0.norm1": {
             "a_patch_consistency": 1.0,
             "a_patch_effect_rate": 1.0,
+            "a_wrong_token_consistency": 0.0,
             "b_patch_consistency": 1.0,
-            "b_patch_effect_rate": 1.0
+            "b_patch_effect_rate": 1.0,
+            "b_wrong_token_consistency": 0.0
           },
           "encoder.layers.0.norm2": {
             "a_patch_consistency": 1.0,
             "a_patch_effect_rate": 1.0,
+            "a_wrong_token_consistency": 0.0,
             "b_patch_consistency": 1.0,
-            "b_patch_effect_rate": 1.0
+            "b_patch_effect_rate": 1.0,
+            "b_wrong_token_consistency": 0.0
           }
         }
       }
@@ -3044,6 +3050,11 @@
       "embedding": 1.0,
       "encoder.layers.0.norm1": 1.0,
       "encoder.layers.0.norm2": 1.0
+    },
+    "mean_activation_site_wrong_token_consistency": {
+      "embedding": 0.0,
+      "encoder.layers.0.norm1": 0.0,
+      "encoder.layers.0.norm2": 0.0
     }
   },
   "tiny_redundant_transformer_demo": {

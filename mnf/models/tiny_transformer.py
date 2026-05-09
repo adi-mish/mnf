@@ -247,10 +247,12 @@ def evaluate_activation_site_patching(
             # The embedding site carries each input token locally. Later block
             # sites carry task information into the final readout token.
             patch_position_for_source = {0: 0, 1: 1} if module_name == "embedding" else {0: 2, 1: 2}
+            wrong_patch_position_for_source = {0: 2, 1: 2} if module_name == "embedding" else {0: 0, 1: 1}
             site_metrics: dict[str, float] = {}
             for source_position, patch_position in patch_position_for_source.items():
                 consistency = []
                 effect = []
+                wrong_consistency = []
                 for delta in deltas:
                     source = x.clone()
                     source[:, source_position] = (source[:, source_position] + delta) % modulus
@@ -265,8 +267,18 @@ def evaluate_activation_site_patching(
                     expected = (base_pred + delta) % modulus
                     consistency.append(float((pred == expected).float().mean().detach().cpu()))
                     effect.append(float((pred != base_pred).float().mean().detach().cpu()))
+                    wrong_logits = run_with_token_activation_patch(
+                        model,
+                        base_tokens=x,
+                        source_tokens=source,
+                        module_name=module_name,
+                        token_positions=(wrong_patch_position_for_source[source_position],),
+                    )
+                    wrong_pred = wrong_logits.argmax(dim=-1)
+                    wrong_consistency.append(float((wrong_pred == expected).float().mean().detach().cpu()))
                 prefix = "a" if source_position == 0 else "b"
                 site_metrics[f"{prefix}_patch_consistency"] = float(sum(consistency) / len(consistency))
                 site_metrics[f"{prefix}_patch_effect_rate"] = float(sum(effect) / len(effect))
+                site_metrics[f"{prefix}_wrong_token_consistency"] = float(sum(wrong_consistency) / len(wrong_consistency))
             out[module_name] = site_metrics
     return out

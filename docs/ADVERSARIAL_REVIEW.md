@@ -128,8 +128,9 @@ valid causal evidence, but it is weaker than decomposing attention q/k/v or MLP
 submodules into interpretable mechanisms.
 
 **Current response.** The benchmark now distinguishes shallow embedding patches
-from later final-token block patches and reports both. It does not claim q/k/v
-or MLP-local recovery.
+from later final-token block patches, reports both, and includes wrong-token
+controls that stay at zero consistency. It does not claim q/k/v or MLP-local
+recovery.
 
 **Needed evidence.** Add hook-level decomposition for attention patterns,
 attention output, MLP preactivation, and MLP output, with negative controls
