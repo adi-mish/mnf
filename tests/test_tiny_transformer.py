@@ -6,6 +6,7 @@ from mnf.models import (
     evaluate_modular_interventions,
     evaluate_redundant_route_interventions,
     evaluate_shared_residual_route_interventions,
+    tiny_activation_site_names,
     torch_available,
     train_tiny_modular_addition,
     train_tiny_redundant_modular_transformer,
@@ -38,6 +39,7 @@ def test_tiny_transformer_learns_modular_addition_on_cpu():
     assert site_patching["encoder.layers.0.norm1"]["b_wrong_token_consistency"] <= 0.2
     assert site_patching["encoder.layers.0.norm2"]["a_wrong_token_consistency"] <= 0.2
     assert site_patching["encoder.layers.0.norm2"]["b_wrong_token_consistency"] <= 0.2
+    assert "encoder.layers.0.self_attn" in tiny_activation_site_names(model)
 
 
 @pytest.mark.slow

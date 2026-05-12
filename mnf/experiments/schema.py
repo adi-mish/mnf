@@ -103,6 +103,8 @@ def validate_research_sweeps(data: Mapping[str, Any]) -> SchemaValidation:
     _require_numeric(data, ("identifiability_demo", "atom_splitting", "rich_observable_max_distance"), errors)
     _require_numeric(data, ("feature_baseline_suite", "mean_random_false_mechanism_rate"), errors)
     _require_numeric(data, ("feature_baseline_suite", "mean_trained_causal_use_score"), errors)
+    _require_numeric(data, ("feature_baseline_suite", "mean_dictionary_random_false_mechanism_rate"), errors)
+    _require_path(data, ("feature_baseline_suite", "acdc_redundancy_failure"), errors)
     _require_path(data, ("tiny_transformer_demo", "available"), errors)
     if data.get("tiny_transformer_demo", {}).get("available"):
         _require_numeric(data, ("tiny_transformer_demo", "mean_final_accuracy"), errors)

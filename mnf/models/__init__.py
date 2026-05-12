@@ -6,6 +6,7 @@ from mnf.models.tiny_transformer import (
     evaluate_embedding_patch_interventions,
     evaluate_modular_interventions,
     modular_addition_dataset,
+    tiny_activation_site_names,
     torch_available,
     train_tiny_modular_addition,
 )
@@ -37,6 +38,7 @@ __all__ = [
     "evaluate_modular_interventions",
     "evaluate_embedding_patch_interventions",
     "evaluate_activation_site_patching",
+    "tiny_activation_site_names",
     "evaluate_redundant_route_interventions",
     "evaluate_shared_residual_route_interventions",
     "run_redundant_cpu_sweep",

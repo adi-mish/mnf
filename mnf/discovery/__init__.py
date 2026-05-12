@@ -8,6 +8,7 @@ from mnf.discovery.ecology import (
 )
 from mnf.discovery.graph_discovery import discover_linear_effect_graph, prune_edges_by_mdl
 from mnf.discovery.acd import AtlasCausalDiscovery, DiscoveryResult
+from mnf.discovery.meda import MEDAConfig, MEDAResult, discover_meda
 
 __all__ = [
     "CandidateAtom",
@@ -19,4 +20,7 @@ __all__ = [
     "prune_edges_by_mdl",
     "AtlasCausalDiscovery",
     "DiscoveryResult",
+    "MEDAConfig",
+    "MEDAResult",
+    "discover_meda",
 ]

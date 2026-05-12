@@ -14,6 +14,7 @@ from mnf.benchmarks.memorization import memorization_control
 from mnf.benchmarks.training_dynamics import make_training_emergence_trace, training_emergence_control
 from mnf.benchmarks.induction import make_induction_program, compare_induction_vs_memorization
 from mnf.benchmarks.identifiability import atom_splitting_identifiability_metrics
+from mnf.benchmarks.cards import BENCHMARK_CARDS, BenchmarkCard, benchmark_card_index
 from mnf.benchmarks.interactions import (
     capacity_competition_sweep,
     developmental_bootstrap_metrics,
@@ -48,6 +49,9 @@ __all__ = [
     "make_induction_program",
     "compare_induction_vs_memorization",
     "atom_splitting_identifiability_metrics",
+    "BENCHMARK_CARDS",
+    "BenchmarkCard",
+    "benchmark_card_index",
     "capacity_competition_sweep",
     "developmental_bootstrap_metrics",
     "gating_metrics",

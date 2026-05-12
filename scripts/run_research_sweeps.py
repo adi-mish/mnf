@@ -98,8 +98,34 @@ def load_config(path: Path | None) -> dict[str, object]:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", type=Path, default=None, help="Optional simple YAML-style CPU sweep config")
+    tiny_group = parser.add_mutually_exclusive_group()
+    tiny_group.add_argument("--include-tiny", action="store_true", help="Force tiny transformer CPU smoke tests on")
+    tiny_group.add_argument("--skip-tiny", action="store_true", help="Skip tiny transformer CPU smoke tests")
+    parser.add_argument("--tiny-steps", type=int, default=None, help="Override all tiny transformer training steps")
+    parser.add_argument("--tiny-seeds", type=int, default=None, help="Override all tiny transformer seed counts")
     args = parser.parse_args()
     config = load_config(args.config)
+    if args.include_tiny:
+        config["include_tiny_transformer"] = True
+    if args.skip_tiny:
+        config["include_tiny_transformer"] = False
+    if args.tiny_steps is not None:
+        for key in (
+            "tiny_transformer_steps",
+            "tiny_redundant_transformer_steps",
+            "tiny_shared_residual_transformer_steps",
+            "tiny_shared_residual_control_steps",
+        ):
+            config[key] = args.tiny_steps
+    if args.tiny_seeds is not None:
+        seeds = tuple(range(args.tiny_seeds))
+        for key in (
+            "tiny_transformer_seeds",
+            "tiny_redundant_transformer_seeds",
+            "tiny_shared_residual_transformer_seeds",
+            "tiny_shared_residual_control_seeds",
+        ):
+            config[key] = seeds
     out = {
         "absorption_phase": run_absorption_phase.run(
             n=int(config["absorption_n"]),

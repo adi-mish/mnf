@@ -6,6 +6,7 @@ from mnf.certificates import (
     certificate_report,
     pareto_frontier,
     percentile_interval,
+    certificate_pareto_svg,
     sorted_certificate_names,
 )
 
@@ -74,3 +75,18 @@ def test_confidence_interval_width_and_percentiles():
     assert interval.low <= interval.high
     assert explicit.width == 1.0
     assert explicit.contains(1.5)
+
+
+def test_certificate_pareto_svg_writes_plot(tmp_path):
+    report = {
+        "pareto_indices": [0],
+        "certificates": {
+            "frontier": MechanismCertificate(intervention_error=0.01, shared_description_length=2.0).as_dict(),
+            "dominated": MechanismCertificate(intervention_error=0.1, shared_description_length=4.0).as_dict(),
+        },
+    }
+    path = tmp_path / "pareto.svg"
+
+    certificate_pareto_svg(report, path)
+
+    assert path.read_text().startswith("<svg")

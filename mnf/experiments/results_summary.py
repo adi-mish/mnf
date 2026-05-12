@@ -50,8 +50,17 @@ def summarize_research_sweeps(data: Mapping[str, Any]) -> str:
             "",
             f"Mean false-mechanism rate on random labelable controls: `{_fmt(feature_baselines['mean_random_false_mechanism_rate'])}`.",
             f"Mean causal-use score: random labelable `{_fmt(feature_baselines['mean_random_causal_use_score'])}` versus trained-used `{_fmt(feature_baselines['mean_trained_causal_use_score'])}`.",
-            "",
         ])
+        if "mean_dictionary_random_false_mechanism_rate" in feature_baselines:
+            acdc = feature_baselines.get("acdc_redundancy_failure", {})
+            lines.append(
+                f"Dictionary baselines false-mechanism rate on random labelable controls: `{_fmt(feature_baselines['mean_dictionary_random_false_mechanism_rate'])}`."
+            )
+            if acdc:
+                lines.append(
+                    f"ACDC-style single-ablation redundancy control misses redundancy: `{acdc['misses_redundancy']}` with dual drop `{_fmt(acdc['dual_drop'])}`."
+                )
+        lines.append("")
 
     cyclic_rows = data["cyclic_baseline_comparison"]["rows"]
     low_noise = cyclic_rows[0]

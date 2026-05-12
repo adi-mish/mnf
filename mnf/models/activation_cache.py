@@ -16,6 +16,16 @@ class ActivationCache:
         return tuple(self.activations)
 
 
+def clone_activation(value: Any) -> Any:
+    if hasattr(value, "detach"):
+        return value.detach().clone()
+    if isinstance(value, tuple):
+        return tuple(clone_activation(item) if item is not None else None for item in value)
+    if isinstance(value, list):
+        return [clone_activation(item) if item is not None else None for item in value]
+    return value
+
+
 def collect_activations(model: Any, tokens: Any, module_names: Sequence[str]) -> tuple[Any, ActivationCache]:
     modules = dict(model.named_modules())
     missing = [name for name in module_names if name not in modules]
@@ -27,7 +37,7 @@ def collect_activations(model: Any, tokens: Any, module_names: Sequence[str]) ->
 
     def hook_for(name: str):
         def hook(_module: Any, _inputs: Any, output: Any) -> None:
-            activations[name] = output.detach().clone() if hasattr(output, "detach") else output
+            activations[name] = clone_activation(output)
 
         return hook
 

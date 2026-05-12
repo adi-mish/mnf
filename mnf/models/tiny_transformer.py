@@ -282,3 +282,17 @@ def evaluate_activation_site_patching(
                 site_metrics[f"{prefix}_wrong_token_consistency"] = float(sum(wrong_consistency) / len(wrong_consistency))
             out[module_name] = site_metrics
     return out
+
+
+def tiny_activation_site_names(model: TinyModularAdditionTransformer) -> tuple[str, ...]:
+    preferred = (
+        "embedding",
+        "encoder.layers.0.self_attn",
+        "encoder.layers.0.linear1",
+        "encoder.layers.0.linear2",
+        "encoder.layers.0.norm1",
+        "encoder.layers.0.norm2",
+        "output",
+    )
+    modules = dict(model.named_modules())
+    return tuple(name for name in preferred if name in modules)
