@@ -1,7 +1,7 @@
 from mnf.integrations import check_optional_dependency
 from mnf.integrations.hf_transformers import hf_transformers_status, run_tiny_causal_lm_smoke
 from mnf.integrations.tracr import default_tracr_hook_requests, rasp_program_registry, tracr_benchmark_cards, tracr_status
-from mnf.integrations.transformer_lens import transformer_lens_status
+from mnf.integrations.transformer_lens import run_random_hooked_transformer_smoke, transformer_lens_status
 
 
 def test_optional_integration_status_is_jsonable():
@@ -33,3 +33,12 @@ def test_tracr_optional_scaffold_has_named_programs_and_cards():
     assert "reverse" in registry
     assert cards[0].name == "tracr_interacting_programs"
     assert hooks[0].site == "residual_stream"
+
+
+def test_transformer_lens_random_hooked_model_smoke():
+    result = run_random_hooked_transformer_smoke()
+    data = result.as_dict()
+    assert "available" in data
+    if result.available:
+        assert result.logits_shape == (1, 4, 32)
+        assert result.n_cache_entries > 0

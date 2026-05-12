@@ -149,4 +149,5 @@ def validate_research_sweeps(data: Mapping[str, Any]) -> SchemaValidation:
     if data.get("real_model_smoke", {}).get("available"):
         _require_path(data, ("real_model_smoke", "logits_shape"), errors)
         _require_numeric(data, ("real_model_smoke", "n_hidden_states"), errors)
+    _require_path(data, ("real_model_smoke", "transformer_lens_smoke"), errors)
     return SchemaValidation(tuple(errors))

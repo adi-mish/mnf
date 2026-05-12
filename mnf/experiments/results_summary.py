@@ -335,8 +335,13 @@ def summarize_research_sweeps(data: Mapping[str, Any]) -> str:
         if real_model.get("available"):
             lines.extend([
                 f"Model `{real_model['model_name']}` produced logits shape `{real_model['logits_shape']}` with `{real_model['n_hidden_states']}` hidden-state tensors.",
-                "",
             ])
+            tl = real_model.get("transformer_lens_smoke", {})
+            if tl:
+                lines.append(
+                    f"TransformerLens random hooked-model smoke available: `{tl['available']}` with `{tl.get('n_cache_entries', 0)}` cache entries."
+                )
+            lines.append("")
         else:
             lines.extend([
                 f"Skipped: `{real_model['reason']}`.",

@@ -220,7 +220,11 @@ def main() -> None:
         "real_model_smoke": (
             run_real_model_smoke.run(local_files_only=True)
             if bool(config["include_real_model_smoke"])
-            else {"available": False, "reason": "disabled by config"}
+            else {
+                "available": False,
+                "reason": "disabled by config",
+                "transformer_lens_smoke": {"available": False, "reason": "disabled by config"},
+            }
         ),
     }
     serializable = json.loads(json.dumps(out))
