@@ -1,4 +1,10 @@
-from mnf.discovery.meda import MEDAConfig, discover_meda
+from mnf.discovery.meda import (
+    MEDAConfig,
+    boolean_fourier_coefficients,
+    discover_meda,
+    factorize_pairwise_mechanisms,
+    sparse_anova_terms,
+)
 
 
 def test_meda_reports_structural_ambiguity_without_internal_evidence():
@@ -32,3 +38,21 @@ def test_meda_orients_gate_with_internal_evidence():
     assert structural.ambiguous is False
     assert structural.evidence.structural_label == "directed_gate"
     assert structural.evidence.orientation == "m_to_n"
+
+
+def test_meda_sparse_anova_and_factorization():
+    names = ("a", "b")
+    observations = {
+        (0, 0): 0.0,
+        (1, 0): 0.0,
+        (0, 1): 0.0,
+        (1, 1): 1.0,
+    }
+    coeffs = boolean_fourier_coefficients(names, observations)
+    terms = sparse_anova_terms(names, observations, threshold=0.1)
+    result = discover_meda(names, lambda state: float(state["a"] and state["b"]))
+    factors = factorize_pairwise_mechanisms(result.factorials)
+
+    assert coeffs[("a", "b")] != 0.0
+    assert ("a", "b") in terms
+    assert factors[0].label == "synergistic_or_gated"

@@ -40,6 +40,9 @@ from mnf.benchmarks.interactions.table_aliasing import (
     symmetric_synergy_behavior,
     table_aliasing_metrics,
 )
+from mnf.benchmarks.interactions.same_factorial_table_different_structure import (
+    same_factorial_table_different_structure_metrics,
+)
 
 __all__ = [
     "active_design_trial",
@@ -79,4 +82,5 @@ __all__ = [
     "symmetric_synergy_behavior",
     "table_aliasing_metrics",
     "structural_aliasing_report",
+    "same_factorial_table_different_structure_metrics",
 ]

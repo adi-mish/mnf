@@ -10,6 +10,8 @@ from mnf.models.tiny_transformer import (
     torch_available,
     train_tiny_modular_addition,
 )
+from mnf.models.hooks import TinyHookSpec, collect_tiny_hook_activations, tiny_hook_specs
+from mnf.models.tiny_tasks import TinyTask, modular_addition_task
 from mnf.models.tiny_redundant import (
     TinyRedundantModularTransformer,
     evaluate_redundant_route_interventions,
@@ -29,6 +31,8 @@ __all__ = [
     "TinyModularAdditionTransformer",
     "TinyRedundantModularTransformer",
     "TinySharedResidualRedundantTransformer",
+    "TinyHookSpec",
+    "TinyTask",
     "torch_available",
     "modular_addition_dataset",
     "train_tiny_modular_addition",
@@ -39,6 +43,9 @@ __all__ = [
     "evaluate_embedding_patch_interventions",
     "evaluate_activation_site_patching",
     "tiny_activation_site_names",
+    "collect_tiny_hook_activations",
+    "tiny_hook_specs",
+    "modular_addition_task",
     "evaluate_redundant_route_interventions",
     "evaluate_shared_residual_route_interventions",
     "run_redundant_cpu_sweep",

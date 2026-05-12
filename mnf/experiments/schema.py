@@ -85,8 +85,10 @@ def validate_research_sweeps(data: Mapping[str, Any]) -> SchemaValidation:
         "tiny_redundant_transformer_demo",
         "tiny_shared_residual_control_demo",
         "tiny_shared_residual_transformer_demo",
+        "tiny_activation_recovery",
         "training_emergence",
         "transition_atom_sweep",
+        "real_model_smoke",
     )
     for key in required:
         if key not in data:
@@ -138,4 +140,13 @@ def validate_research_sweeps(data: Mapping[str, Any]) -> SchemaValidation:
         _require_numeric(data, ("tiny_shared_residual_control_demo", "mean_route_b_only_accuracy"), errors)
         _require_numeric(data, ("tiny_shared_residual_control_demo", "mean_max_single_ablation_drop"), errors)
         _require_numeric(data, ("tiny_shared_residual_control_demo", "false_redundancy_rate"), errors)
+    _require_path(data, ("tiny_activation_recovery", "available"), errors)
+    if data.get("tiny_activation_recovery", {}).get("available"):
+        _require_path(data, ("tiny_activation_recovery", "hook_sites"), errors)
+        _require_numeric(data, ("tiny_activation_recovery", "meda_redundancy_recovered_rate"), errors)
+        _require_numeric(data, ("tiny_activation_recovery", "single_ablation_underweights_rate"), errors)
+    _require_path(data, ("real_model_smoke", "available"), errors)
+    if data.get("real_model_smoke", {}).get("available"):
+        _require_path(data, ("real_model_smoke", "logits_shape"), errors)
+        _require_numeric(data, ("real_model_smoke", "n_hidden_states"), errors)
     return SchemaValidation(tuple(errors))

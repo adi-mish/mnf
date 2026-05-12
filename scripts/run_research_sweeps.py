@@ -20,9 +20,11 @@ from mnf.experiments import (
     run_identifiability_demo,
     run_induction_demo,
     run_interaction_suite,
+    run_real_model_smoke,
     run_superposition_phase,
     run_tiny_shared_residual_control_demo,
     run_tiny_shared_residual_transformer_demo,
+    run_tiny_activation_recovery,
     run_tiny_redundant_transformer_demo,
     run_tiny_transformer_demo,
     run_training_emergence,
@@ -61,6 +63,9 @@ DEFAULT_CONFIG = {
     "tiny_shared_residual_transformer_steps": 160,
     "tiny_shared_residual_control_seeds": (0, 1, 2),
     "tiny_shared_residual_control_steps": 160,
+    "tiny_activation_recovery_seeds": (0,),
+    "tiny_activation_recovery_steps": 120,
+    "include_real_model_smoke": True,
 }
 
 
@@ -101,6 +106,9 @@ def main() -> None:
     tiny_group = parser.add_mutually_exclusive_group()
     tiny_group.add_argument("--include-tiny", action="store_true", help="Force tiny transformer CPU smoke tests on")
     tiny_group.add_argument("--skip-tiny", action="store_true", help="Skip tiny transformer CPU smoke tests")
+    real_group = parser.add_mutually_exclusive_group()
+    real_group.add_argument("--include-real-smoke", action="store_true", help="Force optional HF real-model CPU smoke on")
+    real_group.add_argument("--skip-real-smoke", action="store_true", help="Skip optional HF real-model CPU smoke")
     parser.add_argument("--tiny-steps", type=int, default=None, help="Override all tiny transformer training steps")
     parser.add_argument("--tiny-seeds", type=int, default=None, help="Override all tiny transformer seed counts")
     args = parser.parse_args()
@@ -109,12 +117,17 @@ def main() -> None:
         config["include_tiny_transformer"] = True
     if args.skip_tiny:
         config["include_tiny_transformer"] = False
+    if args.include_real_smoke:
+        config["include_real_model_smoke"] = True
+    if args.skip_real_smoke:
+        config["include_real_model_smoke"] = False
     if args.tiny_steps is not None:
         for key in (
             "tiny_transformer_steps",
             "tiny_redundant_transformer_steps",
             "tiny_shared_residual_transformer_steps",
             "tiny_shared_residual_control_steps",
+            "tiny_activation_recovery_steps",
         ):
             config[key] = args.tiny_steps
     if args.tiny_seeds is not None:
@@ -124,6 +137,7 @@ def main() -> None:
             "tiny_redundant_transformer_seeds",
             "tiny_shared_residual_transformer_seeds",
             "tiny_shared_residual_control_seeds",
+            "tiny_activation_recovery_seeds",
         ):
             config[key] = seeds
     out = {
@@ -193,8 +207,21 @@ def main() -> None:
             if bool(config["include_tiny_transformer"])
             else {"available": False, "reason": "disabled by config"}
         ),
+        "tiny_activation_recovery": (
+            run_tiny_activation_recovery.run(
+                seeds=tuple(config["tiny_activation_recovery_seeds"]),
+                steps=int(config["tiny_activation_recovery_steps"]),
+            )
+            if bool(config["include_tiny_transformer"])
+            else {"available": False, "reason": "disabled by config"}
+        ),
         "training_emergence": run_training_emergence.run(seeds=tuple(config["training_seeds"])),
         "superposition_phase": run_superposition_phase.run(),
+        "real_model_smoke": (
+            run_real_model_smoke.run(local_files_only=True)
+            if bool(config["include_real_model_smoke"])
+            else {"available": False, "reason": "disabled by config"}
+        ),
     }
     serializable = json.loads(json.dumps(out))
     validate_research_sweeps(serializable).raise_for_errors()

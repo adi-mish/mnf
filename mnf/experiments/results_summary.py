@@ -298,6 +298,25 @@ def summarize_research_sweeps(data: Mapping[str, Any]) -> str:
                 "",
             ])
 
+    tiny_activation_recovery = data.get("tiny_activation_recovery")
+    if tiny_activation_recovery is not None:
+        lines.extend([
+            "## Tiny Activation Recovery",
+            "",
+        ])
+        if tiny_activation_recovery.get("available"):
+            lines.extend([
+                f"Hook sites captured: `{tiny_activation_recovery['hook_sites']}`.",
+                f"MEDA redundancy recovery rate: `{_fmt(tiny_activation_recovery['meda_redundancy_recovered_rate'])}`.",
+                f"Single-ablation underweights rate: `{_fmt(tiny_activation_recovery['single_ablation_underweights_rate'])}`.",
+                "",
+            ])
+        else:
+            lines.extend([
+                f"Skipped: `{tiny_activation_recovery['reason']}`.",
+                "",
+            ])
+
     training = data["training_emergence"]
     lines.extend([
         "## Training Emergence",
@@ -306,5 +325,22 @@ def summarize_research_sweeps(data: Mapping[str, Any]) -> str:
         f"Mean mechanism/behavior correlation: `{_fmt(training['mean_correlation'])}`.",
         "",
     ])
+
+    real_model = data.get("real_model_smoke")
+    if real_model is not None:
+        lines.extend([
+            "## Real-Model CPU Smoke",
+            "",
+        ])
+        if real_model.get("available"):
+            lines.extend([
+                f"Model `{real_model['model_name']}` produced logits shape `{real_model['logits_shape']}` with `{real_model['n_hidden_states']}` hidden-state tensors.",
+                "",
+            ])
+        else:
+            lines.extend([
+                f"Skipped: `{real_model['reason']}`.",
+                "",
+            ])
 
     return "\n".join(lines)

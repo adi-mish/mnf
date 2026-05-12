@@ -6,7 +6,10 @@ from mnf.models import (
     evaluate_modular_interventions,
     evaluate_redundant_route_interventions,
     evaluate_shared_residual_route_interventions,
+    collect_tiny_hook_activations,
+    modular_addition_dataset,
     tiny_activation_site_names,
+    tiny_hook_specs,
     torch_available,
     train_tiny_modular_addition,
     train_tiny_redundant_modular_transformer,
@@ -40,6 +43,20 @@ def test_tiny_transformer_learns_modular_addition_on_cpu():
     assert site_patching["encoder.layers.0.norm2"]["a_wrong_token_consistency"] <= 0.2
     assert site_patching["encoder.layers.0.norm2"]["b_wrong_token_consistency"] <= 0.2
     assert "encoder.layers.0.self_attn" in tiny_activation_site_names(model)
+
+
+def test_tiny_hook_specs_include_attention_internals():
+    if not torch_available():
+        return
+
+    model, _training = train_tiny_modular_addition(seed=0, steps=1)
+    x, _ = modular_addition_dataset()
+    activations = collect_tiny_hook_activations(model, x[:2])
+    specs = {spec.name: spec for spec in tiny_hook_specs(model)}
+
+    assert specs["encoder.layers.0.self_attn.q"].available is True
+    assert "encoder.layers.0.self_attn.pattern" in activations
+    assert list(activations["encoder.layers.0.self_attn.pattern"].shape) == [2, 4, 3, 3]
 
 
 @pytest.mark.slow
