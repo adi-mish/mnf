@@ -8,12 +8,18 @@ python3 -m pytest -m "slow"
 python3 -m pytest
 python3 scripts/run_research_sweeps.py --config configs/cpu_quick.yaml
 python3 scripts/run_research_sweeps.py --config configs/cpu_full.yaml
+python3 scripts/run_research_sweeps.py --config configs/cpu_quick.yaml --skip-tiny
 python3 scripts/run_tiny_transformer_sweep.py --n-seeds 20 --steps 160
+python3 scripts/run_tiny_activation_recovery.py --n-seeds 3 --steps 120
+python3 scripts/run_real_model_smoke.py
 ```
 
 `scripts/run_research_sweeps.py` validates the generated result object against a
 minimal schema before writing JSON. The quick and full configs both include the
-optional tiny-transformer smoke when PyTorch is installed.
+optional tiny-transformer smoke when PyTorch is installed. Use `--skip-tiny` or
+`--include-tiny` to override config-level tiny-model execution, and
+`--skip-real-smoke` or `--include-real-smoke` for optional HF/TransformerLens
+CPU smokes.
 
 Markers:
 

@@ -306,6 +306,26 @@ point-identified by the available observations.
 - **Expected failure mode:** shared-MDL or named-route accounting falsely certifies redundancy because a second head exists
 - **Current result:** the 100-seed CPU sweep has mean base accuracy `0.9984`, live-route-only accuracy `0.9984`, decorative-route-only accuracy `0.1429`, mean max single-ablation drop `0.8555`, and false redundancy rate `0.0000`
 
+## Tiny activation recovery
+
+- **File:** `mnf/experiments/run_tiny_activation_recovery.py`
+- **Mechanism:** modular-addition hook capture plus learned redundant-route recovery
+- **State types:** token states, attention q/k/v/patterns, residual streams, route on/off states
+- **Interventions:** hook activation capture, route-a/route-b/dual ablations, MEDA response-surface recovery
+- **Known non-identifiability:** redundant routes are still named modules; this is not hidden-route discovery in an arbitrary pretrained transformer
+- **Expected failure mode:** ACDC-style single-ablation scoring underweights redundant routes
+- **Current result:** full CPU config captures embedding, q/k/v, attention pattern, MLP, residual, and output sites; MEDA recovers redundancy at rate `1.0000`, and the ACDC-style control misses the redundant pair
+
+## CPU real-model smoke
+
+- **File:** `mnf/experiments/run_real_model_smoke.py`
+- **Mechanism:** optional integration plumbing for external transformer activations
+- **State types:** Hugging Face hidden states and TransformerLens activation cache entries
+- **Interventions:** no substantive model intervention claim yet; this checks CPU loading and cache access
+- **Known non-identifiability:** not a certified real-model mechanism recovery result
+- **Expected failure mode:** treating integration smoke as interpretation evidence
+- **Current result:** local CPU smoke runs `sshleifer/tiny-gpt2` hidden states and a random TransformerLens `HookedTransformer` cache with q/k/v hook keys
+
 ## Developmental bootstrap
 
 - **File:** `mnf/benchmarks/interactions/developmental_bootstrap.py`
@@ -342,3 +362,5 @@ point-identified by the available observations.
 | Tiny learned modular transformer | input-token mechanisms are tested at embedding and final-token block sites, but not yet decomposed into attention q/k/v or MLP submodules |
 | Tiny learned redundant modular transformer | redundancy is architecture-explicit because the two learned routes are separate modules |
 | Tiny shared-residual redundant transformer | redundant readout routes are still named, though they reuse one shared residual stream; the decorative-route control checks that named heads alone are not enough |
+| Tiny activation recovery | hook-level evidence is local and tiny; route redundancy remains architecture-explicit |
+| CPU real-model smoke | validates optional activation plumbing only, not real-model mechanism recovery |

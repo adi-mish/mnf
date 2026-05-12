@@ -13,9 +13,10 @@ The central claim is that a mechanistic explanation is not a neuron list, SAE la
 - `mnf/certificates`: certificate vectors, identification sets, Pareto ordering, thresholds, and report helpers for mechanism claims.
 - `mnf/atlas`: context-indexed chart and gauge/gluing utilities for interventional mechanism atlases.
 - `mnf/charts`: simple linear charts, cyclic typed charts, hierarchical feature absorption utilities, MOLT-like transition atoms, and a tiny optional PyTorch TopK SAE.
-- `mnf/models`: optional tiny CPU transformer components for learned-mechanism smoke tests.
-- `mnf/baselines`: lightweight probe, PCA, random-feature, shortcut-selection, and scalar/PCA-style chart comparisons.
-- `mnf/discovery`: prototype Atlas-Causal Discovery pipeline plus a minimal Mechanism Ecology Discovery adapter for pairwise interaction recovery.
+- `mnf/models`: optional tiny CPU transformer components, hook capture, and learned-mechanism smoke tests.
+- `mnf/baselines`: lightweight probe, PCA, ICA, k-means dictionary, TopK SAE, ACDC-style, shortcut-selection, and scalar/PCA-style chart comparisons.
+- `mnf/discovery`: prototype Atlas-Causal Discovery pipeline plus CPU MEDA modules for response surfaces, structural disambiguation, shared-MDL pruning, and certificates.
+- `mnf/integrations`: optional Tracr, Hugging Face, and TransformerLens boundaries/smokes.
 - `mnf/benchmarks`: synthetic ground-truth systems for causal chains, gated/XOR programs, induction match-copy, relational lookup, modular arithmetic, transition-only maps, sparse superposition, hierarchical absorption, cyclic weekday features, shortcut controls, memorization controls, training-emergence controls, interaction/ecology controls, and random-vs-trained controls.
 - `mnf/experiments`: runnable demos and CPU-only phase sweeps for the benchmark families.
 - `tests`: passing tests that exercise all core components, including slow CPU smoke tests.
@@ -47,6 +48,8 @@ pytest -q
 pytest -q -m "not slow"
 python scripts/run_all_demos.py
 python scripts/run_research_sweeps.py --config configs/cpu_full.yaml
+python scripts/run_tiny_activation_recovery.py --n-seeds 3 --steps 120
+python scripts/run_real_model_smoke.py
 python scripts/write_results_summary.py
 ```
 
@@ -54,7 +57,7 @@ The repo was tested in the current environment with Python 3.13.2.
 
 ## What this is not
 
-This is not a complete LLM interpretability pipeline.  It does not download large models, train production-scale SAEs, run TransformerLens hooks, or reproduce Anthropic-style attribution graphs.  It is a rigorous scaffold: definitions, scoring, toy ground-truth benchmarks, typed charts, transition atoms, synthetic falsification tests, a tiny learned-transformer smoke test, and a plan for scaling to real models.
+This is not a complete LLM interpretability pipeline.  It does not train production-scale SAEs or reproduce Anthropic-style attribution graphs.  It is a rigorous scaffold: definitions, scoring, toy ground-truth benchmarks, typed charts, transition atoms, synthetic falsification tests, tiny learned-transformer recovery, and CPU-only optional Hugging Face / TransformerLens smokes.
 
 ## Design principle
 

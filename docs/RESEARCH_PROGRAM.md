@@ -31,8 +31,9 @@ A NeurIPS-best-paper-caliber version needs four contributions in one paper:
   fields before writing JSON.
 - Add benchmark cards documenting each synthetic mechanism.
 - Add lightweight feature baselines. Current status: linear probe, PCA-first,
-  and random-search directions are compared on random-labelable versus
-  trained-used controls.
+  random-search, ICA, k-means dictionary, and ACDC-style single-ablation
+  controls are compared on random-labelable, trained-used, and redundant
+  controls.
 
 ## Phase 1: formal theory
 
@@ -99,7 +100,10 @@ Required tasks:
 - coupled training dynamics, including developmental bootstrap and mechanism death;
 - atom-splitting response-kernel non-identifiability with explicit
   `IdentificationSet` output;
-- Tracr/RASP compiled transformers if dependencies permit.
+- Tracr/RASP compiled transformers if dependencies permit. Current status:
+  the Tracr package is not available from the configured package index, so the
+  repo includes explicit Tracr registry/card/hook scaffolding and a
+  non-silent optional dependency boundary.
 
 Metrics:
 
@@ -150,6 +154,10 @@ Initial real-model case studies:
 - weekday/month cyclic features;
 - refusal direction vs distributed refusal gates;
 - factual recall / ROME-style localization.
+
+Current CPU status: Hugging Face `sshleifer/tiny-gpt2` hidden-state smoke and a
+random TransformerLens `HookedTransformer` cache smoke run locally on CPU. These
+verify integration plumbing, not substantive real-model mechanism recovery.
 
 ## Phase 5: adversarial evaluation
 

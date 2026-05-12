@@ -22,6 +22,8 @@ This file is generated from `docs/research_sweeps.json`.
 
 Mean false-mechanism rate on random labelable controls: `0.6667`.
 Mean causal-use score: random labelable `0.0250` versus trained-used `0.8285`.
+Dictionary baselines false-mechanism rate on random labelable controls: `1.0000`.
+ACDC-style single-ablation redundancy control misses redundancy: `True` with dual drop `1.0000`.
 
 ## Cyclic Baseline
 
@@ -102,8 +104,19 @@ Mean route-only accuracy: live route `1.0000`, decorative route `0.1429`.
 Mean max single-ablation drop: `0.8571`.
 False redundancy rate: `0.0000`.
 
+## Tiny Activation Recovery
+
+Hook sites captured: `['embedding', 'encoder.layers.0.linear1', 'encoder.layers.0.linear2', 'encoder.layers.0.norm1', 'encoder.layers.0.norm2', 'encoder.layers.0.self_attn.k', 'encoder.layers.0.self_attn.out', 'encoder.layers.0.self_attn.pattern', 'encoder.layers.0.self_attn.q', 'encoder.layers.0.self_attn.v', 'output', 'position']`.
+MEDA redundancy recovery rate: `1.0000`.
+Single-ablation underweights rate: `1.0000`.
+
 ## Training Emergence
 
 Mean mechanism lead: `8.6000` steps.
 Mean mechanism/behavior correlation: `0.9574`.
+
+## Real-Model CPU Smoke
+
+Model `sshleifer/tiny-gpt2` produced logits shape `[1, 3, 50257]` with `3` hidden-state tensors.
+TransformerLens random hooked-model smoke available: `True` with `23` cache entries.
 
