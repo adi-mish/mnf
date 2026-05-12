@@ -104,7 +104,10 @@ Required tasks:
   Tracr is installable from GitHub in this environment, and the repo runs
   CPU compiled-program smokes for reverse, histogram, token-frequency, sort,
   balanced-parentheses, and modular-arithmetic RASP programs with exact
-  decoded-output checks plus residual/attention/logit shape capture.
+  decoded-output checks plus residual/attention/logit shape capture. It also
+  runs CPU smokes for interacting compiled programs: shared subroutine,
+  redundant subroutines, context-gated subroutine, shortcut plus correct
+  algorithm, and cyclic arithmetic plus lookup.
 
 Metrics:
 

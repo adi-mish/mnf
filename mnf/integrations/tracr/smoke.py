@@ -59,6 +59,12 @@ def _program_specs() -> dict[str, dict[str, object]]:
     from tracr.compiler import lib
     from tracr.rasp import rasp
 
+    count_a = lib.make_count(rasp.tokens, "a")
+    count_a_copy = rasp.Map(lambda c: c, count_a)
+    reverse_tokens = lib.make_reverse(rasp.tokens)
+    increment_mod_five = rasp.Map(lambda x: (x + 1) % 5, rasp.tokens)
+    count_zero = lib.make_count(rasp.tokens, 0)
+
     return {
         "reverse": {
             "program": lib.make_reverse(rasp.tokens),
@@ -100,6 +106,45 @@ def _program_specs() -> dict[str, dict[str, object]]:
             "vocab": {0, 1, 2, 3, 4},
             "input": [0, 1, 4],
             "expected": [1, 2, 0],
+            "max_seq_len": 4,
+        },
+        "shared_subroutine": {
+            "program": rasp.SequenceMap(lambda hist, count: hist + count, lib.make_hist(), count_a),
+            "vocab": {"a", "b", "c"},
+            "input": list("abaca"),
+            "expected": [6, 4, 6, 4, 6],
+            "max_seq_len": 6,
+        },
+        "redundant_subroutines": {
+            "program": rasp.SequenceMap(lambda left, right: max(left, right), count_a, count_a_copy),
+            "vocab": {"a", "b", "c"},
+            "input": list("abaca"),
+            "expected": [3, 3, 3, 3, 3],
+            "max_seq_len": 6,
+        },
+        "context_gated_subroutine": {
+            "program": rasp.SequenceMap(lambda token, count: count if token == "a" else 0, rasp.tokens, count_a),
+            "vocab": {"a", "b", "c"},
+            "input": list("abaca"),
+            "expected": [3, 0, 3, 0, 3],
+            "max_seq_len": 6,
+        },
+        "shortcut_plus_correct_algorithm": {
+            "program": rasp.SequenceMap(
+                lambda token, reversed_token: token if token == "s" else reversed_token,
+                rasp.tokens,
+                reverse_tokens,
+            ),
+            "vocab": {"a", "b", "c", "s"},
+            "input": list("abcs"),
+            "expected": ["s", "c", "b", "s"],
+            "max_seq_len": 5,
+        },
+        "cyclic_arithmetic_plus_lookup": {
+            "program": rasp.SequenceMap(lambda inc, count: (inc + count) % 5, increment_mod_five, count_zero),
+            "vocab": {0, 1, 2, 3, 4},
+            "input": [0, 1, 4],
+            "expected": [2, 3, 1],
             "max_seq_len": 4,
         },
         "length": {
@@ -163,6 +208,11 @@ def run_tracr_smoke(
         "sort",
         "balanced_parentheses",
         "modular_arithmetic",
+        "shared_subroutine",
+        "redundant_subroutines",
+        "context_gated_subroutine",
+        "shortcut_plus_correct_algorithm",
+        "cyclic_arithmetic_plus_lookup",
     ),
 ) -> dict[str, object]:
     rows = [run_tracr_program_smoke(name).as_dict() for name in programs]

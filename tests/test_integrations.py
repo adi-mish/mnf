@@ -40,16 +40,19 @@ def test_tracr_optional_scaffold_has_named_programs_and_cards():
     assert "histogram" in registry
     assert "balanced_parentheses" in registry
     assert "modular_arithmetic" in registry
+    assert "shared_subroutine" in registry
+    assert "context_gated_subroutine" in registry
+    assert "cyclic_arithmetic_plus_lookup" in registry
     assert cards[0].name == "tracr_interacting_programs"
     assert hooks[0].site == "residual_stream"
 
 
 def test_tracr_compiled_program_smoke():
-    result = run_tracr_smoke(programs=("reverse", "map_increment"))
+    result = run_tracr_smoke(programs=("reverse", "map_increment", "context_gated_subroutine"))
     assert "available" in result
     if result["available"]:
         assert result["all_exact_match"] is True
-        assert result["n_programs"] == 2
+        assert result["n_programs"] == 3
         assert result["rows"][0]["residual_shapes"]
 
 

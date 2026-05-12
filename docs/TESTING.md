@@ -38,9 +38,9 @@ The slowest calls were:
 
 | Test | Time |
 | --- | ---: |
-| `tests/test_interaction_suite.py::test_interaction_suite_smoke` | 19.49s |
-| `tests/test_integrations.py::test_tracr_compiled_program_smoke` | 6.38s |
-| `tests/test_dictionary_baselines.py::test_dictionary_baselines_and_acdc_control_expose_failures` | 1.89s |
-| `tests/test_integrations.py::test_hf_transformers_smoke_boundary_is_jsonable` | 1.75s |
-| `tests/test_tiny_transformer.py::test_tiny_redundant_transformer_recovers_redundant_routes_on_cpu` | 1.44s |
-| `tests/test_tiny_activation_recovery.py::test_tiny_activation_recovery_smoke` | 1.20s |
+| `tests/test_interaction_suite.py::test_interaction_suite_smoke` | 18.29s |
+| `tests/test_integrations.py::test_tracr_compiled_program_smoke` | 9.33s |
+| `tests/test_integrations.py::test_hf_transformers_smoke_boundary_is_jsonable` | 1.93s |
+| `tests/test_dictionary_baselines.py::test_dictionary_baselines_and_acdc_control_expose_failures` | 1.42s |
+| `tests/test_tiny_transformer.py::test_tiny_redundant_transformer_recovers_redundant_routes_on_cpu` | 1.14s |
+| `tests/test_tiny_activation_recovery.py::test_tiny_activation_recovery_smoke` | 1.05s |

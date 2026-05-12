@@ -119,5 +119,5 @@ Mean mechanism/behavior correlation: `0.9574`.
 
 Model `sshleifer/tiny-gpt2` produced logits shape `[1, 3, 50257]` with `3` hidden-state tensors.
 TransformerLens random hooked-model smoke available: `True` with `23` cache entries.
-Tracr compiled-program smoke available: `True` with all-exact-match `True` over `6` programs.
+Tracr compiled-program smoke available: `True` with all-exact-match `True` over `11` programs.
 

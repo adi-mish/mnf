@@ -2727,13 +2727,13 @@
             {
               "name": "kmeans_dictionary",
               "label_accuracy": 0.962890625,
-              "causal_use_score": 0.8859975443709704,
+              "causal_use_score": 0.8859975443709707,
               "reconstruction_error": 0.9638635601858345,
               "false_mechanism": false
             }
           ],
           "mean_label_accuracy": 0.962890625,
-          "mean_causal_use_score": 0.8853365121173142,
+          "mean_causal_use_score": 0.8853365121173143,
           "false_mechanism_rate": 0.0
         }
       },
@@ -2756,13 +2756,13 @@
             {
               "name": "kmeans_dictionary",
               "label_accuracy": 0.9775390625,
-              "causal_use_score": 0.006990016041812492,
+              "causal_use_score": 0.006990016041812489,
               "reconstruction_error": 0.9526822033440325,
               "false_mechanism": true
             }
           ],
           "mean_label_accuracy": 0.9765625,
-          "mean_causal_use_score": 0.007560367478346935,
+          "mean_causal_use_score": 0.007560367478346933,
           "false_mechanism_rate": 1.0
         },
         "trained_used": {
@@ -3625,7 +3625,7 @@
     },
     "tracr_smoke": {
       "available": true,
-      "n_programs": 6,
+      "n_programs": 11,
       "all_exact_match": true,
       "rows": [
         {
@@ -4217,6 +4217,493 @@
             1,
             4,
             16
+          ],
+          "reason": "ok"
+        },
+        {
+          "name": "shared_subroutine",
+          "available": true,
+          "decoded": [
+            6,
+            4,
+            6,
+            4,
+            6
+          ],
+          "expected": [
+            6,
+            4,
+            6,
+            4,
+            6
+          ],
+          "exact_match": true,
+          "residual_shapes": [
+            [
+              1,
+              6,
+              41
+            ],
+            [
+              1,
+              6,
+              41
+            ],
+            [
+              1,
+              6,
+              41
+            ],
+            [
+              1,
+              6,
+              41
+            ]
+          ],
+          "layer_output_shapes": [
+            [
+              1,
+              6,
+              41
+            ],
+            [
+              1,
+              6,
+              41
+            ],
+            [
+              1,
+              6,
+              41
+            ],
+            [
+              1,
+              6,
+              41
+            ]
+          ],
+          "attn_logit_shapes": [
+            [
+              1,
+              2,
+              6,
+              6
+            ],
+            [
+              1,
+              2,
+              6,
+              6
+            ]
+          ],
+          "transformer_output_shape": [
+            1,
+            6,
+            41
+          ],
+          "reason": "ok"
+        },
+        {
+          "name": "redundant_subroutines",
+          "available": true,
+          "decoded": [
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "expected": [
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "exact_match": true,
+          "residual_shapes": [
+            [
+              1,
+              6,
+              34
+            ],
+            [
+              1,
+              6,
+              34
+            ],
+            [
+              1,
+              6,
+              34
+            ],
+            [
+              1,
+              6,
+              34
+            ],
+            [
+              1,
+              6,
+              34
+            ],
+            [
+              1,
+              6,
+              34
+            ]
+          ],
+          "layer_output_shapes": [
+            [
+              1,
+              6,
+              34
+            ],
+            [
+              1,
+              6,
+              34
+            ],
+            [
+              1,
+              6,
+              34
+            ],
+            [
+              1,
+              6,
+              34
+            ],
+            [
+              1,
+              6,
+              34
+            ],
+            [
+              1,
+              6,
+              34
+            ]
+          ],
+          "attn_logit_shapes": [
+            [
+              1,
+              1,
+              6,
+              6
+            ],
+            [
+              1,
+              1,
+              6,
+              6
+            ],
+            [
+              1,
+              1,
+              6,
+              6
+            ]
+          ],
+          "transformer_output_shape": [
+            1,
+            6,
+            34
+          ],
+          "reason": "ok"
+        },
+        {
+          "name": "context_gated_subroutine",
+          "available": true,
+          "decoded": [
+            3,
+            0,
+            3,
+            0,
+            3
+          ],
+          "expected": [
+            3,
+            0,
+            3,
+            0,
+            3
+          ],
+          "exact_match": true,
+          "residual_shapes": [
+            [
+              1,
+              6,
+              27
+            ],
+            [
+              1,
+              6,
+              27
+            ],
+            [
+              1,
+              6,
+              27
+            ],
+            [
+              1,
+              6,
+              27
+            ]
+          ],
+          "layer_output_shapes": [
+            [
+              1,
+              6,
+              27
+            ],
+            [
+              1,
+              6,
+              27
+            ],
+            [
+              1,
+              6,
+              27
+            ],
+            [
+              1,
+              6,
+              27
+            ]
+          ],
+          "attn_logit_shapes": [
+            [
+              1,
+              1,
+              6,
+              6
+            ],
+            [
+              1,
+              1,
+              6,
+              6
+            ]
+          ],
+          "transformer_output_shape": [
+            1,
+            6,
+            27
+          ],
+          "reason": "ok"
+        },
+        {
+          "name": "shortcut_plus_correct_algorithm",
+          "available": true,
+          "decoded": [
+            "s",
+            "c",
+            "b",
+            "s"
+          ],
+          "expected": [
+            "s",
+            "c",
+            "b",
+            "s"
+          ],
+          "exact_match": true,
+          "residual_shapes": [
+            [
+              1,
+              5,
+              47
+            ],
+            [
+              1,
+              5,
+              47
+            ],
+            [
+              1,
+              5,
+              47
+            ],
+            [
+              1,
+              5,
+              47
+            ],
+            [
+              1,
+              5,
+              47
+            ],
+            [
+              1,
+              5,
+              47
+            ],
+            [
+              1,
+              5,
+              47
+            ],
+            [
+              1,
+              5,
+              47
+            ]
+          ],
+          "layer_output_shapes": [
+            [
+              1,
+              5,
+              47
+            ],
+            [
+              1,
+              5,
+              47
+            ],
+            [
+              1,
+              5,
+              47
+            ],
+            [
+              1,
+              5,
+              47
+            ],
+            [
+              1,
+              5,
+              47
+            ],
+            [
+              1,
+              5,
+              47
+            ],
+            [
+              1,
+              5,
+              47
+            ],
+            [
+              1,
+              5,
+              47
+            ]
+          ],
+          "attn_logit_shapes": [
+            [
+              1,
+              1,
+              5,
+              5
+            ],
+            [
+              1,
+              1,
+              5,
+              5
+            ],
+            [
+              1,
+              1,
+              5,
+              5
+            ],
+            [
+              1,
+              1,
+              5,
+              5
+            ]
+          ],
+          "transformer_output_shape": [
+            1,
+            5,
+            47
+          ],
+          "reason": "ok"
+        },
+        {
+          "name": "cyclic_arithmetic_plus_lookup",
+          "available": true,
+          "decoded": [
+            2,
+            3,
+            1
+          ],
+          "expected": [
+            2,
+            3,
+            1
+          ],
+          "exact_match": true,
+          "residual_shapes": [
+            [
+              1,
+              4,
+              28
+            ],
+            [
+              1,
+              4,
+              28
+            ],
+            [
+              1,
+              4,
+              28
+            ],
+            [
+              1,
+              4,
+              28
+            ]
+          ],
+          "layer_output_shapes": [
+            [
+              1,
+              4,
+              28
+            ],
+            [
+              1,
+              4,
+              28
+            ],
+            [
+              1,
+              4,
+              28
+            ],
+            [
+              1,
+              4,
+              28
+            ]
+          ],
+          "attn_logit_shapes": [
+            [
+              1,
+              1,
+              4,
+              4
+            ],
+            [
+              1,
+              1,
+              4,
+              4
+            ]
+          ],
+          "transformer_output_shape": [
+            1,
+            4,
+            28
           ],
           "reason": "ok"
         }

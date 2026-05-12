@@ -10,6 +10,11 @@ SUPPORTED_RASP_PROGRAMS = (
     "sort",
     "balanced_parentheses",
     "modular_arithmetic",
+    "shared_subroutine",
+    "redundant_subroutines",
+    "context_gated_subroutine",
+    "shortcut_plus_correct_algorithm",
+    "cyclic_arithmetic_plus_lookup",
     "length",
     "map_increment",
 )
