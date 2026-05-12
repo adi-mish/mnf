@@ -341,6 +341,11 @@ def summarize_research_sweeps(data: Mapping[str, Any]) -> str:
                 lines.append(
                     f"TransformerLens random hooked-model smoke available: `{tl['available']}` with `{tl.get('n_cache_entries', 0)}` cache entries."
                 )
+            tracr = real_model.get("tracr_smoke", {})
+            if tracr:
+                lines.append(
+                    f"Tracr compiled-program smoke available: `{tracr['available']}` with all-exact-match `{tracr.get('all_exact_match')}` over `{tracr.get('n_programs', 0)}` programs."
+                )
             lines.append("")
         else:
             lines.extend([

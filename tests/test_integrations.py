@@ -1,6 +1,12 @@
 from mnf.integrations import check_optional_dependency
 from mnf.integrations.hf_transformers import hf_transformers_status, run_tiny_causal_lm_smoke
-from mnf.integrations.tracr import default_tracr_hook_requests, rasp_program_registry, tracr_benchmark_cards, tracr_status
+from mnf.integrations.tracr import (
+    default_tracr_hook_requests,
+    rasp_program_registry,
+    run_tracr_smoke,
+    tracr_benchmark_cards,
+    tracr_status,
+)
 from mnf.integrations.transformer_lens import run_random_hooked_transformer_smoke, transformer_lens_status
 
 
@@ -31,8 +37,20 @@ def test_tracr_optional_scaffold_has_named_programs_and_cards():
     hooks = default_tracr_hook_requests()
 
     assert "reverse" in registry
+    assert "histogram" in registry
+    assert "balanced_parentheses" in registry
+    assert "modular_arithmetic" in registry
     assert cards[0].name == "tracr_interacting_programs"
     assert hooks[0].site == "residual_stream"
+
+
+def test_tracr_compiled_program_smoke():
+    result = run_tracr_smoke(programs=("reverse", "map_increment"))
+    assert "available" in result
+    if result["available"]:
+        assert result["all_exact_match"] is True
+        assert result["n_programs"] == 2
+        assert result["rows"][0]["residual_shapes"]
 
 
 def test_transformer_lens_random_hooked_model_smoke():

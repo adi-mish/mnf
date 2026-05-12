@@ -13,7 +13,7 @@ def tracr_benchmark_cards() -> tuple[BenchmarkCard, ...]:
             ground_truth_charts=("compiled_program_chart",),
             allowed_interventions=("activation_patch", "path_patch", "compiled_variable_patch"),
             observable_variables=("logits", "residual_stream", "compiled_rasp_states"),
-            known_nonidentifiabilities=("not executable until Tracr is installed",),
+            known_nonidentifiabilities=("compiled program variables are known, but mapping them to natural model mechanisms is still code- and intervention-relative",),
             baseline_failure_modes=("component-level circuit discovery misses interacting compiled subroutines",),
             expected_certificate_thresholds={"max_intervention_error": 0.05},
         ),

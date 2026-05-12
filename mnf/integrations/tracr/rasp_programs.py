@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from mnf.integrations.tracr.availability import tracr_status
+
 
 SUPPORTED_RASP_PROGRAMS = (
     "reverse",
@@ -8,15 +10,18 @@ SUPPORTED_RASP_PROGRAMS = (
     "sort",
     "balanced_parentheses",
     "modular_arithmetic",
+    "length",
+    "map_increment",
 )
 
 
 def rasp_program_registry() -> dict[str, dict[str, object]]:
+    status = tracr_status()
     return {
         name: {
             "name": name,
-            "available": False,
-            "reason": "Tracr package is not available in this environment",
+            "available": status.available,
+            "reason": "installed" if status.available else status.reason,
         }
         for name in SUPPORTED_RASP_PROGRAMS
     }

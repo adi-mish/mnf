@@ -2706,13 +2706,13 @@
             {
               "name": "kmeans_dictionary",
               "label_accuracy": 0.962890625,
-              "causal_use_score": 0.0621646755602796,
+              "causal_use_score": 0.06216467556027959,
               "reconstruction_error": 0.9638635601858345,
               "false_mechanism": true
             }
           ],
           "mean_label_accuracy": 0.962890625,
-          "mean_causal_use_score": 0.06251235690523693,
+          "mean_causal_use_score": 0.06251235690523692,
           "false_mechanism_rate": 1.0
         },
         "trained_used": {
@@ -2756,13 +2756,13 @@
             {
               "name": "kmeans_dictionary",
               "label_accuracy": 0.9775390625,
-              "causal_use_score": 0.006990016041812467,
+              "causal_use_score": 0.006990016041812492,
               "reconstruction_error": 0.9526822033440325,
               "false_mechanism": true
             }
           ],
           "mean_label_accuracy": 0.9765625,
-          "mean_causal_use_score": 0.007560367478346922,
+          "mean_causal_use_score": 0.007560367478346935,
           "false_mechanism_rate": 1.0
         },
         "trained_used": {
@@ -3622,6 +3622,605 @@
         "blocks.0.attn.hook_v"
       ],
       "reason": "ok"
+    },
+    "tracr_smoke": {
+      "available": true,
+      "n_programs": 6,
+      "all_exact_match": true,
+      "rows": [
+        {
+          "name": "reverse",
+          "available": true,
+          "decoded": [
+            "d",
+            "c",
+            "b",
+            "a"
+          ],
+          "expected": [
+            "d",
+            "c",
+            "b",
+            "a"
+          ],
+          "exact_match": true,
+          "residual_shapes": [
+            [
+              1,
+              5,
+              43
+            ],
+            [
+              1,
+              5,
+              43
+            ],
+            [
+              1,
+              5,
+              43
+            ],
+            [
+              1,
+              5,
+              43
+            ],
+            [
+              1,
+              5,
+              43
+            ],
+            [
+              1,
+              5,
+              43
+            ],
+            [
+              1,
+              5,
+              43
+            ],
+            [
+              1,
+              5,
+              43
+            ]
+          ],
+          "layer_output_shapes": [
+            [
+              1,
+              5,
+              43
+            ],
+            [
+              1,
+              5,
+              43
+            ],
+            [
+              1,
+              5,
+              43
+            ],
+            [
+              1,
+              5,
+              43
+            ],
+            [
+              1,
+              5,
+              43
+            ],
+            [
+              1,
+              5,
+              43
+            ],
+            [
+              1,
+              5,
+              43
+            ],
+            [
+              1,
+              5,
+              43
+            ]
+          ],
+          "attn_logit_shapes": [
+            [
+              1,
+              1,
+              5,
+              5
+            ],
+            [
+              1,
+              1,
+              5,
+              5
+            ],
+            [
+              1,
+              1,
+              5,
+              5
+            ],
+            [
+              1,
+              1,
+              5,
+              5
+            ]
+          ],
+          "transformer_output_shape": [
+            1,
+            5,
+            43
+          ],
+          "reason": "ok"
+        },
+        {
+          "name": "histogram",
+          "available": true,
+          "decoded": [
+            3,
+            1,
+            3,
+            1,
+            3
+          ],
+          "expected": [
+            3,
+            1,
+            3,
+            1,
+            3
+          ],
+          "exact_match": true,
+          "residual_shapes": [
+            [
+              1,
+              6,
+              20
+            ],
+            [
+              1,
+              6,
+              20
+            ]
+          ],
+          "layer_output_shapes": [
+            [
+              1,
+              6,
+              20
+            ],
+            [
+              1,
+              6,
+              20
+            ]
+          ],
+          "attn_logit_shapes": [
+            [
+              1,
+              1,
+              6,
+              6
+            ]
+          ],
+          "transformer_output_shape": [
+            1,
+            6,
+            20
+          ],
+          "reason": "ok"
+        },
+        {
+          "name": "token_frequency",
+          "available": true,
+          "decoded": [
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "expected": [
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "exact_match": true,
+          "residual_shapes": [
+            [
+              1,
+              6,
+              20
+            ],
+            [
+              1,
+              6,
+              20
+            ]
+          ],
+          "layer_output_shapes": [
+            [
+              1,
+              6,
+              20
+            ],
+            [
+              1,
+              6,
+              20
+            ]
+          ],
+          "attn_logit_shapes": [
+            [
+              1,
+              1,
+              6,
+              6
+            ]
+          ],
+          "transformer_output_shape": [
+            1,
+            6,
+            20
+          ],
+          "reason": "ok"
+        },
+        {
+          "name": "sort",
+          "available": true,
+          "decoded": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "expected": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "exact_match": true,
+          "residual_shapes": [
+            [
+              1,
+              5,
+              27
+            ],
+            [
+              1,
+              5,
+              27
+            ],
+            [
+              1,
+              5,
+              27
+            ],
+            [
+              1,
+              5,
+              27
+            ],
+            [
+              1,
+              5,
+              27
+            ],
+            [
+              1,
+              5,
+              27
+            ]
+          ],
+          "layer_output_shapes": [
+            [
+              1,
+              5,
+              27
+            ],
+            [
+              1,
+              5,
+              27
+            ],
+            [
+              1,
+              5,
+              27
+            ],
+            [
+              1,
+              5,
+              27
+            ],
+            [
+              1,
+              5,
+              27
+            ],
+            [
+              1,
+              5,
+              27
+            ]
+          ],
+          "attn_logit_shapes": [
+            [
+              1,
+              1,
+              5,
+              5
+            ],
+            [
+              1,
+              1,
+              5,
+              5
+            ],
+            [
+              1,
+              1,
+              5,
+              5
+            ]
+          ],
+          "transformer_output_shape": [
+            1,
+            5,
+            27
+          ],
+          "reason": "ok"
+        },
+        {
+          "name": "balanced_parentheses",
+          "available": true,
+          "decoded": [
+            true,
+            true,
+            true,
+            true
+          ],
+          "expected": [
+            true,
+            true,
+            true,
+            true
+          ],
+          "exact_match": true,
+          "residual_shapes": [
+            [
+              1,
+              5,
+              38
+            ],
+            [
+              1,
+              5,
+              38
+            ],
+            [
+              1,
+              5,
+              38
+            ],
+            [
+              1,
+              5,
+              38
+            ],
+            [
+              1,
+              5,
+              38
+            ],
+            [
+              1,
+              5,
+              38
+            ],
+            [
+              1,
+              5,
+              38
+            ],
+            [
+              1,
+              5,
+              38
+            ],
+            [
+              1,
+              5,
+              38
+            ],
+            [
+              1,
+              5,
+              38
+            ],
+            [
+              1,
+              5,
+              38
+            ],
+            [
+              1,
+              5,
+              38
+            ]
+          ],
+          "layer_output_shapes": [
+            [
+              1,
+              5,
+              38
+            ],
+            [
+              1,
+              5,
+              38
+            ],
+            [
+              1,
+              5,
+              38
+            ],
+            [
+              1,
+              5,
+              38
+            ],
+            [
+              1,
+              5,
+              38
+            ],
+            [
+              1,
+              5,
+              38
+            ],
+            [
+              1,
+              5,
+              38
+            ],
+            [
+              1,
+              5,
+              38
+            ],
+            [
+              1,
+              5,
+              38
+            ],
+            [
+              1,
+              5,
+              38
+            ],
+            [
+              1,
+              5,
+              38
+            ],
+            [
+              1,
+              5,
+              38
+            ]
+          ],
+          "attn_logit_shapes": [
+            [
+              1,
+              2,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              5,
+              5
+            ],
+            [
+              1,
+              2,
+              5,
+              5
+            ]
+          ],
+          "transformer_output_shape": [
+            1,
+            5,
+            38
+          ],
+          "reason": "ok"
+        },
+        {
+          "name": "modular_arithmetic",
+          "available": true,
+          "decoded": [
+            1,
+            2,
+            0
+          ],
+          "expected": [
+            1,
+            2,
+            0
+          ],
+          "exact_match": true,
+          "residual_shapes": [
+            [
+              1,
+              4,
+              16
+            ],
+            [
+              1,
+              4,
+              16
+            ]
+          ],
+          "layer_output_shapes": [
+            [
+              1,
+              4,
+              16
+            ],
+            [
+              1,
+              4,
+              16
+            ]
+          ],
+          "attn_logit_shapes": [
+            [
+              1,
+              1,
+              4,
+              4
+            ]
+          ],
+          "transformer_output_shape": [
+            1,
+            4,
+            16
+          ],
+          "reason": "ok"
+        }
+      ]
     }
   },
   "training_emergence": {

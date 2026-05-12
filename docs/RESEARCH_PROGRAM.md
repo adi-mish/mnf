@@ -101,9 +101,10 @@ Required tasks:
 - atom-splitting response-kernel non-identifiability with explicit
   `IdentificationSet` output;
 - Tracr/RASP compiled transformers if dependencies permit. Current status:
-  the Tracr package is not available from the configured package index, so the
-  repo includes explicit Tracr registry/card/hook scaffolding and a
-  non-silent optional dependency boundary.
+  Tracr is installable from GitHub in this environment, and the repo runs
+  CPU compiled-program smokes for reverse, histogram, token-frequency, sort,
+  balanced-parentheses, and modular-arithmetic RASP programs with exact
+  decoded-output checks plus residual/attention/logit shape capture.
 
 Metrics:
 

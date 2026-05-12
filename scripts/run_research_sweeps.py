@@ -224,6 +224,7 @@ def main() -> None:
                 "available": False,
                 "reason": "disabled by config",
                 "transformer_lens_smoke": {"available": False, "reason": "disabled by config"},
+                "tracr_smoke": {"available": False, "reason": "disabled by config", "n_programs": 0},
             }
         ),
     }
